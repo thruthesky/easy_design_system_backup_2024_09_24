@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Update. ComicListView and ComicListView.separated.
+
 ## 0.0.3
 
 * Update. document.

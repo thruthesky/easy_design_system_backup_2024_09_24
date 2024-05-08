@@ -2,7 +2,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-/// Generate a list view named `ComicListView` that extends `ListView`.
+/// ComicListView
+///
+/// A scrollable list of widgets arranged linearly.
+///
+/// [ComicListView] is an opinionated list view that supports the full functionality
+/// of the [ListView].
+///
 class ComicListView extends StatelessWidget {
   /// Creates a scrollable, linear array of widgets from an explicit [List].
   ///
