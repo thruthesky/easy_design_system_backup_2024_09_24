@@ -3,7 +3,7 @@
 Comic style theme design.
 
 
-![Comic List Tile](./images/list_tile.jpg)
+![Comic List Tile](./images/comic_list_tile.jpg)
 
 
 ## How to apply
