@@ -1,3 +1,19 @@
+# Example Folder
+example/.idea
+example/android
+example/ios
+example/lib/*
+example/linux
+example/macos
+example/test
+example/web
+example/window
+example/.*
+example/*.ymal
+example/pubspec.*
+example/README
+
+
 # Miscellaneous
 *.class
 *.log
