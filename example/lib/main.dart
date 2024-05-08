@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_design_system/social_design_system.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,6 +56,27 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const ListTile(
+              title: Text('Item 1'),
+              subtitle: Text('Subtitle 1'),
+              leading: Icon(Icons.ac_unit),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
+            ComicTheme(
+              context: context,
+              child: const ListTile(
+                title: Text('Item 2'),
+                subtitle: Text('Subtitle 2'),
+                leading: Icon(Icons.access_alarm),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+            ),
+            const ListTile(
+              title: Text('Item 3'),
+              subtitle: Text('Subtitle 3'),
+              leading: Icon(Icons.access_time),
+              trailing: Icon(Icons.arrow_forward_ios),
             ),
           ],
         ),

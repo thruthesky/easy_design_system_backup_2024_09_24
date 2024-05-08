@@ -9,7 +9,7 @@ Social Design System(sds) is an Elegant UI/UX library crafted specifically for b
 
 ## Getting started
 
-Please visit the Social Design System document website to learn more.
+Please visit the [Social Design System document website](https://thruthesky.github.io/social_design_system/) to learn more.
 
 
 ## Usage
