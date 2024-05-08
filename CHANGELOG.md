@@ -1,11 +1,11 @@
 ## 0.0.3
 
-* Update. document
+* Update. document.
 
 ## 0.0.2
 
-* Add. ComicTheme, ListTile UI
+* Add. ComicTheme, ListTile UI.
 
 ## 0.0.1
 
-* First version release
+* First version release.
