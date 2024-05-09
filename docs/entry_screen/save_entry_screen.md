@@ -1,3 +1,0 @@
-# Wave Entry Screen
-
-...

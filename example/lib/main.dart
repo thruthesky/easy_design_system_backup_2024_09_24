@@ -1,4 +1,8 @@
 import 'package:example/buttons.dart';
+import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
+import 'package:example/screens/entry/round_carousel_entry.screen.dart';
+import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
+import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -66,6 +70,38 @@ class _MyHomePageState extends State<MyHomePage> {
                 const Divider(
                   height: 48,
                 ),
+                ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ___) =>
+                            const WaveCarouselEntryScreen()),
+                  ),
+                  child: const Text('Wave Carousel Entry Screen'),
+                ),
+                ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ___) =>
+                            const BasicCarouselEntryScreen()),
+                  ),
+                  child: const Text('Basic Carousel Entry Screen'),
+                ),
+                ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ___) =>
+                            const RoundCarouselEntryScreen()),
+                  ),
+                  child: const Text('Round Carousel Entry Screen'),
+                ),
+                ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ___) => const SleepWalkerScreen()),
+                  ),
+                  child: const Text('Sleep Walker'),
+                ),
+                const Divider(),
                 Theme(
                   data: SleekThemeData.of(context),
                   child: SleekListView(

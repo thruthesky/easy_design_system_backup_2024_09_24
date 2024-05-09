@@ -11,6 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  loop_page_view: ^1.2.5
+  rxdart: ^0.27.7
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_test:

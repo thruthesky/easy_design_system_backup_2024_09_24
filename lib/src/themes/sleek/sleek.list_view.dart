@@ -74,8 +74,6 @@ class SleekListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(
-        'SleekListView build: ${Theme.of(context).colorScheme.primaryContainer}');
     if (itemBuilder != null) {
       return isSeparated == true
           ? Container(

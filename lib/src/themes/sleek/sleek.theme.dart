@@ -12,8 +12,6 @@ class SleekThemeData {
   ///
   /// [of] is a method that returns a [ThemeData] object with the color scheme
   static ThemeData of(BuildContext context) {
-    print(
-        'SleekThemeData.of(): ${Theme.of(context).colorScheme.primaryContainer}');
     final theme = Theme.of(context);
     return ThemeData(
       colorScheme: Theme.of(context).colorScheme,
