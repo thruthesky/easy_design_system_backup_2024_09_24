@@ -43,7 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
       body: Padding(
@@ -59,6 +58,57 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text(
                   '$_counter',
                   style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                const SizedBox(height: 24),
+                Theme(
+                  data: SleekThemeData.of(context),
+                  child: SleekListView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    padding: EdgeInsets.zero,
+                    children: List.generate(
+                      5,
+                      (index) => ListTile(
+                        title: Text('Item $index'),
+                        subtitle: Text('Subtitle $index'),
+                        leading: const Icon(Icons.ac_unit),
+                        trailing: const Icon(Icons.arrow_forward_ios),
+                        onTap: () {},
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 24),
+                SleekTheme(
+                  child: SleekListView.builder(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 5,
+                    itemBuilder: (context, index) => ListTile(
+                      title: Text('Item $index'),
+                      subtitle: Text('Subtitle $index'),
+                      leading: const Icon(Icons.ac_unit),
+                      trailing: const Icon(Icons.arrow_forward_ios),
+                      onTap: () {},
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 24),
+                SleekTheme(
+                  child: SleekListView.separated(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 5,
+                    itemBuilder: (context, index) => ListTile(
+                      title: Text('Item $index'),
+                      subtitle: Text('Subtitle $index'),
+                      leading: const Icon(Icons.ac_unit),
+                      trailing: const Icon(Icons.arrow_forward_ios),
+                      onTap: () {},
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 24),
                 ComicListView(
