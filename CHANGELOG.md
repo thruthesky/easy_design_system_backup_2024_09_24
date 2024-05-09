@@ -1,3 +1,8 @@
+## 0.0.6
+
+* Add. Carousel Entries - WaveCarouselEntry, BasicCarouselEntry, RoundCarouselEntry
+
+
 ## 0.0.5
 
 * Add. TextButton, ElevatedButton.
