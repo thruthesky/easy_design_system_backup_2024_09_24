@@ -64,6 +64,7 @@ class ComicListView extends StatelessWidget {
               (prototypeItem == null && itemExtentBuilder == null),
           'You can only pass one of itemExtent, prototypeItem and itemExtentBuilder.',
         ),
+        isSeparated = false,
         itemCount = children.length;
 
   final bool addAutomaticKeepAlives;
@@ -73,65 +74,88 @@ class ComicListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget child;
-
     if (itemBuilder != null) {
-      child = ListView.separated(
-        key: key,
-        separatorBuilder: (context, index) => Divider(
-          thickness: 2,
-          color: Theme.of(context).colorScheme.secondary,
-        ),
-        scrollDirection: scrollDirection,
-        reverse: reverse,
-        controller: controller,
-        primary: primary,
-        physics: physics,
-        shrinkWrap: shrinkWrap,
-        padding: padding,
-        // itemExtent: itemExtent,
-        // itemExtentBuilder: itemExtentBuilder,
-        // prototypeItem: prototypeItem,
-        itemBuilder: itemBuilder!,
-        findChildIndexCallback: findChildIndexCallback,
-        itemCount: itemCount,
-        addAutomaticKeepAlives: addAutomaticKeepAlives,
-        addRepaintBoundaries: addRepaintBoundaries,
-        addSemanticIndexes: addSemanticIndexes,
-        cacheExtent: cacheExtent,
-        dragStartBehavior: dragStartBehavior,
-        keyboardDismissBehavior: keyboardDismissBehavior,
-        restorationId: restorationId,
-        clipBehavior: clipBehavior,
-      );
+      return isSeparated == true
+          ? Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surface,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(
+                  color: Theme.of(context).colorScheme.secondary,
+                  width: 2,
+                ),
+              ),
+              child: ListView.separated(
+                key: key,
+                separatorBuilder: (context, index) => Divider(
+                  height: 1,
+                  thickness: 2,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+                scrollDirection: scrollDirection,
+                reverse: reverse,
+                controller: controller,
+                primary: primary,
+                physics: physics,
+                shrinkWrap: shrinkWrap,
+                padding: padding,
+                // itemExtent: itemExtent,
+                // itemExtentBuilder: itemExtentBuilder,
+                // prototypeItem: prototypeItem,
+                itemBuilder: itemBuilder!,
+                findChildIndexCallback: findChildIndexCallback,
+                itemCount: itemCount,
+                addAutomaticKeepAlives: addAutomaticKeepAlives,
+                addRepaintBoundaries: addRepaintBoundaries,
+                addSemanticIndexes: addSemanticIndexes,
+                cacheExtent: cacheExtent,
+                dragStartBehavior: dragStartBehavior,
+                keyboardDismissBehavior: keyboardDismissBehavior,
+                restorationId: restorationId,
+                clipBehavior: clipBehavior,
+              ),
+            )
+          : ListView.separated(
+              key: key,
+              separatorBuilder: (context, index) => const Divider(
+                height: 9,
+                thickness: 0,
+                color: Colors.transparent,
+              ),
+              scrollDirection: scrollDirection,
+              reverse: reverse,
+              controller: controller,
+              primary: primary,
+              physics: physics,
+              shrinkWrap: shrinkWrap,
+              padding: padding,
+              // itemExtent: itemExtent,
+              // itemExtentBuilder: itemExtentBuilder,
+              // prototypeItem: prototypeItem,
+              itemBuilder: (context, index) => Container(
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surface,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(
+                    color: Theme.of(context).colorScheme.secondary,
+                    width: 2,
+                  ),
+                ),
+                child: itemBuilder!(context, index),
+              ),
+              findChildIndexCallback: findChildIndexCallback,
+              itemCount: itemCount,
+              addAutomaticKeepAlives: addAutomaticKeepAlives,
+              addRepaintBoundaries: addRepaintBoundaries,
+              addSemanticIndexes: addSemanticIndexes,
+              cacheExtent: cacheExtent,
+              dragStartBehavior: dragStartBehavior,
+              keyboardDismissBehavior: keyboardDismissBehavior,
+              restorationId: restorationId,
+              clipBehavior: clipBehavior,
+            );
     } else {
-      child = ListView(
-        key: key,
-        scrollDirection: scrollDirection,
-        reverse: reverse,
-        controller: controller,
-        primary: primary,
-        physics: physics,
-        shrinkWrap: shrinkWrap,
-        padding: padding,
-        itemExtent: itemExtent,
-        itemExtentBuilder: itemExtentBuilder,
-        prototypeItem: prototypeItem,
-        addAutomaticKeepAlives: addAutomaticKeepAlives,
-        addRepaintBoundaries: addRepaintBoundaries,
-        addSemanticIndexes: addSemanticIndexes,
-        cacheExtent: cacheExtent,
-        semanticChildCount: semanticChildCount,
-        dragStartBehavior: dragStartBehavior,
-        keyboardDismissBehavior: keyboardDismissBehavior,
-        restorationId: restorationId,
-        clipBehavior: clipBehavior,
-        children: children,
-      );
-    }
-    return Padding(
-      padding: const EdgeInsets.all(24),
-      child: Container(
+      return Container(
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
@@ -140,10 +164,69 @@ class ComicListView extends StatelessWidget {
             width: 2,
           ),
         ),
-        child: child,
-      ),
-    );
+        child: ListView(
+          key: key,
+          scrollDirection: scrollDirection,
+          reverse: reverse,
+          controller: controller,
+          primary: primary,
+          physics: physics,
+          shrinkWrap: shrinkWrap,
+          padding: padding,
+          itemExtent: itemExtent,
+          itemExtentBuilder: itemExtentBuilder,
+          prototypeItem: prototypeItem,
+          addAutomaticKeepAlives: addAutomaticKeepAlives,
+          addRepaintBoundaries: addRepaintBoundaries,
+          addSemanticIndexes: addSemanticIndexes,
+          cacheExtent: cacheExtent,
+          semanticChildCount: semanticChildCount,
+          dragStartBehavior: dragStartBehavior,
+          keyboardDismissBehavior: keyboardDismissBehavior,
+          restorationId: restorationId,
+          clipBehavior: clipBehavior,
+          children: children,
+        ),
+      );
+    }
   }
+
+  const ComicListView.builder({
+    super.key,
+    this.scrollDirection = Axis.vertical,
+    this.reverse = false,
+    this.controller,
+    this.primary,
+    this.scrollBehavior,
+    this.physics,
+    this.shrinkWrap = false,
+    this.center,
+    this.anchor = 0.0,
+    this.padding,
+    this.itemExtent,
+    this.itemExtentBuilder,
+    this.prototypeItem,
+    required this.itemBuilder,
+    this.findChildIndexCallback,
+    required this.itemCount,
+    this.addAutomaticKeepAlives = true,
+    this.addRepaintBoundaries = true,
+    this.addSemanticIndexes = true,
+    this.cacheExtent,
+    this.semanticChildCount,
+    this.dragStartBehavior = DragStartBehavior.start,
+    this.keyboardDismissBehavior = ScrollViewKeyboardDismissBehavior.manual,
+    this.restorationId,
+    this.clipBehavior = Clip.hardEdge,
+  })  : assert(itemCount >= 0),
+        assert(
+          (itemExtent == null && prototypeItem == null) ||
+              (itemExtent == null && itemExtentBuilder == null) ||
+              (prototypeItem == null && itemExtentBuilder == null),
+          'You can only pass one of itemExtent, prototypeItem and itemExtentBuilder.',
+        ),
+        isSeparated = false,
+        children = const [];
 
   /// Creates a scrollable, linear array of widgets that are created on demand.
   ///
@@ -218,11 +301,14 @@ class ComicListView extends StatelessWidget {
               (prototypeItem == null && itemExtentBuilder == null),
           'You can only pass one of itemExtent, prototypeItem and itemExtentBuilder.',
         ),
+        isSeparated = true,
         children = const <Widget>[];
 
   final NullableIndexedWidgetBuilder? itemBuilder;
   final ChildIndexGetter? findChildIndexCallback;
   final int itemCount;
+
+  final bool? isSeparated;
 
   /// {@template flutter.widgets.scroll_view.scrollDirection}
   /// The [Axis] along which the scroll view's offset increases.
