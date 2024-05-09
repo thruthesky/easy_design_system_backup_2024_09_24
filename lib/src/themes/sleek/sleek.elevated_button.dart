@@ -38,34 +38,19 @@ class SleekElevatedButton extends StatelessWidget {
   ///
   /// The icon and label are arranged in a row and padded by 12 logical pixels
   /// at the start, and 16 at the end, with an 8 pixel gap in between.
-  static Widget icon({
+  const factory SleekElevatedButton.icon({
     Key? key,
     required void Function()? onPressed,
     void Function()? onLongPress,
     void Function(bool)? onHover,
     void Function(bool)? onFocusChange,
     FocusNode? focusNode,
-    bool autofocus = false,
-    Clip clipBehavior = Clip.none,
+    bool autofocus,
+    Clip clipBehavior,
     MaterialStatesController? statesController,
     required Widget icon,
     required Widget label,
-  }) {
-    return _SleekElevatedButtonIcon(
-      key: key,
-      onPressed: onPressed,
-      onLongPress: onLongPress,
-      onHover: onHover,
-      onFocusChange: onFocusChange,
-      focusNode: focusNode,
-      autofocus: autofocus,
-      clipBehavior: clipBehavior,
-      statesController: statesController,
-      icon: icon,
-      label: label,
-      child: null,
-    );
-  }
+  }) = _SleekElevatedButtonIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -79,8 +64,8 @@ class SleekElevatedButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         shadowColor: Colors.transparent,
-        backgroundColor: Theme.of(context).colorScheme.primary.withAlpha(60),
-        foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+        backgroundColor: Theme.of(context).colorScheme.secondary.withAlpha(60),
+        foregroundColor: Theme.of(context).colorScheme.onSecondary,
       ),
       focusNode: focusNode,
       autofocus: autofocus,
@@ -104,8 +89,7 @@ class _SleekElevatedButtonIcon extends SleekElevatedButton {
     super.statesController,
     required this.icon,
     required this.label,
-    required super.child,
-  });
+  }) : super(child: null);
 
   final Widget icon;
   final Widget label;
@@ -123,8 +107,8 @@ class _SleekElevatedButtonIcon extends SleekElevatedButton {
           borderRadius: BorderRadius.circular(8),
         ),
         shadowColor: Colors.transparent,
-        backgroundColor: Theme.of(context).colorScheme.primary.withAlpha(60),
-        foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+        backgroundColor: Theme.of(context).colorScheme.secondary.withAlpha(60),
+        foregroundColor: Theme.of(context).colorScheme.onSecondary,
       ),
       focusNode: focusNode,
       autofocus: autofocus,
