@@ -2,14 +2,14 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-/// ComicListView
+/// SleekListView
 ///
 /// A scrollable list of widgets arranged linearly.
 ///
-/// [ComicListView] is an opinionated list view that supports the full functionality
+/// [SleekListView] is an opinionated list view that supports the full functionality
 /// of the [ListView].
 ///
-class ComicListView extends StatelessWidget {
+class SleekListView extends StatelessWidget {
   /// Creates a scrollable, linear array of widgets from an explicit [List].
   ///
   /// This constructor is appropriate for list views with a small number of
@@ -31,7 +31,7 @@ class ComicListView extends StatelessWidget {
   /// `addSemanticIndexes` argument corresponds to the
   /// [SliverChildListDelegate.addSemanticIndexes] property. None
   /// may be null.
-  const ComicListView({
+  const SleekListView({
     super.key,
     this.scrollDirection = Axis.vertical,
     this.reverse = false,
@@ -78,19 +78,15 @@ class ComicListView extends StatelessWidget {
       return isSeparated == true
           ? Container(
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surface,
+                color: Theme.of(context).colorScheme.secondary.withAlpha(50),
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(
-                  color: Theme.of(context).colorScheme.secondary,
-                  width: 2,
-                ),
               ),
               child: ListView.separated(
                 key: key,
                 separatorBuilder: (context, index) => Divider(
                   height: 1,
-                  thickness: 2,
-                  color: Theme.of(context).colorScheme.secondary,
+                  thickness: 1,
+                  color: Theme.of(context).colorScheme.secondary.withAlpha(60),
                 ),
                 scrollDirection: scrollDirection,
                 reverse: reverse,
@@ -134,12 +130,8 @@ class ComicListView extends StatelessWidget {
               // prototypeItem: prototypeItem,
               itemBuilder: (context, index) => Container(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface,
+                  color: Theme.of(context).colorScheme.secondary.withAlpha(50),
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
-                    color: Theme.of(context).colorScheme.secondary,
-                    width: 2,
-                  ),
                 ),
                 child: itemBuilder!(context, index),
               ),
@@ -157,12 +149,8 @@ class ComicListView extends StatelessWidget {
     } else {
       return Container(
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.surface,
+          color: Theme.of(context).colorScheme.secondary.withAlpha(50),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-            color: Theme.of(context).colorScheme.secondary,
-            width: 2,
-          ),
         ),
         child: ListView(
           key: key,
@@ -191,7 +179,7 @@ class ComicListView extends StatelessWidget {
     }
   }
 
-  const ComicListView.builder({
+  const SleekListView.builder({
     super.key,
     this.scrollDirection = Axis.vertical,
     this.reverse = false,
@@ -266,7 +254,7 @@ class ComicListView extends StatelessWidget {
   /// `addSemanticIndexes` argument corresponds to the
   /// [SliverChildBuilderDelegate.addSemanticIndexes] property. None may be
   /// null.
-  const ComicListView.separated({
+  const SleekListView.separated({
     super.key,
     this.scrollDirection = Axis.vertical,
     this.reverse = false,
