@@ -4,7 +4,7 @@
 
 The `ComicListView` supports full ListView widget with the comic style ui design.
 
-![Comic List View](./images/comic_list_view.jpg)
+![Comic List View](../../images/comic_list_view.jpg)
 
 ```dart
 ComicListView(
@@ -26,7 +26,7 @@ ComicListView(
 
 `ComicListView.builder()` support the most of `ListView.builder()` properties with opinionated comic style ui design.
 
-![ComicListView.builder](./images/comic_list_view_builder.jpg)
+![ComicListView.builder](../../images/comic_list_view_builder.jpg)
 
 ```dart
 ComicListView.builder(
@@ -46,7 +46,7 @@ ComicListView.builder(
 
 `ComicListView.separated` supports the most of `ListView.separated` properties except that you cannot customize the `separatedBuilder` since it is opinionated for comic ui design.
 
-![ComicListView.separated](./images/comic_list_view_separated.jpg)
+![ComicListView.separated](../../images/comic_list_view_separated.jpg)
 
 ```dart
 ComicListView.separated(

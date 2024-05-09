@@ -11,7 +11,7 @@ It should
 
 
 
-![Sleek List Tile](./images/sleek.list_view.separated.jpg)
+![Sleek List Tile](../../images/sleek.list_view.separated.jpg)
 
 ## How to apply
 

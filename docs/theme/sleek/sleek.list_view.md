@@ -4,7 +4,7 @@
 
 The `SleekListView` supports full ListView widget with the sleek style ui design.
 
-![Sleek List View](./images/sleek.list_view.jpg)
+![Sleek List View](../../images/sleek.list_view.jpg)
 
 ```dart
 SleekListView(
@@ -26,7 +26,7 @@ SleekListView(
 
 `SleekListView.builder()` support the most of `ListView.builder()` properties with opinionated sleek style ui design.
 
-![SleekListView.builder](./images/sleek.list_view.builder.jpg)
+![SleekListView.builder](../../images/sleek.list_view.builder.jpg)
 
 ```dart
 SleekListView.builder(
@@ -46,7 +46,7 @@ SleekListView.builder(
 
 `SleekListView.separated` supports the most of `ListView.separated` properties except that you cannot customize the `separatedBuilder` since it is opinionated for sleek ui design.
 
-![SleekListView.separated](./images/sleek.list_view.separated.jpg)
+![SleekListView.separated](../../images/sleek.list_view.separated.jpg)
 
 ```dart
 SleekListView.separated(
