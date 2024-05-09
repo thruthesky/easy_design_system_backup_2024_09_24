@@ -14,3 +14,5 @@ export 'src/sleep_walker/sleep_walker.dart';
 
 export 'src/themes/sleek/sleek.theme.dart';
 export 'src/themes/sleek/sleek.list_view.dart';
+
+export 'src/settings/settings.dart';
