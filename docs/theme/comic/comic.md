@@ -2,7 +2,13 @@
 
 Comic style theme design.
 
-![Comic List Tile](./images/comic_list_tile.jpg)
+Comic theme should have
+- thick border
+- rounded border
+- no shaow
+
+
+
 
 ## How to apply
 

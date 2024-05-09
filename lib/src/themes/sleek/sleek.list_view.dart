@@ -74,11 +74,13 @@ class SleekListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(
+        'SleekListView build: ${Theme.of(context).colorScheme.primaryContainer}');
     if (itemBuilder != null) {
       return isSeparated == true
           ? Container(
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.secondary.withAlpha(50),
+                color: Theme.of(context).colorScheme.primaryContainer,
                 borderRadius: BorderRadius.circular(16),
               ),
               child: ListView.separated(
@@ -86,7 +88,10 @@ class SleekListView extends StatelessWidget {
                 separatorBuilder: (context, index) => Divider(
                   height: 1,
                   thickness: 1,
-                  color: Theme.of(context).colorScheme.secondary.withAlpha(60),
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onPrimaryContainer
+                      .withAlpha(32),
                 ),
                 scrollDirection: scrollDirection,
                 reverse: reverse,
@@ -130,7 +135,7 @@ class SleekListView extends StatelessWidget {
               // prototypeItem: prototypeItem,
               itemBuilder: (context, index) => Container(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.secondary.withAlpha(50),
+                  color: Theme.of(context).colorScheme.primaryContainer,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: itemBuilder!(context, index),
@@ -149,7 +154,7 @@ class SleekListView extends StatelessWidget {
     } else {
       return Container(
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.secondary.withAlpha(50),
+          color: Theme.of(context).colorScheme.primaryContainer,
           borderRadius: BorderRadius.circular(16),
         ),
         child: ListView(

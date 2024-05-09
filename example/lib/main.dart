@@ -1,3 +1,4 @@
+import 'package:example/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -31,14 +32,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,14 +45,27 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                const Text(
-                  'You have pushed the button this many times:',
+                ElevatedButton(
+                  onPressed: () {
+                    showGeneralDialog(
+                      context: context,
+                      pageBuilder: (_, __, ___) => Scaffold(
+                        appBar: AppBar(
+                          title: const Text('Buttons'),
+                        ),
+                        body: const Buttons(),
+                      ),
+                    );
+                  },
+                  child: const Text('BUTTON'),
                 ),
-                Text(
-                  '$_counter',
-                  style: Theme.of(context).textTheme.headlineMedium,
+                const Divider(
+                  height: 48,
                 ),
-                const SizedBox(height: 24),
+                const Buttons(),
+                const Divider(
+                  height: 48,
+                ),
                 Theme(
                   data: SleekThemeData.of(context),
                   child: SleekListView(
@@ -111,44 +117,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 const SizedBox(height: 24),
-                SleekTheme(
-                  child: SleekElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Button'),
-                  ),
-                ),
-                SleekTheme(
-                  child: SleekElevatedButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.add),
-                    label: const Text('Button'),
-                  ),
-                ),
-                const SizedBox(height: 24),
-                SleekTheme(
-                  child: SleekIconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.headphones),
-                  ),
-                ),
-                SleekTheme(
-                  child: SleekIconButton.filled(
-                    onPressed: () {},
-                    icon: const Icon(Icons.headphones),
-                  ),
-                ),
-                SleekTheme(
-                  child: SleekIconButton.filledTonal(
-                    onPressed: () {},
-                    icon: const Icon(Icons.headphones),
-                  ),
-                ),
-                SleekTheme(
-                  child: SleekIconButton.outlined(
-                    onPressed: () {},
-                    icon: const Icon(Icons.headphones),
-                  ),
-                ),
                 const SizedBox(height: 24),
                 ComicListView(
                   shrinkWrap: true,
@@ -199,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

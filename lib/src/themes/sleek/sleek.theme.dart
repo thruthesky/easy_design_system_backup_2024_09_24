@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 /// SleekThemeData
 ///
@@ -13,36 +12,39 @@ class SleekThemeData {
   ///
   /// [of] is a method that returns a [ThemeData] object with the color scheme
   static ThemeData of(BuildContext context) {
+    print(
+        'SleekThemeData.of(): ${Theme.of(context).colorScheme.primaryContainer}');
     final theme = Theme.of(context);
     return ThemeData(
-      colorScheme: const ColorScheme(
-        brightness: Brightness.light,
-        primary: Color(0xff03a9f4),
-        onPrimary: Colors.white,
-        primaryContainer: Color(0xffb2ebf5),
-        onPrimaryContainer: Color(0xff003c8f),
-        secondary: Color(0xff00bcd4),
-        onSecondary: Colors.black,
-        secondaryContainer: Color(0xffb2ebf5),
-        onSecondaryContainer: Color(0xff00678b),
-        error: Color(0xffd32f2f),
-        onError: Colors.white,
-        errorContainer: Color(0xfff2b8b5),
-        onErrorContainer: Color(0xff470001),
-        background: Color(0xfffcfcfc),
-        onBackground: Color(0xff1f1f1f),
-        surface: Color(0xfffcfcfc),
-        onSurface: Color(0xff1f1f1f),
-        surfaceVariant: Color(0xffdad7d7),
-        onSurfaceVariant: Color(0xff49454f),
-        outline: Color(0xff707070),
-        outlineVariant: Color(0xff49454f),
-        shadow: Color(0xff000000),
-        scrim: Color(0xff000000),
-        inverseSurface: Color(0xfff4eff4),
-        onInverseSurface: Color(0xff333039),
-        inversePrimary: Color(0xff03a9f4),
-        surfaceTint: Color(0xff03a9f4),
+      colorScheme: Theme.of(context).colorScheme,
+      textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+          foregroundColor:
+              MaterialStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor: MaterialStateProperty.all(
+            theme.colorScheme.primaryContainer,
+          ),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+          ),
+        ),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+          elevation: MaterialStateProperty.all(0),
+          foregroundColor:
+              MaterialStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor: MaterialStateProperty.all(
+            theme.colorScheme.primaryContainer,
+          ),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+          ),
+        ),
       ),
       // textTheme: const TextTheme(
       // bodyLarge: TextStyle(

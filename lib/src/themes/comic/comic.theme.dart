@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const borderThickness = 2.0;
+
 /// ComicThemeData
 ///
 /// [ComicThemeData] is a class that holds the color scheme for the Comic theme.
@@ -14,6 +16,42 @@ class ComicThemeData {
   static ThemeData of(BuildContext context) {
     final theme = Theme.of(context);
     return ThemeData(
+      colorScheme: Theme.of(context).colorScheme,
+      textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+          foregroundColor:
+              MaterialStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor:
+              MaterialStateProperty.all(theme.colorScheme.background),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                width: borderThickness,
+                color: theme.colorScheme.secondary,
+              ),
+            ),
+          ),
+        ),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+          elevation: MaterialStateProperty.all(0),
+          foregroundColor:
+              MaterialStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor:
+              MaterialStateProperty.all(theme.colorScheme.background),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                width: borderThickness,
+                color: theme.colorScheme.secondary,
+              ),
+            ),
+          ),
+        ),
+      ),
       listTileTheme: theme.listTileTheme.copyWith(
         tileColor: theme.colorScheme.surface,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
