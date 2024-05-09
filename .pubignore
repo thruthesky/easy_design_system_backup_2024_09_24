@@ -3,6 +3,7 @@ example/.idea
 example/android
 example/analysis_options.yaml
 example/ios
+example/lib/**/*.dart
 example/linux
 example/macos
 example/test
