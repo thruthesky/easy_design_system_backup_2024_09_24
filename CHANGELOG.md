@@ -1,3 +1,8 @@
+## 0.0.5
+
+* Add. TextButton, ElevatedButton.
+* Fix. Color shceme.
+
 ## 0.0.4
 
 * Update. ComicListView and ComicListView.separated.
