@@ -13,6 +13,10 @@ example/*.ymal
 example/pubspec.*
 example/README
 
+# Docs Folder
+
+docs/
+
 
 # Miscellaneous
 *.class
