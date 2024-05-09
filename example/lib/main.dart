@@ -125,6 +125,31 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 const SizedBox(height: 24),
+                SleekTheme(
+                  child: SleekIconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.headphones),
+                  ),
+                ),
+                SleekTheme(
+                  child: SleekIconButton.filled(
+                    onPressed: () {},
+                    icon: const Icon(Icons.headphones),
+                  ),
+                ),
+                SleekTheme(
+                  child: SleekIconButton.filledTonal(
+                    onPressed: () {},
+                    icon: const Icon(Icons.headphones),
+                  ),
+                ),
+                SleekTheme(
+                  child: SleekIconButton.outlined(
+                    onPressed: () {},
+                    icon: const Icon(Icons.headphones),
+                  ),
+                ),
+                const SizedBox(height: 24),
                 ComicListView(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
