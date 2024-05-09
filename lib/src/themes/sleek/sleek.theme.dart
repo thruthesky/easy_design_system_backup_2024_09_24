@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 /// SleekThemeData
 ///
@@ -43,6 +44,68 @@ class SleekThemeData {
         inversePrimary: Color(0xff03a9f4),
         surfaceTint: Color(0xff03a9f4),
       ),
+      // textTheme: const TextTheme(
+      // bodyLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // bodyMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // bodySmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // titleLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // titleMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // titleSmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // labelLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // labelMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // labelSmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // displayLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // displayMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // displaySmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // headlineLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // headlineMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // headlineSmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // ),
     );
   }
 }
