@@ -1,13 +1,13 @@
-# ComicListView
+# SleekListView
 
-`ComicListView` is a list view with comic style theme. It provides `ComicListView`, `ComicListView.builder()`, `ComicListView.separated()`.
+`SleekListView` is a list view with sleek style theme. It provides `SleekListView`, `SleekListView.builder()`, `SleekListView.separated()`.
 
-The `ComicListView` supports full ListView widget with the comic style ui design.
+The `SleekListView` supports full ListView widget with the sleek style ui design.
 
-![Comic List View](./images/comic_list_view.jpg)
+![Sleek List View](./images/sleek_list_view.jpg)
 
 ```dart
-ComicListView(
+SleekListView(
   shrinkWrap: true,
   physics: const NeverScrollableScrollPhysics(),
   padding: EdgeInsets.zero,
@@ -24,12 +24,12 @@ ComicListView(
 ),
 ```
 
-`ComicListView.builder()` support the most of `ListView.builder()` properties with opinionated comic style ui design.
+`SleekListView.builder()` support the most of `ListView.builder()` properties with opinionated sleek style ui design.
 
-![ComicListView.builder](./images/comic_list_view_builder.jpg)
+![SleekListView.builder](./images/sleek_list_view_builder.jpg)
 
 ```dart
-ComicListView.builder(
+SleekListView.builder(
   padding: EdgeInsets.zero,
   shrinkWrap: true,
   physics: const NeverScrollableScrollPhysics(),
@@ -44,12 +44,12 @@ ComicListView.builder(
 ),
 ```
 
-`ComicListView.separated` supports the most of `ListView.separated` properties except that you cannot customize the `separatedBuilder` since it is opinionated for comic ui design.
+`SleekListView.separated` supports the most of `ListView.separated` properties except that you cannot customize the `separatedBuilder` since it is opinionated for sleek ui design.
 
-![ComicListView.separated](./images/comic_list_view_separated.jpg)
+![SleekListView.separated](./images/sleek_list_view_separated.jpg)
 
 ```dart
-ComicListView.separated(
+SleekListView.separated(
   padding: EdgeInsets.zero,
   shrinkWrap: true,
   itemCount: 5,

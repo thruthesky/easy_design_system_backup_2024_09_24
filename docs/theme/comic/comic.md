@@ -2,13 +2,9 @@
 
 Comic style theme design.
 
-
 ![Comic List Tile](./images/comic_list_tile.jpg)
 
-
 ## How to apply
-
-There are many wasy of applying comic theme
 
 You can use `ComicTheme` widget like below.
 
@@ -22,7 +18,6 @@ const ComicTheme(
     ),
 ),
 ```
-
 
 Or you can use `Theme` widget with `ComicThemeData`.
 
