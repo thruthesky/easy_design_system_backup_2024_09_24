@@ -2,6 +2,10 @@
 
 Sleek theme is a theme with smooth, plain, clean, straight-forward style.
 
+It should
+- not have border
+- not have shadow
+
 ![Sleek List Tile](./images/sleek_list_view_separated.jpg)
 
 ## How to apply
