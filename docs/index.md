@@ -29,23 +29,18 @@ Social Design System (SDS) is an Elegant UI/UX library crafted specifically for 
 - Checkbox
 - Chip
 
-
 ## Sample UI of Social Deisgn System
+
+<!-- prettier-ignore -->
 |      |           |         |
 | -------------------------- | --------------------- | --------------------------- |
 | ComicListView![ComicListView](./theme/comic/images/comic_list_view.jpg) | ComicListView.builder ![ComicListView.builder](./theme/comic/images/comic_list_view_builder.jpg) | ComicListView.separated ![ComicListView.separated](./theme/comic/images/comic_list_view_separated.jpg) |
 |WaveCarouseEntry ![WaveCarouseEntry](./images/wave_carousel_entry.gif)|BasicCarouseEntry ![BasicCarouseEntry](./images/basic_carousel_entry.gif)|RoundCarouseEntry ![RoundCarouseEntry](./images/round_carousel_entry.gif)|
 | Buttons ![Buttons](./images/buttons.jpg) |Settings ![Settings](./images/settings.jpg) | x |
 
-
-
 ### Sleep Walker
 
-
 ![SleepWalker](./images/sleep_walker.gif)
-
-
-
 
 ## Themes
 
@@ -61,6 +56,7 @@ SDS provides the following themes:
 - How to apply SDS to your button?
 
 Applying `ComicTheme` to your button.
+
 ```dart
 Theme(
     data: ComicThemeData.of(context),
@@ -83,9 +79,4 @@ The theme (for instance `ComicTheme`) provides UI design to most of the flutter 
 
 - There are some cases we cannot acheive good UI with theming, like designing the list view and list tile together. In this caase we provide speial widgets like `ComicListView` or `SleekListView`.
 
-
-
-
 - Developers can choose their color scheme and all the widgets will follow the chosen color.
-
-

@@ -60,6 +60,10 @@ class ComicThemeData {
           side: BorderSide(color: theme.colorScheme.secondary, width: 2),
         ),
       ),
+      dividerTheme: theme.dividerTheme.copyWith(
+        color: theme.colorScheme.secondary,
+        thickness: borderThickness,
+      ),
     );
   }
 }
