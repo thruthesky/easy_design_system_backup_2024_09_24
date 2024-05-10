@@ -14,7 +14,7 @@ Badge(
 ),
 ```
 
-## Comic Badge Usage
+## How to apply
 
 Here is a simple example on how to apply `ComicTheme` to `Badge`.
 

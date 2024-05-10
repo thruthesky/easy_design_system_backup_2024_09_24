@@ -2,7 +2,7 @@
 
 ![Comic FloatingActionButton](../../images/comic.floatin.action.button.png)
 
-### Comic Floating Action Button Usage
+## How to apply
 
 Here is an example of using `FloatingActionButton()`
 

@@ -45,18 +45,12 @@ class SleekThemeData {
         ),
       ),
       segmentedButtonTheme: SegmentedButtonThemeData(
-        style: ButtonStyle(
-          elevation: MaterialStateProperty.all(0),
-          foregroundColor: MaterialStateProperty.all(theme.colorScheme.primary),
-          backgroundColor: MaterialStateProperty.all(
-            theme.colorScheme.primaryContainer,
-          ),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
-          ),
-          side: MaterialStateProperty.all(BorderSide.none),
+        style: SegmentedButton.styleFrom(
+          selectedBackgroundColor: theme.colorScheme.primary,
+          selectedForegroundColor: theme.colorScheme.onPrimary,
+          backgroundColor: theme.colorScheme.primaryContainer,
+          side: BorderSide.none,
+          elevation: 0,
         ),
       ),
       iconButtonTheme: IconButtonThemeData(
@@ -87,6 +81,7 @@ class SleekThemeData {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),
+        highlightElevation: 0,
       ),
       badgeTheme: BadgeThemeData(
         backgroundColor: theme.colorScheme.primary,
