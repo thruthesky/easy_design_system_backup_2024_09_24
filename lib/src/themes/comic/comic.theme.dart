@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 const borderThickness = 2.0;
@@ -17,35 +19,35 @@ class ComicThemeData {
     final theme = Theme.of(context);
     return ThemeData(
       colorScheme: Theme.of(context).colorScheme,
-      // textButtonTheme: TextButtonThemeData(
-      //   style: ButtonStyle(
-      //     foregroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.onSurface),
-      //     backgroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.background),
-      //     shape: MaterialStateProperty.all(
-      //       RoundedRectangleBorder(
-      //         borderRadius: BorderRadius.circular(24),
-      //         side: BorderSide(
-      //           width: borderThickness,
-      //           color: theme.colorScheme.secondary,
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          foregroundColor: MaterialStateProperty.all(theme.colorScheme.primary),
+          foregroundColor:
+              MaterialStateProperty.all(theme.colorScheme.onSurface),
           backgroundColor:
               MaterialStateProperty.all(theme.colorScheme.background),
-          textStyle: MaterialStatePropertyAll(
-            theme.textTheme.labelLarge?.copyWith(
-              fontWeight: FontWeight.w700,
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                width: borderThickness,
+                color: theme.colorScheme.secondary,
+              ),
             ),
           ),
         ),
       ),
+      // textButtonTheme: TextButtonThemeData(
+      //   style: ButtonStyle(
+      //     foregroundColor: MaterialStateProperty.all(theme.colorScheme.primary),
+      //     backgroundColor:
+      //         MaterialStateProperty.all(theme.colorScheme.background),
+      //     textStyle: MaterialStatePropertyAll(
+      //       theme.textTheme.labelLarge?.copyWith(
+      //         fontWeight: FontWeight.w700,
+      //       ),
+      //     ),
+      //   ),
+      // ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(0),
@@ -69,7 +71,10 @@ class ComicThemeData {
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
-          side: BorderSide(color: theme.colorScheme.secondary, width: 2),
+          side: BorderSide(
+            color: theme.colorScheme.secondary,
+            width: borderThickness,
+          ),
         ),
       ),
       dividerTheme: theme.dividerTheme.copyWith(
@@ -132,69 +137,6 @@ class ComicThemeData {
           ),
         ),
       ),
-
-      // textTheme: const TextTheme(
-      // bodyLarge: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // bodyMedium: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // bodySmall: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // titleLarge: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // titleMedium: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // titleSmall: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // labelLarge: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // labelMedium: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // labelSmall: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // displayLarge: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // displayMedium: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // displaySmall: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // headlineLarge: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // headlineMedium: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // headlineSmall: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // ),
       iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(0),
@@ -210,6 +152,20 @@ class ComicThemeData {
                 color: theme.colorScheme.secondary,
               ),
             ),
+          ),
+        ),
+      ),
+      appBarTheme: AppBarTheme(
+        elevation: 0,
+        backgroundColor: theme.colorScheme.background,
+        foregroundColor: theme.colorScheme.onBackground,
+        iconTheme: IconThemeData(
+          color: theme.colorScheme.onBackground,
+        ),
+        shape: UnderlineInputBorder(
+          borderSide: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.onBackground,
           ),
         ),
       ),
