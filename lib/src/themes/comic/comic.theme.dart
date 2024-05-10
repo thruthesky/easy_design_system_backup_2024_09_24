@@ -17,19 +17,31 @@ class ComicThemeData {
     final theme = Theme.of(context);
     return ThemeData(
       colorScheme: Theme.of(context).colorScheme,
+      // textButtonTheme: TextButtonThemeData(
+      //   style: ButtonStyle(
+      //     foregroundColor:
+      //         MaterialStateProperty.all(theme.colorScheme.onSurface),
+      //     backgroundColor:
+      //         MaterialStateProperty.all(theme.colorScheme.background),
+      //     shape: MaterialStateProperty.all(
+      //       RoundedRectangleBorder(
+      //         borderRadius: BorderRadius.circular(24),
+      //         side: BorderSide(
+      //           width: borderThickness,
+      //           color: theme.colorScheme.secondary,
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      // ),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          foregroundColor:
-              MaterialStateProperty.all(theme.colorScheme.onSurface),
+          foregroundColor: MaterialStateProperty.all(theme.colorScheme.primary),
           backgroundColor:
               MaterialStateProperty.all(theme.colorScheme.background),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-              side: BorderSide(
-                width: borderThickness,
-                color: theme.colorScheme.secondary,
-              ),
+          textStyle: MaterialStatePropertyAll(
+            theme.textTheme.labelLarge?.copyWith(
+              fontWeight: FontWeight.w700,
             ),
           ),
         ),
@@ -60,6 +72,129 @@ class ComicThemeData {
           side: BorderSide(color: theme.colorScheme.secondary, width: 2),
         ),
       ),
+      dividerTheme: theme.dividerTheme.copyWith(
+        color: theme.colorScheme.secondary,
+        thickness: borderThickness,
+      ),
+      tabBarTheme: theme.tabBarTheme.copyWith(
+        indicator: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              width: borderThickness * 3,
+              color: theme.colorScheme.onBackground,
+            ),
+          ),
+        ),
+        dividerColor: theme.colorScheme.onBackground,
+        dividerHeight: borderThickness * 0.8,
+        labelColor: theme.colorScheme.onBackground,
+        unselectedLabelColor: theme.colorScheme.onBackground,
+        overlayColor: MaterialStateProperty.all(
+          theme.colorScheme.secondary.withAlpha(40),
+        ),
+      ),
+      navigationBarTheme: theme.navigationBarTheme.copyWith(
+        surfaceTintColor: Colors.transparent,
+        backgroundColor: theme.navigationBarTheme.backgroundColor,
+        labelTextStyle: MaterialStateProperty.resolveWith((states) {
+          if (states.contains(MaterialState.selected)) {
+            return TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w800,
+              color: Theme.of(context).colorScheme.onBackground,
+            );
+          }
+          return TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.w300,
+            color: Theme.of(context).colorScheme.onBackground,
+          );
+        }),
+        indicatorColor: Theme.of(context).colorScheme.background,
+        indicatorShape: RoundedRectangleBorder(
+          side: BorderSide(
+            width: borderThickness,
+            color: Theme.of(context).colorScheme.onBackground,
+          ),
+          borderRadius: BorderRadius.circular(24),
+        ),
+        labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+      ),
+      inputDecorationTheme: theme.inputDecorationTheme.copyWith(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(24),
+          borderSide: BorderSide(
+            color: theme.colorScheme.secondary,
+            width: borderThickness,
+          ),
+        ),
+      ),
+
+      // textTheme: const TextTheme(
+      // bodyLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // bodyMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // bodySmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // titleLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // titleMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // titleSmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // labelLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // labelMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // labelSmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // displayLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // displayMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // displaySmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // headlineLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // headlineMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // headlineSmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // ),
       iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(0),
