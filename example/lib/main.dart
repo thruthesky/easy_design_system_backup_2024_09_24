@@ -1,8 +1,14 @@
-import 'package:example/buttons.dart';
+import 'package:example/widgets/badge.dart';
+import 'package:example/widgets/bottom_sheet.dart';
+import 'package:example/widgets/buttons.dart';
+import 'package:example/widgets/floating_action_button.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
+import 'package:example/widgets/icon_buttons.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
+import 'package:example/widgets/progress_indicator.dart';
+import 'package:example/widgets/segmented_button.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -67,6 +73,30 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 48,
                 ),
                 const Buttons(),
+                const Divider(
+                  height: 48,
+                ),
+                const BottomSheets(),
+                const Divider(
+                  height: 48,
+                ),
+                const ProgressIndicators(),
+                const Divider(
+                  height: 48,
+                ),
+                const Badges(),
+                const Divider(
+                  height: 48,
+                ),
+                const FloatingActionButtons(),
+                const Divider(
+                  height: 48,
+                ),
+                const SegmentedButtons(),
+                const Divider(
+                  height: 48,
+                ),
+                const IconButtons(),
                 const Divider(
                   height: 48,
                 ),

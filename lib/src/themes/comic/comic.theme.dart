@@ -60,6 +60,67 @@ class ComicThemeData {
           side: BorderSide(color: theme.colorScheme.secondary, width: 2),
         ),
       ),
+      iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+          elevation: MaterialStateProperty.all(0),
+          foregroundColor:
+              MaterialStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor:
+              MaterialStateProperty.all(theme.colorScheme.background),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                width: borderThickness,
+                color: theme.colorScheme.secondary,
+              ),
+            ),
+          ),
+        ),
+      ),
+      segmentedButtonTheme: SegmentedButtonThemeData(
+        style: ButtonStyle(
+          side: MaterialStateProperty.all(
+            BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.secondary,
+            ),
+          ),
+          elevation: MaterialStateProperty.all(0),
+          foregroundColor:
+              MaterialStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor:
+              MaterialStateProperty.all(theme.colorScheme.background),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+          ),
+        ),
+      ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: theme.colorScheme.background,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+          side: const BorderSide(
+            width: borderThickness,
+          ),
+        ),
+      ),
+      badgeTheme: BadgeThemeData(
+        backgroundColor: theme.colorScheme.inverseSurface,
+        textColor: theme.colorScheme.onInverseSurface,
+        padding: const EdgeInsets.only(left: 5, right: 5),
+      ),
+      progressIndicatorTheme: ProgressIndicatorThemeData(
+        linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
+        color: theme.colorScheme.secondary,
+      ),
+      bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: theme.colorScheme.background,
+        surfaceTintColor: theme.colorScheme.primary,
+      ),
     );
   }
 }
