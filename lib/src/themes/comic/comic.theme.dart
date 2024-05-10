@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 const borderThickness = 2.0;
@@ -97,6 +95,7 @@ class ComicThemeData {
           theme.colorScheme.secondary.withAlpha(40),
         ),
       ),
+
       navigationBarTheme: theme.navigationBarTheme.copyWith(
         surfaceTintColor: Colors.transparent,
         backgroundColor: theme.navigationBarTheme.backgroundColor,
@@ -177,22 +176,6 @@ class ComicThemeData {
           ),
           elevation: 0,
         ),
-        // style: ButtonStyle(
-        //   side: MaterialStateProperty.all(
-        //     BorderSide(
-        //       width: borderThickness,
-        //       color: theme.colorScheme.secondary,
-        //     ),
-        //   ),
-        //   elevation: MaterialStateProperty.all(0),
-        //   foregroundColor:
-        //       MaterialStateProperty.all(theme.colorScheme.onSurface),
-        //   shape: MaterialStateProperty.all(
-        //     RoundedRectangleBorder(
-        //       borderRadius: BorderRadius.circular(24),
-        //     ),
-        //   ),
-        // ),
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: theme.colorScheme.background,
