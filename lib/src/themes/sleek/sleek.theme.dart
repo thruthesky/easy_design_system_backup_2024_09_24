@@ -44,6 +44,13 @@ class SleekThemeData {
           ),
         ),
       ),
+      listTileTheme: theme.listTileTheme.copyWith(
+        tileColor: theme.colorScheme.primaryContainer,
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+      ),
       // textTheme: const TextTheme(
       // bodyLarge: TextStyle(
       //   color: Colors.red,
