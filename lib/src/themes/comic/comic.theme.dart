@@ -120,69 +120,81 @@ class ComicThemeData {
         ),
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
       ),
-
-      textTheme: const TextTheme(
-          // bodyLarge: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // bodyMedium: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // bodySmall: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // titleLarge: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // titleMedium: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // titleSmall: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // labelLarge: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // labelMedium: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // labelSmall: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // displayLarge: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // displayMedium: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // displaySmall: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // headlineLarge: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // headlineMedium: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
-          // headlineSmall: TextStyle(
-          //   color: Colors.red,
-          //   fontSize: 20,
-          // ),
+      inputDecorationTheme: theme.inputDecorationTheme.copyWith(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(24),
+          borderSide: BorderSide(
+            color: theme.colorScheme.secondary,
+            width: borderThickness,
           ),
+        ),
+      ),
+
+      // textTheme: const TextTheme(
+      // bodyLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // bodyMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // bodySmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // titleLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // titleMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // titleSmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // labelLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // labelMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // labelSmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // displayLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // displayMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // displaySmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // headlineLarge: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // headlineMedium: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // headlineSmall: TextStyle(
+      //   color: Colors.red,
+      //   fontSize: 20,
+      // ),
+      // ),
     );
   }
 }
