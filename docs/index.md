@@ -34,7 +34,7 @@ Social Design System (SDS) is an Elegant UI/UX library crafted specifically for 
 <!-- prettier-ignore -->
 |      |           |         |
 | -------------------------- | --------------------- | --------------------------- |
-| ComicListView![ComicListView](./theme/comic/images/comic_list_view.jpg) | ComicListView.builder ![ComicListView.builder](./theme/comic/images/comic_list_view_builder.jpg) | ComicListView.separated ![ComicListView.separated](./theme/comic/images/comic_list_view_separated.jpg) |
+| ComicListView![ComicListView](./images/comic_list_view.jpg) | ComicListView.builder ![ComicListView.builder](./images/comic_list_view_builder.jpg) | ComicListView.separated ![ComicListView.separated](./images/comic_list_view_separated.jpg) |
 |WaveCarouseEntry ![WaveCarouseEntry](./images/wave_carousel_entry.gif)|BasicCarouseEntry ![BasicCarouseEntry](./images/basic_carousel_entry.gif)|RoundCarouseEntry ![RoundCarouseEntry](./images/round_carousel_entry.gif)|
 | Buttons ![Buttons](./images/buttons.jpg) |Settings ![Settings](./images/settings.jpg) | x |
 
