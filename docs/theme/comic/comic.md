@@ -3,12 +3,10 @@
 Comic style theme design.
 
 Comic theme should have
+
 - thick border
 - rounded border
 - no shadow
-
-
-
 
 ## How to apply
 
