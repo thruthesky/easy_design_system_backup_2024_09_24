@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 const borderThickness = 2.0;
@@ -8,9 +6,7 @@ const borderThickness = 2.0;
 ///
 /// [ComicThemeData] is a class that holds the color scheme for the Comic theme.
 class ComicThemeData {
-  ComicThemeData({required this.colorScheme});
-
-  final ColorScheme colorScheme;
+  ComicThemeData();
 
   /// of
   ///
@@ -18,6 +14,24 @@ class ComicThemeData {
   static ThemeData of(BuildContext context) {
     final theme = Theme.of(context);
     return ThemeData(
+      appBarTheme: AppBarTheme(
+        elevation: 0,
+        backgroundColor: theme.colorScheme.background,
+        foregroundColor: theme.colorScheme.onBackground,
+        iconTheme: IconThemeData(
+          color: theme.colorScheme.error,
+        ),
+        // actionsIconTheme: IconThemeData(
+        //   color: theme.colorScheme.primary,
+        // ),
+        shape: UnderlineInputBorder(
+          borderSide: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.onBackground,
+          ),
+        ),
+        // centerTitle: false,
+      ),
       colorScheme: Theme.of(context).colorScheme,
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
@@ -150,20 +164,6 @@ class ComicThemeData {
                 width: borderThickness,
               ),
             ),
-          ),
-        ),
-      ),
-      appBarTheme: AppBarTheme(
-        elevation: 0,
-        backgroundColor: theme.colorScheme.background,
-        foregroundColor: theme.colorScheme.onBackground,
-        iconTheme: IconThemeData(
-          color: theme.colorScheme.onBackground,
-        ),
-        shape: UnderlineInputBorder(
-          borderSide: BorderSide(
-            width: borderThickness,
-            color: theme.colorScheme.onBackground,
           ),
         ),
       ),
