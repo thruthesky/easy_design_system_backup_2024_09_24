@@ -38,10 +38,6 @@ Social Design System (SDS) is an Elegant UI/UX library crafted specifically for 
 |WaveCarouseEntry ![WaveCarouseEntry](./images/wave_carousel_entry.gif)|BasicCarouseEntry ![BasicCarouseEntry](./images/basic_carousel_entry.gif)|RoundCarouseEntry ![RoundCarouseEntry](./images/round_carousel_entry.gif)|
 | Buttons ![Buttons](./images/buttons.jpg) |Settings ![Settings](./images/settings.jpg) | x |
 
-### Sleep Walker
-
-![SleepWalker](./images/sleep_walker.gif)
-
 ## Themes
 
 SDS provides the following themes:
@@ -80,3 +76,12 @@ The theme (for instance `ComicTheme`) provides UI design to most of the flutter 
 - There are some cases we cannot acheive good UI with theming, like designing the list view and list tile together. In this caase we provide speial widgets like `ComicListView` or `SleekListView`.
 
 - Developers can choose their color scheme and all the widgets will follow the chosen color.
+
+
+## Common patterns of SDS
+
+- SDS does not provides theme design directly to `IconButton` because it is used as `BackButton` in `AppBar` and we cannot make a clean design with it. Flutter allows to custom UI design only for icons not for icon button for this time.
+  - So, SDS provides `[Theme]IconButton` like `ComicIconbutton` or `SleekIconButton`.
+
+
+

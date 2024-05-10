@@ -15,23 +15,24 @@ class ComicThemeData {
     final theme = Theme.of(context);
     return ThemeData(
       appBarTheme: AppBarTheme(
-        elevation: 0,
         backgroundColor: theme.colorScheme.background,
         foregroundColor: theme.colorScheme.onBackground,
-        iconTheme: IconThemeData(
-          color: theme.colorScheme.error,
+        iconTheme: theme.iconTheme.copyWith(
+          color: theme.colorScheme.onBackground,
         ),
-        // actionsIconTheme: IconThemeData(
-        //   color: theme.colorScheme.primary,
-        // ),
-        shape: UnderlineInputBorder(
-          borderSide: BorderSide(
-            width: borderThickness,
-            color: theme.colorScheme.onBackground,
-          ),
+        actionsIconTheme: theme.iconTheme.copyWith(
+          color: theme.colorScheme.onBackground,
         ),
-        // centerTitle: false,
+        titleTextStyle: theme.textTheme.headlineMedium?.copyWith(
+          color: theme.colorScheme.onBackground,
+        ),
       ),
+
+      // actionIconTheme: ActionIconThemeData(
+      //   backButtonIconBuilder: (context) =>
+      //       IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
+      // ),
+
       colorScheme: Theme.of(context).colorScheme,
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
@@ -150,23 +151,23 @@ class ComicThemeData {
           ),
         ),
       ),
-      iconButtonTheme: IconButtonThemeData(
-        style: ButtonStyle(
-          elevation: MaterialStateProperty.all(0),
-          foregroundColor:
-              MaterialStateProperty.all(theme.colorScheme.onSurface),
-          backgroundColor:
-              MaterialStateProperty.all(theme.colorScheme.background),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-              side: const BorderSide(
-                width: borderThickness,
-              ),
-            ),
-          ),
-        ),
-      ),
+      // iconButtonTheme: IconButtonThemeData(
+      //   style: ButtonStyle(
+      //     elevation: MaterialStateProperty.all(0),
+      //     foregroundColor:
+      //         MaterialStateProperty.all(theme.colorScheme.onSurface),
+      //     backgroundColor:
+      //         MaterialStateProperty.all(theme.colorScheme.background),
+      //     shape: MaterialStateProperty.all(
+      //       RoundedRectangleBorder(
+      //         borderRadius: BorderRadius.circular(24),
+      //         side: const BorderSide(
+      //           width: borderThickness,
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      // ),
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: SegmentedButton.styleFrom(
           selectedBackgroundColor: theme.colorScheme.secondary.withAlpha(80),
