@@ -34,18 +34,18 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
           bottom: TabBar(
             controller: _tabController,
             tabs: const [
-              Tab(text: '추천 모임'),
-              Tab(text: '전체 모임'),
-              Tab(text: '내 모임'),
+              Tab(text: 'First'),
+              Tab(text: 'Second'),
+              Tab(text: 'Third'),
             ],
           ),
         ),
         body: TabBarView(
           controller: _tabController,
           children: const [
-            Center(child: Text('추천 모임')),
-            Center(child: Text('전체 모임')),
-            Center(child: Text('내 모임')),
+            Center(child: Text('First')),
+            Center(child: Text('Second')),
+            Center(child: Text('Third')),
           ],
         ),
         bottomNavigationBar: NavigationBarTheme(

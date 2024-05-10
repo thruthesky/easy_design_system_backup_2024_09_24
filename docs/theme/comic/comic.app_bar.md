@@ -1,8 +1,8 @@
-# App Bar
+# Tab Bar
 
-Comic Theme provides a theme for App Bar
+Comic Theme provides a theme for Tab Bar
 
-![Comic App Bar](../../images/comic.app_bar.jpg)
+![Comic Tab Bar](../../images/comic.tab_bar.jpg)
 
 ## How to apply
 
@@ -12,8 +12,23 @@ Theme(
     child: Scaffold(
         appBar: AppBar(
             title: const Text('Comic Screen Demo'),
+            bottom: TabBar(
+                controller: _tabController,
+                tabs: const [
+                Tab(text: 'First'),
+                Tab(text: 'Second'),
+                Tab(text: 'Third'),
+                ],
+            ),
         ),
-        // ... body
+        body: TabBarView(
+            controller: _tabController,
+            children: const [
+                Center(child: Text('First')),
+                Center(child: Text('Second')),
+                Center(child: Text('Third')),
+            ],
+        ),
     ),
 );
 ```
