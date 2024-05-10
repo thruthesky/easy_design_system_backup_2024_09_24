@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:example/buttons.dart';
+import 'package:example/screens/comic/comic.screen.demo.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
@@ -64,6 +65,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text('BUTTON'),
                 ),
+                const Divider(height: 48),
+                const SizedBox(height: 24),
+                Theme(
+                  data: ComicThemeData.of(context),
+                  child: TextButton(
+                    onPressed: () {
+                      showGeneralDialog(
+                        context: context,
+                        pageBuilder: (_, __, ___) => const ComicScreenDemo(),
+                      );
+                    },
+                    child: const Text('Comic Demo Screen'),
+                  ),
+                ),
+                const SizedBox(height: 24),
                 const Divider(
                   height: 48,
                 ),
