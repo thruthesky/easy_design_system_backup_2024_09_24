@@ -244,9 +244,8 @@ class ComicThemeData {
         ),
       ),
       badgeTheme: BadgeThemeData(
-        backgroundColor: theme.colorScheme.inverseSurface,
-        textColor: theme.colorScheme.onInverseSurface,
-        padding: const EdgeInsets.only(left: 5, right: 5),
+        backgroundColor: theme.colorScheme.secondary,
+        textColor: theme.colorScheme.onSecondary,
       ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
         linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),

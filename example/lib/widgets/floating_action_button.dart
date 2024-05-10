@@ -8,7 +8,7 @@ class FloatingActionButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text('FloatinActionButton'),
+        const Text('FloatingActionButton'),
         const SizedBox(height: 16),
         Wrap(
           spacing: 24,

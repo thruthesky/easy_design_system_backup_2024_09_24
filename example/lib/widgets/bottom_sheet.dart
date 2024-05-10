@@ -12,7 +12,7 @@ class BottomSheets extends StatelessWidget {
         Theme(
           data: ComicThemeData.of(context),
           child: ElevatedButton(
-            onPressed: () => showBottomSheet(
+            onPressed: () => showModalBottomSheet(
               context: context,
               builder: (context) => BottomSheet(
                 onClosing: () {},

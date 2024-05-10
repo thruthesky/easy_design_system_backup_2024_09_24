@@ -147,6 +147,10 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
             ),
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
+        ),
       ),
     );
   }
