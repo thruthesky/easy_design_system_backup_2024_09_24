@@ -87,11 +87,11 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
               destinations: [
                 const NavigationDestination(
                   icon: Icon(Icons.car_rental),
-                  label: '실버스',
+                  label: 'Car',
                 ),
                 const NavigationDestination(
                   icon: Icon(Icons.person),
-                  label: '모임',
+                  label: 'You',
                 ),
                 NavigationDestination(
                   icon: SizedBox(
@@ -133,15 +133,15 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
                       ],
                     ),
                   ),
-                  label: '채팅',
+                  label: 'Chat',
                 ),
                 const NavigationDestination(
                   icon: Icon(Icons.post_add),
-                  label: '게시판',
+                  label: 'Record',
                 ),
                 const NavigationDestination(
                   icon: Icon(Icons.menu),
-                  label: '메뉴',
+                  label: 'Menu',
                 ),
               ],
             ),

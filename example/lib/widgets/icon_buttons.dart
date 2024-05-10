@@ -13,11 +13,31 @@ class IconButtons extends StatelessWidget {
           data: ComicThemeData.of(context),
           child: Column(
             children: [
+              const Text('Comic'),
+              const SizedBox(height: 18),
               IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.grade_outlined),
               ),
-              const Text('Comic IconButton'),
+              const Text('IconButton'),
+              const SizedBox(height: 18),
+              IconButton.filled(
+                onPressed: () {},
+                icon: const Icon(Icons.grade_outlined),
+              ),
+              const Text('IconButton.filled'),
+              const SizedBox(height: 18),
+              IconButton.filledTonal(
+                onPressed: () {},
+                icon: const Icon(Icons.grade_outlined),
+              ),
+              const Text('IconButton.filledTonal'),
+              const SizedBox(height: 18),
+              IconButton.outlined(
+                onPressed: () {},
+                icon: const Icon(Icons.grade_outlined),
+              ),
+              const Text('IconButton.outlined'),
             ],
           ),
         ),
