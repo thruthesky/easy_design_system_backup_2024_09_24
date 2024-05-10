@@ -56,9 +56,8 @@ class ComicThemeData {
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
-              side: BorderSide(
+              side: const BorderSide(
                 width: borderThickness,
-                color: theme.colorScheme.secondary,
               ),
             ),
           ),
@@ -205,33 +204,39 @@ class ComicThemeData {
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
-              side: BorderSide(
+              side: const BorderSide(
                 width: borderThickness,
-                color: theme.colorScheme.secondary,
               ),
             ),
           ),
         ),
       ),
       segmentedButtonTheme: SegmentedButtonThemeData(
-        style: ButtonStyle(
-          side: MaterialStateProperty.all(
-            BorderSide(
-              width: borderThickness,
-              color: theme.colorScheme.secondary,
-            ),
+        style: SegmentedButton.styleFrom(
+          selectedBackgroundColor: theme.colorScheme.secondary.withAlpha(80),
+          selectedForegroundColor: theme.colorScheme.onSurface,
+          foregroundColor: theme.colorScheme.onSurface,
+          side: const BorderSide(
+            width: borderThickness,
           ),
-          elevation: MaterialStateProperty.all(0),
-          foregroundColor:
-              MaterialStateProperty.all(theme.colorScheme.onSurface),
-          backgroundColor:
-              MaterialStateProperty.all(theme.colorScheme.background),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
-          ),
+          elevation: 0,
         ),
+        // style: ButtonStyle(
+        //   side: MaterialStateProperty.all(
+        //     BorderSide(
+        //       width: borderThickness,
+        //       color: theme.colorScheme.secondary,
+        //     ),
+        //   ),
+        //   elevation: MaterialStateProperty.all(0),
+        //   foregroundColor:
+        //       MaterialStateProperty.all(theme.colorScheme.onSurface),
+        //   shape: MaterialStateProperty.all(
+        //     RoundedRectangleBorder(
+        //       borderRadius: BorderRadius.circular(24),
+        //     ),
+        //   ),
+        // ),
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: theme.colorScheme.background,
@@ -242,6 +247,7 @@ class ComicThemeData {
             width: borderThickness,
           ),
         ),
+        highlightElevation: 0,
       ),
       badgeTheme: BadgeThemeData(
         backgroundColor: theme.colorScheme.secondary,
