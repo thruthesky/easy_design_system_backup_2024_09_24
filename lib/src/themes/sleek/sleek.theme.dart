@@ -14,21 +14,12 @@ class SleekThemeData {
   static ThemeData of(BuildContext context) {
     final theme = Theme.of(context);
     return ThemeData(
-      colorScheme: Theme.of(context).colorScheme,
-      textButtonTheme: TextButtonThemeData(
-        style: ButtonStyle(
-          foregroundColor:
-              MaterialStateProperty.all(theme.colorScheme.onSurface),
-          backgroundColor: MaterialStateProperty.all(
-            theme.colorScheme.primaryContainer,
-          ),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
-          ),
-        ),
+      badgeTheme: BadgeThemeData(
+        backgroundColor: theme.colorScheme.primary,
+        textColor: theme.colorScheme.onPrimary,
+        padding: const EdgeInsets.only(left: 5, right: 5),
       ),
+      colorScheme: Theme.of(context).colorScheme,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(0),
@@ -44,14 +35,14 @@ class SleekThemeData {
           ),
         ),
       ),
-      segmentedButtonTheme: SegmentedButtonThemeData(
-        style: SegmentedButton.styleFrom(
-          selectedBackgroundColor: theme.colorScheme.primary,
-          selectedForegroundColor: theme.colorScheme.onPrimary,
-          backgroundColor: theme.colorScheme.primaryContainer,
-          side: BorderSide.none,
-          elevation: 0,
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: theme.colorScheme.primaryContainer,
+        elevation: 0,
+        foregroundColor: theme.colorScheme.primary,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
         ),
+        highlightElevation: 0,
       ),
       iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
@@ -74,85 +65,32 @@ class SleekThemeData {
           borderRadius: BorderRadius.circular(24),
         ),
       ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: theme.colorScheme.primaryContainer,
-        elevation: 0,
-        foregroundColor: theme.colorScheme.primary,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-        ),
-        highlightElevation: 0,
-      ),
-      badgeTheme: BadgeThemeData(
-        backgroundColor: theme.colorScheme.primary,
-        textColor: theme.colorScheme.onPrimary,
-        padding: const EdgeInsets.only(left: 5, right: 5),
-      ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
         linearTrackColor: theme.colorScheme.primaryContainer.withAlpha(80),
       ),
-      // textTheme: const TextTheme(
-      // bodyLarge: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // bodyMedium: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // bodySmall: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // titleLarge: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // titleMedium: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // titleSmall: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // labelLarge: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // labelMedium: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // labelSmall: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // displayLarge: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // displayMedium: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // displaySmall: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // headlineLarge: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // headlineMedium: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // headlineSmall: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 20,
-      // ),
-      // ),
+      segmentedButtonTheme: SegmentedButtonThemeData(
+        style: SegmentedButton.styleFrom(
+          selectedBackgroundColor: theme.colorScheme.primary,
+          selectedForegroundColor: theme.colorScheme.onPrimary,
+          backgroundColor: theme.colorScheme.primaryContainer,
+          side: BorderSide.none,
+          elevation: 0,
+        ),
+      ),
+      textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+          foregroundColor:
+              MaterialStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor: MaterialStateProperty.all(
+            theme.colorScheme.primaryContainer,
+          ),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
