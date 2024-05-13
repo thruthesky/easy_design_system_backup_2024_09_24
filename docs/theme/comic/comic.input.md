@@ -2,6 +2,8 @@
 
 Comic has theme for TextField and TextFormField
 
+@withcenter-dev2 Do we need this document for any explanation? Is any special thing to mention here?
+
 ## Text Field
 
 ![Sleek Text Field](../../images/comic.text_field.jpg)

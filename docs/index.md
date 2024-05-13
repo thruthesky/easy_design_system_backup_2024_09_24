@@ -2,6 +2,12 @@
 
 Social Design System (SDS) is an Elegant UI/UX library crafted specifically for building social like applications. This is an open source project that you can fork and make PR.
 
+## Terms
+
+- `Basic widgets` means the widgets in [material.dart](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/material.dart).
+- `widget of visual component` is a widget that appears on the screen. For instance `TextButton` is a visual component since it appears on the screen while `GestureDetector` is not a visual component since it does not appear on the screen.
+
+
 ## TODO
 
 ## Sample UI of Social Deisgn System
@@ -22,11 +28,11 @@ SDS provides the following themes:
 
 
 
-## Philosophy of SDS
+## Philosophy of Social Design System
 
-- We design with flutter theme as much as possible. This means, developers are not needed to learn anything about the SDS. They can continue working with their code and Social Design System will naturally update the look.
+- Social design system desings the basic widgets by theme customization. This means, you don't need to learn anything. Just write your code and the design of your app will be updated.
 
-- How to apply SDS to your button?
+- How to apply the social design system to your button?
 
 Applying `ComicTheme` to your button.
 
@@ -37,7 +43,7 @@ Theme(
 )
 ```
 
-or you can apply the `ComicTheme` to all of your buttons in the app.
+or you can apply the `ComicTheme` to all over your app like below.
 
 ```dart
 Theme(
@@ -46,19 +52,23 @@ Theme(
 )
 ```
 
-then, all the buttons will use `ComicTheme`.
+then, not only the buttons but all the widgets will use `ComicTheme`.
 
-The theme (for instance `ComicTheme`) provides UI design to most of the flutter widgets that have visibility and if it works alone without a subset. For instance, button widget work a lone while list view widget work with a child widget. So, the theme does not provide and UI for the list view widget. Instead, it provides a special widget named `ComicListView`.
+Social design system provides UI design to the basic widgets with visual component and it also provides its own custom widget for non-visual component like `ComicListView`.
 
-- There are some cases we cannot acheive good UI with theming, like designing the list view and list tile together. In this caase we provide speial widgets like `ComicListView` or `SleekListView`.
+- You can apply your own custom color scheme just as the way how flutter goes. And the social design system will honor it while applying its design system.
 
-- Developers can choose their color scheme and all the widgets will follow the chosen color.
 
 
 ## Common patterns of SDS
 
-- SDS does not provides theme design directly to `IconButton` because it is used as `BackButton` in `AppBar` and we cannot make a clean design with it. Flutter allows to custom UI design only for icons not for icon button for this time.
-  - So, SDS provides `[Theme]IconButton` like `ComicIconbutton` or `SleekIconButton`.
+
+- Social design system follows the theme system of the Flutter. This means, you can apply your own theme just the way you used to.
+
+- There are exceptions that some of the basic widgets change its look.
+    - For instance, `ElevatedButton` has a shadow. But the shadow is removed with comic theme. And this is because the button in comic theme should look like a commic style. So the shadow is removed.
+
+- Comic theme does not add thick border on `TextButton(TextButton.icon)` and `IconButton` because Text Button is meant to be without border. You may use `OutlinedButton`.
 
 
 
