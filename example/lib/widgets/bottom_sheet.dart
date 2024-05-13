@@ -14,12 +14,15 @@ class BottomSheets extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () => showModalBottomSheet(
               context: context,
-              builder: (context) => BottomSheet(
-                onClosing: () {},
-                builder: (context) => const SizedBox(
-                  height: 200,
-                  child: Center(
-                    child: Text('Comic'),
+              builder: (context) => Theme(
+                data: ComicThemeData.of(context),
+                child: BottomSheet(
+                  onClosing: () {},
+                  builder: (context) => const SizedBox(
+                    height: 200,
+                    child: Center(
+                      child: Text('Comic'),
+                    ),
                   ),
                 ),
               ),
@@ -30,14 +33,22 @@ class BottomSheets extends StatelessWidget {
         Theme(
           data: SleekThemeData.of(context),
           child: ElevatedButton(
-            onPressed: () => showBottomSheet(
+            onPressed: () => showModalBottomSheet(
               context: context,
-              builder: (context) => BottomSheet(
-                onClosing: () {},
-                builder: (context) => const Text('Comic'),
+              builder: (context) => Theme(
+                data: SleekThemeData.of(context),
+                child: BottomSheet(
+                  onClosing: () {},
+                  builder: (context) => const SizedBox(
+                    height: 200,
+                    child: Center(
+                      child: Text('Sleek'),
+                    ),
+                  ),
+                ),
               ),
             ),
-            child: const Text('Display Comic Bottomsheet'),
+            child: const Text('Display Sleek Bottomsheet'),
           ),
         ),
       ],

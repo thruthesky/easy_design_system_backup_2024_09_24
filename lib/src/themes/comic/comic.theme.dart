@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 const borderThickness = 2.0;
 
@@ -216,7 +217,11 @@ class ComicThemeData {
       ),
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: theme.colorScheme.background,
-        surfaceTintColor: theme.colorScheme.primary,
+        shape: const Border(
+          top: BorderSide(
+            width: borderThickness,
+          ),
+        ),
       ),
     );
   }
