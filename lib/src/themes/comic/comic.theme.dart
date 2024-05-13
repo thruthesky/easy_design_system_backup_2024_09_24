@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 const borderThickness = 2.0;
 
@@ -16,8 +15,6 @@ class ComicThemeData {
     final theme = Theme.of(context);
     return ThemeData(
       appBarTheme: AppBarTheme(
-        backgroundColor: theme.colorScheme.background,
-        foregroundColor: theme.colorScheme.onBackground,
         iconTheme: theme.iconTheme.copyWith(
           color: theme.colorScheme.onBackground,
         ),
@@ -74,7 +71,8 @@ class ComicThemeData {
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
-              side: const BorderSide(
+              side: BorderSide(
+                color: theme.colorScheme.outline,
                 width: borderThickness,
               ),
             ),
@@ -87,7 +85,7 @@ class ComicThemeData {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(
-            color: theme.colorScheme.secondary,
+            color: theme.colorScheme.outline,
             width: borderThickness,
           ),
         ),

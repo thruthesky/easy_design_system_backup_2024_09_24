@@ -4,31 +4,6 @@ Social Design System (SDS) is an Elegant UI/UX library crafted specifically for 
 
 ## TODO
 
-- all the entry screen and other widgets from social kit.
-- light & dark mode
-- TextField
-- Buttons
-- TextFormField
-- Floating Action button
-- IconButton
-- segmentedbutton
-- badget
-- LinearProgressIndicator
-- SnackBar
-- AlertDialog
-- BottomSheet
-- Card
-- Divider
-- ListTile
-- AppBar
-- Bottom App Bar
-- NavigationBar
-- NavigationDrawer
-- NavigationRail
-- TabBar
-- Checkbox
-- Chip
-
 ## Sample UI of Social Deisgn System
 
 <!-- prettier-ignore -->
@@ -44,6 +19,8 @@ SDS provides the following themes:
 
 - Sleek
 - Comic
+
+
 
 ## Philosophy of SDS
 
