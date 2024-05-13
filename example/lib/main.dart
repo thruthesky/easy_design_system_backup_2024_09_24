@@ -198,6 +198,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
+                Theme(
+                  data: SleekThemeData.of(context),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: 'Sleek',
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 24),
                 Theme(
                   data: ComicThemeData.of(context),
