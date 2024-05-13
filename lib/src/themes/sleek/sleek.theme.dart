@@ -58,6 +58,18 @@ class SleekThemeData {
           ),
         ),
       ),
+      inputDecorationTheme: theme.inputDecorationTheme.copyWith(
+        filled: true,
+        fillColor: theme.colorScheme.primaryContainer,
+        border: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(24)),
+          borderSide: BorderSide.none,
+        ),
+        enabledBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(24)),
+          borderSide: BorderSide.none,
+        ),
+      ),
       listTileTheme: theme.listTileTheme.copyWith(
         tileColor: theme.colorScheme.primaryContainer,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
