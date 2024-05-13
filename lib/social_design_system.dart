@@ -2,6 +2,7 @@ export 'src/defines.dart';
 
 export 'src/themes/comic/comic.theme.dart';
 export 'src/themes/comic/comic.list_view.dart';
+export 'src/themes/comic/comic.icon_button.dart';
 
 export 'src/entry/basic_carousel_entry/basic_carousel_entry.dart';
 export 'src/entry/round_carousel_entry/round_carousel_entry.dart';

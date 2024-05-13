@@ -1,6 +1,6 @@
 # Social Design System
 
-Social Design System(sds) is an Elegant UI/UX library crafted specifically for building social like applications. This is an open source project that you can fork and make PR.
+Social Design System(SDS) is an Elegant UI/UX library crafted specifically for building social like applications. This is an open source project that you can fork and make PR.
 
 ## Features
 
@@ -12,10 +12,38 @@ Social Design System(sds) is an Elegant UI/UX library crafted specifically for b
 Please visit the [Social Design System document website](https://thruthesky.github.io/social_design_system/) to learn more.
 
 
+## UI samples
+
+|      |           |         |
+| -------------------------- | --------------------- | --------------------------- |
+| ComicListView![ComicListView](https://thruthesky.github.io/social_design_system/images/comic_list_view.jpg) | ComicListView.builder ![ComicListView.builder](https://thruthesky.github.io/social_design_system/images/comic_list_view_builder.jpg) | ComicListView.separated ![ComicListView.separated](https://thruthesky.github.io/social_design_system/images/comic_list_view_separated.jpg) |
+|WaveCarouseEntry ![WaveCarouseEntry](https://thruthesky.github.io/social_design_system/images/wave_carousel_entry.gif)|BasicCarouseEntry ![BasicCarouseEntry](https://thruthesky.github.io/social_design_system/images/basic_carousel_entry.gif)|RoundCarouseEntry ![RoundCarouseEntry](https://thruthesky.github.io/social_design_system/images/round_carousel_entry.gif)|
+| Buttons ![Buttons](https://thruthesky.github.io/social_design_system/images/buttons.jpg) |Settings ![Settings](https://thruthesky.github.io/social_design_system/images/settings.jpg) | x |
+
+
 ## Usage
 
 
-You can use `ComicTheme` widget like below.
+Social Design System follows the principle of the Flutter programming style. You can just continue with Flutter coding without knowing how to apply the UI design.
+
+For instance, SDS provides `ComicTheme` and you use it like below;
+
+```dart
+Theme(
+    data: ComicThemeData.of(context),
+    child: const ListTile(
+    title: Text('Item 1'),
+    subtitle: Text('Subtitle 1'),
+    leading: Icon(Icons.access_time),
+    trailing: Icon(Icons.arrow_forward_ios),
+    ),
+),
+```
+
+As you know this is really the way how the Flutter goes.
+
+
+You may use `ComicTheme` widget for short like below;
 
 ```dart
 const ComicTheme(
@@ -29,19 +57,6 @@ const ComicTheme(
 ```
 
 
-Or you can use `Theme` widget with `ComicThemeData`.
-
-```dart
-Theme(
-    data: ComicThemeData.of(context),
-    child: const ListTile(
-    title: Text('Item 3'),
-    subtitle: Text('Subtitle 3'),
-    leading: Icon(Icons.access_time),
-    trailing: Icon(Icons.arrow_forward_ios),
-    ),
-),
-```
 
 For more details, please visit the [Social Design System document website](https://thruthesky.github.io/social_design_system/)
 
