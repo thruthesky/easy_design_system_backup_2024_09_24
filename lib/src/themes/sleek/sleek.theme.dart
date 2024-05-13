@@ -44,6 +44,53 @@ class SleekThemeData {
           ),
         ),
       ),
+      segmentedButtonTheme: SegmentedButtonThemeData(
+        style: SegmentedButton.styleFrom(
+          selectedBackgroundColor: theme.colorScheme.primary,
+          selectedForegroundColor: theme.colorScheme.onPrimary,
+          backgroundColor: theme.colorScheme.primaryContainer,
+          side: BorderSide.none,
+          elevation: 0,
+        ),
+      ),
+      iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+          elevation: MaterialStateProperty.all(0),
+          foregroundColor: MaterialStateProperty.all(theme.colorScheme.primary),
+          backgroundColor: MaterialStateProperty.all(
+            theme.colorScheme.primaryContainer,
+          ),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+          ),
+        ),
+      ),
+      listTileTheme: theme.listTileTheme.copyWith(
+        tileColor: theme.colorScheme.primaryContainer,
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+      ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: theme.colorScheme.primaryContainer,
+        elevation: 0,
+        foregroundColor: theme.colorScheme.primary,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        highlightElevation: 0,
+      ),
+      badgeTheme: BadgeThemeData(
+        backgroundColor: theme.colorScheme.primary,
+        textColor: theme.colorScheme.onPrimary,
+        padding: const EdgeInsets.only(left: 5, right: 5),
+      ),
+      progressIndicatorTheme: ProgressIndicatorThemeData(
+        linearTrackColor: theme.colorScheme.primaryContainer.withAlpha(80),
+      ),
       // textTheme: const TextTheme(
       // bodyLarge: TextStyle(
       //   color: Colors.red,

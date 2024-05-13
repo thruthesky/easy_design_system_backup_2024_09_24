@@ -3,12 +3,10 @@
 Comic style theme design.
 
 Comic theme should have
+
 - thick border
 - rounded border
-- no shaow
-
-
-
+- no shadow
 
 ## How to apply
 
@@ -31,10 +29,10 @@ Or you can use `Theme` widget with `ComicThemeData`.
 Theme(
     data: ComicThemeData.of(context),
     child: const ListTile(
-    title: Text('Item 3'),
-    subtitle: Text('Subtitle 3'),
-    leading: Icon(Icons.access_time),
-    trailing: Icon(Icons.arrow_forward_ios),
-    ),
+        title: Text('Item 3'),
+        subtitle: Text('Subtitle 3'),
+        leading: Icon(Icons.access_time),
+        trailing: Icon(Icons.arrow_forward_ios),
+        ),
 ),
 ```

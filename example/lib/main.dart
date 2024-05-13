@@ -1,8 +1,16 @@
-import 'package:example/buttons.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:example/screens/comic/comic.screen.demo.dart';
+import 'package:example/widgets/badge.dart';
+import 'package:example/widgets/bottom_sheet.dart';
+import 'package:example/widgets/buttons.dart';
+import 'package:example/widgets/floating_action_button.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
+import 'package:example/widgets/icon_buttons.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
+import 'package:example/widgets/progress_indicator.dart';
+import 'package:example/widgets/segmented_button.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -63,10 +71,49 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text('BUTTON'),
                 ),
+                const Divider(height: 48),
+                const SizedBox(height: 24),
+                Theme(
+                  data: ComicThemeData.of(context),
+                  child: TextButton(
+                    onPressed: () {
+                      showGeneralDialog(
+                        context: context,
+                        pageBuilder: (_, __, ___) => const ComicScreenDemo(),
+                      );
+                    },
+                    child: const Text('Comic Demo Screen'),
+                  ),
+                ),
+                const SizedBox(height: 24),
                 const Divider(
                   height: 48,
                 ),
                 const Buttons(),
+                const Divider(
+                  height: 48,
+                ),
+                const BottomSheets(),
+                const Divider(
+                  height: 48,
+                ),
+                const ProgressIndicators(),
+                const Divider(
+                  height: 48,
+                ),
+                const Badges(),
+                const Divider(
+                  height: 48,
+                ),
+                const FloatingActionButtons(),
+                const Divider(
+                  height: 48,
+                ),
+                const SegmentedButtons(),
+                const Divider(
+                  height: 48,
+                ),
+                const IconButtons(),
                 const Divider(
                   height: 48,
                 ),
@@ -97,9 +144,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () => debugPrint('Item 3'),
                   ),
                 ]),
-                const Divider(
-                  height: 48,
+                const Divider(height: 48),
+                const SizedBox(height: 24),
+                Theme(
+                  data: ComicThemeData.of(context),
+                  child: const Divider(),
                 ),
+                Theme(
+                  data: SleekThemeData.of(context),
+                  child: const Divider(),
+                ),
+                const SizedBox(height: 24),
+                const Divider(height: 48),
                 ElevatedButton(
                   onPressed: () => Navigator.of(context).push(
                     PageRouteBuilder(
@@ -131,7 +187,63 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   child: const Text('Sleep Walker'),
                 ),
-                const Divider(),
+                const Divider(height: 48),
+                const Text('Text Field'),
+                const SizedBox(height: 24),
+                Theme(
+                  data: SleekThemeData.of(context),
+                  child: const TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Sleek',
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 24),
+                Theme(
+                  data: ComicThemeData.of(context),
+                  child: const TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Comic',
+                    ),
+                  ),
+                ),
+                const Divider(height: 48),
+                Theme(
+                  data: ComicThemeData.of(context),
+                  child: Container(
+                    width: 48,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: const DecorationImage(
+                        image: CachedNetworkImageProvider(
+                          "https://picsum.photos/200",
+                        ),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                Theme(
+                  data: ComicThemeData.of(context),
+                  child: Container(
+                    width: 48,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: const DecorationImage(
+                        image: CachedNetworkImageProvider(
+                          "https://picsum.photos/200",
+                        ),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                const Divider(height: 48),
                 Theme(
                   data: SleekThemeData.of(context),
                   child: SleekListView(
