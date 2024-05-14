@@ -20,8 +20,6 @@ SDS provides the following themes:
 - Sleek
 - Comic
 
-
-
 ## Philosophy of SDS
 
 - We design with flutter theme as much as possible. This means, developers are not needed to learn anything about the SDS. They can continue working with their code and Social Design System will naturally update the look.
@@ -54,11 +52,7 @@ The theme (for instance `ComicTheme`) provides UI design to most of the flutter 
 
 - Developers can choose their color scheme and all the widgets will follow the chosen color.
 
-
 ## Common patterns of SDS
 
 - SDS does not provides theme design directly to `IconButton` because it is used as `BackButton` in `AppBar` and we cannot make a clean design with it. Flutter allows to custom UI design only for icons not for icon button for this time.
-  - So, SDS provides `[Theme]IconButton` like `ComicIconbutton` or `SleekIconButton`.
-
-
-
+    - So, SDS provides `[Theme]IconButton` like `ComicIconbutton` or `SleekIconButton`.
