@@ -2,38 +2,35 @@ import 'package:flutter/material.dart';
 
 const borderThickness = 2.0;
 
-/// ComicThemeData
-///
-/// [ComicThemeData] is a class that holds the color scheme for the Comic theme.
-class ComicThemeData {
-  ComicThemeData();
+class ComicIconButtonThemeData {
+  ComicIconButtonThemeData();
 
-  /// of
-  ///
-  /// [of] is a method that returns a [ThemeData] object with the color scheme
   static ThemeData of(BuildContext context) {
     final theme = Theme.of(context);
     return ThemeData(
-      appBarTheme: AppBarTheme(
-        backgroundColor: theme.colorScheme.background,
-        foregroundColor: theme.colorScheme.onBackground,
-        iconTheme: theme.iconTheme.copyWith(
-          color: theme.colorScheme.onBackground,
-        ),
-        actionsIconTheme: theme.iconTheme.copyWith(
-          color: theme.colorScheme.onBackground,
-        ),
-        titleTextStyle: theme.textTheme.headlineMedium?.copyWith(
-          color: theme.colorScheme.onBackground,
+      iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                color: theme.colorScheme.outline,
+                width: borderThickness,
+              ),
+            ),
+          ),
         ),
       ),
+    );
+  }
+}
 
-      // actionIconTheme: ActionIconThemeData(
-      //   backButtonIconBuilder: (context) =>
-      //       IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
-      // ),
+class ComicTextButtonThemeData {
+  ComicTextButtonThemeData();
 
-      colorScheme: Theme.of(context).colorScheme,
+  static ThemeData of(BuildContext context) {
+    final theme = Theme.of(context);
+    return ThemeData(
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
           foregroundColor:
@@ -51,6 +48,58 @@ class ComicThemeData {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// ComicThemeData
+///
+/// [ComicThemeData] is a class that holds the color scheme for the Comic theme.
+class ComicThemeData {
+  ComicThemeData();
+
+  /// of
+  ///
+  /// [of] is a method that returns a [ThemeData] object with the color scheme
+  static ThemeData of(BuildContext context) {
+    final theme = Theme.of(context);
+    return ThemeData(
+      appBarTheme: AppBarTheme(
+        iconTheme: theme.iconTheme.copyWith(
+          color: theme.colorScheme.onBackground,
+        ),
+        actionsIconTheme: theme.iconTheme.copyWith(
+          color: theme.colorScheme.onBackground,
+        ),
+        titleTextStyle: theme.textTheme.headlineMedium?.copyWith(
+          color: theme.colorScheme.onBackground,
+        ),
+      ),
+
+      // actionIconTheme: ActionIconThemeData(
+      //   backButtonIconBuilder: (context) =>
+      //       IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
+      // ),
+
+      colorScheme: Theme.of(context).colorScheme,
+
+      // textButtonTheme: TextButtonThemeData(
+      //   style: ButtonStyle(
+      //     foregroundColor:
+      //         MaterialStateProperty.all(theme.colorScheme.onSurface),
+      //     backgroundColor:
+      //         MaterialStateProperty.all(theme.colorScheme.background),
+      //     shape: MaterialStateProperty.all(
+      //       RoundedRectangleBorder(
+      //         borderRadius: BorderRadius.circular(24),
+      //         side: BorderSide(
+      //           width: borderThickness,
+      //           color: theme.colorScheme.secondary,
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      // ),
       // textButtonTheme: TextButtonThemeData(
       //   style: ButtonStyle(
       //     foregroundColor: MaterialStateProperty.all(theme.colorScheme.primary),
@@ -73,20 +122,22 @@ class ComicThemeData {
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
-              side: const BorderSide(
+              side: BorderSide(
+                color: theme.colorScheme.outline,
                 width: borderThickness,
               ),
             ),
           ),
         ),
       ),
+
       listTileTheme: theme.listTileTheme.copyWith(
         tileColor: theme.colorScheme.surface,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(
-            color: theme.colorScheme.secondary,
+            color: theme.colorScheme.outline,
             width: borderThickness,
           ),
         ),
@@ -152,7 +203,7 @@ class ComicThemeData {
           ),
         ),
       ),
-      // iconButtonTheme: IconButtonThemeData(
+      // iconButtonTheme: ComicIconButtonThemeData(
       //   style: ButtonStyle(
       //     elevation: MaterialStateProperty.all(0),
       //     foregroundColor:
@@ -201,7 +252,11 @@ class ComicThemeData {
       ),
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: theme.colorScheme.background,
-        surfaceTintColor: theme.colorScheme.primary,
+        shape: const Border(
+          top: BorderSide(
+            width: borderThickness,
+          ),
+        ),
       ),
     );
   }

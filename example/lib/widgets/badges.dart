@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:social_design_system/social_design_system.dart';
 
 class Badges extends StatelessWidget {
@@ -13,25 +12,21 @@ class Badges extends StatelessWidget {
       children: [
         Theme(
           data: ComicThemeData.of(context),
-          child: SizedBox(
-            height: 40,
-            width: 100,
-            child: Stack(
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Comic'),
+          child: Stack(
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text('Comic'),
+              ),
+              const Align(
+                alignment: Alignment(.8, -1.3),
+                child: Badge(
+                  largeSize: 16,
+                  isLabelVisible: true,
+                  label: Text('5'),
                 ),
-                const Align(
-                  alignment: Alignment(.8, -1.3),
-                  child: Badge(
-                    largeSize: 16,
-                    isLabelVisible: true,
-                    label: Text('5'),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         Theme(
