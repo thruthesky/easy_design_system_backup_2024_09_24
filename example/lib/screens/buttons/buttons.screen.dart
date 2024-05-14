@@ -28,17 +28,17 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
                   data: ComicThemeData.of(context),
                   child: ElevatedButton(
                     onPressed: () {
-                      debugPrint('ElevatedButton pressed');
+                      debugPrint('Pressed');
                     },
-                    child: const Text('ElevatedButton'),
+                    child: const Text('Comic Theme'),
                   ),
                 ),
                 SleekTheme(
                   child: ElevatedButton(
                     onPressed: () {
-                      debugPrint('ElevatedButton pressed');
+                      debugPrint('Pressed');
                     },
-                    child: const Text('ElevatedButton'),
+                    child: const Text('Sleek Theme'),
                   ),
                 ),
               ],
@@ -48,43 +48,20 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
               spacing: 8,
               children: [
                 Theme(
-                  data: ComicThemeData.of(context),
+                  data: ComicTextButtonThemeData.of(context),
                   child: TextButton(
                     onPressed: () {
-                      debugPrint('ElevatedButton pressed');
+                      debugPrint('Pressed');
                     },
-                    child: const Text('ElevatedButton'),
+                    child: const Text('Comic Theme'),
                   ),
                 ),
                 SleekTheme(
                   child: TextButton(
                     onPressed: () {
-                      debugPrint('ElevatedButton pressed');
+                      debugPrint('Pressed');
                     },
-                    child: const Text('ElevatedButton'),
-                  ),
-                ),
-              ],
-            ),
-            const Text("Icon Buttons"),
-            Wrap(
-              spacing: 8,
-              children: [
-                Theme(
-                  data: ComicThemeData.of(context),
-                  child: IconButton(
-                    onPressed: () {
-                      debugPrint('ElevatedButton pressed');
-                    },
-                    icon: const Text('ElevatedButton'),
-                  ),
-                ),
-                SleekTheme(
-                  child: IconButton(
-                    onPressed: () {
-                      debugPrint('ElevatedButton pressed');
-                    },
-                    icon: const Text('ElevatedButton'),
+                    child: const Text('Sleek Theme'),
                   ),
                 ),
               ],
@@ -94,10 +71,10 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
               spacing: 8,
               children: [
                 Theme(
-                  data: ComicThemeData.of(context),
+                  data: ComicTextButtonThemeData.of(context),
                   child: TextButton.icon(
                     onPressed: () {
-                      debugPrint('ElevatedButton pressed');
+                      debugPrint('Pressed');
                     },
                     icon: const Icon(Icons.add),
                     label: const Text('This is Lebel'),
@@ -106,14 +83,77 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
                 SleekTheme(
                   child: TextButton.icon(
                     onPressed: () {
-                      debugPrint('ElevatedButton pressed');
+                      debugPrint('Pressed');
                     },
                     icon: const Text('This is Lebel'),
                     label: const Icon(Icons.add),
                   ),
                 ),
               ],
-            )
+            ),
+            const Text("Outlined Buttons"),
+            Wrap(
+              spacing: 8,
+              children: [
+                Theme(
+                  data: ComicThemeData.of(context),
+                  child: OutlinedButton(
+                    onPressed: () {
+                      debugPrint('Pressed');
+                    },
+                    child: const Text('Comic Theme'),
+                  ),
+                ),
+                SleekTheme(
+                  child: OutlinedButton(
+                    onPressed: () {
+                      debugPrint('Pressed');
+                    },
+                    child: const Text('Sleek Theme'),
+                  ),
+                ),
+              ],
+            ),
+            const Text("Icon Buttons"),
+            Wrap(
+              spacing: 8,
+              children: [
+                Theme(
+                  data: ComicIconButtonThemeData.of(context),
+                  child: IconButton(
+                    onPressed: () {
+                      debugPrint('Pressed');
+                    },
+                    icon: const Icon(Icons.favorite),
+                  ),
+                ),
+                SleekTheme(
+                  child: IconButton(
+                    onPressed: () {
+                      debugPrint('Pressed');
+                    },
+                    icon: const Icon(Icons.favorite),
+                  ),
+                ),
+                Theme(
+                  data: ComicIconButtonThemeData.of(context),
+                  child: IconButton(
+                    onPressed: () {
+                      debugPrint('Pressed');
+                    },
+                    icon: const Text('Comic Theme'),
+                  ),
+                ),
+                SleekTheme(
+                  child: IconButton(
+                    onPressed: () {
+                      debugPrint('Pressed');
+                    },
+                    icon: const Text('Sleek Theme'),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

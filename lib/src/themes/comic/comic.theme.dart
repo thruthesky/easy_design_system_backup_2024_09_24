@@ -2,6 +2,56 @@ import 'package:flutter/material.dart';
 
 const borderThickness = 2.0;
 
+class ComicIconButtonThemeData {
+  ComicIconButtonThemeData();
+
+  static ThemeData of(BuildContext context) {
+    final theme = Theme.of(context);
+    return ThemeData(
+      iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                color: theme.colorScheme.outline,
+                width: borderThickness,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ComicTextButtonThemeData {
+  ComicTextButtonThemeData();
+
+  static ThemeData of(BuildContext context) {
+    final theme = Theme.of(context);
+    return ThemeData(
+      textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+          foregroundColor:
+              MaterialStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor:
+              MaterialStateProperty.all(theme.colorScheme.background),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                width: borderThickness,
+                color: theme.colorScheme.secondary,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 /// ComicThemeData
 ///
 /// [ComicThemeData] is a class that holds the color scheme for the Comic theme.
@@ -32,23 +82,24 @@ class ComicThemeData {
       // ),
 
       colorScheme: Theme.of(context).colorScheme,
-      textButtonTheme: TextButtonThemeData(
-        style: ButtonStyle(
-          foregroundColor:
-              MaterialStateProperty.all(theme.colorScheme.onSurface),
-          backgroundColor:
-              MaterialStateProperty.all(theme.colorScheme.background),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-              side: BorderSide(
-                width: borderThickness,
-                color: theme.colorScheme.secondary,
-              ),
-            ),
-          ),
-        ),
-      ),
+
+      // textButtonTheme: TextButtonThemeData(
+      //   style: ButtonStyle(
+      //     foregroundColor:
+      //         MaterialStateProperty.all(theme.colorScheme.onSurface),
+      //     backgroundColor:
+      //         MaterialStateProperty.all(theme.colorScheme.background),
+      //     shape: MaterialStateProperty.all(
+      //       RoundedRectangleBorder(
+      //         borderRadius: BorderRadius.circular(24),
+      //         side: BorderSide(
+      //           width: borderThickness,
+      //           color: theme.colorScheme.secondary,
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      // ),
       // textButtonTheme: TextButtonThemeData(
       //   style: ButtonStyle(
       //     foregroundColor: MaterialStateProperty.all(theme.colorScheme.primary),
@@ -79,6 +130,7 @@ class ComicThemeData {
           ),
         ),
       ),
+
       listTileTheme: theme.listTileTheme.copyWith(
         tileColor: theme.colorScheme.surface,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
@@ -150,7 +202,7 @@ class ComicThemeData {
           ),
         ),
       ),
-      // iconButtonTheme: IconButtonThemeData(
+      // iconButtonTheme: ComicIconButtonThemeData(
       //   style: ButtonStyle(
       //     elevation: MaterialStateProperty.all(0),
       //     foregroundColor:
