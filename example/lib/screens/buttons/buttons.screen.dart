@@ -120,28 +120,52 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
               children: [
                 Theme(
                   data: ComicIconButtonThemeData.of(context),
-                  child: IconButton(
-                    onPressed: () {
-                      debugPrint('Pressed');
-                    },
-                    icon: const Icon(Icons.favorite),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          debugPrint('Pressed');
+                        },
+                        icon: const Icon(Icons.favorite),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          debugPrint('Pressed');
+                        },
+                        icon: const Icon(Icons.add),
+                      ),
+                    ],
                   ),
                 ),
                 SleekTheme(
-                  child: IconButton(
-                    onPressed: () {
-                      debugPrint('Pressed');
-                    },
-                    icon: const Icon(Icons.favorite),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          debugPrint('Pressed');
+                        },
+                        icon: const Icon(Icons.favorite),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          debugPrint('Pressed');
+                        },
+                        icon: const Icon(Icons.add),
+                      ),
+                    ],
                   ),
                 ),
                 Theme(
                   data: ComicIconButtonThemeData.of(context),
-                  child: IconButton(
-                    onPressed: () {
-                      debugPrint('Pressed');
-                    },
-                    icon: const Text('Comic Theme'),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          debugPrint('Pressed');
+                        },
+                        icon: const Text('Comic Theme'),
+                      ),
+                    ],
                   ),
                 ),
                 SleekTheme(
