@@ -14,11 +14,17 @@ Please visit the [Social Design System document website](https://thruthesky.gith
 
 ## UI samples
 
-|      |           |         |
+
+| Comic Theme    | Sleek Theme          | Social Theme        |
 | -------------------------- | --------------------- | --------------------------- |
-| ComicListView![ComicListView](https://thruthesky.github.io/social_design_system/images/comic_list_view.jpg) | ComicListView.builder ![ComicListView.builder](https://thruthesky.github.io/social_design_system/images/comic_list_view_builder.jpg) | ComicListView.separated ![ComicListView.separated](https://thruthesky.github.io/social_design_system/images/comic_list_view_separated.jpg) |
+| ComicListView![ComicListView](https://thruthesky.github.io/social_design_system/images/comic_list_view.jpg) | | x |
+| ComicListView.builder ![ComicListView.builder](https://thruthesky.github.io/social_design_system/images/comic_list_view_builder.jpg) | | x |
+| ComicListView.separated ![ComicListView.separated](https://thruthesky.github.io/social_design_system/images/comic_list_view_separated.jpg) | | x |
+| Buttons ![Buttons](https://thruthesky.github.io/social_design_system/images/buttons.jpg) |  | x |
+| Settings ![Settings](https://thruthesky.github.io/social_design_system/images/settings.jpg) |  | x |
+| TextField ![TextField Soical Theme](https://thruthesky.github.io/social_design_system/images/comic.text_field.jpg) | | x |
 |WaveCarouseEntry ![WaveCarouseEntry](https://thruthesky.github.io/social_design_system/images/wave_carousel_entry.gif)|BasicCarouseEntry ![BasicCarouseEntry](https://thruthesky.github.io/social_design_system/images/basic_carousel_entry.gif)|RoundCarouseEntry ![RoundCarouseEntry](https://thruthesky.github.io/social_design_system/images/round_carousel_entry.gif)|
-| Buttons ![Buttons](https://thruthesky.github.io/social_design_system/images/buttons.jpg) |Settings ![Settings](https://thruthesky.github.io/social_design_system/images/settings.jpg) | x |
+
 
 
 ## Usage
