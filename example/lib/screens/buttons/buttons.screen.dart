@@ -25,7 +25,7 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
               spacing: 8,
               children: [
                 Theme(
-                  data: ComicThemeData.of(context),
+                  data: ComicTheme.of(context),
                   child: ElevatedButton(
                     onPressed: () {
                       debugPrint('Pressed');
@@ -96,7 +96,7 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
               spacing: 8,
               children: [
                 Theme(
-                  data: ComicThemeData.of(context),
+                  data: ComicTheme.of(context),
                   child: OutlinedButton(
                     onPressed: () {
                       debugPrint('Pressed');
@@ -153,27 +153,6 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
                         icon: const Icon(Icons.add),
                       ),
                     ],
-                  ),
-                ),
-                Theme(
-                  data: ComicIconButtonThemeData.of(context),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          debugPrint('Pressed');
-                        },
-                        icon: const Text('Comic Theme'),
-                      ),
-                    ],
-                  ),
-                ),
-                SleekTheme(
-                  child: IconButton(
-                    onPressed: () {
-                      debugPrint('Pressed');
-                    },
-                    icon: const Text('Sleek Theme'),
                   ),
                 ),
               ],

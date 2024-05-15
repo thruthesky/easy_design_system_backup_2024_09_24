@@ -285,6 +285,20 @@ class ComicTheme extends StatelessWidget {
 
   final Widget child;
 
+  /// Supporting method to get the [ThemeData] object
+  ///
+  /// @example
+  /// ```dart
+  /// final theme = ComicTheme.of(context);
+  ///
+  /// Theme(
+  ///   data: theme,
+  /// )
+  /// ```
+  static ThemeData of(BuildContext context) {
+    return ComicThemeData.of(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Theme(

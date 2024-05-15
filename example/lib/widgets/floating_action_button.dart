@@ -14,7 +14,7 @@ class FloatingActionButtons extends StatelessWidget {
           spacing: 24,
           children: [
             Theme(
-              data: ComicThemeData.of(context),
+              data: ComicTheme.of(context),
               child: Column(
                 children: [
                   FloatingActionButton(
