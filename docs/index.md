@@ -11,11 +11,23 @@ Social Design System (SDS) is an Elegant UI/UX library crafted specifically for 
 
 ## Sample UI of Social Deisgn System
 
-|      |           |         |
+
+| Comic Theme    | Sleek Theme          | Social Theme        |
 | -------------------------- | --------------------- | --------------------------- |
-| ComicListView![ComicListView](./images/comic_list_view.jpg) | ComicListView.builder ![ComicListView.builder](./images/comic_list_view_builder.jpg) | ComicListView.separated ![ComicListView.separated](./images/comic_list_view_separated.jpg) |
-|WaveCarouseEntry ![WaveCarouseEntry](./images/wave_carousel_entry.gif)|BasicCarouseEntry ![BasicCarouseEntry](./images/basic_carousel_entry.gif)|RoundCarouseEntry ![RoundCarouseEntry](./images/round_carousel_entry.gif)|
-| Buttons ![Buttons](./images/buttons.jpg) |Settings ![Settings](./images/settings.jpg) | x |
+| ComicListView![ComicListView](https://thruthesky.github.io/social_design_system/images/comic_list_view.jpg) | | x |
+| ComicListView.builder ![ComicListView.builder](https://thruthesky.github.io/social_design_system/images/comic_list_view_builder.jpg) | | x |
+| ComicListView.separated ![ComicListView.separated](https://thruthesky.github.io/social_design_system/images/comic_list_view_separated.jpg) | | x |
+| Buttons ![Buttons](https://thruthesky.github.io/social_design_system/images/buttons.jpg) |  | x |
+| Settings ![Settings](https://thruthesky.github.io/social_design_system/images/settings.jpg) |  | x |
+| TextField ![TextField Comic Theme](https://thruthesky.github.io/social_design_system/images/comic.text_field.jpg) | | x |
+| IconButton ![IconButton Comic Theme](https://thruthesky.github.io/social_design_system/images/comic.icon_button.jpg) | IconButton ![IconButton Comic Theme](https://thruthesky.github.io/social_design_system/images/sleek.icon_button.jpg) | x |
+|WaveCarouseEntry ![WaveCarouseEntry](https://thruthesky.github.io/social_design_system/images/wave_carousel_entry.gif)|BasicCarouseEntry ![BasicCarouseEntry](https://thruthesky.github.io/social_design_system/images/basic_carousel_entry.gif)|RoundCarouseEntry ![RoundCarouseEntry](https://thruthesky.github.io/social_design_system/images/round_carousel_entry.gif)|
+
+
+comic.icon_button.jpg
+
+
+
 
 ## Themes
 
