@@ -8,12 +8,9 @@ Comic theme should have
 - rounded border
 - no shadow
 
-
 ## Common Patterns
 
 - `ElevatedButton` has a shadow. But the shadow is removed with comic theme. And this is because the button in comic theme should look like a commic style. So the shadow is removed.
-
-
 
 ## How to apply
 
@@ -43,4 +40,3 @@ Theme(
         ),
 ),
 ```
-

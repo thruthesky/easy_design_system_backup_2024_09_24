@@ -4,7 +4,6 @@
     - `IconButton` is used as in `BackButton` of the `AppBar` and it looks urgly when it has a border. Instead, it support `ComicIconButtonThemeData` to make it look as comic design.
     - You may use `ComicTextButtonThemeData` to make the look of `TextButton` as comic design.
 
-
 Example of `ComicTextButtonThemeData`
 
 ```dart
@@ -19,7 +18,6 @@ Theme(
   ),
 ),
 ```
-
 
 Example of `ComicIconButtonThemeData`
 

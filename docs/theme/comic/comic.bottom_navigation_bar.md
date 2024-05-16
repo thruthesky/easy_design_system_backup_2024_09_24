@@ -2,6 +2,8 @@
 
 Comic design also gives bottom navigation bar a style.
 
+However, currently, there is no top outline in the theming for Navigation Bar. By default there will be no top outline. To add an outline NavigationBar must be a child of a Container with a BoxDecoration that has Border at top (it will be shown in example code below).
+
 ![Comic Bottom Navigation Bar](../../images/comic.bottom_navigation_bar.jpg)
 
 ## How to apply

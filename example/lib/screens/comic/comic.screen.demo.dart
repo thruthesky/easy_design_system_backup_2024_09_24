@@ -50,6 +50,8 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
                 children: [
                   const Text('First'),
                   const SizedBox(height: 24),
+                  const ComicBottomSheetDemo(),
+                  const SizedBox(height: 24),
                   ElevatedButton(
                     onPressed: () => showModalBottomSheet(
                       context: context,
@@ -66,7 +68,7 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
                         ),
                       ),
                     ),
-                    child: const Text('Display Comic Bottomsheet'),
+                    child: const Text('Display Comic Modal Bottomsheet'),
                   ),
                 ],
               ),
@@ -161,6 +163,39 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
           child: const Icon(Icons.add),
         ),
       ),
+    );
+  }
+}
+
+class ComicBottomSheetDemo extends StatelessWidget {
+  const ComicBottomSheetDemo({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () => showBottomSheet(
+        context: context,
+        builder: (context) => Theme(
+          data: ComicThemeData.of(context),
+          child: BottomSheet(
+            onClosing: () {},
+            builder: (context) => SizedBox(
+              height: 200,
+              child: Center(
+                child: OutlinedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text("Close bottom Sheet"),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      child: const Text('Display Comic Bottomsheet'),
     );
   }
 }
