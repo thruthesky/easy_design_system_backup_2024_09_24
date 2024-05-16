@@ -116,6 +116,10 @@ class SleekTheme extends StatelessWidget {
 
   final Widget child;
 
+  static ThemeData of(BuildContext context) {
+    return SleekThemeData.of(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Theme(

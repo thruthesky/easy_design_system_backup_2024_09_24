@@ -26,10 +26,6 @@ Social Design System (SDS) is an Elegant UI/UX library crafted specifically for 
 |WaveCarouseEntry ![WaveCarouseEntry](https://thruthesky.github.io/social_design_system/images/wave_carousel_entry.gif)|BasicCarouseEntry ![BasicCarouseEntry](https://thruthesky.github.io/social_design_system/images/basic_carousel_entry.gif)|RoundCarouseEntry ![RoundCarouseEntry](https://thruthesky.github.io/social_design_system/images/round_carousel_entry.gif)|
 
 
-comic.icon_button.jpg
-
-
-
 
 ## Themes
 
@@ -54,7 +50,7 @@ Applying `ComicTheme` to your button.
 
 ```dart
 Theme(
-    data: ComicThemeData.of(context),
+    data: ComicTheme.of(context),
     child: TextButton('Hello, World!'),
 )
 ```
@@ -63,7 +59,7 @@ or you can apply the `ComicTheme` to all over your app like below.
 
 ```dart
 Theme(
-    data: ComicThemeData.of(context),
+    data: ComicTheme.of(context),
     child: MaterialApp( ... )
 )
 ```
