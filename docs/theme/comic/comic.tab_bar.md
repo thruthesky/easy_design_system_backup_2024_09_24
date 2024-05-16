@@ -8,7 +8,7 @@ Comic Theme provides a theme for Tab Bar
 
 ```dart
 Theme(
-    data: ComicThemeData.of(context),
+    data: ComicTheme.of(context),
     child: Scaffold(
         appBar: AppBar(
             title: const Text('Comic Screen Demo'),

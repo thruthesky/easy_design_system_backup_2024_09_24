@@ -27,7 +27,7 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: ComicThemeData.of(context),
+      data: ComicTheme.of(context),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Comic Screen Demo'),
@@ -42,31 +42,41 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
         ),
         body: TabBarView(
           controller: _tabController,
-          children: const [
-            Center(child: Text('First')),
-            Center(child: Text('Second')),
-            Center(child: Text('Third')),
+          children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Text('First'),
+                  const SizedBox(height: 24),
+                  ElevatedButton(
+                    onPressed: () => showModalBottomSheet(
+                      context: context,
+                      builder: (context) => Theme(
+                        data: ComicTheme.of(context),
+                        child: BottomSheet(
+                          onClosing: () {},
+                          builder: (context) => const SizedBox(
+                            height: 200,
+                            child: Center(
+                              child: Text('Comic'),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    child: const Text('Display Comic Bottomsheet'),
+                  ),
+                ],
+              ),
+            ),
+            const Center(child: Text('Second')),
+            const Center(child: Text('Third')),
           ],
         ),
         bottomNavigationBar: NavigationBarTheme(
-          // data: NavigationBarThemeData(
-          //   labelTextStyle: MaterialStateProperty.resolveWith((states) {
-          //     if (states.contains(MaterialState.selected)) {
-          //       return TextStyle(
-          //         fontSize: 13,
-          //         fontWeight: FontWeight.w600,
-          //         color: Theme.of(context).colorScheme.primary,
-          //       );
-          //     }
-          //     return TextStyle(
-          //       fontSize: 13,
-          //       fontWeight: FontWeight.w300,
-          //       color: Theme.of(context).colorScheme.secondary,
-          //     );
-          //   }),
-          //   labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-          // ),
-          data: ComicThemeData.of(context).navigationBarTheme,
+          data: ComicTheme.of(context).navigationBarTheme,
           child: Container(
             decoration: BoxDecoration(
               border: Border(
@@ -79,7 +89,6 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
             child: NavigationBar(
               selectedIndex: index,
               onDestinationSelected: (v) {
-                // context.routerState.change(v);
                 setState(() {
                   index = v;
                 });

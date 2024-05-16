@@ -8,6 +8,13 @@ Comic theme should have
 - rounded border
 - no shadow
 
+
+## Common Patterns
+
+- `ElevatedButton` has a shadow. But the shadow is removed with comic theme. And this is because the button in comic theme should look like a commic style. So the shadow is removed.
+
+
+
 ## How to apply
 
 You can use `ComicTheme` widget like below.
@@ -27,7 +34,7 @@ Or you can use `Theme` widget with `ComicThemeData`.
 
 ```dart
 Theme(
-    data: ComicThemeData.of(context),
+    data: ComicTheme.of(context),
     child: const ListTile(
         title: Text('Item 3'),
         subtitle: Text('Subtitle 3'),
@@ -36,3 +43,4 @@ Theme(
         ),
 ),
 ```
+

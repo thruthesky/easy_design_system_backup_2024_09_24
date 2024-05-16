@@ -11,30 +11,26 @@ class Badges extends StatelessWidget {
       runSpacing: 24,
       children: [
         Theme(
-          data: ComicThemeData.of(context),
-          child: SizedBox(
-            height: 40,
-            width: 100,
-            child: Stack(
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Comic'),
+          data: ComicTheme.of(context),
+          child: Stack(
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text('Comic'),
+              ),
+              const Align(
+                alignment: Alignment(.8, -1.3),
+                child: Badge(
+                  largeSize: 16,
+                  isLabelVisible: true,
+                  label: Text('5'),
                 ),
-                const Align(
-                  alignment: Alignment(.8, -1.3),
-                  child: Badge(
-                    largeSize: 16,
-                    isLabelVisible: true,
-                    label: Text('5'),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         Theme(
-          data: ComicThemeData.of(context),
+          data: ComicTheme.of(context),
           child: SizedBox(
             height: 40,
             width: 100,

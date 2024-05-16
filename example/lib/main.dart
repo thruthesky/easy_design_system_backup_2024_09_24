@@ -1,18 +1,13 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:example/screens/comic/comic.screen.demo.dart';
-import 'package:example/widgets/badge.dart';
-import 'package:example/widgets/bottom_sheet.dart';
-import 'package:example/widgets/buttons.dart';
-import 'package:example/widgets/floating_action_button.dart';
+import 'package:example/screens/badge/badge.screen.dart';
+import 'package:example/screens/buttons/buttons.screen.dart';
+import 'package:example/screens/color_scheme/color_scheme.screen.dart';
+import 'package:example/screens/list_tile/list_tile.screen.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
-import 'package:example/widgets/icon_buttons.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
-import 'package:example/widgets/progress_indicator.dart';
-import 'package:example/widgets/segmented_button.dart';
+import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:flutter/material.dart';
-import 'package:social_design_system/social_design_system.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,305 +45,54 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ElevatedButton(
-                  onPressed: () {
-                    showGeneralDialog(
-                      context: context,
-                      pageBuilder: (_, __, ___) => Scaffold(
-                        appBar: AppBar(
-                          title: const Text('Buttons'),
-                        ),
-                        body: const Buttons(),
-                      ),
-                    );
-                  },
-                  child: const Text('BUTTON'),
-                ),
-                const Divider(height: 48),
-                const SizedBox(height: 24),
-                Theme(
-                  data: ComicThemeData.of(context),
-                  child: TextButton(
-                    onPressed: () {
-                      showGeneralDialog(
-                        context: context,
-                        pageBuilder: (_, __, ___) => const ComicScreenDemo(),
-                      );
-                    },
-                    child: const Text('Comic Demo Screen'),
-                  ),
-                ),
-                const SizedBox(height: 24),
-                const Divider(
-                  height: 48,
-                ),
-                const Buttons(),
-                const Divider(
-                  height: 48,
-                ),
-                const BottomSheets(),
-                const Divider(
-                  height: 48,
-                ),
-                const ProgressIndicators(),
-                const Divider(
-                  height: 48,
-                ),
-                const Badges(),
-                const Divider(
-                  height: 48,
-                ),
-                const FloatingActionButtons(),
-                const Divider(
-                  height: 48,
-                ),
-                const SegmentedButtons(),
-                const Divider(
-                  height: 48,
-                ),
-                const IconButtons(),
-                const Divider(
-                  height: 48,
-                ),
-                Settings(label: 'Settings', children: [
-                  ListTile(
-                    visualDensity: VisualDensity.compact,
-                    title: const Text('Notifications'),
-                    subtitle: const Text('Receive notifications'),
-                    leading: const Icon(Icons.notifications_outlined),
-                    trailing: const Icon(Icons.chevron_right_rounded),
-                    onTap: () => debugPrint('Item 1'),
-                  ),
-                  ListTile(
-                    visualDensity: VisualDensity.compact,
-                    title: const Text('Favorites'),
-                    subtitle: const Text('Want to know who likes you?'),
-                    leading: const Icon(Icons.favorite_border_outlined),
-                    trailing: const Icon(
-                      Icons.arrow_right_rounded,
-                      size: 32,
-                    ),
-                    onTap: () => debugPrint('Item 2'),
-                  ),
-                  ListTile(
-                    title: const Text('Privacy Policy'),
-                    leading: const Icon(Icons.shield_outlined),
-                    trailing: const Icon(Icons.arrow_circle_right_outlined),
-                    onTap: () => debugPrint('Item 3'),
-                  ),
-                ]),
-                const Divider(height: 48),
-                const SizedBox(height: 24),
-                Theme(
-                  data: ComicThemeData.of(context),
-                  child: const Divider(),
-                ),
-                Theme(
-                  data: SleekThemeData.of(context),
-                  child: const Divider(),
-                ),
-                const SizedBox(height: 24),
-                const Divider(height: 48),
-                ElevatedButton(
-                  onPressed: () => Navigator.of(context).push(
-                    PageRouteBuilder(
-                        pageBuilder: (_, __, ___) =>
-                            const WaveCarouselEntryScreen()),
-                  ),
-                  child: const Text('Wave Carousel Entry Screen'),
-                ),
-                ElevatedButton(
-                  onPressed: () => Navigator.of(context).push(
-                    PageRouteBuilder(
-                        pageBuilder: (_, __, ___) =>
-                            const BasicCarouselEntryScreen()),
-                  ),
-                  child: const Text('Basic Carousel Entry Screen'),
-                ),
-                ElevatedButton(
-                  onPressed: () => Navigator.of(context).push(
-                    PageRouteBuilder(
-                        pageBuilder: (_, __, ___) =>
-                            const RoundCarouselEntryScreen()),
-                  ),
-                  child: const Text('Round Carousel Entry Screen'),
-                ),
-                ElevatedButton(
-                  onPressed: () => Navigator.of(context).push(
-                    PageRouteBuilder(
-                        pageBuilder: (_, __, ___) => const SleepWalkerScreen()),
-                  ),
-                  child: const Text('Sleep Walker'),
-                ),
-                const Divider(height: 48),
-                const Text('Text Field'),
-                const SizedBox(height: 24),
-                Theme(
-                  data: SleekThemeData.of(context),
-                  child: const TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Sleek',
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 24),
-                Theme(
-                  data: ComicThemeData.of(context),
-                  child: const TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Comic',
-                    ),
-                  ),
-                ),
-                const Divider(height: 48),
-                Theme(
-                  data: ComicThemeData.of(context),
-                  child: Container(
-                    width: 48,
-                    height: 48,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                        image: CachedNetworkImageProvider(
-                          "https://picsum.photos/200",
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 24,
-                ),
-                Theme(
-                  data: ComicThemeData.of(context),
-                  child: Container(
-                    width: 48,
-                    height: 48,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                        image: CachedNetworkImageProvider(
-                          "https://picsum.photos/200",
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-                const Divider(height: 48),
-                Theme(
-                  data: SleekThemeData.of(context),
-                  child: SleekListView(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    padding: EdgeInsets.zero,
-                    children: List.generate(
-                      5,
-                      (index) => ListTile(
-                        title: Text('Item $index'),
-                        subtitle: Text('Subtitle $index'),
-                        leading: const Icon(Icons.ac_unit),
-                        trailing: const Icon(Icons.arrow_forward_ios),
-                        onTap: () {},
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 24),
-                SleekTheme(
-                  child: SleekListView.builder(
-                    padding: EdgeInsets.zero,
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 5,
-                    itemBuilder: (context, index) => ListTile(
-                      title: Text('Item $index'),
-                      subtitle: Text('Subtitle $index'),
-                      leading: const Icon(Icons.ac_unit),
-                      trailing: const Icon(Icons.arrow_forward_ios),
-                      onTap: () {},
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 24),
-                SleekTheme(
-                  child: SleekListView.separated(
-                    padding: EdgeInsets.zero,
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 5,
-                    itemBuilder: (context, index) => ListTile(
-                      title: Text('Item $index'),
-                      subtitle: Text('Subtitle $index'),
-                      leading: const Icon(Icons.ac_unit),
-                      trailing: const Icon(Icons.arrow_forward_ios),
-                      onTap: () {},
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 24),
-                const SizedBox(height: 24),
-                ComicListView(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  padding: EdgeInsets.zero,
-                  children: List.generate(
-                    5,
-                    (index) => ListTile(
-                      title: Text('Item $index'),
-                      subtitle: Text('Subtitle $index'),
-                      leading: const Icon(Icons.ac_unit),
-                      trailing: const Icon(Icons.arrow_forward_ios),
-                      onTap: () {},
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 24),
-                ComicListView.builder(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 5,
-                  itemBuilder: (context, index) => ListTile(
-                    title: Text('Item $index'),
-                    subtitle: Text('Subtitle $index'),
-                    leading: const Icon(Icons.ac_unit),
-                    trailing: const Icon(Icons.arrow_forward_ios),
-                    onTap: () {},
-                  ),
-                ),
-                const SizedBox(height: 24),
-                ComicListView.separated(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 5,
-                  itemBuilder: (context, index) => ListTile(
-                    title: Text('Item $index'),
-                    subtitle: Text('Subtitle $index'),
-                    leading: const Icon(Icons.ac_unit),
-                    trailing: const Icon(Icons.arrow_forward_ios),
-                    onTap: () {},
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+      body: ListView(
+        children: <Widget>[
+          ElevatedButton(
+              onPressed: () {}, child: const Text("light & dark mode")),
+          pushScreen('TextField', const TextFieldScreen()),
+          pushScreen('Buttons', const ButtonsScreen()),
+          //
+          ElevatedButton(onPressed: () {}, child: const Text("TextFormField")),
+          ElevatedButton(
+              onPressed: () {}, child: const Text("Floating Action button")),
+          ElevatedButton(onPressed: () {}, child: const Text("IconButton")),
+          ElevatedButton(
+              onPressed: () {}, child: const Text("segmentedbutton")),
+          pushScreen('Badge', const BadgeScreen()),
+          ElevatedButton(
+              onPressed: () {}, child: const Text("LinearProgressIndicator")),
+          ElevatedButton(onPressed: () {}, child: const Text("SnackBar")),
+          ElevatedButton(onPressed: () {}, child: const Text("AlertDialog")),
+          ElevatedButton(onPressed: () {}, child: const Text("BottomSheet")),
+          ElevatedButton(onPressed: () {}, child: const Text("Card")),
+          ElevatedButton(onPressed: () {}, child: const Text("Divider")),
+          pushScreen('ListTile', const ListTileScreen()),
+          ElevatedButton(onPressed: () {}, child: const Text("AppBar")),
+          ElevatedButton(onPressed: () {}, child: const Text("Bottom App Bar")),
+          ElevatedButton(onPressed: () {}, child: const Text("NavigationBar")),
+          ElevatedButton(
+              onPressed: () {}, child: const Text("NavigationDrawer")),
+          ElevatedButton(onPressed: () {}, child: const Text("NavigationRail")),
+          ElevatedButton(onPressed: () {}, child: const Text("TabBar")),
+          ElevatedButton(onPressed: () {}, child: const Text("Checkbox")),
+          ElevatedButton(onPressed: () {}, child: const Text("Chip")),
+
+          pushScreen('Sleep Walker', const SleepWalkerScreen()),
+          pushScreen('Basic Carousel Entry', const BasicCarouselEntryScreen()),
+          pushScreen('Wave Carousel Entry', const WaveCarouselEntryScreen()),
+          pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
+          pushScreen('Color scheme', const ColorSchemeScreen()),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+    );
+  }
+
+  pushScreen(String title, Widget screen) {
+    return ElevatedButton(
+      onPressed: () => Navigator.of(context).push(
+        MaterialPageRoute(builder: (_) => screen),
       ),
+      child: Text(title),
     );
   }
 }

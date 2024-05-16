@@ -36,7 +36,7 @@ class _SegmentedButtonsState extends State<SegmentedButtons> {
           runSpacing: 16,
           children: [
             Theme(
-              data: ComicThemeData.of(context),
+              data: ComicTheme.of(context),
               child: Column(
                 children: [
                   const Text('Comic'),
