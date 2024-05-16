@@ -25,7 +25,7 @@ class Badges extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: ComicThemeData.of(context),
+      data: ComicTheme.of(context),
       child: SizedBox(
         height: 40,
         width: 100,

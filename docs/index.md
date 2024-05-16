@@ -22,8 +22,6 @@ Social Design System (SDS) is an Elegant UI/UX library crafted specifically for 
 | IconButton ![IconButton Comic Theme](https://thruthesky.github.io/social_design_system/images/comic.icon_button.jpg) | IconButton ![IconButton Comic Theme](https://thruthesky.github.io/social_design_system/images/sleek.icon_button.jpg) | x |
 |WaveCarouseEntry ![WaveCarouseEntry](https://thruthesky.github.io/social_design_system/images/wave_carousel_entry.gif)|BasicCarouseEntry ![BasicCarouseEntry](https://thruthesky.github.io/social_design_system/images/basic_carousel_entry.gif)|RoundCarouseEntry ![RoundCarouseEntry](https://thruthesky.github.io/social_design_system/images/round_carousel_entry.gif)|
 
-comic.icon_button.jpg
-
 ## Themes
 
 SDS provides the following themes:

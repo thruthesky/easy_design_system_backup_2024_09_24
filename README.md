@@ -36,7 +36,7 @@ For instance, SDS provides `ComicTheme` and you use it like below;
 
 ```dart
 Theme(
-    data: ComicThemeData.of(context),
+    data: ComicTheme.of(context),
     child: const ListTile(
     title: Text('Item 1'),
     subtitle: Text('Subtitle 1'),

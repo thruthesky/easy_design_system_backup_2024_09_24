@@ -31,7 +31,7 @@ Or you can use `Theme` widget with `ComicThemeData`.
 
 ```dart
 Theme(
-    data: ComicThemeData.of(context),
+    data: ComicTheme.of(context),
     child: const ListTile(
         title: Text('Item 3'),
         subtitle: Text('Subtitle 3'),

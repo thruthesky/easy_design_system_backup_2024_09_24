@@ -11,7 +11,7 @@ class Badges extends StatelessWidget {
       runSpacing: 24,
       children: [
         Theme(
-          data: ComicThemeData.of(context),
+          data: ComicTheme.of(context),
           child: Stack(
             children: [
               ElevatedButton(
@@ -30,7 +30,7 @@ class Badges extends StatelessWidget {
           ),
         ),
         Theme(
-          data: ComicThemeData.of(context),
+          data: ComicTheme.of(context),
           child: SizedBox(
             height: 40,
             width: 100,

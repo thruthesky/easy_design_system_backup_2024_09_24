@@ -12,7 +12,7 @@ class ProgressIndicators extends StatelessWidget {
       children: [
         Expanded(
           child: Theme(
-            data: ComicThemeData.of(context),
+            data: ComicTheme.of(context),
             child: const Column(
               children: [
                 Text('Comic'),

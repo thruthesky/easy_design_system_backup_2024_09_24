@@ -12,11 +12,11 @@ Check this example code.
 
 ```dart
 Theme(
-    data: ComicThemeData.of(context),
+    data: ComicTheme.of(context),
     child: Scaffold(
         // ... body
         bottomNavigationBar: NavigationBarTheme(
-            data: ComicThemeData.of(context).navigationBarTheme,
+            data: ComicTheme.of(context).navigationBarTheme,
                 child: Container(
                     decoration: BoxDecoration(
                         border: Border(

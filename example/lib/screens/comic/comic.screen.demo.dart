@@ -27,7 +27,7 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: ComicThemeData.of(context),
+      data: ComicTheme.of(context),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Comic Screen Demo'),
@@ -56,7 +56,7 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
                     onPressed: () => showModalBottomSheet(
                       context: context,
                       builder: (context) => Theme(
-                        data: ComicThemeData.of(context),
+                        data: ComicTheme.of(context),
                         child: BottomSheet(
                           onClosing: () {},
                           builder: (context) => const SizedBox(
@@ -78,7 +78,7 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
           ],
         ),
         bottomNavigationBar: NavigationBarTheme(
-          data: ComicThemeData.of(context).navigationBarTheme,
+          data: ComicTheme.of(context).navigationBarTheme,
           child: Container(
             decoration: BoxDecoration(
               border: Border(
