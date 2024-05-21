@@ -73,10 +73,6 @@ Social design system provides UI design to the basic widgets with visual compone
 
 ## Common patterns of SDS
 
-<<<<<<< HEAD
-- SDS does not provides theme design directly to `IconButton` because it is used as `BackButton` in `AppBar` and we cannot make a clean design with it. Flutter allows to custom UI design only for icons not for icon button for this time.
-    - So, SDS provides `[Theme]IconButton` like `ComicIconbutton` or `SleekIconButton`.
-=======
 
 - Social design system follows the theme system of the Flutter. This means, you can apply your own theme just the way you used to.
 
@@ -87,4 +83,3 @@ Social design system provides UI design to the basic widgets with visual compone
 
 
 
->>>>>>> c0b68303f801c42e02f3aba9d155e80d1d328ee2
