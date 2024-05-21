@@ -7,7 +7,6 @@ import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
-import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -50,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           ElevatedButton(
               onPressed: () {}, child: const Text("light & dark mode")),
-          pushScreen('TextField', const TextFieldScreen()),
+          ElevatedButton(onPressed: () {}, child: const Text("TextField")),
           pushScreen('Buttons', const ButtonsScreen()),
           //
           ElevatedButton(onPressed: () {}, child: const Text("TextFormField")),

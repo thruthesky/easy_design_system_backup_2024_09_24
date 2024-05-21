@@ -130,7 +130,24 @@ class ComicThemeData {
           ),
         ),
       ),
-
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: ButtonStyle(
+          elevation: MaterialStateProperty.all(0),
+          foregroundColor:
+              MaterialStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor:
+              MaterialStateProperty.all(theme.colorScheme.background),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                color: theme.colorScheme.outline,
+                width: borderThickness,
+              ),
+            ),
+          ),
+        ),
+      ),
       listTileTheme: theme.listTileTheme.copyWith(
         tileColor: theme.colorScheme.surface,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),

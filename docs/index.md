@@ -22,6 +22,8 @@ Social Design System (SDS) is an Elegant UI/UX library crafted specifically for 
 | IconButton ![IconButton Comic Theme](https://thruthesky.github.io/social_design_system/images/comic.icon_button.jpg) | IconButton ![IconButton Comic Theme](https://thruthesky.github.io/social_design_system/images/sleek.icon_button.jpg) | x |
 |WaveCarouseEntry ![WaveCarouseEntry](https://thruthesky.github.io/social_design_system/images/wave_carousel_entry.gif)|BasicCarouseEntry ![BasicCarouseEntry](https://thruthesky.github.io/social_design_system/images/basic_carousel_entry.gif)|RoundCarouseEntry ![RoundCarouseEntry](https://thruthesky.github.io/social_design_system/images/round_carousel_entry.gif)|
 
+comic.icon_button.jpg
+
 ## Themes
 
 SDS provides the following themes:
@@ -44,7 +46,7 @@ Theme(
 )
 ```
 
-or you can apply the `ComicTheme` to all over your app like below.
+Or you can apply the `ComicTheme` to all over your app like below.
 
 ```dart
 Theme(
@@ -53,7 +55,13 @@ Theme(
 )
 ```
 
-then, not only the buttons but all the widgets will use `ComicTheme`.
+Then, not only the buttons but all the widgets will use `ComicTheme`.
+
+Also, there are some widgets that can be given a theme.
+
+```dart
+
+```
 
 Social design system provides UI design to the basic widgets with visual component and it also provides its own custom widget for non-visual component like `ComicListView`.
 
