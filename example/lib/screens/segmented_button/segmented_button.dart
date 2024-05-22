@@ -9,7 +9,6 @@ class SegmentedButtonScreen extends StatefulWidget {
 }
 
 class _SegmentedButtonState extends State<SegmentedButtonScreen> {
-  @override
   Set<String> _selected = {'value1'};
   Set<String> _selected1 = {'value1'};
 
@@ -32,53 +31,44 @@ class _SegmentedButtonState extends State<SegmentedButtonScreen> {
         title: const Text('Segmented Button'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          spacing: 16,
+          runSpacing: 16,
           children: [
-            const Text('Segmented Button'),
-            const SizedBox(height: 16),
-            Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 16,
-              runSpacing: 16,
-              children: [
-                Theme(
-                  data: ComicTheme.of(context),
-                  child: Column(
-                    children: [
-                      const Text('Comic'),
-                      SegmentedButton(
-                        selected: _selected,
-                        segments: const [
-                          ButtonSegment(value: 'value1', label: Text('Inbox')),
-                          ButtonSegment(
-                              value: 'value2', label: Text('Primary')),
-                          ButtonSegment(value: 'value3', label: Text('Others')),
-                        ],
-                        onSelectionChanged: updateSelection,
-                      ),
+            Theme(
+              data: ComicTheme.of(context),
+              child: Column(
+                children: [
+                  const Text('Comic'),
+                  SegmentedButton(
+                    selected: _selected,
+                    segments: const [
+                      ButtonSegment(value: 'value1', label: Text('Inbox')),
+                      ButtonSegment(value: 'value2', label: Text('Primary')),
+                      ButtonSegment(value: 'value3', label: Text('Others')),
                     ],
+                    onSelectionChanged: updateSelection,
                   ),
-                ),
-                Theme(
-                  data: SleekThemeData.of(context),
-                  child: Column(
-                    children: [
-                      const Text('Sleek'),
-                      SegmentedButton(
-                        selected: _selected1,
-                        segments: const [
-                          ButtonSegment(value: 'value1', label: Text('Inbox')),
-                          ButtonSegment(
-                              value: 'value2', label: Text('Primary')),
-                          ButtonSegment(value: 'value3', label: Text('Others')),
-                        ],
-                        onSelectionChanged: updateSelection1,
-                      ),
+                ],
+              ),
+            ),
+            Theme(
+              data: SleekThemeData.of(context),
+              child: Column(
+                children: [
+                  const Text('Sleek'),
+                  SegmentedButton(
+                    selected: _selected1,
+                    segments: const [
+                      ButtonSegment(value: 'value1', label: Text('Inbox')),
+                      ButtonSegment(value: 'value2', label: Text('Primary')),
+                      ButtonSegment(value: 'value3', label: Text('Others')),
                     ],
+                    onSelectionChanged: updateSelection1,
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),

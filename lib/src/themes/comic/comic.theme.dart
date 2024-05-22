@@ -10,7 +10,7 @@ class ComicIconButtonThemeData {
     return ThemeData(
       iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
-          shape: MaterialStateProperty.all(
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
               side: BorderSide(
@@ -33,11 +33,9 @@ class ComicTextButtonThemeData {
     return ThemeData(
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          foregroundColor:
-              MaterialStateProperty.all(theme.colorScheme.onSurface),
-          backgroundColor:
-              MaterialStateProperty.all(theme.colorScheme.background),
-          shape: MaterialStateProperty.all(
+          foregroundColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor: WidgetStateProperty.all(theme.colorScheme.surface),
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
               side: BorderSide(
@@ -66,13 +64,13 @@ class ComicThemeData {
     return ThemeData(
       appBarTheme: AppBarTheme(
         iconTheme: theme.iconTheme.copyWith(
-          color: theme.colorScheme.onBackground,
+          color: theme.colorScheme.onSurface,
         ),
         actionsIconTheme: theme.iconTheme.copyWith(
-          color: theme.colorScheme.onBackground,
+          color: theme.colorScheme.onSurface,
         ),
         titleTextStyle: theme.textTheme.headlineMedium?.copyWith(
-          color: theme.colorScheme.onBackground,
+          color: theme.colorScheme.onSurface,
         ),
       ),
 
@@ -86,7 +84,7 @@ class ComicThemeData {
         textColor: theme.colorScheme.onSecondary,
       ),
       bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: theme.colorScheme.background,
+        backgroundColor: theme.colorScheme.surface,
         shape: const Border(
           top: BorderSide(
             width: borderThickness,
@@ -100,8 +98,8 @@ class ComicThemeData {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          elevation: MaterialStateProperty.all(0),
-          shape: MaterialStateProperty.all(
+          elevation: WidgetStateProperty.all(0),
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
               side: BorderSide(
@@ -113,7 +111,7 @@ class ComicThemeData {
         ),
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: theme.colorScheme.background,
+        backgroundColor: theme.colorScheme.surface,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
@@ -137,9 +135,9 @@ class ComicThemeData {
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: ButtonStyle(
-          elevation: MaterialStateProperty.all(0),
+          elevation: WidgetStateProperty.all(0),
           // NOTE: Shape is not working here.
-          side: MaterialStatePropertyAll(
+          side: WidgetStatePropertyAll(
             BorderSide(
               color: theme.colorScheme.outline,
               width: borderThickness,
@@ -163,15 +161,15 @@ class ComicThemeData {
           border: Border(
             bottom: BorderSide(
               width: borderThickness * 3,
-              color: theme.colorScheme.onBackground,
+              color: theme.colorScheme.onSurface,
             ),
           ),
         ),
-        dividerColor: theme.colorScheme.onBackground,
+        dividerColor: theme.colorScheme.onSurface,
         dividerHeight: borderThickness * 0.8,
-        labelColor: theme.colorScheme.onBackground,
-        unselectedLabelColor: theme.colorScheme.onBackground,
-        overlayColor: MaterialStateProperty.all(
+        labelColor: theme.colorScheme.onSurface,
+        unselectedLabelColor: theme.colorScheme.onSurface,
+        overlayColor: WidgetStateProperty.all(
           theme.colorScheme.secondary.withAlpha(40),
         ),
       ),
@@ -179,25 +177,25 @@ class ComicThemeData {
       navigationBarTheme: theme.navigationBarTheme.copyWith(
         surfaceTintColor: Colors.transparent,
         backgroundColor: theme.navigationBarTheme.backgroundColor,
-        labelTextStyle: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.w800,
-              color: Theme.of(context).colorScheme.onBackground,
+              color: Theme.of(context).colorScheme.onSurface,
             );
           }
           return TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w300,
-            color: Theme.of(context).colorScheme.onBackground,
+            color: Theme.of(context).colorScheme.onSurface,
           );
         }),
-        indicatorColor: Theme.of(context).colorScheme.background,
+        indicatorColor: Theme.of(context).colorScheme.surface,
         indicatorShape: RoundedRectangleBorder(
           side: BorderSide(
             width: borderThickness,
-            color: Theme.of(context).colorScheme.onBackground,
+            color: Theme.of(context).colorScheme.onSurface,
           ),
           borderRadius: BorderRadius.circular(24),
         ),
@@ -206,6 +204,20 @@ class ComicThemeData {
       progressIndicatorTheme: ProgressIndicatorThemeData(
         linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
         color: theme.colorScheme.secondary,
+      ),
+      snackBarTheme: SnackBarThemeData(
+        elevation: 0,
+        backgroundColor: theme.colorScheme.surface,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+          side: const BorderSide(
+            width: borderThickness,
+          ),
+        ),
+        actionTextColor: theme.colorScheme.primary,
+        contentTextStyle: TextStyle(
+          color: theme.colorScheme.onSurface,
+        ),
       ),
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: SegmentedButton.styleFrom(

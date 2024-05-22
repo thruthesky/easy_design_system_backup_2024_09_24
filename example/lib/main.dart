@@ -8,8 +8,12 @@ import 'package:example/screens/list_tile/list_tile.screen.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
+import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
+import 'package:example/screens/snackbar/comic.snackbar.screen.dart';
+import 'package:example/screens/snackbar/snackbars.screen.dart';
+import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -52,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           ElevatedButton(
               onPressed: () {}, child: const Text("light & dark mode")),
-          ElevatedButton(onPressed: () {}, child: const Text("TextField")),
+          pushScreen('TextFields', const TextFieldScreen()),
           pushScreen('Buttons', const ButtonsScreen()),
           //
           ElevatedButton(onPressed: () {}, child: const Text("TextFormField")),
@@ -61,9 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('IconButton', const IconButtonScreen()),
           pushScreen('Segmented Button', const SegmentedButtonScreen()),
           pushScreen('Badge', const BadgeScreen()),
-          ElevatedButton(
-              onPressed: () {}, child: const Text("LinearProgressIndicator")),
-          ElevatedButton(onPressed: () {}, child: const Text("SnackBar")),
+          pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
+          pushScreen('SnackBar', const SnackBarScreen()),
           ElevatedButton(onPressed: () {}, child: const Text("AlertDialog")),
           ElevatedButton(onPressed: () {}, child: const Text("BottomSheet")),
           ElevatedButton(onPressed: () {}, child: const Text("Card")),

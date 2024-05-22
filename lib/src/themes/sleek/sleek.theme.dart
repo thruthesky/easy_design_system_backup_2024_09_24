@@ -12,7 +12,6 @@ class SleekThemeData {
   ///
   /// [of] is a method that returns a [ThemeData] object with the color scheme
   static ThemeData of(BuildContext context) {
-    
     final theme = Theme.of(context);
     return ThemeData(
       badgeTheme: BadgeThemeData(
@@ -23,13 +22,12 @@ class SleekThemeData {
       colorScheme: Theme.of(context).colorScheme,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          elevation: MaterialStateProperty.all(0),
-          foregroundColor:
-              MaterialStateProperty.all(theme.colorScheme.onSurface),
-          backgroundColor: MaterialStateProperty.all(
+          elevation: WidgetStateProperty.all(0),
+          foregroundColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor: WidgetStateProperty.all(
             theme.colorScheme.primaryContainer,
           ),
-          shape: MaterialStateProperty.all(
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
             ),
@@ -47,12 +45,12 @@ class SleekThemeData {
       ),
       iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
-          elevation: MaterialStateProperty.all(0),
-          foregroundColor: MaterialStateProperty.all(theme.colorScheme.primary),
-          backgroundColor: MaterialStateProperty.all(
+          elevation: WidgetStateProperty.all(0),
+          foregroundColor: WidgetStateProperty.all(theme.colorScheme.primary),
+          backgroundColor: WidgetStateProperty.all(
             theme.colorScheme.primaryContainer,
           ),
-          shape: MaterialStateProperty.all(
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
             ),
@@ -92,17 +90,27 @@ class SleekThemeData {
       ),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          foregroundColor:
-              MaterialStateProperty.all(theme.colorScheme.onSurface),
-          backgroundColor: MaterialStateProperty.all(
+          foregroundColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor: WidgetStateProperty.all(
             theme.colorScheme.primaryContainer,
           ),
-          shape: MaterialStateProperty.all(
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
             ),
           ),
         ),
+      ),
+      snackBarTheme: SnackBarThemeData(
+        elevation: 0,
+        backgroundColor: theme.colorScheme.primaryContainer,
+        contentTextStyle: TextStyle(
+          color: theme.colorScheme.onPrimaryContainer,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        actionTextColor: theme.colorScheme.primary,
       ),
     );
   }
