@@ -20,7 +20,10 @@ Social Design System (SDS) is an Elegant UI/UX library crafted specifically for 
 | Settings ![Settings](https://thruthesky.github.io/social_design_system/images/settings.jpg) |  | x |
 | TextField ![TextField Comic Theme](https://thruthesky.github.io/social_design_system/images/comic.text_field.jpg) | | x |
 | IconButton ![IconButton Comic Theme](https://thruthesky.github.io/social_design_system/images/comic.icon_button.jpg) | IconButton ![IconButton Comic Theme](https://thruthesky.github.io/social_design_system/images/sleek.icon_button.jpg) | x |
-|WaveCarouseEntry ![WaveCarouseEntry](https://thruthesky.github.io/social_design_system/images/wave_carousel_entry.gif)|BasicCarouseEntry ![BasicCarouseEntry](https://thruthesky.github.io/social_design_system/images/basic_carousel_entry.gif)|RoundCarouseEntry ![RoundCarouseEntry](https://thruthesky.github.io/social_design_system/images/round_carousel_entry.gif)|
+
+| Wave Carousel Entry | Basic Carousel Entry | Round Carousel Entry |
+| -------------------------- | --------------------- | --------------------------- |
+| ![WaveCarouseEntry](https://thruthesky.github.io/social_design_system/images/wave_carousel_entry.gif)| ![BasicCarouseEntry](https://thruthesky.github.io/social_design_system/images/basic_carousel_entry.gif)| ![RoundCarouseEntry](https://thruthesky.github.io/social_design_system/images/round_carousel_entry.gif)|
 
 comic.icon_button.jpg
 
