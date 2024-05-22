@@ -131,23 +131,6 @@ class ComicThemeData {
           ),
         ),
       ),
-      // iconButtonTheme: ComicIconButtonThemeData(
-      //   style: ButtonStyle(
-      //     elevation: MaterialStateProperty.all(0),
-      //     foregroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.onSurface),
-      //     backgroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.background),
-      //     shape: MaterialStateProperty.all(
-      //       RoundedRectangleBorder(
-      //         borderRadius: BorderRadius.circular(24),
-      //         side: const BorderSide(
-      //           width: borderThickness,
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(0),
@@ -233,25 +216,11 @@ class ComicThemeData {
           ),
           elevation: 0,
         ),
-        // style: ButtonStyle(
-        //   side: MaterialStateProperty.all(
-        //     BorderSide(
-        //       width: borderThickness,
-        //       color: theme.colorScheme.secondary,
-        //     ),
-        //   ),
-        //   elevation: MaterialStateProperty.all(0),
-        //   foregroundColor:
-        //       MaterialStateProperty.all(theme.colorScheme.onSurface),
-        //   shape: MaterialStateProperty.all(
-        //     RoundedRectangleBorder(
-        //       borderRadius: BorderRadius.circular(24),
-        //     ),
-        //   ),
-        // ),
       ),
     );
   }
+
+  static ComicTextButtonThemeData get textButton => ComicTextButtonThemeData();
 }
 
 /// ComicTheme
