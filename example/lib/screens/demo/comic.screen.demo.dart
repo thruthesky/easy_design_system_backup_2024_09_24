@@ -34,7 +34,7 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
           bottom: TabBar(
             controller: _tabController,
             tabs: const [
-              Tab(text: 'First'),
+              Tab(text: 'Widgets'),
               Tab(text: 'Theme'),
               Tab(text: 'Color Scheme'),
             ],
@@ -43,7 +43,7 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
         body: TabBarView(
           controller: _tabController,
           children: [
-            Center(
+            SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -167,7 +167,7 @@ class ComicBottomSheetDemo extends StatelessWidget {
       onPressed: () => showBottomSheet(
         context: context,
         builder: (context) => Theme(
-          data: ComicThemeData.of(context),
+          data: ComicTheme.of(context),
           child: BottomSheet(
             onClosing: () {},
             builder: (context) => SizedBox(
