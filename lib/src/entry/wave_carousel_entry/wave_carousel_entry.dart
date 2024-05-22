@@ -139,6 +139,7 @@ class _WaveCarouselEntryState extends State<WaveCarouselEntry> {
           children: [
             Positioned.fill(
               child: Container(
+                // TODO update depricated colors (background -> surface)
                 color: Theme.of(context).colorScheme.background,
               ),
             ),
