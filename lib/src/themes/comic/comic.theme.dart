@@ -62,17 +62,17 @@ class ComicThemeData {
   static ThemeData of(BuildContext context) {
     final theme = Theme.of(context);
     return ThemeData(
-      appBarTheme: AppBarTheme(
-        iconTheme: theme.iconTheme.copyWith(
-          color: theme.colorScheme.onSurface,
-        ),
-        actionsIconTheme: theme.iconTheme.copyWith(
-          color: theme.colorScheme.onSurface,
-        ),
-        titleTextStyle: theme.textTheme.headlineMedium?.copyWith(
-          color: theme.colorScheme.onSurface,
-        ),
-      ),
+      // appBarTheme: AppBarTheme(
+      //   iconTheme: theme.iconTheme.copyWith(
+      //     color: theme.colorScheme.onSurface,
+      //   ),
+      //   actionsIconTheme: theme.iconTheme.copyWith(
+      //     color: theme.colorScheme.onSurface,
+      //   ),
+      //   titleTextStyle: theme.textTheme.headlineMedium?.copyWith(
+      //     color: theme.colorScheme.onSurface,
+      //   ),
+      // ),
 
       // actionIconTheme: ActionIconThemeData(
       //   backButtonIconBuilder: (context) =>
@@ -89,7 +89,7 @@ class ComicThemeData {
           ),
         ),
       ),
-      colorScheme: Theme.of(context).colorScheme,
+      colorScheme: theme.colorScheme,
       dividerTheme: theme.dividerTheme.copyWith(
         // TODO check the default color
         color: theme.colorScheme.outline,
