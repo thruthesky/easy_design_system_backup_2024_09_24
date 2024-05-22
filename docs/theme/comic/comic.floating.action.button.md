@@ -12,7 +12,7 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>{
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: ComicThemeData.of(context),
+      data: ComicTheme.of(context),
       child: Scaffold(
         appBar: //your app bar here
         body: // your app body here

@@ -4,9 +4,6 @@
 
 - The speed of the each move is set by the starting point of the `duration`. Meaning, the speed of the current position to next position is depends on the `duration` of the current position. So, the last `duration` is ignored.
 
-
-
-
 ```dart
 import 'package:flutter/material.dart';
 import 'package:social_kit/social_kit.dart';
@@ -70,4 +67,3 @@ class _SleepWalkerScreenState extends State<SleepWalkerScreen> {
 ```
 
 - Use case; You may add a background that moves in a screen. Add a child widget that has some blurred shapes and rotatation.
-

@@ -35,5 +35,3 @@ Settings(label: 'Settings', children: [
   ),
 ]),
 ```
-
-

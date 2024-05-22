@@ -22,7 +22,7 @@ class _BadgeScreenState extends State<BadgeScreen> {
           children: [
             const Text('Comic Theme'),
             Theme(
-              data: ComicThemeData.of(context),
+              data: ComicTheme.of(context),
               child: const Badge(
                 label: Text('5'),
               ),

@@ -1,7 +1,6 @@
 {
-	"prettier.useTabs": true,
-	"markdownlint.config": {
-		"default": true,
-		"MD007": { "indent": 2 }
-	}
+	
+	"editor.codeActionsOnSave": {
+		"source.fixAll.markdownlint": "always"
+	},
 }

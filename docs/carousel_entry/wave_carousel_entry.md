@@ -158,126 +158,193 @@ class _EntryScreenState extends State<EntryScreen> {
 ```
 
 
+- Below is a background widget that you can use it with CarouselEntries. The `EntryBackground` widget uses SleepWalker to make animated background.
+
+
+```dart
+WaveCarouselEntry(
+  backgroundWidget: EntryBackground(),
+)
+```
+
 ```dart
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:social_design_system/social_design_system.dart';
 
 class EntryBackground extends StatelessWidget {
   const EntryBackground({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 196,
-      height: 196,
-      child: Stack(
-        children: [
-          // Center, Red
-          Positioned(
-            top: 80,
-            left: 50,
-            child: Transform(
-              alignment: Alignment.topRight,
-              transform: Matrix4.rotationZ(pi / 12), // rotateZ(-pi / 12.0),
-              child: Container(
-                width: 99.88,
-                height: 99.88,
-                decoration: ShapeDecoration(
-                  color: Colors.red.withAlpha(1),
-                  shape: const StarBorder.polygon(
-                    sides: 3,
-                    pointRounding: 0.5,
-                  ),
-                  shadows: [
-                    BoxShadow(
-                      color: Colors.red.shade900.withAlpha(71),
-                      blurRadius: 384.4,
-                      spreadRadius: 0.1,
+    return SleepWalker(
+      alignments: const [
+        (
+          alignment: Alignment.centerLeft,
+          duration: Duration(milliseconds: 2000),
+        ),
+        (
+          alignment: Alignment(-.1, .35),
+          duration: Duration(milliseconds: 2000),
+        ),
+        (
+          alignment: Alignment(0, .39),
+          duration: Duration(milliseconds: 2000),
+        ),
+        (
+          alignment: Alignment(0.9, .2),
+          duration: Duration(milliseconds: 1500),
+        ),
+        (
+          alignment: Alignment(1, .3),
+          duration: Duration(milliseconds: 1500),
+        ),
+        (
+          alignment: Alignment(.8, .6),
+          duration: Duration(milliseconds: 1400),
+        ),
+        (
+          alignment: Alignment(.0, .85),
+          duration: Duration(milliseconds: 1400),
+        ),
+        (
+          alignment: Alignment(-.8, .5),
+          duration: Duration(milliseconds: 1300),
+        ),
+        (
+          alignment: Alignment(.7, .2),
+          duration: Duration(milliseconds: 1200),
+        ),
+        (
+          alignment: Alignment(.8, .1),
+          duration: Duration(milliseconds: 1200),
+        ),
+        (
+          alignment: Alignment(.7, .15),
+          duration: Duration(milliseconds: 1200),
+        ),
+        (
+          alignment: Alignment(-.1, .25),
+          duration: Duration(milliseconds: 1200),
+        ),
+        (
+          alignment: Alignment.centerLeft,
+          duration: Duration(seconds: 1),
+        ),
+      ],
+      repeat: true,
+      child: SizedBox(
+        width: 196,
+        height: 196,
+        child: Stack(
+          children: [
+            // Center, Red
+            Positioned(
+              top: 80,
+              left: 50,
+              child: Transform(
+                alignment: Alignment.topRight,
+                transform: Matrix4.rotationZ(pi / 12), // rotateZ(-pi / 12.0),
+                child: Container(
+                  width: 99.88,
+                  height: 99.88,
+                  decoration: ShapeDecoration(
+                    color: Colors.red.withAlpha(1),
+                    shape: const StarBorder.polygon(
+                      sides: 3,
+                      pointRounding: 0.5,
                     ),
-                  ],
-                ),
-              ).animate().fade().scale().rotate().then().rotate(
-                    delay: .4.seconds,
-                    duration: 2300.seconds,
-                    begin: 100,
-                    end: 0,
+                    shadows: [
+                      BoxShadow(
+                        color: Colors.red.shade900.withAlpha(71),
+                        blurRadius: 384.4,
+                        spreadRadius: 0.1,
+                      ),
+                    ],
                   ),
-            ),
-          ),
-          //Top, Orange
-          Positioned(
-            top: 0,
-            left: 30,
-            child: Transform(
-              alignment: Alignment.topRight,
-              transform: Matrix4.rotationZ(-pi / 7), // rotateZ(-pi / 12.0),
-              child: Container(
-                width: 99.88,
-                height: 99.88,
-                decoration: ShapeDecoration(
-                  color: Colors.orange.withAlpha(1),
-                  shape: const StarBorder.polygon(
-                    sides: 3,
-                    pointRounding: 0.5,
-                  ),
-                  shadows: [
-                    BoxShadow(
-                      color: Colors.orange.shade900.withAlpha(71),
-                      blurRadius: 384.4,
-                      spreadRadius: 0.1,
+                ).animate().fade().scale().rotate().then().rotate(
+                      delay: .4.seconds,
+                      duration: 2300.seconds,
+                      begin: 100,
+                      end: 0,
                     ),
-                  ],
-                ),
-              ).animate().fade().scale().rotate().then().rotate(
-                    delay: .4.seconds,
-                    duration: 6000.seconds,
-                    begin: 0,
-                    end: 100,
-                  ),
+              ),
             ),
-          ),
+            //Top, Orange
+            Positioned(
+              top: 0,
+              left: 30,
+              child: Transform(
+                alignment: Alignment.topRight,
+                transform: Matrix4.rotationZ(-pi / 7), // rotateZ(-pi / 12.0),
+                child: Container(
+                  width: 99.88,
+                  height: 99.88,
+                  decoration: ShapeDecoration(
+                    color: Colors.orange.withAlpha(1),
+                    shape: const StarBorder.polygon(
+                      sides: 3,
+                      pointRounding: 0.5,
+                    ),
+                    shadows: [
+                      BoxShadow(
+                        color: Colors.orange.shade900.withAlpha(71),
+                        blurRadius: 384.4,
+                        spreadRadius: 0.1,
+                      ),
+                    ],
+                  ),
+                ).animate().fade().scale().rotate().then().rotate(
+                      delay: .4.seconds,
+                      duration: 6000.seconds,
+                      begin: 0,
+                      end: 100,
+                    ),
+              ),
+            ),
 
-          /// Bottom, Blue
-          Positioned(
-            top: 90,
-            left: 50,
-            child: Transform(
-              alignment: Alignment.topRight,
-              transform: Matrix4.rotationZ(-pi / 5), // rotateZ(-pi / 12.0),
-              child: Container(
-                width: 99.88,
-                height: 99.88,
-                decoration: ShapeDecoration(
-                  color: Colors.blue.withAlpha(1),
-                  shape: const StarBorder.polygon(
-                    sides: 3,
-                    pointRounding: .9,
-                  ),
-                  shadows: [
-                    BoxShadow(
-                      color: Colors.blue.shade900.withAlpha(71),
-                      blurRadius: 384.4,
-                      spreadRadius: 12,
+            /// Bottom, Blue
+            Positioned(
+              top: 90,
+              left: 50,
+              child: Transform(
+                alignment: Alignment.topRight,
+                transform: Matrix4.rotationZ(-pi / 5), // rotateZ(-pi / 12.0),
+                child: Container(
+                  width: 99.88,
+                  height: 99.88,
+                  decoration: ShapeDecoration(
+                    color: Colors.blue.withAlpha(1),
+                    shape: const StarBorder.polygon(
+                      sides: 3,
+                      pointRounding: .9,
                     ),
-                  ],
-                ),
-              ).animate().fade().scale().rotate().then().rotate(
-                    delay: .4.seconds,
-                    duration: 1900.seconds,
-                    begin: 0,
-                    end: 100,
+                    shadows: [
+                      BoxShadow(
+                        color: Colors.blue.shade900.withAlpha(71),
+                        blurRadius: 384.4,
+                        spreadRadius: 12,
+                      ),
+                    ],
                   ),
+                ).animate().fade().scale().rotate().then().rotate(
+                      delay: .4.seconds,
+                      duration: 1900.seconds,
+                      begin: 0,
+                      end: 100,
+                    ),
+              ),
             ),
-          ),
-        ],
-      ).animate().rotate().scale().then().rotate(
-            delay: .4.seconds,
-            duration: 1900.seconds,
-            begin: 100,
-            end: 0,
-          ),
+          ],
+        ).animate().rotate().scale().then().rotate(
+              delay: .4.seconds,
+              duration: 1900.seconds,
+              begin: 100,
+              end: 0,
+            ),
+      ),
     );
   }
 }

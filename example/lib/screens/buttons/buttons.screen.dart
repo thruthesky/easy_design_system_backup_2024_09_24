@@ -25,7 +25,7 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
               spacing: 8,
               children: [
                 Theme(
-                  data: ComicThemeData.of(context),
+                  data: ComicTheme.of(context),
                   child: ElevatedButton(
                     onPressed: () {
                       debugPrint('Pressed');
@@ -49,6 +49,15 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
               children: [
                 Theme(
                   data: ComicTextButtonThemeData.of(context),
+                  child: TextButton(
+                    onPressed: () {
+                      debugPrint('Pressed');
+                    },
+                    child: const Text('Comic Theme'),
+                  ),
+                ),
+                Theme(
+                  data: ComicThemeData.of(context),
                   child: TextButton(
                     onPressed: () {
                       debugPrint('Pressed');
@@ -96,7 +105,7 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
               spacing: 8,
               children: [
                 Theme(
-                  data: ComicThemeData.of(context),
+                  data: ComicTheme.of(context),
                   child: OutlinedButton(
                     onPressed: () {
                       debugPrint('Pressed');
@@ -120,36 +129,39 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
               children: [
                 Theme(
                   data: ComicIconButtonThemeData.of(context),
-                  child: IconButton(
-                    onPressed: () {
-                      debugPrint('Pressed');
-                    },
-                    icon: const Icon(Icons.favorite),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          debugPrint('Pressed');
+                        },
+                        icon: const Icon(Icons.favorite),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          debugPrint('Pressed');
+                        },
+                        icon: const Icon(Icons.add),
+                      ),
+                    ],
                   ),
                 ),
                 SleekTheme(
-                  child: IconButton(
-                    onPressed: () {
-                      debugPrint('Pressed');
-                    },
-                    icon: const Icon(Icons.favorite),
-                  ),
-                ),
-                Theme(
-                  data: ComicIconButtonThemeData.of(context),
-                  child: IconButton(
-                    onPressed: () {
-                      debugPrint('Pressed');
-                    },
-                    icon: const Text('Comic Theme'),
-                  ),
-                ),
-                SleekTheme(
-                  child: IconButton(
-                    onPressed: () {
-                      debugPrint('Pressed');
-                    },
-                    icon: const Text('Sleek Theme'),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          debugPrint('Pressed');
+                        },
+                        icon: const Icon(Icons.favorite),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          debugPrint('Pressed');
+                        },
+                        icon: const Icon(Icons.add),
+                      ),
+                    ],
                   ),
                 ),
               ],
