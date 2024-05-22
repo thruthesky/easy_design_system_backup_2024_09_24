@@ -1,7 +1,8 @@
 import 'package:example/screens/badge/badge.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
-import 'package:example/screens/comic/comic.screen.demo.dart';
+import 'package:example/screens/demo/comic.screen.demo.dart';
+import 'package:example/screens/demo/sleek.screen.demo.dart';
 import 'package:example/screens/floating_action_button/floating_action_button.screen.dart';
 import 'package:example/screens/icon_buttons/icon_buttons.screen.dart';
 import 'package:example/screens/list_tile/list_tile.screen.dart';
@@ -84,7 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Wave Carousel Entry', const WaveCarouselEntryScreen()),
           pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
           pushScreen('Color scheme', const ColorSchemeScreen()),
-          pushScreen('Comic Theme Demo', const ComicScreenDemo())
+          pushScreen('Comic Theme Demo', const ComicScreenDemo()),
+          pushScreen('Sleek Theme Demo', const SleekScreenDemo())
         ],
       ),
     );

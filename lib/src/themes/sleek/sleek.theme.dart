@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// SleekThemeData
 ///
-/// [SleekThemeData] is a class that holds the color scheme for the Comic theme.
+/// [SleekThemeData] is a class that holds the color scheme for the Sleek theme.
 class SleekThemeData {
   SleekThemeData({required this.colorScheme});
 
@@ -12,7 +12,6 @@ class SleekThemeData {
   ///
   /// [of] is a method that returns a [ThemeData] object with the color scheme
   static ThemeData of(BuildContext context) {
-    
     final theme = Theme.of(context);
     return ThemeData(
       badgeTheme: BadgeThemeData(
