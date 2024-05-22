@@ -255,10 +255,18 @@ class ComicTheme extends StatelessWidget {
     return ComicThemeData.of(context);
   }
 
-  // Example
+  // TODO
   /// For testing only
   /// Assuming these are the colors good for comic
   /// To be confirmed
+  /// The code to use will become like
+  /// ```dart
+  /// Theme(
+  ///   data: ComicTheme.of(context).copyWith(
+  ///     colorScheme: ComicTheme.colorScheme
+  ///   )
+  /// )
+  /// ```
   static ColorScheme colorScheme =
       ColorScheme.fromSeed(seedColor: Colors.black);
 
