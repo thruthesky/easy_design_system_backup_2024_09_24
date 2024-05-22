@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 /// SleekThemeData
 ///
-/// [SleekThemeData] is a class that holds the color scheme for the Comic theme.
+/// [SleekThemeData] is a class that holds the color scheme for the Sleek theme.
 class SleekThemeData {
-  SleekThemeData({required this.colorScheme});
+  SleekThemeData();
 
-  final ColorScheme colorScheme;
+  // final ColorScheme colorScheme;
 
   /// of
   ///
@@ -100,6 +100,17 @@ class SleekThemeData {
             ),
           ),
         ),
+      ),
+      snackBarTheme: SnackBarThemeData(
+        elevation: 0,
+        backgroundColor: theme.colorScheme.primaryContainer,
+        contentTextStyle: TextStyle(
+          color: theme.colorScheme.onPrimaryContainer,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        actionTextColor: theme.colorScheme.primary,
       ),
     );
   }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
-class SegmentedButtons extends StatefulWidget {
-  const SegmentedButtons({super.key});
+class SegmentedButtonScreen extends StatefulWidget {
+  const SegmentedButtonScreen({super.key});
 
   @override
-  State<SegmentedButtons> createState() => _SegmentedButtonsState();
+  State<SegmentedButtonScreen> createState() => _SegmentedButtonState();
 }
 
-class _SegmentedButtonsState extends State<SegmentedButtons> {
+class _SegmentedButtonState extends State<SegmentedButtonScreen> {
   Set<String> _selected = {'value1'};
   Set<String> _selected1 = {'value1'};
 
@@ -26,11 +26,12 @@ class _SegmentedButtonsState extends State<SegmentedButtons> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text('Segmented Button'),
-        const SizedBox(height: 16),
-        Wrap(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Segmented Button'),
+      ),
+      body: Center(
+        child: Wrap(
           alignment: WrapAlignment.center,
           spacing: 16,
           runSpacing: 16,
@@ -71,7 +72,7 @@ class _SegmentedButtonsState extends State<SegmentedButtons> {
             ),
           ],
         ),
-      ],
+      ),
     );
   }
 }

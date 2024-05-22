@@ -1,11 +1,19 @@
 import 'package:example/screens/badge/badge.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
+import 'package:example/screens/demo/comic.screen.demo.dart';
+import 'package:example/screens/demo/sleek.screen.demo.dart';
+import 'package:example/screens/floating_action_button/floating_action_button.screen.dart';
+import 'package:example/screens/icon_buttons/icon_buttons.screen.dart';
 import 'package:example/screens/list_tile/list_tile.screen.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
+import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
+import 'package:example/screens/segmented_button/segmented_button.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
+import 'package:example/screens/snackbar/comic.snackbar.screen.dart';
+import 'package:example/screens/snackbar/snackbars.screen.dart';
 import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:flutter/material.dart';
 
@@ -49,19 +57,17 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           ElevatedButton(
               onPressed: () {}, child: const Text("light & dark mode")),
-          pushScreen('TextField', const TextFieldScreen()),
+          pushScreen('TextFields', const TextFieldScreen()),
           pushScreen('Buttons', const ButtonsScreen()),
           //
           ElevatedButton(onPressed: () {}, child: const Text("TextFormField")),
-          ElevatedButton(
-              onPressed: () {}, child: const Text("Floating Action button")),
-          ElevatedButton(onPressed: () {}, child: const Text("IconButton")),
-          ElevatedButton(
-              onPressed: () {}, child: const Text("segmentedbutton")),
+          pushScreen(
+              'Floating Action Button', const FloatingActionButtonScreen()),
+          pushScreen('IconButton', const IconButtonScreen()),
+          pushScreen('Segmented Button', const SegmentedButtonScreen()),
           pushScreen('Badge', const BadgeScreen()),
-          ElevatedButton(
-              onPressed: () {}, child: const Text("LinearProgressIndicator")),
-          ElevatedButton(onPressed: () {}, child: const Text("SnackBar")),
+          pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
+          pushScreen('SnackBar', const SnackBarScreen()),
           ElevatedButton(onPressed: () {}, child: const Text("AlertDialog")),
           ElevatedButton(onPressed: () {}, child: const Text("BottomSheet")),
           ElevatedButton(onPressed: () {}, child: const Text("Card")),
@@ -82,6 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Wave Carousel Entry', const WaveCarouselEntryScreen()),
           pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
           pushScreen('Color scheme', const ColorSchemeScreen()),
+          pushScreen('Comic Theme Demo', const ComicScreenDemo()),
+          pushScreen('Sleek Theme Demo', const SleekScreenDemo())
         ],
       ),
     );
