@@ -134,7 +134,7 @@ class _BasicCarouselEntryState extends State<BasicCarouselEntry> {
           children: [
             Positioned.fill(
               child: Container(
-                color: Theme.of(context).colorScheme.background,
+                color: Theme.of(context).colorScheme.surface,
               ),
             ),
 

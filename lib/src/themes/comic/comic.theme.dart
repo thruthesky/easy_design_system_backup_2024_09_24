@@ -10,7 +10,7 @@ class ComicIconButtonThemeData {
     return ThemeData(
       iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
-          shape: MaterialStateProperty.all(
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
               side: BorderSide(
@@ -33,11 +33,9 @@ class ComicTextButtonThemeData {
     return ThemeData(
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          foregroundColor:
-              MaterialStateProperty.all(theme.colorScheme.onSurface),
-          backgroundColor:
-              MaterialStateProperty.all(theme.colorScheme.background),
-          shape: MaterialStateProperty.all(
+          foregroundColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor: WidgetStateProperty.all(theme.colorScheme.surface),
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
               side: BorderSide(
@@ -66,13 +64,13 @@ class ComicThemeData {
     return ThemeData(
       appBarTheme: AppBarTheme(
         iconTheme: theme.iconTheme.copyWith(
-          color: theme.colorScheme.onBackground,
+          color: theme.colorScheme.onSurface,
         ),
         actionsIconTheme: theme.iconTheme.copyWith(
-          color: theme.colorScheme.onBackground,
+          color: theme.colorScheme.onSurface,
         ),
         titleTextStyle: theme.textTheme.headlineMedium?.copyWith(
-          color: theme.colorScheme.onBackground,
+          color: theme.colorScheme.onSurface,
         ),
       ),
 
@@ -86,10 +84,10 @@ class ComicThemeData {
       // textButtonTheme: TextButtonThemeData(
       //   style: ButtonStyle(
       //     foregroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.onSurface),
+      //         WidgetStateProperty.all(theme.colorScheme.onSurface),
       //     backgroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.background),
-      //     shape: MaterialStateProperty.all(
+      //         WidgetStateProperty.all(theme.colorScheme.surface),
+      //     shape: WidgetStateProperty.all(
       //       RoundedRectangleBorder(
       //         borderRadius: BorderRadius.circular(24),
       //         side: BorderSide(
@@ -102,9 +100,9 @@ class ComicThemeData {
       // ),
       // textButtonTheme: TextButtonThemeData(
       //   style: ButtonStyle(
-      //     foregroundColor: MaterialStateProperty.all(theme.colorScheme.primary),
+      //     foregroundColor: WidgetStateProperty.all(theme.colorScheme.primary),
       //     backgroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.background),
+      //         WidgetStateProperty.all(theme.colorScheme.surface),
       //     textStyle: MaterialStatePropertyAll(
       //       theme.textTheme.labelLarge?.copyWith(
       //         fontWeight: FontWeight.w700,
@@ -114,17 +112,37 @@ class ComicThemeData {
       // ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          elevation: MaterialStateProperty.all(0),
-          foregroundColor:
-              MaterialStateProperty.all(theme.colorScheme.onSurface),
-          backgroundColor:
-              MaterialStateProperty.all(theme.colorScheme.background),
-          shape: MaterialStateProperty.all(
+          elevation: WidgetStateProperty.all(0),
+          foregroundColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor: WidgetStateProperty.all(theme.colorScheme.surface),
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
               side: BorderSide(
                 color: theme.colorScheme.outline,
                 width: borderThickness,
+              ),
+            ),
+          ),
+        ),
+      ),
+
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: ButtonStyle(
+          elevation: WidgetStateProperty.all(0),
+          foregroundColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
+          backgroundColor: WidgetStateProperty.all(theme.colorScheme.surface),
+          side: WidgetStateProperty.all(
+            BorderSide(
+              color: theme.colorScheme.outline,
+              width: borderThickness,
+            ),
+          ),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                color: theme.colorScheme.outline,
               ),
             ),
           ),
@@ -151,40 +169,40 @@ class ComicThemeData {
           border: Border(
             bottom: BorderSide(
               width: borderThickness * 3,
-              color: theme.colorScheme.onBackground,
+              color: theme.colorScheme.onSurface,
             ),
           ),
         ),
-        dividerColor: theme.colorScheme.onBackground,
+        dividerColor: theme.colorScheme.onSurface,
         dividerHeight: borderThickness * 0.8,
-        labelColor: theme.colorScheme.onBackground,
-        unselectedLabelColor: theme.colorScheme.onBackground,
-        overlayColor: MaterialStateProperty.all(
+        labelColor: theme.colorScheme.onSurface,
+        unselectedLabelColor: theme.colorScheme.onSurface,
+        overlayColor: WidgetStateProperty.all(
           theme.colorScheme.secondary.withAlpha(40),
         ),
       ),
       navigationBarTheme: theme.navigationBarTheme.copyWith(
         surfaceTintColor: Colors.transparent,
         backgroundColor: theme.navigationBarTheme.backgroundColor,
-        labelTextStyle: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.w800,
-              color: Theme.of(context).colorScheme.onBackground,
+              color: Theme.of(context).colorScheme.onSurface,
             );
           }
           return TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w300,
-            color: Theme.of(context).colorScheme.onBackground,
+            color: Theme.of(context).colorScheme.onSurface,
           );
         }),
-        indicatorColor: Theme.of(context).colorScheme.background,
+        indicatorColor: Theme.of(context).colorScheme.surface,
         indicatorShape: RoundedRectangleBorder(
           side: BorderSide(
             width: borderThickness,
-            color: Theme.of(context).colorScheme.onBackground,
+            color: Theme.of(context).colorScheme.onSurface,
           ),
           borderRadius: BorderRadius.circular(24),
         ),
@@ -192,24 +210,31 @@ class ComicThemeData {
       ),
       inputDecorationTheme: theme.inputDecorationTheme.copyWith(
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(15.15),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(15.15),
           borderSide: BorderSide(
-            color: theme.colorScheme.secondary,
+            color: theme.colorScheme.outline,
+            width: borderThickness,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15.15),
+          borderSide: BorderSide(
+            color: theme.colorScheme.outline,
             width: borderThickness,
           ),
         ),
       ),
       // iconButtonTheme: ComicIconButtonThemeData(
       //   style: ButtonStyle(
-      //     elevation: MaterialStateProperty.all(0),
+      //     elevation: WidgetStateProperty.all(0),
       //     foregroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.onSurface),
+      //         WidgetStateProperty.all(theme.colorScheme.onSurface),
       //     backgroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.background),
-      //     shape: MaterialStateProperty.all(
+      //         WidgetStateProperty.all(theme.colorScheme.surface),
+      //     shape: WidgetStateProperty.all(
       //       RoundedRectangleBorder(
       //         borderRadius: BorderRadius.circular(24),
       //         side: const BorderSide(
@@ -230,16 +255,16 @@ class ComicThemeData {
           elevation: 0,
         ),
         // style: ButtonStyle(
-        //   side: MaterialStateProperty.all(
+        //   side: WidgetStateProperty.all(
         //     BorderSide(
         //       width: borderThickness,
         //       color: theme.colorScheme.secondary,
         //     ),
         //   ),
-        //   elevation: MaterialStateProperty.all(0),
+        //   elevation: WidgetStateProperty.all(0),
         //   foregroundColor:
-        //       MaterialStateProperty.all(theme.colorScheme.onSurface),
-        //   shape: MaterialStateProperty.all(
+        //       WidgetStateProperty.all(theme.colorScheme.onSurface),
+        //   shape: WidgetStateProperty.all(
         //     RoundedRectangleBorder(
         //       borderRadius: BorderRadius.circular(24),
         //     ),
@@ -247,7 +272,7 @@ class ComicThemeData {
         // ),
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: theme.colorScheme.background,
+        backgroundColor: theme.colorScheme.surface,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
@@ -266,7 +291,7 @@ class ComicThemeData {
         color: theme.colorScheme.secondary,
       ),
       bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: theme.colorScheme.background,
+        backgroundColor: theme.colorScheme.surface,
         shape: const Border(
           top: BorderSide(
             width: borderThickness,

@@ -20,12 +20,11 @@ class ComicIconButton extends StatelessWidget {
       data: theme.copyWith(
         iconButtonTheme: IconButtonThemeData(
           style: ButtonStyle(
-            elevation: MaterialStateProperty.all(0),
+            elevation: WidgetStateProperty.all(0),
             foregroundColor:
-                MaterialStateProperty.all(theme.colorScheme.onSurface),
-            backgroundColor:
-                MaterialStateProperty.all(theme.colorScheme.background),
-            shape: MaterialStateProperty.all(
+                WidgetStateProperty.all(theme.colorScheme.onSurface),
+            backgroundColor: WidgetStateProperty.all(theme.colorScheme.surface),
+            shape: WidgetStateProperty.all(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18),
                 side: const BorderSide(

@@ -81,7 +81,7 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
             decoration: BoxDecoration(
               border: Border(
                 top: BorderSide(
-                  color: Theme.of(context).colorScheme.onBackground,
+                  color: Theme.of(context).colorScheme.onSurface,
                   width: 1.6,
                 ),
               ),

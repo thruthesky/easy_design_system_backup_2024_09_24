@@ -139,7 +139,7 @@ class _WaveCarouselEntryState extends State<WaveCarouselEntry> {
           children: [
             Positioned.fill(
               child: Container(
-                color: Theme.of(context).colorScheme.background,
+                color: Theme.of(context).colorScheme.surface,
               ),
             ),
             if (widget.backgroundWidget != null) widget.backgroundWidget!,
