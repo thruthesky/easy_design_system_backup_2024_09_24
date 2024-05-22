@@ -5,9 +5,6 @@ const borderThickness = 2.0;
 class ComicIconButtonThemeData {
   ComicIconButtonThemeData();
 
-  static ColorScheme defaultColorScheme =
-      ColorScheme.fromSeed(seedColor: Colors.red);
-
   static ThemeData of(BuildContext context) {
     final theme = Theme.of(context);
     return ThemeData(
@@ -257,6 +254,13 @@ class ComicTheme extends StatelessWidget {
   static ThemeData of(BuildContext context) {
     return ComicThemeData.of(context);
   }
+
+  // Example
+  /// For testing only
+  /// Assuming these are the colors good for comic
+  /// To be confirmed
+  static ColorScheme colorScheme =
+      ColorScheme.fromSeed(seedColor: Colors.black);
 
   @override
   Widget build(BuildContext context) {
