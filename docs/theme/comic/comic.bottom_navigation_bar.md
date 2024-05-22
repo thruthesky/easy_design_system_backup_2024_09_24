@@ -14,26 +14,67 @@ Check this example code.
 Theme(
     data: ComicTheme.of(context),
     child: Scaffold(
-        // ... body
-        bottomNavigationBar: NavigationBarTheme(
-            data: ComicTheme.of(context).navigationBarTheme,
-                child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                        top: BorderSide(
-                            color: Theme.of(context).colorScheme.onBackground,
-                            width: 1.6,
-                        ),
+    // ... body
+    bottomNavigationBar: NavigationBarTheme(
+        data: ComicTheme.of(context).navigationBarTheme,
+            child: NavigationBar(
+                selectedIndex: index,
+                onDestinationSelected: (v) {
+                    setState(() {
+                        index = v;
+                    });
+                },
+                destinations: [
+                    const NavigationDestination(
+                        icon: Icon(Icons.car_rental),
+                        label: '실버스',
+                    ),
+                    const NavigationDestination(
+                        icon: Icon(Icons.person),
+                        label: '모임',
+                    ),
+                    const NavigationDestination(
+                        icon: Icon(Icons.post_add),
+                        label: '게시판',
+                    ),
+                    const NavigationDestination(
+                        icon: Icon(Icons.menu),
+                        label: '메뉴',
+                    ),
+                ],
+            ),
+        ),
+    ),
+)
+```
+
+To add the outline above the navigation bar. Check this example code.
+
+```dart
+Theme(
+    data: ComicTheme.of(context),
+    child: Scaffold(
+    // ... body
+    bottomNavigationBar: NavigationBarTheme(
+        data: ComicTheme.of(context).navigationBarTheme,
+            child: Container(
+                decoration: BoxDecoration(
+                    border: Border(
+                    top: BorderSide(
+                        color: Theme.of(context).colorScheme.onBackground,
+                        width: 1.6,
                     ),
                 ),
-                child: NavigationBar(
-                    selectedIndex: index,
-                    onDestinationSelected: (v) {
-                        setState(() {
-                            index = v;
-                        });
-                    },
-                    destinations: [
+            ),
+            child: NavigationBar(
+                selectedIndex: index,
+                onDestinationSelected: (v) {
+                    setState(() {
+                        index = v;
+                    });
+                },
+                destinations: 
+                    [
                         const NavigationDestination(
                             icon: Icon(Icons.car_rental),
                             label: '실버스',
