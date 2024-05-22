@@ -112,6 +112,10 @@ class SleekThemeData {
         ),
         actionTextColor: theme.colorScheme.primary,
       ),
+      dialogBackgroundColor: theme.colorScheme.primaryContainer,
+      dialogTheme: DialogTheme(
+        iconColor: theme.colorScheme.primary,
+      ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:example/screens/alert_dialog/alert_dialog.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
@@ -67,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Badge', const BadgeScreen()),
           pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
           pushScreen('SnackBar', const SnackBarScreen()),
-          ElevatedButton(onPressed: () {}, child: const Text("AlertDialog")),
+          pushScreen('AlertDialog', const AlertDialogScreen()),
           ElevatedButton(onPressed: () {}, child: const Text("BottomSheet")),
           ElevatedButton(onPressed: () {}, child: const Text("Card")),
           ElevatedButton(onPressed: () {}, child: const Text("Divider")),
