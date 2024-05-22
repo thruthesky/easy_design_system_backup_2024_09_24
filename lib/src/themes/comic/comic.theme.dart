@@ -78,10 +78,9 @@ class ComicThemeData {
       //   backButtonIconBuilder: (context) =>
       //       IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
       // ),
-
       badgeTheme: const BadgeThemeData(),
       bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: theme.colorScheme.surface,
+        // backgroundColor: theme.colorScheme.surface,
         shape: Border(
           top: BorderSide(
             width: borderThickness,
@@ -95,6 +94,7 @@ class ComicThemeData {
         color: theme.colorScheme.outline,
         thickness: borderThickness,
       ),
+
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: WidgetStateProperty.all(0),
@@ -110,7 +110,7 @@ class ComicThemeData {
         ),
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: theme.colorScheme.surface,
+        // backgroundColor: theme.colorScheme.surface,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
@@ -205,7 +205,8 @@ class ComicThemeData {
           ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
-        backgroundColor: theme.colorScheme.surface,
+        // TODO Fix it on the color scheme outside here
+        // backgroundColor: theme.colorScheme.surface,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(
@@ -214,9 +215,10 @@ class ComicThemeData {
           ),
         ),
         actionTextColor: theme.colorScheme.primary,
-        contentTextStyle: TextStyle(
-          color: theme.colorScheme.onSurface,
-        ),
+        // contentTextStyle: TextStyle(
+        // TODO Fix it on the color scheme outside here
+        // color: theme.colorScheme.onSurface,
+        // ),
       ),
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: SegmentedButton.styleFrom(
@@ -265,13 +267,6 @@ class ComicTheme extends StatelessWidget {
   static ThemeData of(BuildContext context) {
     return ComicThemeData.of(context);
   }
-
-  // Example
-  /// For testing only
-  /// Assuming these are the colors good for comic
-  /// To be confirmed
-  static ColorScheme colorScheme =
-      ColorScheme.fromSeed(seedColor: Colors.black);
 
   @override
   Widget build(BuildContext context) {
