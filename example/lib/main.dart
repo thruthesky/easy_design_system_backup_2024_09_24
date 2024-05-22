@@ -1,12 +1,12 @@
 import 'package:example/screens/badge/badge.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
+import 'package:example/screens/comic/comic.screen.demo.dart';
 import 'package:example/screens/list_tile/list_tile.screen.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
-import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           ElevatedButton(
               onPressed: () {}, child: const Text("light & dark mode")),
-          pushScreen('TextField', const TextFieldScreen()),
+          ElevatedButton(onPressed: () {}, child: const Text("TextField")),
           pushScreen('Buttons', const ButtonsScreen()),
           //
           ElevatedButton(onPressed: () {}, child: const Text("TextFormField")),
@@ -82,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Wave Carousel Entry', const WaveCarouselEntryScreen()),
           pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
           pushScreen('Color scheme', const ColorSchemeScreen()),
+          pushScreen('Comic Theme Demo', const ComicScreenDemo())
         ],
       ),
     );

@@ -81,44 +81,26 @@ class ComicThemeData {
       //       IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
       // ),
 
+      badgeTheme: BadgeThemeData(
+        backgroundColor: theme.colorScheme.secondary,
+        textColor: theme.colorScheme.onSecondary,
+      ),
+      bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: theme.colorScheme.background,
+        shape: const Border(
+          top: BorderSide(
+            width: borderThickness,
+          ),
+        ),
+      ),
       colorScheme: Theme.of(context).colorScheme,
-
-      // textButtonTheme: TextButtonThemeData(
-      //   style: ButtonStyle(
-      //     foregroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.onSurface),
-      //     backgroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.background),
-      //     shape: MaterialStateProperty.all(
-      //       RoundedRectangleBorder(
-      //         borderRadius: BorderRadius.circular(24),
-      //         side: BorderSide(
-      //           width: borderThickness,
-      //           color: theme.colorScheme.secondary,
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
-      // textButtonTheme: TextButtonThemeData(
-      //   style: ButtonStyle(
-      //     foregroundColor: MaterialStateProperty.all(theme.colorScheme.primary),
-      //     backgroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.background),
-      //     textStyle: MaterialStatePropertyAll(
-      //       theme.textTheme.labelLarge?.copyWith(
-      //         fontWeight: FontWeight.w700,
-      //       ),
-      //     ),
-      //   ),
-      // ),
+      dividerTheme: theme.dividerTheme.copyWith(
+        color: theme.colorScheme.secondary,
+        thickness: borderThickness,
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(0),
-          foregroundColor:
-              MaterialStateProperty.all(theme.colorScheme.onSurface),
-          backgroundColor:
-              MaterialStateProperty.all(theme.colorScheme.background),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
@@ -130,7 +112,41 @@ class ComicThemeData {
           ),
         ),
       ),
-
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: theme.colorScheme.background,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+          side: const BorderSide(
+            width: borderThickness,
+          ),
+        ),
+        highlightElevation: 0,
+      ),
+      inputDecorationTheme: theme.inputDecorationTheme.copyWith(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(24),
+          borderSide: BorderSide(
+            color: theme.colorScheme.secondary,
+            width: borderThickness,
+          ),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: ButtonStyle(
+          elevation: MaterialStateProperty.all(0),
+          // NOTE: Shape is not working here.
+          side: MaterialStatePropertyAll(
+            BorderSide(
+              color: theme.colorScheme.outline,
+              width: borderThickness,
+            ),
+          ),
+        ),
+      ),
       listTileTheme: theme.listTileTheme.copyWith(
         tileColor: theme.colorScheme.surface,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
@@ -141,10 +157,6 @@ class ComicThemeData {
             width: borderThickness,
           ),
         ),
-      ),
-      dividerTheme: theme.dividerTheme.copyWith(
-        color: theme.colorScheme.secondary,
-        thickness: borderThickness,
       ),
       tabBarTheme: theme.tabBarTheme.copyWith(
         indicator: BoxDecoration(
@@ -191,35 +203,10 @@ class ComicThemeData {
         ),
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
       ),
-      inputDecorationTheme: theme.inputDecorationTheme.copyWith(
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24),
-          borderSide: BorderSide(
-            color: theme.colorScheme.secondary,
-            width: borderThickness,
-          ),
-        ),
+      progressIndicatorTheme: ProgressIndicatorThemeData(
+        linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
+        color: theme.colorScheme.secondary,
       ),
-      // iconButtonTheme: ComicIconButtonThemeData(
-      //   style: ButtonStyle(
-      //     elevation: MaterialStateProperty.all(0),
-      //     foregroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.onSurface),
-      //     backgroundColor:
-      //         MaterialStateProperty.all(theme.colorScheme.background),
-      //     shape: MaterialStateProperty.all(
-      //       RoundedRectangleBorder(
-      //         borderRadius: BorderRadius.circular(24),
-      //         side: const BorderSide(
-      //           width: borderThickness,
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: SegmentedButton.styleFrom(
           selectedBackgroundColor: theme.colorScheme.secondary.withAlpha(80),
@@ -229,33 +216,6 @@ class ComicThemeData {
             width: borderThickness,
           ),
           elevation: 0,
-        ),
-      ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: theme.colorScheme.background,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-          side: const BorderSide(
-            width: borderThickness,
-          ),
-        ),
-        highlightElevation: 0,
-      ),
-      badgeTheme: BadgeThemeData(
-        backgroundColor: theme.colorScheme.secondary,
-        textColor: theme.colorScheme.onSecondary,
-      ),
-      progressIndicatorTheme: ProgressIndicatorThemeData(
-        linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
-        color: theme.colorScheme.secondary,
-      ),
-      bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: theme.colorScheme.background,
-        shape: const Border(
-          top: BorderSide(
-            width: borderThickness,
-          ),
         ),
       ),
     );

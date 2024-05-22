@@ -26,4 +26,3 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>{
   }
 }
 ```
-

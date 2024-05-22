@@ -8,12 +8,9 @@ Comic theme should have
 - rounded border
 - no shadow
 
-
 ## Common Patterns
 
-- `ElevatedButton` has a shadow. But the shadow is removed with comic theme. And this is because the button in comic theme should look like a commic style. So the shadow is removed.
-
-
+- `ElevatedButton` has a shadow but the shadow is removed with comic theme. This is because the button in comic theme should look like a commic style.
 
 ## How to apply
 
@@ -40,7 +37,6 @@ Theme(
         subtitle: Text('Subtitle 3'),
         leading: Icon(Icons.access_time),
         trailing: Icon(Icons.arrow_forward_ios),
-        ),
+    ),
 ),
 ```
-

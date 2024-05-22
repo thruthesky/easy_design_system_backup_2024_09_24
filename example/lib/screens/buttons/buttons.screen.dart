@@ -56,6 +56,15 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
                     child: const Text('Comic Theme'),
                   ),
                 ),
+                Theme(
+                  data: ComicThemeData.of(context),
+                  child: TextButton(
+                    onPressed: () {
+                      debugPrint('Pressed');
+                    },
+                    child: const Text('Comic Theme'),
+                  ),
+                ),
                 SleekTheme(
                   child: TextButton(
                     onPressed: () {
