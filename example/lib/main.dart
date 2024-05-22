@@ -2,10 +2,13 @@ import 'package:example/screens/badge/badge.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
 import 'package:example/screens/comic/comic.screen.demo.dart';
+import 'package:example/screens/floating_action_button/floating_action_button.screen.dart';
+import 'package:example/screens/icon_buttons/icon_buttons.screen.dart';
 import 'package:example/screens/list_tile/list_tile.screen.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
+import 'package:example/screens/segmented_button/segmented_button.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
 import 'package:flutter/material.dart';
 
@@ -53,11 +56,10 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Buttons', const ButtonsScreen()),
           //
           ElevatedButton(onPressed: () {}, child: const Text("TextFormField")),
-          ElevatedButton(
-              onPressed: () {}, child: const Text("Floating Action button")),
-          ElevatedButton(onPressed: () {}, child: const Text("IconButton")),
-          ElevatedButton(
-              onPressed: () {}, child: const Text("segmentedbutton")),
+          pushScreen(
+              'Floating Action Button', const FloatingActionButtonScreen()),
+          pushScreen('IconButton', const IconButtonScreen()),
+          pushScreen('Segmented Button', const SegmentedButtonScreen()),
           pushScreen('Badge', const BadgeScreen()),
           ElevatedButton(
               onPressed: () {}, child: const Text("LinearProgressIndicator")),
