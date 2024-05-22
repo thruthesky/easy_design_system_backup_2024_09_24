@@ -19,7 +19,7 @@ class _ListTileScreenState extends State<ListTileScreen> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Theme(
-          data: ComicThemeData.of(context),
+          data: ComicTheme.of(context),
           child: const Column(
             children: [
               Text('Comic Theme'),

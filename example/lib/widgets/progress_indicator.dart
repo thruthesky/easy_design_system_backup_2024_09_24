@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:social_design_system/social_design_system.dart';
 
 class ProgressIndicators extends StatelessWidget {
@@ -12,7 +10,7 @@ class ProgressIndicators extends StatelessWidget {
       children: [
         Expanded(
           child: Theme(
-            data: ComicThemeData.of(context),
+            data: ComicTheme.of(context),
             child: const Column(
               children: [
                 Text('Comic'),

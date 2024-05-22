@@ -11,7 +11,7 @@ ElevatedButton(
 onPressed: () => showModalBottomSheet(
     context: context,
     builder: (context) => Theme(
-        data: ComicThemeData.of(context),
+        data: ComicTheme.of(context),
         child: BottomSheet(
             onClosing: () {},
             builder: (context) => const SizedBox(
