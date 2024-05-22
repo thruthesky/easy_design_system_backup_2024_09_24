@@ -69,3 +69,31 @@ Theme(
     )
 )
 ```
+
+It is also posible to do something like this way:
+
+```dart
+const colorScheme1 = ColorScheme(
+                        brightness: Brightness.light,
+                        primary: Colors.blue,
+                        onPrimary: Colors.orange,
+                        secondary: Colors.pink,
+                        onSecondary: Colors.red,
+                        error: Colors.purple,
+                        onError: Colors.black,
+                        background: Colors.yellow,
+                        onBackground: Colors.indigo,
+                        surface: Colors.teal,
+                        onSurface: Colors.lime,
+                    );
+// ... some codes
+Theme(
+    data: ComicTheme.of(context).copyWith( colorScheme: colorScheme1 ),
+    child: Scaffold(
+        body: TextButton(
+            child: Text("test"),
+            onPressed: (){},
+        ),
+    )
+)
+```

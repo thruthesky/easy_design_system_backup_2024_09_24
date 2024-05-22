@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 ///
 /// [SleekThemeData] is a class that holds the color scheme for the Sleek theme.
 class SleekThemeData {
-  SleekThemeData({required this.colorScheme});
+  SleekThemeData();
 
-  final ColorScheme colorScheme;
+  // final ColorScheme colorScheme;
 
   /// of
   ///
