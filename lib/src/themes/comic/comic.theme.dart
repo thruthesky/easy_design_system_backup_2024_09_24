@@ -26,7 +26,7 @@ class ComicIconButtonThemeData {
 }
 
 class ComicTextButtonThemeData {
-  ComicTextButtonThemeData();
+  // ComicTextButtonThemeData();
 
   static ThemeData of(BuildContext context) {
     final theme = Theme.of(context);

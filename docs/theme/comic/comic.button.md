@@ -6,6 +6,10 @@
 
 Example of `ComicTextButtonThemeData`
 
+<!-- 
+TODO: We don't actually need to make a separate theming for Text Button because we already have `OutlinedButton`. To be confirmed.
+-->
+
 ```dart
 Theme(
   data: ComicTextButtonThemeData.of(context),
@@ -32,3 +36,33 @@ Theme(
   ),
 ),
 ```
+
+<!-- Or, access `ComicTextButtonThemeData` and `ComicIconButtonThemeData` from `ComicTheme`.
+
+For Icon Button:
+
+```dart
+Theme(
+  data: ComicTheme.iconButton.of(context),
+  child: IconButton(
+    onPressed: () {
+      debugPrint('Pressed');
+    },
+    icon: const Icon(Icons.favorite),
+  ),
+),
+```
+
+For Text Button:
+
+```dart
+Theme(
+  data: ComicTheme.textButton.of(context),
+  child: TextButton(
+    onPressed: () {
+      debugPrint('Pressed');
+    },
+    icon: const Icon(Icons.favorite),
+  ),
+),
+``` -->
