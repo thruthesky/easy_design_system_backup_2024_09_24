@@ -35,8 +35,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Screen'),
       ),
-      body: Container(
-          child: Column(
+      body: Column(
         children: [
           ElevatedButton(onPressed: () {}, child: const Text("Hello, there")),
           ListTile(
@@ -51,7 +50,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ],
-      )),
+      ),
     );
   }
 }
