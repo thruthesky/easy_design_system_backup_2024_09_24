@@ -85,10 +85,10 @@ class ComicThemeData {
       badgeTheme: const BadgeThemeData(),
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: theme.colorScheme.surface,
-        shape: const Border(
+        shape: Border(
           top: BorderSide(
             width: borderThickness,
-            // TODO set color scheme as outline
+            color: theme.colorScheme.outline,
           ),
         ),
       ),
@@ -184,8 +184,6 @@ class ComicThemeData {
             return TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.w800,
-              // TODO review. The original color is coming from navigationBarTheme.backgroundColor
-              // not from colorScheme.background. Check which shall we use.
               color: Theme.of(context).colorScheme.onSurface,
             );
           }
