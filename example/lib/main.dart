@@ -12,7 +12,6 @@ import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
-import 'package:example/screens/snackbar/comic.snackbar.screen.dart';
 import 'package:example/screens/snackbar/snackbars.screen.dart';
 import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:flutter/material.dart';
