@@ -35,8 +35,8 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
             controller: _tabController,
             tabs: const [
               Tab(text: 'First'),
-              Tab(text: 'Second'),
-              Tab(text: 'Third'),
+              Tab(text: 'Theme'),
+              Tab(text: 'Color Scheme'),
             ],
           ),
         ),
@@ -50,9 +50,10 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
                 children: [
                   const Text('First'),
                   const SizedBox(height: 24),
+                  const SizedBox(height: 24),
                   const ComicBottomSheetDemo(),
                   const SizedBox(height: 24),
-                  ElevatedButton(
+                  TextButton(
                     onPressed: () => showModalBottomSheet(
                       context: context,
                       builder: (context) => Theme(
@@ -74,88 +75,76 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
               ),
             ),
             const Center(child: Text('Second')),
-            const Center(child: Text('Third')),
+            const Center(
+              child: Column(
+                children: [
+                  Text('Third'),
+                ],
+              ),
+            ),
           ],
         ),
         bottomNavigationBar: NavigationBarTheme(
           data: ComicTheme.of(context).navigationBarTheme,
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border(
-                top: BorderSide(
-                  color: Theme.of(context).colorScheme.onBackground,
-                  width: 1.6,
-                ),
+          child: NavigationBar(
+            selectedIndex: index,
+            onDestinationSelected: (v) {
+              setState(() {
+                index = v;
+              });
+            },
+            destinations: [
+              const NavigationDestination(
+                icon: Icon(Icons.car_rental),
+                label: 'Car',
               ),
-            ),
-            child: NavigationBar(
-              selectedIndex: index,
-              onDestinationSelected: (v) {
-                setState(() {
-                  index = v;
-                });
-              },
-              destinations: [
-                const NavigationDestination(
-                  icon: Icon(Icons.car_rental),
-                  label: 'Car',
-                ),
-                const NavigationDestination(
-                  icon: Icon(Icons.person),
-                  label: 'You',
-                ),
-                NavigationDestination(
-                  icon: SizedBox(
-                    width: 48,
-                    height: 32,
-                    child: Stack(
-                      children: [
-                        const Align(
-                          alignment: Alignment.center,
-                          child: Icon(Icons.chat_bubble_outline),
-                        ),
-                        Align(
-                          alignment: Alignment.center,
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(16, 0, 0, 12),
-                            child: Container(
-                              width: 16,
-                              height: 16,
-                              decoration: BoxDecoration(
-                                color: Colors.orange.shade900,
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  '5',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(
-                                        fontSize: 10,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                ),
-                              ),
+              const NavigationDestination(
+                icon: Icon(Icons.person),
+                label: 'You',
+              ),
+              NavigationDestination(
+                icon: SizedBox(
+                  width: 48,
+                  height: 32,
+                  child: Stack(
+                    children: [
+                      const Align(
+                        alignment: Alignment.center,
+                        child: Icon(Icons.chat_bubble_outline),
+                      ),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 0, 14),
+                          child: Badge(
+                            label: Text(
+                              '5',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelSmall!
+                                  .copyWith(
+                                    fontSize: 10,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  label: 'Chat',
                 ),
-                const NavigationDestination(
-                  icon: Icon(Icons.post_add),
-                  label: 'Record',
-                ),
-                const NavigationDestination(
-                  icon: Icon(Icons.menu),
-                  label: 'Menu',
-                ),
-              ],
-            ),
+                label: 'Chat',
+              ),
+              const NavigationDestination(
+                icon: Icon(Icons.post_add),
+                label: 'Record',
+              ),
+              const NavigationDestination(
+                icon: Icon(Icons.menu),
+                label: 'Menu',
+              ),
+            ],
           ),
         ),
         floatingActionButton: FloatingActionButton(
@@ -174,7 +163,7 @@ class ComicBottomSheetDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return OutlinedButton(
       onPressed: () => showBottomSheet(
         context: context,
         builder: (context) => Theme(

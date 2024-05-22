@@ -5,6 +5,9 @@ const borderThickness = 2.0;
 class ComicIconButtonThemeData {
   ComicIconButtonThemeData();
 
+  static ColorScheme defaultColorScheme =
+      ColorScheme.fromSeed(seedColor: Colors.red);
+
   static ThemeData of(BuildContext context) {
     final theme = Theme.of(context);
     return ThemeData(
@@ -79,21 +82,20 @@ class ComicThemeData {
       //       IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
       // ),
 
-      badgeTheme: BadgeThemeData(
-        backgroundColor: theme.colorScheme.secondary,
-        textColor: theme.colorScheme.onSecondary,
-      ),
+      badgeTheme: const BadgeThemeData(),
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: theme.colorScheme.surface,
         shape: const Border(
           top: BorderSide(
             width: borderThickness,
+            // TODO set color scheme as outline
           ),
         ),
       ),
       colorScheme: Theme.of(context).colorScheme,
       dividerTheme: theme.dividerTheme.copyWith(
-        color: theme.colorScheme.secondary,
+        // TODO check the default color
+        color: theme.colorScheme.outline,
         thickness: borderThickness,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -176,12 +178,14 @@ class ComicThemeData {
 
       navigationBarTheme: theme.navigationBarTheme.copyWith(
         surfaceTintColor: Colors.transparent,
-        backgroundColor: theme.navigationBarTheme.backgroundColor,
+        // backgroundColor: theme.navigationBarTheme.backgroundColor,
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
             return TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.w800,
+              // TODO review. The original color is coming from navigationBarTheme.backgroundColor
+              // not from colorScheme.background. Check which shall we use.
               color: Theme.of(context).colorScheme.onSurface,
             );
           }
@@ -191,20 +195,20 @@ class ComicThemeData {
             color: Theme.of(context).colorScheme.onSurface,
           );
         }),
-        indicatorColor: Theme.of(context).colorScheme.surface,
+        // indicatorColor: Theme.of(context).colorScheme.background,
         indicatorShape: RoundedRectangleBorder(
           side: BorderSide(
             width: borderThickness,
-            color: Theme.of(context).colorScheme.onSurface,
+            color: Theme.of(context).colorScheme.outline,
           ),
           borderRadius: BorderRadius.circular(24),
         ),
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
       ),
-      progressIndicatorTheme: ProgressIndicatorThemeData(
-        linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
-        color: theme.colorScheme.secondary,
-      ),
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
+          // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
+          // color: theme.colorScheme.secondary,
+          ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
         backgroundColor: theme.colorScheme.surface,
@@ -221,9 +225,9 @@ class ComicThemeData {
       ),
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: SegmentedButton.styleFrom(
-          selectedBackgroundColor: theme.colorScheme.secondary.withAlpha(80),
-          selectedForegroundColor: theme.colorScheme.onSurface,
-          foregroundColor: theme.colorScheme.onSurface,
+          // selectedBackgroundColor: theme.colorScheme.secondary.withAlpha(80),
+          // selectedForegroundColor: theme.colorScheme.onSurface,
+          // foregroundColor: theme.colorScheme.onSurface,
           side: const BorderSide(
             width: borderThickness,
           ),
