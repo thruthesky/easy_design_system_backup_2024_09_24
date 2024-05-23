@@ -22,6 +22,7 @@ class _FloatingActionButtonScreenState
         child: Wrap(
           runSpacing: 8,
           children: [
+            const Text("Comic Theme"),
             Theme(
               data: ComicThemeData.of(context),
               child: Row(
@@ -44,6 +45,8 @@ class _FloatingActionButtonScreenState
                 ],
               ),
             ),
+            const SizedBox(height: 80),
+            const Text("Sleek Theme"),
             SleekTheme(
               child: Row(
                 children: [

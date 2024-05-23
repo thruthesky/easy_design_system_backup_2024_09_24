@@ -61,6 +61,13 @@ class ComicThemeData {
   /// [of] is a method that returns a [ThemeData] object with the color scheme
   static ThemeData of(BuildContext context) {
     final theme = Theme.of(context);
+    // final theme = Theme.of(context).copyWith(
+    //   colorScheme: ColorScheme.fromSeed(
+    //     seedColor: const Color(0xFF6750A4),
+    //     brightness: Brightness.dark,
+    //     error: const Color(0xFFB00020),
+    //   ),
+    // );
     return ThemeData(
       // appBarTheme: AppBarTheme(
       //   iconTheme: theme.iconTheme.copyWith(
@@ -78,7 +85,22 @@ class ComicThemeData {
       //   backButtonIconBuilder: (context) =>
       //       IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
       // ),
-      badgeTheme: const BadgeThemeData(),
+
+      // NOTE: Did not set the badge color because it
+      // should be up to the developer
+      // by default it is set to colorScheme.error
+      // badgeTheme: theme.badgeTheme.copyWith(
+      //   backgroundColor: theme.colorScheme.primary,
+      // ),
+
+      // NOTE: Unable to add borders for comic theme in bottom app bar.
+      // bottomAppBarTheme: theme.bottomAppBarTheme,
+
+      bottomNavigationBarTheme: theme.bottomNavigationBarTheme.copyWith(
+        backgroundColor: Colors.red,
+        elevation: 0,
+      ),
+
       bottomSheetTheme: BottomSheetThemeData(
         // backgroundColor: theme.colorScheme.surface,
         shape: Border(
@@ -162,6 +184,7 @@ class ComicThemeData {
         ),
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
+        // TODO check the default color
         // backgroundColor: theme.colorScheme.surface,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -198,6 +221,12 @@ class ComicThemeData {
           // NOTE: Shape is not working here.
           side: WidgetStatePropertyAll(
             BorderSide(
+              // TODO this might be a wrong way to do it.
+              // because in flutter way, to set the color scheme, we can usually set
+              // it thru copyWith, then set the color scheme.
+              // Here, it is accessing the outline color from the theme variable.
+              // When developer used this like ComicTheme.of(context).copyWith( colorScheme: theme.colorScheme )
+              // theme.colorScheme.
               color: theme.colorScheme.outline,
               width: borderThickness,
             ),
