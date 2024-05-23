@@ -99,6 +99,32 @@ class ComicThemeData {
           borderRadius: BorderRadius.circular(24),
         ),
       ),
+
+      /// [Chip] @thruthesky - 2024-05-22
+      ///
+      chipTheme: ChipThemeData(
+        backgroundColor: theme.colorScheme.surface,
+        deleteIconColor: theme.colorScheme.onSurface,
+        disabledColor: theme.colorScheme.onSurface,
+        selectedColor: theme.colorScheme.secondary,
+        secondarySelectedColor: theme.colorScheme.secondary,
+        labelPadding: const EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+          side: BorderSide(
+            color: theme.colorScheme.outline,
+            width: borderThickness,
+          ),
+        ),
+        labelStyle: theme.textTheme.bodyLarge?.copyWith(
+          color: theme.colorScheme.onSurface,
+        ),
+        secondaryLabelStyle: theme.textTheme.bodyLarge?.copyWith(
+          color: theme.colorScheme.onSurface,
+        ),
+        brightness: theme.brightness,
+      ),
       colorScheme: theme.colorScheme,
       dialogTheme: DialogTheme(
         elevation: 0,

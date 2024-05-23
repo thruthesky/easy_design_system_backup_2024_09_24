@@ -57,20 +57,6 @@ class SleekThemeData {
         ),
         highlightElevation: 0,
       ),
-      iconButtonTheme: IconButtonThemeData(
-        style: ButtonStyle(
-          elevation: WidgetStateProperty.all(0),
-          foregroundColor: WidgetStateProperty.all(theme.colorScheme.primary),
-          backgroundColor: WidgetStateProperty.all(
-            theme.colorScheme.primaryContainer,
-          ),
-          shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
-          ),
-        ),
-      ),
       inputDecorationTheme: theme.inputDecorationTheme.copyWith(
         filled: true,
         fillColor: theme.colorScheme.primaryContainer,

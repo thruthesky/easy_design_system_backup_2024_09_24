@@ -17,6 +17,16 @@ class SnackBarScreen extends StatelessWidget {
           child: Wrap(
             children: [
               ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('This is a SnackBar'),
+                    ),
+                  );
+                },
+                child: const Text('Comic Style Snackbar'),
+              ),
+              ElevatedButton(
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) => const ComicSnackBarsScreen(),
