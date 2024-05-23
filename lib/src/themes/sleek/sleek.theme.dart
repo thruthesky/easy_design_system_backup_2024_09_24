@@ -34,6 +34,11 @@ class SleekThemeData {
       dialogTheme: DialogTheme(
         iconColor: theme.colorScheme.primary,
       ),
+      checkboxTheme: CheckboxThemeData(
+        side: BorderSide(
+          color: theme.colorScheme.outline,
+        ),
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: WidgetStateProperty.all(0),
