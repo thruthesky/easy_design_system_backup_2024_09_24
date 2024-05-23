@@ -134,11 +134,13 @@ class SleekThemeData {
         labelTextStyle: WidgetStateTextStyle.resolveWith((state) {
           if (state.contains(WidgetState.selected)) {
             return TextStyle(
+              fontSize: 12,
               color: theme.colorScheme.primary,
               fontWeight: FontWeight.w700,
             );
           }
           return TextStyle(
+            fontSize: 12,
             color: theme.colorScheme.onPrimaryContainer,
           );
         }),

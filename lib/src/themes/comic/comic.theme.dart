@@ -60,14 +60,40 @@ class ComicThemeData {
   ///
   /// [of] is a method that returns a [ThemeData] object with the color scheme
   static ThemeData of(BuildContext context) {
-    final theme = Theme.of(context);
-    // final theme = Theme.of(context).copyWith(
-    //   colorScheme: ColorScheme.fromSeed(
-    //     seedColor: const Color(0xFF6750A4),
-    //     brightness: Brightness.dark,
-    //     error: const Color(0xFFB00020),
-    //   ),
-    // );
+    // final theme = Theme.of(context);
+    final theme = Theme.of(context).copyWith(
+      // colorScheme: ColorScheme.fromSeed(
+      //   seedColor: const Color(0xFF6750A4),
+      //   brightness: Brightness.dark,
+      //   error: const Color(0xFFB00020),
+      // ),
+      textTheme: Theme.of(context).textTheme.copyWith(
+            labelSmall: const TextStyle(
+              fontWeight: FontWeight.w400,
+              color: Colors.pink,
+            ),
+            labelMedium: const TextStyle(
+              fontWeight: FontWeight.w400,
+              color: Colors.pink,
+            ),
+            labelLarge: const TextStyle(
+              fontWeight: FontWeight.w400,
+              color: Colors.pink,
+            ),
+            bodyLarge: const TextStyle(
+              fontWeight: FontWeight.w400,
+              color: Colors.pink,
+            ),
+            bodyMedium: const TextStyle(
+              fontWeight: FontWeight.w400,
+              color: Colors.pink,
+            ),
+            bodySmall: const TextStyle(
+              fontWeight: FontWeight.w400,
+              color: Colors.pink,
+            ),
+          ),
+    );
     return ThemeData(
       // appBarTheme: AppBarTheme(
       //   iconTheme: theme.iconTheme.copyWith(
@@ -257,29 +283,21 @@ class ComicThemeData {
         // Note: By default, the dividerColor uses outlineVariant
         // dividerColor: theme.colorScheme.onSurface,
         dividerHeight: borderThickness * 0.8,
-        // TODO fix this thru color scheme
-        // labelColor: theme.colorScheme.onSurface,
-        // unselectedLabelColor: theme.colorScheme.onSurface,
-        // TODO fix this thru color scheme
-        // overlayColor: WidgetStateProperty.all(
-        //   theme.colorScheme.secondary.withAlpha(40),
-        // ),
       ),
+
       navigationBarTheme: theme.navigationBarTheme.copyWith(
-        // TODO fix this thru color scheme
-        // surfaceTintColor: Colors.transparent,
-        // backgroundColor: theme.navigationBarTheme.backgroundColor,
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
+            // TODO check if we can use something like theme.textTheme.labelSmall.copyWith(fontWeight: FontWeight.w800)
             return TextStyle(
-              fontSize: 13,
+              fontSize: 12,
               fontWeight: FontWeight.w800,
               color: Theme.of(context).colorScheme.onSurface,
             );
           }
           return TextStyle(
-            fontSize: 13,
-            fontWeight: FontWeight.w300,
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
             color: Theme.of(context).colorScheme.onSurface,
           );
         }),
