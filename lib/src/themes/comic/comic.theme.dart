@@ -126,6 +126,12 @@ class ComicThemeData {
         brightness: theme.brightness,
       ),
       colorScheme: theme.colorScheme,
+      checkboxTheme: CheckboxThemeData(
+        side: BorderSide(
+          width: borderThickness,
+          color: theme.colorScheme.outline,
+        ),
+      ),
       dialogTheme: DialogTheme(
         elevation: 0,
         shape: RoundedRectangleBorder(
