@@ -8,117 +8,111 @@ class BottomSheetScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bottom Sheets'),
+        title: const Text('Bottom Sheet'),
       ),
       body: Wrap(
+        spacing: 24,
         children: [
-          const ComicBottomSheet(),
-          TextButton(
-            onPressed: () => showModalBottomSheet(
-              context: context,
-              builder: (context) => Theme(
-                data: ComicTheme.of(context),
-                child: BottomSheet(
-                  onClosing: () {},
-                  builder: (context) => const SizedBox(
-                    height: 200,
-                    child: Center(
-                      child: Text('Comic'),
+          Theme(
+            data: ComicTheme.of(context),
+            child: ElevatedButton(
+              onPressed: () => showModalBottomSheet(
+                context: context,
+                builder: (context) => Theme(
+                  data: ComicTheme.of(context),
+                  child: BottomSheet(
+                    onClosing: () {},
+                    builder: (context) => const SizedBox(
+                      height: 200,
+                      child: Center(
+                        child: Text('Comic'),
+                      ),
                     ),
                   ),
                 ),
               ),
+              child: const Text('Display Comic Modal Bottomsheet'),
             ),
-            child: const Text('Display Comic Modal Bottomsheet'),
           ),
-          const SleekBottomSheet(),
-          TextButton(
-            onPressed: () => showModalBottomSheet(
-              context: context,
-              builder: (context) => Theme(
-                data: SleekTheme.of(context),
-                child: BottomSheet(
-                  onClosing: () {},
-                  builder: (context) => const SizedBox(
-                    height: 200,
-                    child: Center(
-                      child: Text('Sleek'),
+          Builder(builder: (context) {
+            return Theme(
+              data: ComicTheme.of(context),
+              child: ElevatedButton(
+                onPressed: () => showBottomSheet(
+                  context: context,
+                  builder: (context) => Theme(
+                    data: ComicTheme.of(context),
+                    child: BottomSheet(
+                      onClosing: () {},
+                      builder: (context) => SizedBox(
+                        height: 200,
+                        child: Center(
+                          child: OutlinedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text('Close'),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                child: const Text('Display Comic Bottomsheet'),
+              ),
+            );
+          }),
+          Theme(
+            data: SleekThemeData.of(context),
+            child: ElevatedButton(
+              onPressed: () => showModalBottomSheet(
+                context: context,
+                builder: (context) => Theme(
+                  data: SleekThemeData.of(context),
+                  child: BottomSheet(
+                    onClosing: () {},
+                    builder: (context) => const SizedBox(
+                      height: 200,
+                      child: Center(
+                        child: Text('Sleek'),
+                      ),
                     ),
                   ),
                 ),
               ),
+              child: const Text('Display Sleek Modal Bottomsheet'),
             ),
-            child: const Text('Display Sleek Modal Bottomsheet'),
           ),
+          Builder(builder: (context) {
+            return Theme(
+              data: SleekTheme.of(context),
+              child: ElevatedButton(
+                onPressed: () => showBottomSheet(
+                  context: context,
+                  builder: (context) => Theme(
+                    data: SleekTheme.of(context),
+                    child: BottomSheet(
+                      onClosing: () {},
+                      builder: (context) => SizedBox(
+                        height: 200,
+                        child: Center(
+                          child: OutlinedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text('Close'),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                child: const Text('Display Sleek Bottomsheet'),
+              ),
+            );
+          }),
         ],
       ),
-    );
-  }
-}
-
-//  to prevent the error "No Scaffold widget found."
-class ComicBottomSheet extends StatelessWidget {
-  const ComicBottomSheet({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () => showBottomSheet(
-        context: context,
-        builder: (context) => Theme(
-          data: ComicTheme.of(context),
-          child: BottomSheet(
-            onClosing: () {},
-            builder: (context) => SizedBox(
-              height: 200,
-              child: Center(
-                child: OutlinedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text("Close bottom Sheet"),
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-      child: const Text('Display Comic Bottomsheet'),
-    );
-  }
-}
-
-class SleekBottomSheet extends StatelessWidget {
-  const SleekBottomSheet({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () => showBottomSheet(
-        context: context,
-        builder: (context) => Theme(
-          data: SleekTheme.of(context),
-          child: BottomSheet(
-            onClosing: () {},
-            builder: (context) => SizedBox(
-              height: 200,
-              child: Center(
-                child: OutlinedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text("Close bottom Sheet"),
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-      child: const Text('Display Sleek Bottomsheet'),
     );
   }
 }

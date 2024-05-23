@@ -19,7 +19,21 @@ class SleekThemeData {
         textColor: theme.colorScheme.onPrimary,
         padding: const EdgeInsets.only(left: 5, right: 5),
       ),
+      cardTheme: theme.cardTheme.copyWith(
+        // TODO fix it with proper colorscheming
+        // this color uses `surfaceContainerLow` from color scheme by default
+        // color: theme.colorScheme.primary,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          side: BorderSide.none,
+          borderRadius: BorderRadius.circular(24),
+        ),
+      ),
       colorScheme: Theme.of(context).colorScheme,
+      dialogBackgroundColor: theme.colorScheme.primaryContainer,
+      dialogTheme: DialogTheme(
+        iconColor: theme.colorScheme.primary,
+      ),
       checkboxTheme: CheckboxThemeData(
         side: BorderSide(
           color: theme.colorScheme.outline,
@@ -47,20 +61,6 @@ class SleekThemeData {
           borderRadius: BorderRadius.circular(24),
         ),
         highlightElevation: 0,
-      ),
-      iconButtonTheme: IconButtonThemeData(
-        style: ButtonStyle(
-          elevation: WidgetStateProperty.all(0),
-          foregroundColor: WidgetStateProperty.all(theme.colorScheme.primary),
-          backgroundColor: WidgetStateProperty.all(
-            theme.colorScheme.primaryContainer,
-          ),
-          shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
-          ),
-        ),
       ),
       inputDecorationTheme: theme.inputDecorationTheme.copyWith(
         filled: true,
@@ -93,6 +93,16 @@ class SleekThemeData {
           elevation: 0,
         ),
       ),
+      tabBarTheme: TabBarTheme(
+        indicator: BoxDecoration(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(12),
+            topRight: Radius.circular(12),
+          ),
+          color: theme.colorScheme.primaryContainer,
+        ),
+        indicatorSize: TabBarIndicatorSize.tab,
+      ),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
           foregroundColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
@@ -116,21 +126,6 @@ class SleekThemeData {
           borderRadius: BorderRadius.circular(24),
         ),
         actionTextColor: theme.colorScheme.primary,
-      ),
-      dialogBackgroundColor: theme.colorScheme.primaryContainer,
-      dialogTheme: DialogTheme(
-        iconColor: theme.colorScheme.primary,
-      ),
-      cardTheme: CardTheme(
-        color: theme.colorScheme.primaryContainer,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        elevation: 0,
-      ),
-      dividerTheme: theme.dividerTheme.copyWith(
-        // TODO check the default color
-        color: theme.colorScheme.primary,
       ),
     );
   }
