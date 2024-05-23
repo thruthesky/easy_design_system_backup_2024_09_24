@@ -22,11 +22,9 @@ class AlertDialogScreen extends StatelessWidget {
                   child: AlertDialog(
                     icon: const Icon(Icons.star),
                     title: const Text('Comic'),
+                    content:
+                        const Text('This is an alert dialog for comic theme.'),
                     actions: [
-                      ElevatedButton(
-                        onPressed: () => Navigator.of(context).pop(),
-                        child: const Text('Cancel'),
-                      ),
                       ElevatedButton(
                         onPressed: () => Navigator.of(context).pop(),
                         child: const Text('Ok'),
@@ -45,11 +43,9 @@ class AlertDialogScreen extends StatelessWidget {
                   child: AlertDialog(
                     icon: const Icon(Icons.star),
                     title: const Text('Sleek'),
+                    content:
+                        const Text('This is an alert dialog for sleek theme.'),
                     actions: [
-                      ElevatedButton(
-                        onPressed: () => Navigator.of(context).pop(),
-                        child: const Text('Cancel'),
-                      ),
                       ElevatedButton(
                         onPressed: () => Navigator.of(context).pop(),
                         child: const Text('Ok'),
