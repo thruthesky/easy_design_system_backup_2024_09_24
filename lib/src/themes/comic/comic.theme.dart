@@ -257,7 +257,20 @@ class ComicThemeData {
         ),
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
       ),
-
+      drawerTheme: theme.drawerTheme.copyWith(
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        endShape: RoundedRectangleBorder(
+            side: BorderSide(
+          width: borderThickness,
+          color: theme.colorScheme.outline,
+        )),
+        shape: RoundedRectangleBorder(
+            side: BorderSide(
+          width: borderThickness,
+          color: theme.colorScheme.outline,
+        )),
+      ),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
           // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
           // color: theme.colorScheme.secondary,
