@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         children: <Widget>[
           ElevatedButton(
               onPressed: () {}, child: const Text("light & dark mode")),
