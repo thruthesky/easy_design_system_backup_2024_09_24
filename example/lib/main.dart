@@ -1,6 +1,8 @@
 import 'package:example/screens/alert_dialog/alert_dialog.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
+import 'package:example/screens/bottom_sheet/bottom_sheet.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
+import 'package:example/screens/card/card.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
 import 'package:example/screens/demo/comic.screen.demo.dart';
 import 'package:example/screens/demo/sleek.screen.demo.dart';
@@ -15,6 +17,7 @@ import 'package:example/screens/segmented_button/segmented_button.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
 import 'package:example/screens/snackbar/snackbars.screen.dart';
 import 'package:example/screens/text_field/text_field.screen.dart';
+import 'package:example/screens/text_form_field/text_form_field.screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -60,7 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('TextFields', const TextFieldScreen()),
           pushScreen('Buttons', const ButtonsScreen()),
           //
-          ElevatedButton(onPressed: () {}, child: const Text("TextFormField")),
+
+          pushScreen('TextFormFieldScreen', const TextFormFieldScreen()),
           pushScreen(
               'Floating Action Button', const FloatingActionButtonScreen()),
           pushScreen('IconButton', const IconButtonScreen()),
@@ -69,8 +73,9 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
           pushScreen('SnackBar', const SnackBarScreen()),
           pushScreen('AlertDialog', const AlertDialogScreen()),
-          ElevatedButton(onPressed: () {}, child: const Text("BottomSheet")),
-          ElevatedButton(onPressed: () {}, child: const Text("Card")),
+          pushScreen('BottomSheet', const BottomSheetScreen()),
+          // ElevatedButton(onPressed: () {}, child: const Text("Card")),
+          pushScreen('Card', const CardScreen()),
           ElevatedButton(onPressed: () {}, child: const Text("Divider")),
           pushScreen('ListTile', const ListTileScreen()),
           ElevatedButton(onPressed: () {}, child: const Text("AppBar")),

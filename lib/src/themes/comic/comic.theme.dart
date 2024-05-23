@@ -88,6 +88,17 @@ class ComicThemeData {
           ),
         ),
       ),
+      cardTheme: theme.cardTheme.copyWith(
+        // color: theme.colorScheme.surface,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.outline,
+          ),
+          borderRadius: BorderRadius.circular(24),
+        ),
+      ),
       colorScheme: theme.colorScheme,
       dividerTheme: theme.dividerTheme.copyWith(
         // TODO check the default color
@@ -114,8 +125,9 @@ class ComicThemeData {
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
-          side: const BorderSide(
+          side: BorderSide(
             width: borderThickness,
+            color: theme.colorScheme.outline,
           ),
         ),
         highlightElevation: 0,
@@ -167,20 +179,25 @@ class ComicThemeData {
           border: Border(
             bottom: BorderSide(
               width: borderThickness * 3,
-              color: theme.colorScheme.onSurface,
+              color: theme.colorScheme.outline,
             ),
           ),
         ),
-        dividerColor: theme.colorScheme.onSurface,
+        indicatorSize: TabBarIndicatorSize.label,
+        // Note: By default, the dividerColor uses outlineVariant
+        // dividerColor: theme.colorScheme.onSurface,
         dividerHeight: borderThickness * 0.8,
-        labelColor: theme.colorScheme.onSurface,
-        unselectedLabelColor: theme.colorScheme.onSurface,
-        overlayColor: WidgetStateProperty.all(
-          theme.colorScheme.secondary.withAlpha(40),
-        ),
+        // TODO fix this thru color scheme
+        // labelColor: theme.colorScheme.onSurface,
+        // unselectedLabelColor: theme.colorScheme.onSurface,
+        // TODO fix this thru color scheme
+        // overlayColor: WidgetStateProperty.all(
+        //   theme.colorScheme.secondary.withAlpha(40),
+        // ),
       ),
       navigationBarTheme: theme.navigationBarTheme.copyWith(
-        surfaceTintColor: Colors.transparent,
+        // TODO fix this thru color scheme
+        // surfaceTintColor: Colors.transparent,
         // backgroundColor: theme.navigationBarTheme.backgroundColor,
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
@@ -196,7 +213,6 @@ class ComicThemeData {
             color: Theme.of(context).colorScheme.onSurface,
           );
         }),
-        // indicatorColor: Theme.of(context).colorScheme.background,
         indicatorShape: RoundedRectangleBorder(
           side: BorderSide(
             width: borderThickness,
@@ -221,7 +237,8 @@ class ComicThemeData {
             color: theme.colorScheme.outline,
           ),
         ),
-        actionTextColor: theme.colorScheme.primary,
+        // TODO Fix it on the color scheme outside here
+        // actionTextColor: theme.colorScheme.primary,
         // contentTextStyle: TextStyle(
         // TODO Fix it on the color scheme outside here
         // color: theme.colorScheme.onSurface,
@@ -232,8 +249,9 @@ class ComicThemeData {
           // selectedBackgroundColor: theme.colorScheme.secondary.withAlpha(80),
           // selectedForegroundColor: theme.colorScheme.onSurface,
           // foregroundColor: theme.colorScheme.onSurface,
-          side: const BorderSide(
+          side: BorderSide(
             width: borderThickness,
+            color: theme.colorScheme.outline,
           ),
           elevation: 0,
         ),
