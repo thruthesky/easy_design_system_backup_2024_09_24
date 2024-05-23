@@ -78,10 +78,9 @@ class ComicThemeData {
       //   backButtonIconBuilder: (context) =>
       //       IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
       // ),
-
       badgeTheme: const BadgeThemeData(),
       bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: theme.colorScheme.surface,
+        // backgroundColor: theme.colorScheme.surface,
         shape: Border(
           top: BorderSide(
             width: borderThickness,
@@ -89,7 +88,54 @@ class ComicThemeData {
           ),
         ),
       ),
+      cardTheme: theme.cardTheme.copyWith(
+        // color: theme.colorScheme.surface,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.outline,
+          ),
+          borderRadius: BorderRadius.circular(24),
+        ),
+      ),
+
+      /// [Chip] @thruthesky - 2024-05-22
+      ///
+      chipTheme: ChipThemeData(
+        backgroundColor: theme.colorScheme.surface,
+        deleteIconColor: theme.colorScheme.onSurface,
+        disabledColor: theme.colorScheme.onSurface,
+        selectedColor: theme.colorScheme.secondary,
+        secondarySelectedColor: theme.colorScheme.secondary,
+        labelPadding: const EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+          side: BorderSide(
+            color: theme.colorScheme.outline,
+            width: borderThickness,
+          ),
+        ),
+        labelStyle: theme.textTheme.bodyLarge?.copyWith(
+          color: theme.colorScheme.onSurface,
+        ),
+        secondaryLabelStyle: theme.textTheme.bodyLarge?.copyWith(
+          color: theme.colorScheme.onSurface,
+        ),
+        brightness: theme.brightness,
+      ),
       colorScheme: theme.colorScheme,
+      dialogTheme: DialogTheme(
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+          side: BorderSide(
+            color: theme.colorScheme.outline,
+            width: borderThickness,
+          ),
+        ),
+      ),
       dividerTheme: theme.dividerTheme.copyWith(
         // TODO check the default color
         color: theme.colorScheme.outline,
@@ -110,12 +156,13 @@ class ComicThemeData {
         ),
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: theme.colorScheme.surface,
+        // backgroundColor: theme.colorScheme.surface,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
-          side: const BorderSide(
+          side: BorderSide(
             width: borderThickness,
+            color: theme.colorScheme.outline,
           ),
         ),
         highlightElevation: 0,
@@ -167,21 +214,25 @@ class ComicThemeData {
           border: Border(
             bottom: BorderSide(
               width: borderThickness * 3,
-              color: theme.colorScheme.onSurface,
+              color: theme.colorScheme.outline,
             ),
           ),
         ),
-        dividerColor: theme.colorScheme.onSurface,
+        indicatorSize: TabBarIndicatorSize.label,
+        // Note: By default, the dividerColor uses outlineVariant
+        // dividerColor: theme.colorScheme.onSurface,
         dividerHeight: borderThickness * 0.8,
-        labelColor: theme.colorScheme.onSurface,
-        unselectedLabelColor: theme.colorScheme.onSurface,
-        overlayColor: WidgetStateProperty.all(
-          theme.colorScheme.secondary.withAlpha(40),
-        ),
+        // TODO fix this thru color scheme
+        // labelColor: theme.colorScheme.onSurface,
+        // unselectedLabelColor: theme.colorScheme.onSurface,
+        // TODO fix this thru color scheme
+        // overlayColor: WidgetStateProperty.all(
+        //   theme.colorScheme.secondary.withAlpha(40),
+        // ),
       ),
-
       navigationBarTheme: theme.navigationBarTheme.copyWith(
-        surfaceTintColor: Colors.transparent,
+        // TODO fix this thru color scheme
+        // surfaceTintColor: Colors.transparent,
         // backgroundColor: theme.navigationBarTheme.backgroundColor,
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
@@ -197,7 +248,6 @@ class ComicThemeData {
             color: Theme.of(context).colorScheme.onSurface,
           );
         }),
-        // indicatorColor: Theme.of(context).colorScheme.background,
         indicatorShape: RoundedRectangleBorder(
           side: BorderSide(
             width: borderThickness,
@@ -207,31 +257,37 @@ class ComicThemeData {
         ),
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
       ),
+
       progressIndicatorTheme: const ProgressIndicatorThemeData(
           // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
           // color: theme.colorScheme.secondary,
           ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
-        backgroundColor: theme.colorScheme.surface,
+        // TODO Fix it on the color scheme outside here
+        // backgroundColor: theme.colorScheme.surface,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
-          side: const BorderSide(
+          side: BorderSide(
             width: borderThickness,
+            color: theme.colorScheme.outline,
           ),
         ),
-        actionTextColor: theme.colorScheme.primary,
-        contentTextStyle: TextStyle(
-          color: theme.colorScheme.onSurface,
-        ),
+        // TODO Fix it on the color scheme outside here
+        // actionTextColor: theme.colorScheme.primary,
+        // contentTextStyle: TextStyle(
+        // TODO Fix it on the color scheme outside here
+        // color: theme.colorScheme.onSurface,
+        // ),
       ),
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: SegmentedButton.styleFrom(
           // selectedBackgroundColor: theme.colorScheme.secondary.withAlpha(80),
           // selectedForegroundColor: theme.colorScheme.onSurface,
           // foregroundColor: theme.colorScheme.onSurface,
-          side: const BorderSide(
+          side: BorderSide(
             width: borderThickness,
+            color: theme.colorScheme.outline,
           ),
           elevation: 0,
         ),
@@ -261,13 +317,6 @@ class ComicTheme extends StatelessWidget {
   static ThemeData of(BuildContext context) {
     return ComicThemeData.of(context);
   }
-
-  // Example
-  /// For testing only
-  /// Assuming these are the colors good for comic
-  /// To be confirmed
-  static ColorScheme colorScheme =
-      ColorScheme.fromSeed(seedColor: Colors.black);
 
   @override
   Widget build(BuildContext context) {

@@ -19,8 +19,12 @@ Social Design System (SDS) is an Elegant UI/UX library crafted specifically for 
 | Buttons ![Buttons](https://thruthesky.github.io/social_design_system/images/buttons.jpg) |  | x |
 | Settings ![Settings](https://thruthesky.github.io/social_design_system/images/settings.jpg) |  | x |
 | TextField ![TextField Comic Theme](https://thruthesky.github.io/social_design_system/images/comic.text_field.jpg) | | x |
-| IconButton ![IconButton Comic Theme](https://thruthesky.github.io/social_design_system/images/comic.icon_button.jpg) | IconButton ![IconButton Comic Theme](https://thruthesky.github.io/social_design_system/images/sleek.icon_button.jpg) | x | 
-Floating Action Button ![Floating Action Button](https://thruthesky.github.io/social_design_system/images/comic.floating_action_button.png) | Floating Action Button ![Floating Action Button](https://thruthesky.github.io/social_design_system/images/sleek.floating_action_button.png) | x |
+| IconButton ![IconButton Comic Theme](https://thruthesky.github.io/social_design_system/images/comic.icon_button.jpg) | ![IconButton Comic Theme](https://thruthesky.github.io/social_design_system/images/sleek.icon_button.jpg) | x | 
+| Floating Action Button ![Floating Action Button](https://thruthesky.github.io/social_design_system/images/comic.floating_action_button.jpg) | ![Floating Action Button](https://thruthesky.github.io/social_design_system/images/sleek.floating_action_button.jpg) | x |
+| Segmented Button ![Segmented Button](https://thruthesky.github.io/social_design_system/images/comic.segmented_button.jpg) | ![Segmented Button](https://thruthesky.github.io/social_design_system/images/sleek.segmented_button.jpg) | x |
+| SnackBar ![SnackBar](https://thruthesky.github.io/social_design_system/images/comic.snackbar.jpg) | ![SnackBar](https://thruthesky.github.io/social_design_system/images/sleek.snackbar.jpg) | x |
+| Alert Dialog ![AlertDialog](https://thruthesky.github.io/social_design_system/images/comic.alert_dialog.jpg) |![AlertDialog](https://thruthesky.github.io/social_design_system/images/sleek.alert_dialog.jpg) | x |
+
 
 | Wave Carousel Entry | Basic Carousel Entry | Round Carousel Entry |
 | -------------------------- | --------------------- | --------------------------- |
@@ -35,7 +39,7 @@ SDS provides the following themes:
 
 ## Philosophy of Social Design System
 
-- Social design system desings the basic widgets by theme customization. This means, you don't need to learn anything. Just write your code and the design of your app will be updated.
+- Social design system designs the basic widgets by theme customization. This means, you don't need to learn anything. Just write your code and the design of your app will be updated.
 
 - How to apply the social design system to your button?
 

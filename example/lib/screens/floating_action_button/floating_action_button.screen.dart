@@ -11,7 +11,6 @@ class FloatingActionButtonScreen extends StatefulWidget {
 
 class _FloatingActionButtonScreenState
     extends State<FloatingActionButtonScreen> {
-  bool themeChanged = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

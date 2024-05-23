@@ -1,3 +1,6 @@
+## 0.0.12
+* Fix. comic theme dar error.
+
 ## 0.0.11
 * Update. refactoring the design system.
 * Update. documents.

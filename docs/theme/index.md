@@ -1,3 +1,3 @@
-# Theme Overview
+# Overview
 
 This is the theme overview
