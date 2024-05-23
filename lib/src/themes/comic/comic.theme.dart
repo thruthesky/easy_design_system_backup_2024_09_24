@@ -271,7 +271,7 @@ class ComicThemeData {
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
         // TODO Fix it on the color scheme outside here
-        // backgroundColor: theme.colorScheme.surface,
+        backgroundColor: theme.colorScheme.surface,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(
@@ -280,11 +280,11 @@ class ComicThemeData {
           ),
         ),
         // TODO Fix it on the color scheme outside here
-        // actionTextColor: theme.colorScheme.primary,
-        // contentTextStyle: TextStyle(
-        // TODO Fix it on the color scheme outside here
-        // color: theme.colorScheme.onSurface,
-        // ),
+        actionTextColor: theme.colorScheme.primary,
+        contentTextStyle: TextStyle(
+          // TODO Fix it on the color scheme outside here
+          color: theme.colorScheme.onSurface,
+        ),
       ),
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: SegmentedButton.styleFrom(

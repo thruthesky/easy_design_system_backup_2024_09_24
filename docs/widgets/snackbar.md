@@ -1,8 +1,8 @@
-# Applying theme on SnackBar
+# SnackBar
 
-SDS can not directly apply the `Theme` with the `SnackBar` unlike other widgets. `Scaffold` needs to wrap with the `Theme` widget to apply the themes successfully.
+SDS can not directly apply the `Theme` with the `SnackBar` unlike other widgets. It needs to wrap the `Scaffold` with the `Theme` widget to apply the themes successfully.
 
-#### Displaying Snackbar
+### Displaying Snackbar
 
 
 ```dart
@@ -22,7 +22,7 @@ ElevatedButton(
 In flutter, this is the common way to display a snackbar. It needs to call the `showSnackBar()` from `ScaffoldMessenger` where it use the default color of `SnackBar` and being dependent on `Scaffold`. The code below is an example on how to work around with `SnackBar`.
 
 
-#### Applying theme on snackbar
+### Applying theme on snackbar
 
 To apply, for example, the `Comic Theme`, we can wrap the `Scaffold` widget with the `Theme` and provide the `ComicThemeData`.
 ```dart
@@ -52,3 +52,5 @@ To apply, for example, the `Comic Theme`, we can wrap the `Scaffold` widget with
     );
   }
 ```
+### Customizing the Snackbar
+

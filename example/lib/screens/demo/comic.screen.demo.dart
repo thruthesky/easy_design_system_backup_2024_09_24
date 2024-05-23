@@ -71,6 +71,19 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
                     ),
                     child: const Text('Display Comic Modal Bottomsheet'),
                   ),
+                  const SizedBox(height: 24),
+                  TextButton(
+                    onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: const Text('This is Comic SnackBar'),
+                        action: SnackBarAction(
+                          onPressed: () {},
+                          label: 'Action',
+                        ),
+                      ),
+                    ),
+                    child: const Text('Display Snackbar'),
+                  ),
                 ],
               ),
             ),
