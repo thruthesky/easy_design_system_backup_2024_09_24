@@ -94,7 +94,6 @@ class ComicThemeData {
         color: theme.colorScheme.outline,
         thickness: borderThickness,
       ),
-
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: WidgetStateProperty.all(0),
@@ -247,6 +246,15 @@ class ComicThemeData {
             width: borderThickness,
           ),
         ),
+      ),
+      cardTheme: CardTheme(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: const BorderSide(
+            width: borderThickness,
+          ),
+        ),
+        elevation: 0,
       ),
     );
   }

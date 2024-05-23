@@ -2,9 +2,11 @@ import 'package:example/screens/alert_dialog/alert_dialog.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
 import 'package:example/screens/bottom_sheet/bottom_sheet.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
+import 'package:example/screens/card/card.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
 import 'package:example/screens/demo/comic.screen.demo.dart';
 import 'package:example/screens/demo/sleek.screen.demo.dart';
+import 'package:example/screens/divider/divider.screen.dart';
 import 'package:example/screens/floating_action_button/floating_action_button.screen.dart';
 import 'package:example/screens/icon_buttons/icon_buttons.screen.dart';
 import 'package:example/screens/list_tile/list_tile.screen.dart';
@@ -71,8 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('SnackBar', const SnackBarScreen()),
           pushScreen('AlertDialog', const AlertDialogScreen()),
           pushScreen('BottomSheet', const BottomSheetScreen()),
-          ElevatedButton(onPressed: () {}, child: const Text("Card")),
-          ElevatedButton(onPressed: () {}, child: const Text("Divider")),
+          pushScreen('Card', const CardScreen()),
+          pushScreen('Divider', const DividerScreen()),
           pushScreen('ListTile', const ListTileScreen()),
           ElevatedButton(onPressed: () {}, child: const Text("AppBar")),
           ElevatedButton(onPressed: () {}, child: const Text("Bottom App Bar")),

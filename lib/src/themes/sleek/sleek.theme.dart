@@ -116,6 +116,17 @@ class SleekThemeData {
       dialogTheme: DialogTheme(
         iconColor: theme.colorScheme.primary,
       ),
+      cardTheme: CardTheme(
+        color: theme.colorScheme.primaryContainer,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        elevation: 0,
+      ),
+      dividerTheme: theme.dividerTheme.copyWith(
+        // TODO check the default color
+        color: theme.colorScheme.primary,
+      ),
     );
   }
 }
