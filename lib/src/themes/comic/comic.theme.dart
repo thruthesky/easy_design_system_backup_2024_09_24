@@ -122,12 +122,19 @@ class ComicThemeData {
       ),
       inputDecorationTheme: theme.inputDecorationTheme.copyWith(
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(15.15),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(15.15),
           borderSide: BorderSide(
-            color: theme.colorScheme.secondary,
+            color: theme.colorScheme.outline,
+            width: borderThickness,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15.15),
+          borderSide: BorderSide(
+            color: theme.colorScheme.outline,
             width: borderThickness,
           ),
         ),
