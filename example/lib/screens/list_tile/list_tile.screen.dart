@@ -18,33 +18,45 @@ class _ListTileScreenState extends State<ListTileScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Theme(
-          data: ComicTheme.of(context),
-          child: const Column(
-            children: [
-              Text('Comic Theme'),
-              ListTile(
-                title: Text('ListTile'),
-                subtitle: Text('Subtitle'),
-                leading: Icon(Icons.ac_unit),
-                trailing: Icon(Icons.arrow_forward_ios),
+        child: Column(
+          children: [
+            Theme(
+              data: ComicTheme.of(context),
+              child: const Column(
+                children: [
+                  Text('Comic Theme'),
+                  ListTile(
+                    title: Text('ListTile'),
+                    subtitle: Text('Subtitle'),
+                    leading: Icon(Icons.ac_unit),
+                    trailing: Icon(Icons.arrow_forward_ios),
+                  ),
+
+                  // Text('Comic Theme'),
+                  // ListTile(
+                  //   title: Text('ListTile'),
+                  //   subtitle: Text('Subtitle'),
+                  //   leading: Icon(Icons.ac_unit),
+                  //   trailing: Icon(Icons.arrow_forward_ios),
+                  // ),
+                ],
               ),
-              Text('Comic Theme'),
-              ListTile(
-                title: Text('ListTile'),
-                subtitle: Text('Subtitle'),
-                leading: Icon(Icons.ac_unit),
-                trailing: Icon(Icons.arrow_forward_ios),
+            ),
+            Theme(
+              data: SleekTheme.of(context),
+              child: const Column(
+                children: [
+                  Text('Sleek Theme'),
+                  ListTile(
+                    title: Text('ListTile'),
+                    subtitle: Text('Subtitle'),
+                    leading: Icon(Icons.ac_unit),
+                    trailing: Icon(Icons.arrow_forward_ios),
+                  ),
+                ],
               ),
-              Text('Comic Theme'),
-              ListTile(
-                title: Text('ListTile'),
-                subtitle: Text('Subtitle'),
-                leading: Icon(Icons.ac_unit),
-                trailing: Icon(Icons.arrow_forward_ios),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

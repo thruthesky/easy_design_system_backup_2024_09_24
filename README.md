@@ -75,3 +75,11 @@ For more details, please visit the [Social Design System document website](https
 - Leave your issues on the git repo.
 
 
+## How to work
+
+- Add theme desing
+- Add Sample code
+- add screenshots
+- documentation
+
+
