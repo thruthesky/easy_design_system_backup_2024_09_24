@@ -20,8 +20,10 @@ class SleekThemeData {
         padding: const EdgeInsets.only(left: 5, right: 5),
       ),
       cardTheme: theme.cardTheme.copyWith(
-        color: theme.colorScheme.primary,
-        // elevation: 0,
+        // TODO fix it with proper colorscheming
+        // this color uses `surfaceContainerLow` from color scheme by default
+        // color: theme.colorScheme.primary,
+        elevation: 0,
         shape: RoundedRectangleBorder(
           side: BorderSide.none,
           borderRadius: BorderRadius.circular(24),

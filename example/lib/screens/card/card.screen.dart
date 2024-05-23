@@ -27,9 +27,11 @@ class CardScreen extends StatelessWidget {
           ),
           Theme(
             data: SleekTheme.of(context),
-            child: const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Text('Card Sleek Theme'),
+            child: const Card(
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text('Card Sleek Theme'),
+              ),
             ),
           ),
         ],
