@@ -89,6 +89,12 @@ class ComicThemeData {
         ),
       ),
       colorScheme: theme.colorScheme,
+      checkboxTheme: CheckboxThemeData(
+        side: BorderSide(
+          width: borderThickness,
+          color: theme.colorScheme.outline,
+        ),
+      ),
       dividerTheme: theme.dividerTheme.copyWith(
         // TODO check the default color
         color: theme.colorScheme.outline,

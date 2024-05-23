@@ -20,6 +20,11 @@ class SleekThemeData {
         padding: const EdgeInsets.only(left: 5, right: 5),
       ),
       colorScheme: Theme.of(context).colorScheme,
+      checkboxTheme: CheckboxThemeData(
+        side: BorderSide(
+          color: theme.colorScheme.outline,
+        ),
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: WidgetStateProperty.all(0),

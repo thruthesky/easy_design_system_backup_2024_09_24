@@ -27,6 +27,7 @@ class _FloatingActionButtonScreenState
               child: Row(
                 children: [
                   FloatingActionButton(
+                    heroTag: 'fab',
                     onPressed: () {
                       debugPrint('Pressed');
                     },
@@ -34,6 +35,7 @@ class _FloatingActionButtonScreenState
                   ),
                   const SizedBox(width: 8),
                   FloatingActionButton.extended(
+                    heroTag: 'ss',
                     onPressed: () {
                       debugPrint('Pressed');
                     },
@@ -46,6 +48,7 @@ class _FloatingActionButtonScreenState
               child: Row(
                 children: [
                   FloatingActionButton(
+                    heroTag: 'ssss',
                     onPressed: () {
                       debugPrint('Pressed');
                     },
@@ -53,6 +56,7 @@ class _FloatingActionButtonScreenState
                   ),
                   const SizedBox(width: 8),
                   FloatingActionButton.extended(
+                    heroTag: 'sssss',
                     onPressed: () {
                       debugPrint('Pressed');
                     },
