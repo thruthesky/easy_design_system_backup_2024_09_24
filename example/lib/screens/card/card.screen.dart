@@ -10,55 +10,29 @@ class CardScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Card'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          children: [
-            const Text('Comic'),
-            Theme(
-              data: ComicTheme.of(context),
-              child: const Card(
-                child: CardContent(),
-              ),
-            ),
-            const SizedBox(height: 32),
-            const Text('Sleek'),
-            Theme(
-              data: SleekTheme.of(context),
-              child: const Card(
-                child: CardContent(),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-//  this is content only to display the card properly.
-//  not necessarily part of the code above.
-class CardContent extends StatelessWidget {
-  const CardContent({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: Column(
         children: [
-          Container(
-            width: double.infinity,
-            height: 200,
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primaryFixedDim,
-              borderRadius: BorderRadius.circular(8),
+          Theme(
+            data: ComicTheme.of(context),
+            child: const Card(
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text('Card Comic Theme'),
+              ),
             ),
-            child: const Icon(Icons.image, size: 32),
           ),
-          const SizedBox(height: 24),
-          const Text('Sample Card'),
+          const SizedBox(
+            height: 24,
+          ),
+          Theme(
+            data: SleekTheme.of(context),
+            child: const Card(
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text('Card Sleek Theme'),
+              ),
+            ),
+          ),
         ],
       ),
     );
