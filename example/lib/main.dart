@@ -63,8 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView(
         children: <Widget>[
-          ElevatedButton(
-              onPressed: () {}, child: const Text("light & dark mode")),
+          Row(
+            children: [
+              pushScreen('Comic Theme Demo', const ComicScreenDemo()),
+              pushScreen('Sleek Theme Demo', const SleekScreenDemo()),
+            ],
+          ),
           pushScreen('TextFields', const TextFieldScreen()),
           pushScreen('Buttons', const ButtonsScreen()),
           //
@@ -99,8 +103,6 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Wave Carousel Entry', const WaveCarouselEntryScreen()),
           pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
           pushScreen('Color scheme', const ColorSchemeScreen()),
-          pushScreen('Comic Theme Demo', const ComicScreenDemo()),
-          pushScreen('Sleek Theme Demo', const SleekScreenDemo())
         ],
       ),
     );
