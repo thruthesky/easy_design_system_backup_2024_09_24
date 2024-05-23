@@ -179,7 +179,6 @@ class ComicThemeData {
           theme.colorScheme.secondary.withAlpha(40),
         ),
       ),
-
       navigationBarTheme: theme.navigationBarTheme.copyWith(
         surfaceTintColor: Colors.transparent,
         // backgroundColor: theme.navigationBarTheme.backgroundColor,
@@ -217,8 +216,9 @@ class ComicThemeData {
         // backgroundColor: theme.colorScheme.surface,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
-          side: const BorderSide(
+          side: BorderSide(
             width: borderThickness,
+            color: theme.colorScheme.outline,
           ),
         ),
         actionTextColor: theme.colorScheme.primary,
@@ -236,6 +236,17 @@ class ComicThemeData {
             width: borderThickness,
           ),
           elevation: 0,
+        ),
+      ),
+      dialogBackgroundColor: theme.colorScheme.surface,
+      dialogTheme: DialogTheme(
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+          side: BorderSide(
+            color: theme.colorScheme.outline,
+            width: borderThickness,
+          ),
         ),
       ),
     );
