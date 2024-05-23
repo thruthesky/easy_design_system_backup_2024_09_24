@@ -24,11 +24,11 @@ class AlertDialogScreen extends StatelessWidget {
                     title: const Text('Comic'),
                     actions: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => Navigator.of(context).pop(),
                         child: const Text('Cancel'),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => Navigator.of(context).pop(),
                         child: const Text('Ok'),
                       ),
                     ],
@@ -47,11 +47,11 @@ class AlertDialogScreen extends StatelessWidget {
                     title: const Text('Sleek'),
                     actions: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => Navigator.of(context).pop(),
                         child: const Text('Cancel'),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => Navigator.of(context).pop(),
                         child: const Text('Ok'),
                       ),
                     ],

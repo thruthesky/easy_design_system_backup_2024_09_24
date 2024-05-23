@@ -1,5 +1,6 @@
 import 'package:example/screens/alert_dialog/alert_dialog.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
+import 'package:example/screens/bottom_sheet/bottom_sheet.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
 import 'package:example/screens/demo/comic.screen.demo.dart';
@@ -69,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
           pushScreen('SnackBar', const SnackBarScreen()),
           pushScreen('AlertDialog', const AlertDialogScreen()),
-          ElevatedButton(onPressed: () {}, child: const Text("BottomSheet")),
+          pushScreen('BottomSheet', const BottomSheetScreen()),
           ElevatedButton(onPressed: () {}, child: const Text("Card")),
           ElevatedButton(onPressed: () {}, child: const Text("Divider")),
           pushScreen('ListTile', const ListTileScreen()),

@@ -238,7 +238,6 @@ class ComicThemeData {
           elevation: 0,
         ),
       ),
-      dialogBackgroundColor: theme.colorScheme.surface,
       dialogTheme: DialogTheme(
         elevation: 0,
         shape: RoundedRectangleBorder(
