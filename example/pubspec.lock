@@ -326,7 +326,11 @@ packages:
       path: ".."
       relative: true
     source: path
+<<<<<<< HEAD
     version: "0.0.11"
+=======
+    version: "0.0.12"
+>>>>>>> main
   source_span:
     dependency: transitive
     description:
