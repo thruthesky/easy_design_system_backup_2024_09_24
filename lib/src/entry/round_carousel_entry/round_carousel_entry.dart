@@ -134,8 +134,7 @@ class _RoundCarouselEntryState extends State<RoundCarouselEntry> {
           children: [
             Positioned.fill(
               child: Container(
-                // TODO update depricated colors (background -> surface)
-                color: Theme.of(context).colorScheme.background,
+                color: Theme.of(context).colorScheme.surface,
               ),
             ),
 

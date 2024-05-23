@@ -1,6 +1,11 @@
 # Social Design System
 
-Social Design System(SDS) is an Elegant UI/UX library crafted specifically for building social like applications. This is an open source project that you can fork and make PR.
+Social design system isElegant and easy-to-use UI/UX design library for Flutter, crafted to enhance your app's aesthetics and user experience. This is an open source project that you can fork and pr.
+
+## Goal
+
+There is nothing to learn. 
+
 
 ## Features
 
