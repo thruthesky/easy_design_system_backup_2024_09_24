@@ -1,4 +1,4 @@
-# Floating Action Button
+# Checkbox
 
 ![Checkbox](../images/checkbox.jpg)
 
