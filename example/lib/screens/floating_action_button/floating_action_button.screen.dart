@@ -28,7 +28,7 @@ class _FloatingActionButtonScreenState
               child: Row(
                 children: [
                   FloatingActionButton(
-                    heroTag: 'fab',
+                    heroTag: 'comicFloatingActionButton',
                     onPressed: () {
                       debugPrint('Pressed');
                     },
@@ -36,7 +36,7 @@ class _FloatingActionButtonScreenState
                   ),
                   const SizedBox(width: 8),
                   FloatingActionButton.extended(
-                    heroTag: 'ss',
+                    heroTag: 'comicFloatingActionButtonExtended',
                     onPressed: () {
                       debugPrint('Pressed');
                     },
@@ -51,7 +51,7 @@ class _FloatingActionButtonScreenState
               child: Row(
                 children: [
                   FloatingActionButton(
-                    heroTag: 'ssss',
+                    heroTag: 'sleekFloatingActionButton',
                     onPressed: () {
                       debugPrint('Pressed');
                     },
@@ -59,7 +59,7 @@ class _FloatingActionButtonScreenState
                   ),
                   const SizedBox(width: 8),
                   FloatingActionButton.extended(
-                    heroTag: 'sssss',
+                    heroTag: 'sleekFloatingActionButtonExtended',
                     onPressed: () {
                       debugPrint('Pressed');
                     },
