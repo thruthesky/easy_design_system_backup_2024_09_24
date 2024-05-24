@@ -6,19 +6,34 @@ on:
 permissions:
   contents: write
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-java@v1
         with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v3
+          java-version: "12.x"
+
+      # 원하는 버전으로 플러터를 설치한다.
+      - uses: subosito/flutter-action@v2
         with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-      - run: pip install mkdocs-material 
-      - run: mkdocs gh-deploy --force
+          flutter-version: "3.22.1"
+          channel: "stable"
+      - run: flutter --version
+      - name: "Run flutter pub get"
+        working-directory: ./example
+        run: flutter pub get
+      - name: Enable flutter web
+        working-directory: ./example
+        run: flutter config --enable-web
+      - name: "Build Web App"
+        working-directory: ./example
+        run: flutter build web --wasm
+
+      # 깃 허브 배포. gh-page 브랜치에 배포를 한다.
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # Github Page 에 배포하기 위한 키
+          github_token: ${{ secrets.REPO_SCOPE_DEPLOY_TOKEN }}
+          publish_dir: ./example/build/web
