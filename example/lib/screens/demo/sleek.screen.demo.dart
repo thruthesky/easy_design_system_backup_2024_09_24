@@ -160,7 +160,7 @@ class SleekBottomSheetDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
+    return TextButton(
       onPressed: () => showBottomSheet(
         context: context,
         builder: (context) => Theme(
@@ -170,7 +170,7 @@ class SleekBottomSheetDemo extends StatelessWidget {
             builder: (context) => SizedBox(
               height: 200,
               child: Center(
-                child: OutlinedButton(
+                child: TextButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },

@@ -60,52 +60,58 @@ class ComicThemeData {
   ///
   /// [of] is a method that returns a [ThemeData] object with the color scheme
   static ThemeData of(BuildContext context) {
-    // final theme = Theme.of(context);
-    final theme = Theme.of(context).copyWith(
-      // colorScheme: ColorScheme.fromSeed(
-      //   seedColor: const Color(0xFF6750A4),
-      //   brightness: Brightness.dark,
-      //   error: const Color(0xFFB00020),
-      // ),
-      textTheme: Theme.of(context).textTheme.copyWith(
-            labelSmall: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.pink,
-            ),
-            labelMedium: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.pink,
-            ),
-            labelLarge: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.pink,
-            ),
-            bodyLarge: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.pink,
-            ),
-            bodyMedium: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.pink,
-            ),
-            bodySmall: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.pink,
-            ),
-          ),
-    );
+    final theme = Theme.of(context);
+    // final theme = Theme.of(context).copyWith(
+    // colorScheme: ColorScheme.fromSeed(
+    //   seedColor: const Color(0xFF6750A4),
+    //   brightness: Brightness.dark,
+    //   error: const Color(0xFFB00020),
+    // ),
+    // textTheme: Theme.of(context).textTheme.copyWith(
+    //       labelSmall: const TextStyle(
+    //         fontWeight: FontWeight.w400,
+    //         color: Colors.pink,
+    //       ),
+    //       labelMedium: const TextStyle(
+    //         fontWeight: FontWeight.w400,
+    //         color: Colors.pink,
+    //       ),
+    //       labelLarge: const TextStyle(
+    //         fontWeight: FontWeight.w400,
+    //         color: Colors.pink,
+    //       ),
+    //       bodyLarge: const TextStyle(
+    //         fontWeight: FontWeight.w400,
+    //         color: Colors.pink,
+    //       ),
+    //       bodyMedium: const TextStyle(
+    //         fontWeight: FontWeight.w400,
+    //         color: Colors.pink,
+    //       ),
+    //       bodySmall: const TextStyle(
+    //         fontWeight: FontWeight.w400,
+    //         color: Colors.pink,
+    //       ),
+    //     ),
+    // );
     return ThemeData(
-      // appBarTheme: AppBarTheme(
-      //   iconTheme: theme.iconTheme.copyWith(
-      //     color: theme.colorScheme.onSurface,
-      //   ),
-      //   actionsIconTheme: theme.iconTheme.copyWith(
-      //     color: theme.colorScheme.onSurface,
-      //   ),
-      //   titleTextStyle: theme.textTheme.headlineMedium?.copyWith(
-      //     color: theme.colorScheme.onSurface,
-      //   ),
-      // ),
+      appBarTheme: AppBarTheme(
+        //   iconTheme: theme.iconTheme.copyWith(
+        //     color: theme.colorScheme.onSurface,
+        //   ),
+        //   actionsIconTheme: theme.iconTheme.copyWith(
+        //     color: theme.colorScheme.onSurface,
+        //   ),
+        //   titleTextStyle: theme.textTheme.headlineMedium?.copyWith(
+        //     color: theme.colorScheme.onSurface,
+        //   ),
+        shape: Border(
+          bottom: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.outline,
+          ),
+        ),
+      ),
 
       // actionIconTheme: ActionIconThemeData(
       //   backButtonIconBuilder: (context) =>
@@ -120,10 +126,10 @@ class ComicThemeData {
       // ),
 
       // NOTE: Unable to add borders for comic theme in bottom app bar.
-      // bottomAppBarTheme: theme.bottomAppBarTheme,
+      bottomAppBarTheme: theme.bottomAppBarTheme,
 
       bottomNavigationBarTheme: theme.bottomNavigationBarTheme.copyWith(
-        backgroundColor: Colors.red,
+        // backgroundColor: Colors.red,
         elevation: 0,
       ),
 
@@ -150,28 +156,27 @@ class ComicThemeData {
 
       /// [Chip] @thruthesky - 2024-05-22
       ///
-      chipTheme: ChipThemeData(
-        backgroundColor: theme.colorScheme.surface,
-        deleteIconColor: theme.colorScheme.onSurface,
-        disabledColor: theme.colorScheme.onSurface,
-        selectedColor: theme.colorScheme.secondary,
-        secondarySelectedColor: theme.colorScheme.secondary,
+      chipTheme: theme.chipTheme.copyWith(
+        // backgroundColor: theme.colorScheme.surface,
+        // deleteIconColor: theme.colorScheme.onSurface,
+        // disabledColor: theme.colorScheme.onSurface,
+        // selectedColor: theme.colorScheme.secondary,
+        // secondarySelectedColor: theme.colorScheme.secondary,
         labelPadding: const EdgeInsets.symmetric(horizontal: 8),
         padding: const EdgeInsets.symmetric(horizontal: 8),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(16),
           side: BorderSide(
             color: theme.colorScheme.outline,
             width: borderThickness,
           ),
         ),
-        labelStyle: theme.textTheme.bodyLarge?.copyWith(
-          color: theme.colorScheme.onSurface,
-        ),
-        secondaryLabelStyle: theme.textTheme.bodyLarge?.copyWith(
-          color: theme.colorScheme.onSurface,
-        ),
-        brightness: theme.brightness,
+        // labelStyle: theme.textTheme.bodyLarge?.copyWith(
+        //   color: theme.colorScheme.onSurface,
+        // ),
+        // secondaryLabelStyle: theme.textTheme.bodyLarge?.copyWith(
+        //   color: theme.colorScheme.onSurface,
+        // ),
       ),
       colorScheme: theme.colorScheme,
       checkboxTheme: CheckboxThemeData(
