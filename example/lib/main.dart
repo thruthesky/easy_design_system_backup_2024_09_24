@@ -29,6 +29,7 @@ import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:example/screens/text_form_field/text_form_field.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 void main() {
   runApp(const MyApp());
@@ -82,6 +83,18 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         children: <Widget>[
+          const MarkdownBody(data: '''
+# Social Design System
+
+- A Flutter package that provides a set of widgets and themes for building applications following the Social Design System.
+
+## Features
+
+- **Themes**: Comic and Sleek themes.
+- **Widgets**: Buttons, TextFields, SnackBars, Dialogs, BottomSheets, Cards, Dividers, ListTiles, AppBars, BottomAppBars, NavigationBars, NavigationDrawers, TabBars, Checkboxes, CheckboxListTiles, Chips, ProgressIndicators, Badges, FloatingActionButtons, IconButtons, SegmentedButtons, TextFormFields, ColorScheme, SleepWalker, BasicCarouselEntry, WaveCarouselEntry, RoundCarouselEntry.
+
+'''),
+
           Row(
             children: [
               pushScreen('Comic Theme Demo', const ComicScreenDemo()),
