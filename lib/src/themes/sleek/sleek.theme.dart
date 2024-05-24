@@ -53,6 +53,11 @@ class SleekThemeData {
         ),
       ),
 
+      bottomSheetTheme: theme.bottomSheetTheme.copyWith(
+        backgroundColor: theme.colorScheme.surfaceContainerHigh,
+        // backgroundColor: Colors.red,
+      ),
+
       cardTheme: theme.cardTheme.copyWith(
         // TODO fix it with proper colorscheming
         // this color uses `surfaceContainerLow` from color scheme by default
@@ -76,7 +81,8 @@ class SleekThemeData {
           color: theme.colorScheme.onPrimaryContainer,
           fontWeight: FontWeight.bold,
         ),
-        // Note: Cannot use theme.chipTheme.shape here because SDS wanted RoundedRectangleBorder
+        // Note: Cannot use theme.chipTheme.shape here because
+        // SDS's sleek wanted RoundedRectangleBorder
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           side: BorderSide.none,
