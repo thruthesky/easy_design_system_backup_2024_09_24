@@ -4,11 +4,6 @@ Social design system is an Elegant and easy-to-use UI/UX design library for Flut
 
 There is nothing to learn with the social design system. It just works. Just apply the theme and continue the way how you develop your app.
 
-## Features
-
-- Design systems for Flutter app development
-- UI widgets
-
 ## Getting started
 
 Please visit the [Social Design System document website](https://thruthesky.github.io/social_design_system/) to learn more.
@@ -60,14 +55,31 @@ const ComicTheme(
 
 For more details, please visit the [Social Design System document website](https://thruthesky.github.io/social_design_system/)
 
+## Things to learn
+
+### Comic theme
+
+- Comic theme uses
+  - outline with outline color.
+
+### Sleek theme
+
+- Sleek theme uses
+  - background color with primaryContainer.
+
+
 ## Contribution
 
 - Fork and PR.
 - Leave your issues on the git repo.
 
-## How to work
+## Coding Guideline
 
-- Add theme design
-- Add Sample code
-- add screenshots to README.md
-- documentation
+- Write a good example and description on the example app since we don't provide other documents.
+
+- In each screen, have;
+    - Title as the name of widget/compoennt,
+    - Widget of the UI on first of the body
+    - And short description
+    - And sample code
+
