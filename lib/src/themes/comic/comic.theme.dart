@@ -132,7 +132,7 @@ class ComicThemeData {
         shape: Border(
           top: BorderSide(
             width: borderThickness,
-            color: theme.colorScheme.outline,
+            color: theme.colorScheme.scrim,
           ),
         ),
       ),
@@ -185,7 +185,10 @@ class ComicThemeData {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(
-            color: theme.colorScheme.outline,
+            /// Initially used the [outline] to match with the other widgets
+            /// but does not work in terms of contrast
+            /// Based from flutter api, [scrim] is used for modal components
+            color: theme.colorScheme.scrim,
             width: borderThickness,
           ),
         ),
@@ -316,8 +319,7 @@ class ComicThemeData {
           // color: theme.colorScheme.secondary,
           ),
       snackBarTheme: SnackBarThemeData(
-        // elevation: 0,
-        // TODO Fix it on the color scheme outside here
+        elevation: 0,
         backgroundColor: theme.colorScheme.surfaceContainerHighest,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
@@ -326,10 +328,8 @@ class ComicThemeData {
             color: theme.colorScheme.outline,
           ),
         ),
-        // TODO Fix it on the color scheme outside here
         actionTextColor: theme.colorScheme.primary,
         contentTextStyle: TextStyle(
-          // TODO Fix it on the color scheme outside here
           color: theme.colorScheme.onSurface,
         ),
       ),

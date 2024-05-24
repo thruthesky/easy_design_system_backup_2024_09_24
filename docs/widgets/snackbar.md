@@ -52,6 +52,19 @@ To apply, for example, the `Comic Theme`, we can wrap the `Scaffold` widget with
     );
   }
 ```
+
+## Colors used for the theme
+**Comic Theme**
+- backgroundColor : `surfaceContainerHighest`
+- borderColor : `outline`
+- textColor : `onSurface`
+- actionTextColor : `primary`
+
+**Sleek Theme**
+- backgroundColor : `primaryContainer`
+- textColor : `onPrimaryContainer`
+- actionTextColor : `primary`
+
 ## Snackbar Behaviors
 SDS lets you customize the widgets however you want. Here are some example of how you can customize your own snackbar.
 
