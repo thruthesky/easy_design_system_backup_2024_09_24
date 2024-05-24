@@ -28,7 +28,7 @@ jobs:
         run: flutter config --enable-web
       - name: "Build Web App"
         working-directory: ./example
-        run: flutter build web --wasm
+        run: flutter build web --wasm --base-href "/social_design_system/"
 
       # 깃 허브 배포. gh-page 브랜치에 배포를 한다.
       - name: deploy
