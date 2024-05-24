@@ -56,7 +56,9 @@ class SleekThemeData {
       cardTheme: theme.cardTheme.copyWith(
         // TODO fix it with proper colorscheming
         // this color uses `surfaceContainerLow` from color scheme by default
-        // color: theme.colorScheme.primary,
+        // and the variant card.filled uses`surfaceContainerHigh` from color
+        // scheme by default
+        // color: theme.colorScheme.surfaceContainerLowest,
         elevation: 0,
         shape: RoundedRectangleBorder(
           side: BorderSide.none,
