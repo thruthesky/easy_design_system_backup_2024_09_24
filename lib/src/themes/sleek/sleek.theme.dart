@@ -63,6 +63,46 @@ class SleekThemeData {
           borderRadius: BorderRadius.circular(24),
         ),
       ),
+      chipTheme: theme.chipTheme.copyWith(
+        // selectedColor: theme.colorScheme.secondary,
+        // secondarySelectedColor: theme.colorScheme.secondary,
+        backgroundColor: theme.colorScheme.primaryContainer,
+        selectedColor: theme.colorScheme.inversePrimary,
+        // selectedColor: theme.colorScheme.primary,
+        labelStyle: (theme.chipTheme.labelStyle ?? const TextStyle()).copyWith(
+          color: theme.colorScheme.onPrimaryContainer,
+        ),
+        secondaryLabelStyle:
+            (theme.chipTheme.secondaryLabelStyle ?? const TextStyle()).copyWith(
+          color: theme.colorScheme.onPrimaryContainer,
+          fontWeight: FontWeight.bold,
+        ),
+        labelPadding: const EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: BorderSide.none,
+        ),
+        side: BorderSide.none,
+      ),
+
+      // chipTheme: ChipThemeData(
+      //   backgroundColor: theme.colorScheme.primaryContainer,
+      //   selectedColor: theme.colorScheme.primary,
+      //   labelStyle: TextStyle(
+      //     color: theme.colorScheme.primary,
+      //   ),
+      //   secondaryLabelStyle: TextStyle(
+      //     color: theme.colorScheme.onPrimary,
+      //   ),
+      //   labelPadding: const EdgeInsets.symmetric(horizontal: 8),
+      //   padding: const EdgeInsets.symmetric(horizontal: 8),
+      //   shape: RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.circular(16),
+      //     side: BorderSide.none,
+      //   ),
+      //   side: BorderSide.none,
+      // ),
       colorScheme: Theme.of(context).colorScheme,
       dialogBackgroundColor: theme.colorScheme.primaryContainer,
       dialogTheme: DialogTheme(
