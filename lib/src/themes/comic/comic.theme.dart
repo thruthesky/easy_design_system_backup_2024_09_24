@@ -157,11 +157,11 @@ class ComicThemeData {
       /// [Chip] @thruthesky - 2024-05-22
       ///
       chipTheme: ChipThemeData(
-        backgroundColor: theme.colorScheme.surface,
-        deleteIconColor: theme.colorScheme.onSurface,
-        disabledColor: theme.colorScheme.onSurface,
-        selectedColor: theme.colorScheme.secondary,
-        secondarySelectedColor: theme.colorScheme.secondary,
+        // backgroundColor: theme.colorScheme.surface,
+        // deleteIconColor: theme.colorScheme.onSurface,
+        // disabledColor: theme.colorScheme.onSurface,
+        // selectedColor: theme.colorScheme.secondary,
+        // secondarySelectedColor: theme.colorScheme.secondary,
         labelPadding: const EdgeInsets.symmetric(horizontal: 8),
         padding: const EdgeInsets.symmetric(horizontal: 8),
         shape: RoundedRectangleBorder(
