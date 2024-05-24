@@ -17,6 +17,7 @@ import 'package:example/screens/list_tile/list_tile.screen.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
+import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
@@ -26,6 +27,7 @@ import 'package:example/screens/tab_bar/tab_bar.screen.dart';
 import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:example/screens/text_form_field/text_form_field.screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,6 +40,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      themeMode: ThemeMode.dark,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
@@ -57,6 +60,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      if (const String.fromEnvironment('MODE') == 'noe') {
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => const NavigationDrawerScreen()));
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,8 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('BottomAppBar', const BottomAppBarScreen()),
           // ElevatedButton(onPressed: () {}, child: const Text("NavigationBar")),
           pushScreen('NavigationBar', const NavigationBarScreen()),
-          ElevatedButton(
-              onPressed: () {}, child: const Text("NavigationDrawer")),
+          pushScreen("NavigationDrawer", const NavigationDrawerScreen()),
           ElevatedButton(onPressed: () {}, child: const Text("NavigationRail")),
           // ElevatedButton(onPressed: () {}, child: const Text("TabBar")),
           pushScreen('TabBar', const TabBarScreen()),

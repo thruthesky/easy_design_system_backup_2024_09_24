@@ -10,30 +10,55 @@ class CardScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Card'),
       ),
-      body: Column(
-        children: [
-          Theme(
-            data: ComicTheme.of(context),
-            child: const Card(
-              child: Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text('Card Comic Theme'),
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Comic Theme'),
+            Theme(
+              data: ComicTheme.of(context),
+              child: const Card(
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text('Card Comic Theme'),
+                ),
               ),
             ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          Theme(
-            data: SleekTheme.of(context),
-            child: const Card(
-              child: Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text('Card Sleek Theme'),
+            Theme(
+              data: ComicTheme.of(context),
+              child: const Card.outlined(
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text('Card Outlined Comic Theme'),
+                ),
               ),
             ),
-          ),
-        ],
+            const SizedBox(
+              height: 24,
+            ),
+            const Text('Sleek Theme'),
+            Theme(
+              data: SleekTheme.of(context),
+              child: const Card(
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text('Card Sleek Theme'),
+                ),
+              ),
+            ),
+            Theme(
+              data: SleekTheme.of(context),
+              child: const Card.filled(
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text('Card Filled Sleek Theme'),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
