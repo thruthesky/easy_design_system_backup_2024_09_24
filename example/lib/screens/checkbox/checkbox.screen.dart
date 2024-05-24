@@ -27,7 +27,7 @@ class _CheckboxScreenState extends State<CheckboxScreen> {
           children: [
             const Padding(
               padding: EdgeInsets.only(left: 16.0),
-              child: Text('ComicTheme'),
+              child: Text('Comic'),
             ),
             Theme(
               data: ComicTheme.of(context),
@@ -58,10 +58,6 @@ class _CheckboxScreenState extends State<CheckboxScreen> {
                       const Text(
                         'Off',
                       ),
-                      const Checkbox(
-                        value: true,
-                        onChanged: null,
-                      ),
                     ],
                   ),
                   const Row(
@@ -91,7 +87,7 @@ class _CheckboxScreenState extends State<CheckboxScreen> {
             ),
             const Padding(
               padding: EdgeInsets.only(left: 16.0),
-              child: Text('SleekTheme'),
+              child: Text('Sleek'),
             ),
             Theme(
               data: SleekTheme.of(context),
