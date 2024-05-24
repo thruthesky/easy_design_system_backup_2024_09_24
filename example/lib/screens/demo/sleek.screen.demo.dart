@@ -1,3 +1,4 @@
+import 'package:example/screens/demo/widgets/list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -45,11 +46,8 @@ class _ComicScreenDemoState extends State<SleekScreenDemo>
           children: [
             Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text('First'),
-                  const SizedBox(height: 24),
+                  const ListTileDemo(title: 'Sleek ListTile'),
                   const SleekBottomSheetDemo(),
                   const SizedBox(height: 24),
                   TextButton(

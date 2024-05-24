@@ -1,3 +1,4 @@
+import 'package:example/screens/demo/widgets/list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -48,8 +49,7 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text('First'),
-                  const SizedBox(height: 24),
+                  const ListTileDemo(title: 'Comic ListTile'),
                   const SizedBox(height: 24),
                   const ComicBottomSheetDemo(),
                   const SizedBox(height: 24),
