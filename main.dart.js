@@ -89653,7 +89653,7 @@ l=new A.a3l(A.u(e,t.w4),A.u(e,t.S),p,!1,o,n,m)
 o.N(0,f.a)
 n.N(0,f.b)
 h.a.toString
-k=B.Co.dn("# Social Design System\n\n- A Flutter package that provides a set of widgets and themes for building applications following the Social Design System.\n\n## Features\n\n- **Themes**: Comic and Sleek themes.\n- **Widgets**: Buttons, TextFields, SnackBars, Dialogs, BottomSheets, Cards, Dividers, ListTiles, AppBars, BottomAppBars, NavigationBars, NavigationDrawers, TabBars, Checkboxes, CheckboxListTiles, Chips, ProgressIndicators, Badges, FloatingActionButtons, IconButtons, SegmentedButtons, TextFormFields, ColorScheme, SleepWalker, BasicCarouselEntry, WaveCarouselEntry, RoundCarouselEntry.\n\n")
+k=B.Co.dn("# Social Design System\n\n- A Flutter package that provides a set of widgets and themes for building applications following the Social Design System.\n\n## Features\n\n- **Themes**: Comic and Sleek themes.\n- **Widgets**: Buttons, TextFields, SnackBars, Dialogs, BottomSheets, Cards, Dividers, ListTiles, AppBars, BottomAppBars, NavigationBars, NavigationDrawers, TabBars, Checkboxes, CheckboxListTiles, Chips, ProgressIndicators, Badges, FloatingActionButtons, IconButtons, SegmentedButtons, TextFormFields, ColorScheme, SleepWalker, BasicCarouselEntry, WaveCarouselEntry, RoundCarouselEntry.\n\n```dart\nRow(\n  children: [\n    pushScreen('Comic Theme Demo', const ComicScreenDemo()),\n    pushScreen('Sleek Theme Demo', const SleekScreenDemo()),\n  ],\n),\n```\n\n")
 f=A.a0(k).i("a7<1,eD>")
 j=A.a0_(A.a6(new A.a7(k,A.aKA(),f),!0,f.i("aF.E")),l).Wz()
 l.Pi(j)
