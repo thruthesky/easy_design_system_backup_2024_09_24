@@ -139,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
           pushScreen('Color scheme', const ColorSchemeScreen()),
 
-          pushScreen('Color scheme', const ColorSchemeNewScreen()),
+          pushScreen('Color scheme new', const ColorSchemeNewScreen()),
         ],
       ),
     );
