@@ -10,108 +10,111 @@ class BottomSheetScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Bottom Sheet'),
       ),
-      body: Wrap(
-        spacing: 24,
-        children: [
-          Theme(
-            data: ComicTheme.of(context),
-            child: ElevatedButton(
-              onPressed: () => showModalBottomSheet(
-                context: context,
-                builder: (context) => Theme(
-                  data: ComicTheme.of(context),
-                  child: BottomSheet(
-                    onClosing: () {},
-                    builder: (context) => const SizedBox(
-                      height: 200,
-                      child: Center(
-                        child: Text('Comic'),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              child: const Text('Display Comic Modal Bottomsheet'),
-            ),
-          ),
-          Builder(builder: (context) {
-            return Theme(
+      body: Center(
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          spacing: 24,
+          children: [
+            Theme(
               data: ComicTheme.of(context),
               child: ElevatedButton(
-                onPressed: () => showBottomSheet(
+                onPressed: () => showModalBottomSheet(
                   context: context,
                   builder: (context) => Theme(
                     data: ComicTheme.of(context),
                     child: BottomSheet(
                       onClosing: () {},
-                      builder: (context) => SizedBox(
+                      builder: (context) => const SizedBox(
                         height: 200,
                         child: Center(
-                          child: OutlinedButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: const Text('Close'),
-                          ),
+                          child: Text('Comic'),
                         ),
                       ),
                     ),
                   ),
                 ),
-                child: const Text('Display Comic Bottomsheet'),
+                child: const Text('Display Comic Modal Bottomsheet'),
               ),
-            );
-          }),
-          Theme(
-            data: SleekThemeData.of(context),
-            child: ElevatedButton(
-              onPressed: () => showModalBottomSheet(
-                context: context,
-                builder: (context) => Theme(
-                  data: SleekThemeData.of(context),
-                  child: BottomSheet(
-                    onClosing: () {},
-                    builder: (context) => const SizedBox(
-                      height: 200,
-                      child: Center(
-                        child: Text('Sleek'),
+            ),
+            Builder(builder: (context) {
+              return Theme(
+                data: ComicTheme.of(context),
+                child: ElevatedButton(
+                  onPressed: () => showBottomSheet(
+                    context: context,
+                    builder: (context) => Theme(
+                      data: ComicTheme.of(context),
+                      child: BottomSheet(
+                        onClosing: () {},
+                        builder: (context) => SizedBox(
+                          height: 200,
+                          child: Center(
+                            child: OutlinedButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: const Text('Close'),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ),
+                  child: const Text('Display Comic Bottomsheet'),
                 ),
-              ),
-              child: const Text('Display Sleek Modal Bottomsheet'),
-            ),
-          ),
-          Builder(builder: (context) {
-            return Theme(
-              data: SleekTheme.of(context),
+              );
+            }),
+            Theme(
+              data: SleekThemeData.of(context),
               child: ElevatedButton(
-                onPressed: () => showBottomSheet(
+                onPressed: () => showModalBottomSheet(
                   context: context,
                   builder: (context) => Theme(
-                    data: SleekTheme.of(context),
+                    data: SleekThemeData.of(context),
                     child: BottomSheet(
                       onClosing: () {},
-                      builder: (context) => SizedBox(
+                      builder: (context) => const SizedBox(
                         height: 200,
                         child: Center(
-                          child: OutlinedButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: const Text('Close'),
-                          ),
+                          child: Text('Sleek'),
                         ),
                       ),
                     ),
                   ),
                 ),
-                child: const Text('Display Sleek Bottomsheet'),
+                child: const Text('Display Sleek Modal Bottomsheet'),
               ),
-            );
-          }),
-        ],
+            ),
+            Builder(builder: (context) {
+              return Theme(
+                data: SleekTheme.of(context),
+                child: ElevatedButton(
+                  onPressed: () => showBottomSheet(
+                    context: context,
+                    builder: (context) => Theme(
+                      data: SleekTheme.of(context),
+                      child: BottomSheet(
+                        onClosing: () {},
+                        builder: (context) => SizedBox(
+                          height: 200,
+                          child: Center(
+                            child: OutlinedButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: const Text('Close'),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  child: const Text('Display Sleek Bottomsheet'),
+                ),
+              );
+            }),
+          ],
+        ),
       ),
     );
   }

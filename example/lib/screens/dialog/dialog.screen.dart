@@ -18,12 +18,16 @@ class DialogScreen extends StatelessWidget {
             // Dialogs
             ElevatedButton(
               onPressed: () => showDialog(
+                barrierColor:
+                    Theme.of(context).colorScheme.scrim.withAlpha(100),
                 context: context,
                 builder: (context) => Theme(
                   data: ComicTheme.of(context),
-                  child: const Dialog(
-                    child: DialogContent(),
-                  ),
+                  child: Builder(builder: (context) {
+                    return const Dialog(
+                      child: DialogContent(),
+                    );
+                  }),
                 ),
               ),
               child: const Text('Comic Dialog'),
