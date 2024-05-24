@@ -1,3 +1,4 @@
+import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -142,6 +143,10 @@ class _CheckboxScreenState extends State<CheckboxScreen> {
                 ],
               ),
             ),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: NothingToLearn(),
+            )
           ],
         ),
       ),
