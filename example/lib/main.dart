@@ -1,8 +1,10 @@
 import 'package:example/screens/alert_dialog/alert_dialog.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
+import 'package:example/screens/bottom_app_bar/bottom_app_bar.screen.dart';
 import 'package:example/screens/bottom_sheet/bottom_sheet.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/card/card.screen.dart';
+import 'package:example/screens/checkbox/checkbox.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
 import 'package:example/screens/demo/comic.screen.demo.dart';
 import 'package:example/screens/demo/sleek.screen.demo.dart';
@@ -14,10 +16,12 @@ import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
 import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
+import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
 import 'package:example/screens/snackbar/snackbars.screen.dart';
+import 'package:example/screens/tab_bar/tab_bar.screen.dart';
 import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:example/screens/text_form_field/text_form_field.screen.dart';
 import 'package:flutter/material.dart';
@@ -74,8 +78,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView(
         children: <Widget>[
-          ElevatedButton(
-              onPressed: () {}, child: const Text("light & dark mode")),
+          Row(
+            children: [
+              pushScreen('Comic Theme Demo', const ComicScreenDemo()),
+              pushScreen('Sleek Theme Demo', const SleekScreenDemo()),
+            ],
+          ),
           pushScreen('TextFields', const TextFieldScreen()),
           pushScreen('Buttons', const ButtonsScreen()),
           //
@@ -94,12 +102,14 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Divider', const DividerScreen()),
           pushScreen('ListTile', const ListTileScreen()),
           ElevatedButton(onPressed: () {}, child: const Text("AppBar")),
-          ElevatedButton(onPressed: () {}, child: const Text("Bottom App Bar")),
-          ElevatedButton(onPressed: () {}, child: const Text("NavigationBar")),
+          pushScreen('BottomAppBar', const BottomAppBarScreen()),
+          // ElevatedButton(onPressed: () {}, child: const Text("NavigationBar")),
+          pushScreen('NavigationBar', const NavigationBarScreen()),
           pushScreen("NavigationDrawer", const NavigationDrawerScreen()),
           ElevatedButton(onPressed: () {}, child: const Text("NavigationRail")),
-          ElevatedButton(onPressed: () {}, child: const Text("TabBar")),
-          ElevatedButton(onPressed: () {}, child: const Text("Checkbox")),
+          // ElevatedButton(onPressed: () {}, child: const Text("TabBar")),
+          pushScreen('TabBar', const TabBarScreen()),
+          pushScreen('Checkbox', const CheckboxScreen()),
           ElevatedButton(onPressed: () {}, child: const Text("Chip")),
 
           pushScreen('Sleep Walker', const SleepWalkerScreen()),
@@ -107,8 +117,6 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Wave Carousel Entry', const WaveCarouselEntryScreen()),
           pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
           pushScreen('Color scheme', const ColorSchemeScreen()),
-          pushScreen('Comic Theme Demo', const ComicScreenDemo()),
-          pushScreen('Sleek Theme Demo', const SleekScreenDemo())
         ],
       ),
     );

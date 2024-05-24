@@ -13,12 +13,46 @@ class SleekThemeData {
   /// [of] is a method that returns a [ThemeData] object with the color scheme
   static ThemeData of(BuildContext context) {
     final theme = Theme.of(context);
+    // final theme = Theme.of(context).copyWith(
+    //   colorScheme: ColorScheme.fromSeed(
+    //     seedColor: const Color(0xFF6750A4),
+    //     // brightness: Brightness.dark,
+    //     error: const Color(0xFFB00020),
+    //     onSurfaceVariant: Colors.pink,
+    //     onSurface: Colors.pink,
+    //     surface: Colors.pink,
+    //     surfaceVariant: Colors.pink,
+    //     primary: Colors.pink,
+    //     onPrimary: Colors.pink,
+    //     secondary: Colors.pink,
+    //     onSecondary: Colors.pink,
+    //     background: Colors.pink,
+    //     onBackground: Colors.pink,
+    //   ),
+    // );
     return ThemeData(
-      badgeTheme: BadgeThemeData(
-        backgroundColor: theme.colorScheme.primary,
-        textColor: theme.colorScheme.onPrimary,
-        padding: const EdgeInsets.only(left: 5, right: 5),
+      // NOTE: Did not set the badge color because it
+      // should be up to the developer
+      // by default it is set to colorScheme.error
+      // badgeTheme: BadgeThemeData(
+      //   backgroundColor: theme.colorScheme.primary,
+      //   textColor: theme.colorScheme.onPrimary,
+      // ),
+      bottomAppBarTheme: theme.bottomAppBarTheme.copyWith(
+        color: theme.colorScheme.primaryContainer,
+        shape: const AutomaticNotchedShape(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(24),
+              topRight: Radius.circular(24),
+            ),
+          ),
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(28)),
+          ),
+        ),
       ),
+
       cardTheme: theme.cardTheme.copyWith(
         // TODO fix it with proper colorscheming
         // this color uses `surfaceContainerLow` from color scheme by default
@@ -35,6 +69,11 @@ class SleekThemeData {
       dialogBackgroundColor: theme.colorScheme.primaryContainer,
       dialogTheme: DialogTheme(
         iconColor: theme.colorScheme.primary,
+      ),
+      checkboxTheme: CheckboxThemeData(
+        side: BorderSide(
+          color: theme.colorScheme.outline,
+        ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
@@ -78,11 +117,55 @@ class SleekThemeData {
           borderRadius: BorderRadius.circular(24),
         ),
       ),
+      navigationBarTheme: theme.navigationBarTheme.copyWith(
+        backgroundColor: theme.colorScheme.primaryContainer,
+        indicatorColor: theme.colorScheme.onPrimary,
+        iconTheme: WidgetStateProperty.resolveWith(
+          (state) {
+            if (state.contains(WidgetState.selected)) {
+              return IconThemeData(
+                color: theme.colorScheme.primary,
+              );
+            }
+            return IconThemeData(
+              // color: theme.colorScheme.onPrimary,
+              color: theme.colorScheme.onPrimaryContainer,
+            );
+          },
+        ),
+        labelTextStyle: WidgetStateTextStyle.resolveWith((state) {
+          if (state.contains(WidgetState.selected)) {
+            return TextStyle(
+              fontSize: 12,
+              color: theme.colorScheme.primary,
+              fontWeight: FontWeight.w700,
+            );
+          }
+          return TextStyle(
+            fontSize: 12,
+            color: theme.colorScheme.onPrimaryContainer,
+          );
+        }),
+        elevation: 0,
+      ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
         linearTrackColor: theme.colorScheme.primaryContainer.withAlpha(80),
       ),
-      segmentedButtonTheme: SegmentedButtonThemeData(
+      // segmentedButtonTheme: const SegmentedButtonThemeData(
+      // style: SegmentedButton.styleFrom(
+      //   // selectedBackgroundColor: theme.colorScheme.primary,
+      //   // selectedForegroundColor: theme.colorScheme.onPrimary,
+      //   // backgroundColor: theme.colorScheme.primaryContainer,
+      //   side: BorderSide.none,
+      //   elevation: 0,
+      // ),
+      // ),
+      segmentedButtonTheme: theme.segmentedButtonTheme.copyWith(
         style: SegmentedButton.styleFrom(
+          // The idea of sleek design is solid, unbordered. However,
+          // the color it uses might be surface that doesn't follow/look like the sleek
+          // idea when we removed the border. That is why we need to give color
+          // for selectedBackgroundColor, selectedForegroundColor, and backgroundColor.
           selectedBackgroundColor: theme.colorScheme.primary,
           selectedForegroundColor: theme.colorScheme.onPrimary,
           backgroundColor: theme.colorScheme.primaryContainer,

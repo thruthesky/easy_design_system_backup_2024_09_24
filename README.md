@@ -79,7 +79,7 @@ For more details, please visit the [Social Design System document website](https
 
 - Add theme desing
 - Add Sample code
-- add screenshots
+- add screenshots to README.md
 - documentation
 
 

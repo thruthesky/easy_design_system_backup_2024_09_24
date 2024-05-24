@@ -22,11 +22,13 @@ class _FloatingActionButtonScreenState
         child: Wrap(
           runSpacing: 8,
           children: [
+            const Text("Comic Theme"),
             Theme(
               data: ComicThemeData.of(context),
               child: Row(
                 children: [
                   FloatingActionButton(
+                    heroTag: 'fab',
                     onPressed: () {
                       debugPrint('Pressed');
                     },
@@ -34,6 +36,7 @@ class _FloatingActionButtonScreenState
                   ),
                   const SizedBox(width: 8),
                   FloatingActionButton.extended(
+                    heroTag: 'ss',
                     onPressed: () {
                       debugPrint('Pressed');
                     },
@@ -42,10 +45,13 @@ class _FloatingActionButtonScreenState
                 ],
               ),
             ),
+            const SizedBox(height: 80),
+            const Text("Sleek Theme"),
             SleekTheme(
               child: Row(
                 children: [
                   FloatingActionButton(
+                    heroTag: 'ssss',
                     onPressed: () {
                       debugPrint('Pressed');
                     },
@@ -53,6 +59,7 @@ class _FloatingActionButtonScreenState
                   ),
                   const SizedBox(width: 8),
                   FloatingActionButton.extended(
+                    heroTag: 'sssss',
                     onPressed: () {
                       debugPrint('Pressed');
                     },
