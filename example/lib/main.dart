@@ -1,4 +1,5 @@
 import 'package:example/screens/alert_dialog/alert_dialog.screen.dart';
+import 'package:example/screens/app_bar/app_bar.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
 import 'package:example/screens/bottom_app_bar/bottom_app_bar.screen.dart';
 import 'package:example/screens/bottom_sheet/bottom_sheet.screen.dart';
@@ -86,7 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Card', const CardScreen()),
           pushScreen('Divider', const DividerScreen()),
           pushScreen('ListTile', const ListTileScreen()),
-          ElevatedButton(onPressed: () {}, child: const Text("AppBar")),
+          // ElevatedButton(onPressed: () {}, child: const Text("AppBar")),
+          pushScreen("AppBar", const AppBarScreen()),
           pushScreen('BottomAppBar', const BottomAppBarScreen()),
           // ElevatedButton(onPressed: () {}, child: const Text("NavigationBar")),
           pushScreen('NavigationBar', const NavigationBarScreen()),
