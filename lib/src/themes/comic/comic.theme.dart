@@ -184,6 +184,14 @@ class ComicThemeData {
           width: borderThickness,
           color: theme.colorScheme.outline,
         ),
+        fillColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outline.withAlpha(75);
+            }
+            return null;
+          },
+        ),
       ),
       dialogTheme: DialogTheme(
         elevation: 0,
