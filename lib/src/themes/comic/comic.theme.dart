@@ -316,9 +316,9 @@ class ComicThemeData {
           // color: theme.colorScheme.secondary,
           ),
       snackBarTheme: SnackBarThemeData(
-        elevation: 0,
+        // elevation: 0,
         // TODO Fix it on the color scheme outside here
-        backgroundColor: theme.colorScheme.surface,
+        backgroundColor: theme.colorScheme.surfaceContainerHighest,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(

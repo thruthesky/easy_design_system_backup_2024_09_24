@@ -52,5 +52,39 @@ To apply, for example, the `Comic Theme`, we can wrap the `Scaffold` widget with
     );
   }
 ```
-### Customizing the Snackbar
+## Snackbar Behaviors
+SDS lets you customize the widgets however you want. Here are some example of how you can customize your own snackbar.
 
+### Snackbar Properties
+Changing the snackbar behaviors depends on your needs.
+
+***SnackBarBehavior.fixed*** lets the `SnackBar` into its default position and sizes.
+
+![Fixed Comic SnackBar](https://thruthesky.github.io/social_design_system/images/fixed.comic.snackbar.jpg)
+
+```dart
+SnackBar(
+  content: const Text('This is Comic SnackBar'),
+  behavior: SnackBarBehavior.fixed,
+  action: SnackBarAction(
+      onPressed: () {},
+      label: 'Action',
+  ),
+),
+```
+***SnackBarBehavior.floating*** makes the `SnackBar` have a floating effect.
+
+
+![floating Comic SnackBar](https://thruthesky.github.io/social_design_system/images/floating.comic.snackbar.jpg)
+
+```dart
+SnackBar(
+  content: const Text('This is Comic SnackBar'),
+  behavior: SnackBarBehavior.floating,
+  margin: const EdgeInsets.fromLTRB(40, 0, 40, 32),
+  action: SnackBarAction(
+    onPressed: () {},
+    label: 'Action',
+  ),
+),
+```
