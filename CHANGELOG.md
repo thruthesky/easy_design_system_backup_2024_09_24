@@ -1,3 +1,7 @@
+## 0.0.13
+* Update. ui designs on coming & sleek theme.
+* Update. document.
+
 ## 0.0.12
 * Fix. comic theme dar error.
 

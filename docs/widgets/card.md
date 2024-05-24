@@ -1,5 +1,3 @@
 # Card
 
-There is nothign to learn. Just continue your work.
-
-
+There is nothing to learn. Just continue your work.

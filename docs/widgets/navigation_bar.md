@@ -1,14 +1,29 @@
-# Bottom Navigation Bar
+# Navigation Bar
 
-Comic design also gives bottom navigation bar a style.
+<!-- Note: Navigation Bar uses Material 3 Design -->
 
-However, currently, there is no top outline in the theming for Navigation Bar. By default there will be no top outline. To add an outline NavigationBar must be a child of a Container with a BoxDecoration that has Border at top (it will be shown in example code below).
+Comic design also gives navigation bar a style. However, currently, there is no top outline in the theming for Navigation Bar. By default there will be no top outline. To add an outline NavigationBar must be a child of a Container with a BoxDecoration that has Border at top (it will be shown in example code below).
 
-![Comic Bottom Navigation Bar](../../images/comic.bottom_navigation_bar.jpg)
+Comic Navigation Bar:
+![Comic Navigation Bar](../../images/comic.navigation_bar1.jpg)
+
+Sleek design has the solid coloring for its background. SDS (Social Design System) used different color for navigation bar to look consistent.
+
+These are the colors used by the theme:
+
+- backgroundColor: `primaryContainer`,
+- indicatorColor: `onPrimary`
+- icon's color when selected: `primary`,
+- icon's color when unselected: `onPrimaryContainer`
+- label's color when selected: `primary`
+- label's color when unselected: `onPrimaryContainer`
+
+Sleek Navigation Bar:
+![Sleek Navigation Bar](../../images/sleek.navigation_bar.jpg)
 
 ## How to apply
 
-Check this example code.
+Check this example code, simply the usual way to apply theme in Flutter.
 
 ```dart
 Theme(
@@ -48,7 +63,11 @@ Theme(
 )
 ```
 
-To add the outline above the navigation bar. Check this example code.
+<!-- TODO need consulation - for confirmation -->
+
+For Comic Theme, To add the outline above the navigation bar. Check this example code. (This will be up to the developer).
+
+![Comic Navigation Bar](../../images/comic.navigation_bar.jpg)
 
 ```dart
 Theme(
