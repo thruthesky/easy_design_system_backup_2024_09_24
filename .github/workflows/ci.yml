@@ -21,7 +21,7 @@ jobs:
           channel: "stable"
       - run: flutter --version
       - name: "Run flutter pub get"
-        working-directory: ./example
+        working-directory: ./example # example 폴더에서 작업한다.
         run: flutter pub get
       - name: Enable flutter web
         working-directory: ./example
