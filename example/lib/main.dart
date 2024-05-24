@@ -93,6 +93,15 @@ class _MyHomePageState extends State<MyHomePage> {
 - **Themes**: Comic and Sleek themes.
 - **Widgets**: Buttons, TextFields, SnackBars, Dialogs, BottomSheets, Cards, Dividers, ListTiles, AppBars, BottomAppBars, NavigationBars, NavigationDrawers, TabBars, Checkboxes, CheckboxListTiles, Chips, ProgressIndicators, Badges, FloatingActionButtons, IconButtons, SegmentedButtons, TextFormFields, ColorScheme, SleepWalker, BasicCarouselEntry, WaveCarouselEntry, RoundCarouselEntry.
 
+```dart
+Row(
+  children: [
+    pushScreen('Comic Theme Demo', const ComicScreenDemo()),
+    pushScreen('Sleek Theme Demo', const SleekScreenDemo()),
+  ],
+),
+```
+
 '''),
 
           Row(
