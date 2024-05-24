@@ -56,7 +56,9 @@ class SleekThemeData {
       cardTheme: theme.cardTheme.copyWith(
         // TODO fix it with proper colorscheming
         // this color uses `surfaceContainerLow` from color scheme by default
-        // color: theme.colorScheme.primary,
+        // and the variant card.filled uses`surfaceContainerHigh` from color
+        // scheme by default
+        // color: theme.colorScheme.surfaceContainerLowest,
         elevation: 0,
         shape: RoundedRectangleBorder(
           side: BorderSide.none,
@@ -106,7 +108,16 @@ class SleekThemeData {
       ),
       checkboxTheme: CheckboxThemeData(
         side: BorderSide(
+          width: 0.5,
           color: theme.colorScheme.outline,
+        ),
+        fillColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outline.withAlpha(50);
+            }
+            return null;
+          },
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(

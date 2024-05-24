@@ -139,7 +139,7 @@ class ComicThemeData {
         shape: Border(
           top: BorderSide(
             width: borderThickness,
-            color: theme.colorScheme.outline,
+            color: theme.colorScheme.scrim,
           ),
         ),
       ),
@@ -174,13 +174,24 @@ class ComicThemeData {
           width: borderThickness,
           color: theme.colorScheme.outline,
         ),
+        fillColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outline.withAlpha(75);
+            }
+            return null;
+          },
+        ),
       ),
       dialogTheme: DialogTheme(
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(
-            color: theme.colorScheme.outline,
+            /// Initially used the [outline] to match with the other widgets
+            /// but does not work in terms of contrast
+            /// Based from flutter api, [scrim] is used for modal components
+            color: theme.colorScheme.scrim,
             width: borderThickness,
           ),
         ),
@@ -255,7 +266,11 @@ class ComicThemeData {
         ),
       ),
       listTileTheme: theme.listTileTheme.copyWith(
-        tileColor: theme.colorScheme.surface,
+        // Note: By default, the tileColor uses Colors.transparent so we should
+        // not give tile color on comic theme because it might conflict with other
+        // widget that uses background color. We should let the developers
+        // override the tileColor instead
+        // tileColor: theme.colorScheme.surface,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
@@ -305,15 +320,45 @@ class ComicThemeData {
         ),
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
       ),
-
+      drawerTheme: theme.drawerTheme.copyWith(
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        endShape: RoundedRectangleBorder(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(24),
+              bottomLeft: Radius.circular(24),
+            ),
+            side: BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.outline,
+            )),
+        shape: RoundedRectangleBorder(
+            borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(24),
+                bottomRight: Radius.circular(24)),
+            side: BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.outline,
+            )),
+      ),
+      navigationDrawerTheme: theme.navigationDrawerTheme.copyWith(
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        indicatorColor: Colors.transparent,
+        indicatorShape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+            side: BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.outline,
+            )),
+      ),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
           // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
           // color: theme.colorScheme.secondary,
           ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
-        // TODO Fix it on the color scheme outside here
-        // backgroundColor: theme.colorScheme.surface,
+        backgroundColor: theme.colorScheme.surfaceContainerHighest,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(
@@ -321,12 +366,10 @@ class ComicThemeData {
             color: theme.colorScheme.outline,
           ),
         ),
-        // TODO Fix it on the color scheme outside here
-        // actionTextColor: theme.colorScheme.primary,
-        // contentTextStyle: TextStyle(
-        // TODO Fix it on the color scheme outside here
-        // color: theme.colorScheme.onSurface,
-        // ),
+        actionTextColor: theme.colorScheme.primary,
+        contentTextStyle: TextStyle(
+          color: theme.colorScheme.onSurface,
+        ),
       ),
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: SegmentedButton.styleFrom(
