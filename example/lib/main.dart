@@ -29,7 +29,6 @@ import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:example/screens/text_form_field/text_form_field.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:markdown_widget/widget/all.dart';
 
 void main() {
@@ -83,45 +82,16 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         children: <Widget>[
-          const MarkdownBody(data: '''
-# Social Design System
-
-- A Flutter package that provides a set of widgets and themes for building applications following the Social Design System.
-
-## Features
-
-- **Themes**: Comic and Sleek themes.
-- **Widgets**: Buttons, TextFields, SnackBars, Dialogs, BottomSheets, Cards, Dividers, ListTiles, AppBars, BottomAppBars, NavigationBars, NavigationDrawers, TabBars, Checkboxes, CheckboxListTiles, Chips, ProgressIndicators, Badges, FloatingActionButtons, IconButtons, SegmentedButtons, TextFormFields, ColorScheme, SleepWalker, BasicCarouselEntry, WaveCarouselEntry, RoundCarouselEntry.
-
-```dart
-Row(
-  children: [
-    pushScreen('Comic Theme Demo', const ComicScreenDemo()),
-    pushScreen('Sleek Theme Demo', const SleekScreenDemo()),
-  ],
-),
-```
-
-'''),
           const MarkdownBlock(data: '''
 # Social Design System
 
-- A Flutter package that provides a set of widgets and themes for building applications following the Social Design System.
+- Social design system is an Elegant UI/UX library crafted specifically for building social like applications. This is an open source project that you can fork and make PR.
+- Developers must NOT do anything, must NOT learn anything, must NOT refer any document to use the social design system. It will just work. Just continue the way how you work.
 
-## Features
-
-- **Themes**: Comic and Sleek themes.
-- **Widgets**: Buttons, TextFields, SnackBars, Dialogs, BottomSheets, Cards, Dividers, ListTiles, AppBars, BottomAppBars, NavigationBars, NavigationDrawers, TabBars, Checkboxes, CheckboxListTiles, Chips, ProgressIndicators, Badges, FloatingActionButtons, IconButtons, SegmentedButtons, TextFormFields, ColorScheme, SleepWalker, BasicCarouselEntry, WaveCarouselEntry, RoundCarouselEntry.
-
-```dart
-Row(
-  children: [
-    pushScreen('Comic Theme Demo', const ComicScreenDemo()),
-    pushScreen('Sleek Theme Demo', const SleekScreenDemo()),
-  ],
-),
-```'''),
-
+## Terms
+- `Basic widgets` means the widgets in material.dart.
+- `Visual component widget` is a widget that have a visual outloook on screen like a Text widget. While GestureDetector is not a visual component since it does not appear on the screen.
+'''),
           Row(
             children: [
               pushScreen('Comic Theme Demo', const ComicScreenDemo()),
