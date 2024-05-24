@@ -324,7 +324,7 @@ class ComicThemeData {
             ),
             side: BorderSide(
               width: borderThickness,
-              color: theme.colorScheme.outline,
+              color: theme.colorScheme.scrim,
             )),
         shape: RoundedRectangleBorder(
             borderRadius: const BorderRadius.only(
@@ -332,7 +332,7 @@ class ComicThemeData {
                 bottomRight: Radius.circular(24)),
             side: BorderSide(
               width: borderThickness,
-              color: theme.colorScheme.outline,
+              color: theme.colorScheme.scrim,
             )),
       ),
       navigationDrawerTheme: theme.navigationDrawerTheme.copyWith(

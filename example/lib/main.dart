@@ -17,6 +17,7 @@ import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
 import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
+import 'package:example/screens/navigation_rail.dart/navigation_rail.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
@@ -60,12 +61,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (const String.fromEnvironment('MODE') == 'noe') {
         Navigator.of(context).push(
-            MaterialPageRoute(builder: (_) => const NavigationDrawerScreen()));
+            MaterialPageRoute(builder: (_) => const NavigationRailScreen()));
       }
     });
   }
@@ -79,6 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView(
         children: <Widget>[
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               pushScreen('Comic Theme Demo', const ComicScreenDemo()),
               pushScreen('Sleek Theme Demo', const SleekScreenDemo()),
@@ -106,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // ElevatedButton(onPressed: () {}, child: const Text("NavigationBar")),
           pushScreen('NavigationBar', const NavigationBarScreen()),
           pushScreen("NavigationDrawer", const NavigationDrawerScreen()),
-          ElevatedButton(onPressed: () {}, child: const Text("NavigationRail")),
+          pushScreen('NavigationRail', const NavigationRailScreen()),
           // ElevatedButton(onPressed: () {}, child: const Text("TabBar")),
           pushScreen('TabBar', const TabBarScreen()),
           pushScreen('Checkbox', const CheckboxScreen()),

@@ -65,6 +65,7 @@ class SleekThemeData {
           borderRadius: BorderRadius.circular(24),
         ),
       ),
+
       colorScheme: Theme.of(context).colorScheme,
       dialogBackgroundColor: theme.colorScheme.primaryContainer,
       dialogTheme: DialogTheme(
@@ -147,6 +148,27 @@ class SleekThemeData {
           );
         }),
         elevation: 0,
+      ),
+      drawerTheme: theme.drawerTheme.copyWith(
+          elevation: 0,
+          shadowColor: Colors.transparent,
+          endShape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(24),
+              bottomLeft: Radius.circular(24),
+            ),
+          ),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(24),
+                bottomRight: Radius.circular(24)),
+          )),
+      navigationDrawerTheme: theme.navigationDrawerTheme.copyWith(
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        indicatorShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
       ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
         linearTrackColor: theme.colorScheme.primaryContainer.withAlpha(80),
