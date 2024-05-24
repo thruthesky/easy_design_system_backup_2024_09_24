@@ -31,7 +31,7 @@ class _ComicScreenDemoState extends State<SleekScreenDemo>
       data: SleekTheme.of(context),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Sleek Screen Demo'),
+          title: const Text('Sleek Theme'),
           bottom: TabBar(
             controller: _tabController,
             tabs: const [

@@ -31,7 +31,7 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
       data: ComicTheme.of(context),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Comic Screen Demo'),
+          title: const Text('Comic Theme'),
           bottom: TabBar(
             controller: _tabController,
             tabs: const [
@@ -49,6 +49,23 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  const Card(child: Text('Card has a border already')),
+                  const SizedBox(height: 24),
+                  const Card(
+                    child: Column(
+                      children: [
+                        ListTileTheme(
+                          child: ListTile(
+                            title: Text('Comic ListTile'),
+                            subtitle: Text('Subtitle'),
+                            leading: Icon(Icons.ac_unit),
+                            trailing: Icon(Icons.arrow_forward),
+                          ),
+                        ),
+                        Text("Yo"),
+                      ],
+                    ),
+                  ),
                   const ListTileDemo(title: 'Comic ListTile'),
                   const SizedBox(height: 24),
                   const ComicBottomSheetDemo(),
