@@ -5,6 +5,7 @@ import 'package:example/screens/bottom_sheet/bottom_sheet.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/card/card.screen.dart';
 import 'package:example/screens/checkbox/checkbox.screen.dart';
+import 'package:example/screens/checkbox_list_tile/checkbox_list_tile.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
 import 'package:example/screens/demo/comic.screen.demo.dart';
 import 'package:example/screens/demo/sleek.screen.demo.dart';
@@ -97,6 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // ElevatedButton(onPressed: () {}, child: const Text("TabBar")),
           pushScreen('TabBar', const TabBarScreen()),
           pushScreen('Checkbox', const CheckboxScreen()),
+          pushScreen('CheckboxListTile', const CheckboxListTileScreen()),
+
           ElevatedButton(onPressed: () {}, child: const Text("Chip")),
 
           pushScreen('Sleep Walker', const SleepWalkerScreen()),
