@@ -1,4 +1,4 @@
-import 'package:example/screens/alert_dialog/alert_dialog.screen.dart';
+import 'package:example/screens/dialog/dialog.screen.dart';
 import 'package:example/screens/app_bar/app_bar.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
 import 'package:example/screens/bottom_app_bar/bottom_app_bar.screen.dart';
@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Badge', const BadgeScreen()),
           pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
           pushScreen('SnackBar', const SnackBarScreen()),
-          pushScreen('AlertDialog', const AlertDialogScreen()),
+          pushScreen('Dialog', const DialogScreen()),
           pushScreen('BottomSheet', const BottomSheetScreen()),
           pushScreen('Card', const CardScreen()),
           pushScreen('Divider', const DividerScreen()),
