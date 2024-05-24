@@ -126,10 +126,10 @@ class ComicThemeData {
       // ),
 
       // NOTE: Unable to add borders for comic theme in bottom app bar.
-      // bottomAppBarTheme: theme.bottomAppBarTheme,
+      bottomAppBarTheme: theme.bottomAppBarTheme,
 
       bottomNavigationBarTheme: theme.bottomNavigationBarTheme.copyWith(
-        backgroundColor: Colors.red,
+        // backgroundColor: Colors.red,
         elevation: 0,
       ),
 
@@ -156,7 +156,7 @@ class ComicThemeData {
 
       /// [Chip] @thruthesky - 2024-05-22
       ///
-      chipTheme: ChipThemeData(
+      chipTheme: theme.chipTheme.copyWith(
         // backgroundColor: theme.colorScheme.surface,
         // deleteIconColor: theme.colorScheme.onSurface,
         // disabledColor: theme.colorScheme.onSurface,
@@ -165,19 +165,18 @@ class ComicThemeData {
         labelPadding: const EdgeInsets.symmetric(horizontal: 8),
         padding: const EdgeInsets.symmetric(horizontal: 8),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(16),
           side: BorderSide(
             color: theme.colorScheme.outline,
             width: borderThickness,
           ),
         ),
-        labelStyle: theme.textTheme.bodyLarge?.copyWith(
-          color: theme.colorScheme.onSurface,
-        ),
-        secondaryLabelStyle: theme.textTheme.bodyLarge?.copyWith(
-          color: theme.colorScheme.onSurface,
-        ),
-        brightness: theme.brightness,
+        // labelStyle: theme.textTheme.bodyLarge?.copyWith(
+        //   color: theme.colorScheme.onSurface,
+        // ),
+        // secondaryLabelStyle: theme.textTheme.bodyLarge?.copyWith(
+        //   color: theme.colorScheme.onSurface,
+        // ),
       ),
       colorScheme: theme.colorScheme,
       checkboxTheme: CheckboxThemeData(
