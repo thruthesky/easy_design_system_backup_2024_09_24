@@ -33,7 +33,6 @@ jobs:
       # 깃 허브 배포. gh-page 브랜치에 배포를 한다.
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
-        working-directory: ./example
         with:
           # Github Page 에 배포하기 위한 키
           github_token: ${{ secrets.REPO_SCOPE_DEPLOY_TOKEN }}
