@@ -12,14 +12,6 @@ class _ChipScreenState extends State<ChipScreen> {
   String selectedChip = "ChoiceChip1";
 
   ThemeData? _themeData;
-  Set<String> _selected = {'value1'};
-
-  void updateSelection(Set<String> newSelection) {
-    setState(() {
-      _selected = newSelection;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     _themeData ??= Theme.of(context);
@@ -33,15 +25,6 @@ class _ChipScreenState extends State<ChipScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SegmentedButton(
-                selected: _selected,
-                segments: const [
-                  ButtonSegment(value: 'value1', label: Text('Inbox')),
-                  ButtonSegment(value: 'value2', label: Text('Primary')),
-                  ButtonSegment(value: 'value3', label: Text('Others')),
-                ],
-                onSelectionChanged: updateSelection,
-              ),
               const SizedBox(height: 24),
               Wrap(
                 children: [

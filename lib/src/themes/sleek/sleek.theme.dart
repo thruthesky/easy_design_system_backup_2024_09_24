@@ -64,11 +64,8 @@ class SleekThemeData {
         ),
       ),
       chipTheme: theme.chipTheme.copyWith(
-        // selectedColor: theme.colorScheme.secondary,
-        // secondarySelectedColor: theme.colorScheme.secondary,
         backgroundColor: theme.colorScheme.primaryContainer,
         selectedColor: theme.colorScheme.inversePrimary,
-        // selectedColor: theme.colorScheme.primary,
         labelStyle: (theme.chipTheme.labelStyle ?? const TextStyle()).copyWith(
           color: theme.colorScheme.onPrimaryContainer,
         ),
@@ -77,8 +74,7 @@ class SleekThemeData {
           color: theme.colorScheme.onPrimaryContainer,
           fontWeight: FontWeight.bold,
         ),
-        labelPadding: const EdgeInsets.symmetric(horizontal: 8),
-        padding: const EdgeInsets.symmetric(horizontal: 8),
+        // Note: Cannot use theme.chipTheme.shape here because SDS wanted RoundedRectangleBorder
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           side: BorderSide.none,
