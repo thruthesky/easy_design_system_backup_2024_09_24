@@ -13,6 +13,8 @@ class ComicNavigationRialScreen extends StatefulWidget {
 class _ComicNavigationRialScreenState extends State<ComicNavigationRialScreen> {
   int selectedIndex = 0;
 
+  String selectedTheme = 'Comic';
+
   void _onItemTapped(int index) {
     setState(() {
       selectedIndex = index;
@@ -22,7 +24,9 @@ class _ComicNavigationRialScreenState extends State<ComicNavigationRialScreen> {
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: ComicTheme.of(context),
+      data: selectedTheme == 'Comic'
+          ? ComicTheme.of(context)
+          : SleekTheme.of(context),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Comic Navigation Rail'),
@@ -47,7 +51,19 @@ class _ComicNavigationRialScreenState extends State<ComicNavigationRialScreen> {
               ],
               selectedIndex: selectedIndex,
             ),
-            const VerticalDivider()
+            const VerticalDivider(),
+            Column(
+              children: [
+                ElevatedButton(
+                  onPressed: () => setState(() => selectedTheme = 'Comic'),
+                  child: const Text('Comic Theme'),
+                ),
+                ElevatedButton(
+                  onPressed: () => setState(() => selectedTheme = 'Sleek'),
+                  child: const Text('Sleek Theme'),
+                )
+              ],
+            )
           ],
         ),
       ),

@@ -362,6 +362,14 @@ class ComicThemeData {
               color: theme.colorScheme.outline,
             )),
       ),
+      navigationRailTheme: theme.navigationRailTheme.copyWith(
+          indicatorColor: Colors.transparent,
+          indicatorShape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                color: theme.colorScheme.outline,
+                width: borderThickness,
+              ))),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
           // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
           // color: theme.colorScheme.secondary,
