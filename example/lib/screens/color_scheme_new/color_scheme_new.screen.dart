@@ -55,8 +55,6 @@ class _ColorSchemeNewScreenState extends State<ColorSchemeNewScreen> {
             Theme.of(context).colorScheme.onPrimaryFixedVariant,
         onNameColorCode: 'Theme.of(context).colorScheme.onPrimaryFixedVariant'
       ),
-
-      
       (
         name: 'secondary',
         nameColor: (context) => Theme.of(context).colorScheme.secondary,
@@ -76,6 +74,24 @@ class _ColorSchemeNewScreenState extends State<ColorSchemeNewScreen> {
         onNameColorCode: 'Theme.of(context).colorScheme.onSecondaryContainer'
       ),
       (
+        name: 'secondaryFixed',
+        nameColor: (context) => Theme.of(context).colorScheme.secondaryFixed,
+        nameColorCode: 'Theme.of(context).colorScheme.secondaryFixed',
+        onName: 'onSecondaryFixed',
+        onNameColor: (context) =>
+            Theme.of(context).colorScheme.onSecondaryFixed,
+        onNameColorCode: 'Theme.of(context).colorScheme.onSecondaryFixed'
+      ),
+      (
+        name: 'secondaryFixedDim',
+        nameColor: (context) => Theme.of(context).colorScheme.secondaryFixedDim,
+        nameColorCode: 'Theme.of(context).colorScheme.secondaryFixedDim',
+        onName: 'onSecondaryFixedVariant',
+        onNameColor: (context) =>
+            Theme.of(context).colorScheme.onSecondaryFixedVariant,
+        onNameColorCode: 'Theme.of(context).colorScheme.onSecondaryFixedVariant'
+      ),
+      (
         name: 'tertiary',
         nameColor: (context) => Theme.of(context).colorScheme.tertiary,
         nameColorCode: 'Theme.of(context).colorScheme.tertiary',
@@ -91,6 +107,23 @@ class _ColorSchemeNewScreenState extends State<ColorSchemeNewScreen> {
         onNameColor: (context) =>
             Theme.of(context).colorScheme.onTertiaryContainer,
         onNameColorCode: 'Theme.of(context).colorScheme.onTertiaryContainer'
+      ),
+      (
+        name: 'tertiaryFixed',
+        nameColor: (context) => Theme.of(context).colorScheme.tertiaryFixed,
+        nameColorCode: 'Theme.of(context).colorScheme.tertiaryFixed',
+        onName: 'onTertiaryFixed',
+        onNameColor: (context) => Theme.of(context).colorScheme.onTertiaryFixed,
+        onNameColorCode: 'Theme.of(context).colorScheme.onTertiaryFixed'
+      ),
+      (
+        name: 'tertiaryFixedDim',
+        nameColor: (context) => Theme.of(context).colorScheme.tertiaryFixedDim,
+        nameColorCode: 'Theme.of(context).colorScheme.tertiaryFixedDim',
+        onName: 'onTertiaryFixedVariant',
+        onNameColor: (context) =>
+            Theme.of(context).colorScheme.onTertiaryFixedVariant,
+        onNameColorCode: 'Theme.of(context).colorScheme.onTertiaryFixedVariant'
       ),
       (
         name: 'error',
@@ -110,10 +143,10 @@ class _ColorSchemeNewScreenState extends State<ColorSchemeNewScreen> {
         onNameColorCode: 'Theme.of(context).colorScheme.onErrorContainer'
       ),
       (
-        name: 'background',
-        nameColor: (context) => Theme.of(context).colorScheme.surface,
-        nameColorCode: 'Theme.of(context).colorScheme.surface',
-        onName: 'onBackground',
+        name: 'surfaceDim',
+        nameColor: (context) => Theme.of(context).colorScheme.surfaceDim,
+        nameColorCode: 'Theme.of(context).colorScheme.surfaceDim',
+        onName: 'onSurface',
         onNameColor: (context) => Theme.of(context).colorScheme.onSurface,
         onNameColorCode: 'Theme.of(context).colorScheme.onSurface'
       ),
@@ -126,14 +159,73 @@ class _ColorSchemeNewScreenState extends State<ColorSchemeNewScreen> {
         onNameColorCode: 'Theme.of(context).colorScheme.onSurface'
       ),
       (
-        name: 'surfaceVariant',
+        name: 'surfaceBright',
+        nameColor: (context) => Theme.of(context).colorScheme.surfaceBright,
+        nameColorCode: 'Theme.of(context).colorScheme.surfaceBright',
+        onName: 'onSurface',
+        onNameColor: (context) => Theme.of(context).colorScheme.onSurface,
+        onNameColorCode: 'Theme.of(context).colorScheme.onSurface'
+      ),
+      (
+        name: 'surfaceContainerLowest',
+        nameColor: (context) =>
+            Theme.of(context).colorScheme.surfaceContainerLowest,
+        nameColorCode: 'Theme.of(context).colorScheme.surfaceContainerLowest',
+        onName: 'onSurface',
+        onNameColor: (context) => Theme.of(context).colorScheme.onSurface,
+        onNameColorCode: 'Theme.of(context).colorScheme.onSurface'
+      ),
+      (
+        name: 'surfaceContainerLow',
+        nameColor: (context) =>
+            Theme.of(context).colorScheme.surfaceContainerLow,
+        nameColorCode: 'Theme.of(context).colorScheme.surfaceContainerLow',
+        onName: 'onSurface',
+        onNameColor: (context) => Theme.of(context).colorScheme.onSurface,
+        onNameColorCode: 'Theme.of(context).colorScheme.onSurface'
+      ),
+      (
+        name: 'surfaceContainer',
+        nameColor: (context) => Theme.of(context).colorScheme.surfaceContainer,
+        nameColorCode: 'Theme.of(context).colorScheme.surfaceContainer',
+        onName: 'onSurface',
+        onNameColor: (context) => Theme.of(context).colorScheme.onSurface,
+        onNameColorCode: 'Theme.of(context).colorScheme.onSurface'
+      ),
+      (
+        name: 'surfaceContainerHigh',
+        nameColor: (context) =>
+            Theme.of(context).colorScheme.surfaceContainerHigh,
+        nameColorCode: 'Theme.of(context).colorScheme.surfaceContainerHigh',
+        onName: 'onSurface',
+        onNameColor: (context) => Theme.of(context).colorScheme.onSurface,
+        onNameColorCode: 'Theme.of(context).colorScheme.onSurface'
+      ),
+      (
+        name: 'surfaceContainerHighest',
         nameColor: (context) =>
             Theme.of(context).colorScheme.surfaceContainerHighest,
         nameColorCode: 'Theme.of(context).colorScheme.surfaceContainerHighest',
-        onName: 'onSurfaceVariant',
+        onName: 'onSurface',
+        onNameColor: (context) => Theme.of(context).colorScheme.onSurface,
+        onNameColorCode: 'Theme.of(context).colorScheme.onSurface'
+      ),
+      (
+        name: 'onSurface',
+        nameColor: (context) => Theme.of(context).colorScheme.onSurface,
+        nameColorCode: 'Theme.of(context).colorScheme.onSurface',
+        onName: 'surface',
+        onNameColor: (context) => Theme.of(context).colorScheme.surface,
+        onNameColorCode: 'Theme.of(context).colorScheme.surface'
+      ),
+      (
+        name: 'onSurfaceVariant',
+        nameColor: (context) => Theme.of(context).colorScheme.onSurfaceVariant,
+        nameColorCode: 'Theme.of(context).colorScheme.onSurfaceVariant',
+        onName: 'surfaceContainerHighest',
         onNameColor: (context) =>
-            Theme.of(context).colorScheme.onSurfaceVariant,
-        onNameColorCode: 'Theme.of(context).colorScheme.onSurfaceVariant'
+            Theme.of(context).colorScheme.surfaceContainerHighest,
+        onNameColorCode: 'Theme.of(context).colorScheme.surfaceContainerHighest'
       ),
       (
         name: 'inverseSurface',
@@ -145,19 +237,27 @@ class _ColorSchemeNewScreenState extends State<ColorSchemeNewScreen> {
         onNameColorCode: 'Theme.of(context).colorScheme.onInverseSurface'
       ),
       (
-        name: 'surfaceTint',
-        nameColor: (context) => Theme.of(context).colorScheme.surfaceTint,
-        nameColorCode: 'Theme.of(context).colorScheme.surfaceTint',
-        onName: '',
-        onNameColor: (context) => Theme.of(context).colorScheme.onPrimary,
-        onNameColorCode: 'Theme.of(context).colorScheme.onInverseSurface'
+        name: 'onInverseSurface',
+        nameColor: (context) => Theme.of(context).colorScheme.onInverseSurface,
+        nameColorCode: 'Theme.of(context).colorScheme.onInverseSurface',
+        onName: 'inverseSurface',
+        onNameColor: (context) => Theme.of(context).colorScheme.inverseSurface,
+        onNameColorCode: 'Theme.of(context).colorScheme.inverseSurface'
       ),
       (
         name: 'inversePrimary',
         nameColor: (context) => Theme.of(context).colorScheme.inversePrimary,
         nameColorCode: 'Theme.of(context).colorScheme.inversePrimary',
-        onName: '',
+        onName: 'primary',
         onNameColor: (context) => Theme.of(context).colorScheme.primary,
+        onNameColorCode: 'Theme.of(context).colorScheme.primary'
+      ),
+      (
+        name: 'surfaceTint',
+        nameColor: (context) => Theme.of(context).colorScheme.surfaceTint,
+        nameColorCode: 'Theme.of(context).colorScheme.surfaceTint',
+        onName: '',
+        onNameColor: (context) => Theme.of(context).colorScheme.onPrimary,
         onNameColorCode: ''
       ),
       (
@@ -249,6 +349,7 @@ class _ColorSchemeNewScreenState extends State<ColorSchemeNewScreen> {
                   ),
               ],
             ),
+            const Divider(height: 32),
             const Text('Dark Mode'),
             Theme(
               data: ThemeData.dark(useMaterial3: true),
@@ -305,16 +406,25 @@ class ColorUnit extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text(
-              keyColorName,
-              style: TextStyle(color: onKeyColor, fontSize: 12),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Text(
+                keyColorName,
+                style: TextStyle(color: onKeyColor, fontSize: 9),
+              ),
             ),
+            if (onKeyColorName != '')
+              const Divider(
+                height: 1,
+                indent: 16,
+                endIndent: 16,
+              ),
             Center(
               child: Text(
                 onKeyColorName,
-                style: TextStyle(color: onKeyColor, fontSize: 12),
+                style: TextStyle(color: onKeyColor, fontSize: 9),
                 textAlign: TextAlign.center,
-                maxLines: 1,
+                maxLines: 2,
               ),
             ),
             const SizedBox(height: 16),
@@ -328,10 +438,21 @@ class ColorUnit extends StatelessWidget {
             children: [
               if (onKeyColorCode.isNotEmpty)
                 IconButton(
-                  onPressed: () async => {
+                  visualDensity:
+                      const VisualDensity(horizontal: -3, vertical: -3),
+                  iconSize: 12,
+                  onPressed: () async {
                     await Clipboard.setData(
                       ClipboardData(text: onKeyColorCode),
-                    )
+                    );
+                    if (context.mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('$onKeyColorCode copied'),
+                          duration: const Duration(seconds: 1),
+                        ),
+                      );
+                    }
                   },
                   icon: Icon(
                     Icons.edit,
@@ -342,16 +463,28 @@ class ColorUnit extends StatelessWidget {
                   ),
                 ),
               IconButton(
-                onPressed: () async => {
+                visualDensity:
+                    const VisualDensity(horizontal: -3, vertical: -3),
+                iconSize: 16,
+                padding: const EdgeInsets.all(0),
+                onPressed: () async {
                   await Clipboard.setData(
                     ClipboardData(text: keyColorCode),
-                  )
+                  );
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('$keyColorCode copied'),
+                        duration: const Duration(seconds: 1),
+                      ),
+                    );
+                  }
                 },
                 icon: Icon(
                   Icons.palette,
                   color: onKeyColor,
                 ),
-              )
+              ),
             ],
           ))
     ]);
