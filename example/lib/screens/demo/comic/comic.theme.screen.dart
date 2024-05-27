@@ -2,6 +2,7 @@ import 'package:example/screens/demo/comic/chat.tab.dart';
 import 'package:example/screens/demo/comic/home.tab.dart';
 import 'package:example/screens/demo/comic/profile.tab.dart';
 import 'package:example/screens/demo/comic/settings.tab.dart';
+import 'package:example/screens/demo/comic/status.dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -241,7 +242,11 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
         ),
         floatingActionButton: index == 0
             ? FloatingActionButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) => const StatusDialog());
+                },
                 child: const Icon(Icons.add_reaction_outlined),
               )
             : null,
