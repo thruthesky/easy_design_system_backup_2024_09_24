@@ -188,7 +188,24 @@ class ComicThemeData {
         fillColor: WidgetStateProperty.all(
           comicContainerBackgroundColor(context),
         ),
-        checkColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
+        checkColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outlineVariant;
+            }
+
+            return theme.colorScheme.onSurface;
+          },
+        ),
+      ),
+      dropdownMenuTheme: DropdownMenuThemeData(
+        menuStyle: theme.dropdownMenuTheme.menuStyle?.copyWith(
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(7),
+            ),
+          ),
+        ),
       ),
       dialogTheme: DialogTheme(
         elevation: 0,

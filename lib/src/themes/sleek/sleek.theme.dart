@@ -96,16 +96,16 @@ class SleekThemeData {
       ),
 
       checkboxTheme: CheckboxThemeData(
-        side: BorderSide(
-          width: 0.5,
-          color: theme.colorScheme.outline,
+        side: const BorderSide(
+          color: Colors.transparent,
         ),
         fillColor: WidgetStateProperty.resolveWith<Color?>(
           (Set<WidgetState> states) {
             if (states.contains(WidgetState.disabled)) {
-              return theme.colorScheme.outline.withAlpha(50);
+              return containerBackgroundColor(context);
             }
-            return null;
+
+            return theme.colorScheme.inversePrimary;
           },
         ),
       ),
