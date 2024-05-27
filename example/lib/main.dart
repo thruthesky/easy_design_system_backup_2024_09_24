@@ -20,12 +20,15 @@ import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
 import 'package:example/screens/demo/login/comic_login.demo.dart';
+import 'package:example/screens/list_view/comic.list_view.screen.dart';
+import 'package:example/screens/list_view/sleek.list_view.screen.dart';
 import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
 import 'package:example/screens/navigation_rail.dart/navigation_rail.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
 import 'package:example/screens/search/search.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
+import 'package:example/screens/setting/setting.screen.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
 import 'package:example/screens/snackbar/snackbars.screen.dart';
 import 'package:example/screens/tab_bar/tab_bar.screen.dart';
@@ -34,6 +37,7 @@ import 'package:example/screens/text_form_field/text_form_field.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:markdown_widget/widget/all.dart';
+import 'package:social_design_system/social_design_system.dart';
 
 void main() {
   runApp(const MyApp());
@@ -133,23 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Flexible(
-                child: pushScreen(
-                  'Comic Login',
-                  const ComicLoginDemo(),
-                ),
-              ),
-              Flexible(
-                child: pushScreen(
-                  'Sleek Login',
-                  const SleekLoginDemo(),
-                ),
-              ),
-            ],
-          ),
+
           const SizedBox(height: 24),
           if (const String.fromEnvironment('MODE') == 'noe') ...{
             pushScreen('Search Widget', const SearchScreen()),
@@ -180,6 +168,11 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('TextFields', const TextFieldScreen()),
           pushScreen('TextFormField', const TextFormFieldScreen()),
           const Divider(),
+          const Text('Custom Widgets:'),
+
+          pushScreen('ComicListView', const ComicListViewScreen()),
+          pushScreen('SleekListView', const SleekListViewScreen()),
+          pushScreen('Setting', const SettingScreen()),
           pushScreen('Basic Carousel Entry', const BasicCarouselEntryScreen()),
           pushScreen('Wave Carousel Entry', const WaveCarouselEntryScreen()),
           pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
