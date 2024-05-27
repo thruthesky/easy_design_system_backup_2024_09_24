@@ -1,3 +1,4 @@
+import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -12,7 +13,6 @@ class TabBarScreenState extends State<TabBarScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
-  ThemeData? _themeData;
   int index = 0;
 
   @override
@@ -27,42 +27,68 @@ class TabBarScreenState extends State<TabBarScreen>
 
   @override
   Widget build(BuildContext context) {
-    _themeData ??= Theme.of(context);
-
-    return Theme(
-      data: _themeData!,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('TabBarScreen'),
-          bottom: TabBar(
-            controller: _tabController,
-            tabs: const [
-              Tab(text: 'Widgets'),
-              Tab(text: 'Theme'),
-              Tab(text: 'Color Scheme'),
-            ],
-          ),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('TabBarScreen'),
+        // bottom: TabBar(
+        //   controller: _tabController,
+        //   tabs: const [
+        //     Tab(text: 'Widgets'),
+        //     Tab(text: 'Theme'),
+        //     Tab(text: 'Color Scheme'),
+        //   ],
+        // ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextButton(
-              onPressed: () {
-                setState(() {
-                  _themeData = ComicTheme.of(context);
-                });
-              },
-              child: const Text("Comic Theme"),
+            const Text("Comic"),
+            SizedBox(
+              height: 100,
+              width: double.maxFinite,
+              child: Theme(
+                data: ComicTheme.of(context),
+                child: Scaffold(
+                  appBar: AppBar(
+                    automaticallyImplyLeading: false,
+                    toolbarHeight: 0,
+                    bottom: TabBar(
+                      controller: _tabController,
+                      tabs: const [
+                        Tab(text: 'Widgets'),
+                        Tab(text: 'Theme'),
+                        Tab(text: 'Color Scheme'),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ),
-            TextButton(
-              onPressed: () {
-                setState(() {
-                  _themeData = SleekTheme.of(context);
-                });
-              },
-              child: const Text("Sleek Theme"),
-            )
+            const Text("Sleek"),
+            SizedBox(
+              height: 100,
+              width: double.maxFinite,
+              child: Theme(
+                data: SleekTheme.of(context),
+                child: Scaffold(
+                  appBar: AppBar(
+                    automaticallyImplyLeading: false,
+                    toolbarHeight: 0,
+                    bottom: TabBar(
+                      controller: _tabController,
+                      tabs: const [
+                        Tab(text: 'Widgets'),
+                        Tab(text: 'Theme'),
+                        Tab(text: 'Color Scheme'),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const NothingToLearn(),
           ],
         ),
       ),
