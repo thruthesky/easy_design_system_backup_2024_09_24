@@ -51,24 +51,30 @@ class _NavigationRailScreenState extends State<NavigationRailScreen> {
               ],
               selectedIndex: selectedIndex,
             ),
-            const VerticalDivider(),
-            Column(
-              children: [
-                Theme(
-                  data: ComicTheme.of(context),
-                  child: ElevatedButton(
-                    onPressed: () => setState(() => selectedTheme = 'Comic'),
-                    child: const Text('Comic Theme'),
+            if (selectedTheme == "Comic")
+              const VerticalDivider(
+                width: 0,
+              ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Theme(
+                    data: ComicTheme.of(context),
+                    child: ElevatedButton(
+                      onPressed: () => setState(() => selectedTheme = 'Comic'),
+                      child: const Text('Comic Theme'),
+                    ),
                   ),
-                ),
-                Theme(
-                  data: SleekTheme.of(context),
-                  child: ElevatedButton(
-                    onPressed: () => setState(() => selectedTheme = 'Sleek'),
-                    child: const Text('Sleek Theme'),
-                  ),
-                )
-              ],
+                  Theme(
+                    data: SleekTheme.of(context),
+                    child: ElevatedButton(
+                      onPressed: () => setState(() => selectedTheme = 'Sleek'),
+                      child: const Text('Sleek Theme'),
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),

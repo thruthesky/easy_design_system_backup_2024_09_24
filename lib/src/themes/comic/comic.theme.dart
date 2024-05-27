@@ -130,7 +130,6 @@ class ComicThemeData {
       bottomAppBarTheme: theme.bottomAppBarTheme,
 
       bottomNavigationBarTheme: theme.bottomNavigationBarTheme.copyWith(
-        // backgroundColor: Colors.red,
         elevation: 0,
       ),
 
@@ -344,7 +343,7 @@ class ComicThemeData {
       navigationDrawerTheme: theme.navigationDrawerTheme.copyWith(
         elevation: 0,
         shadowColor: Colors.transparent,
-        indicatorColor: Colors.transparent,
+        // indicatorColor: Colors.transparent,
         indicatorShape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
             side: BorderSide(
@@ -363,6 +362,7 @@ class ComicThemeData {
       progressIndicatorTheme: const ProgressIndicatorThemeData(
           // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
           // color: theme.colorScheme.secondary,
+
           ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
