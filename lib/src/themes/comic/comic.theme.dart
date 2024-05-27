@@ -133,7 +133,6 @@ class ComicThemeData {
       bottomAppBarTheme: theme.bottomAppBarTheme,
 
       bottomNavigationBarTheme: theme.bottomNavigationBarTheme.copyWith(
-        // backgroundColor: Colors.red,
         elevation: 0,
       ),
 
@@ -206,7 +205,27 @@ class ComicThemeData {
         color: theme.colorScheme.outline,
         thickness: borderThickness,
       ),
-
+      drawerTheme: theme.drawerTheme.copyWith(
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        endShape: RoundedRectangleBorder(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(24),
+              bottomLeft: Radius.circular(24),
+            ),
+            side: BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.scrim,
+            )),
+        shape: RoundedRectangleBorder(
+            borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(24),
+                bottomRight: Radius.circular(24)),
+            side: BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.scrim,
+            )),
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: WidgetStateProperty.all(0),
@@ -311,31 +330,10 @@ class ComicThemeData {
         ),
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
       ),
-      drawerTheme: theme.drawerTheme.copyWith(
-        elevation: 0,
-        shadowColor: Colors.transparent,
-        endShape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(24),
-              bottomLeft: Radius.circular(24),
-            ),
-            side: BorderSide(
-              width: borderThickness,
-              color: theme.colorScheme.outline,
-            )),
-        shape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(24),
-                bottomRight: Radius.circular(24)),
-            side: BorderSide(
-              width: borderThickness,
-              color: theme.colorScheme.outline,
-            )),
-      ),
       navigationDrawerTheme: theme.navigationDrawerTheme.copyWith(
         elevation: 0,
         shadowColor: Colors.transparent,
-        indicatorColor: Colors.transparent,
+        // indicatorColor: Colors.transparent,
         indicatorShape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
             side: BorderSide(
@@ -343,9 +341,18 @@ class ComicThemeData {
               color: theme.colorScheme.outline,
             )),
       ),
+      navigationRailTheme: theme.navigationRailTheme.copyWith(
+          indicatorColor: Colors.transparent,
+          indicatorShape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                color: theme.colorScheme.outline,
+                width: borderThickness,
+              ))),
       // progressIndicatorTheme: const ProgressIndicatorThemeData(
       // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
       // color: theme.colorScheme.secondary,
+
       // ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
