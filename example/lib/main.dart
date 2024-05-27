@@ -92,12 +92,26 @@ class _MyHomePageState extends State<MyHomePage> {
 - `Basic widgets` means the widgets in material.dart.
 - `Visual component widget` is a widget that have a visual outloook on screen like a Text widget. While GestureDetector is not a visual component since it does not appear on the screen.
 '''),
+          const SizedBox(height: 16),
+          const Text("Demos:"),
+          const SizedBox(height: 8),
           Row(
             children: [
-              pushScreen('Comic Theme Demo', const ComicScreenDemo()),
-              pushScreen('Sleek Theme Demo', const SleekScreenDemo()),
+              Flexible(
+                child: pushScreen(
+                  'Comic Theme',
+                  const ComicScreenDemo(),
+                ),
+              ),
+              Flexible(
+                child: pushScreen(
+                  'Sleek Theme',
+                  const SleekScreenDemo(),
+                ),
+              ),
             ],
           ),
+          const SizedBox(height: 24),
           pushScreen('TextFields', const TextFieldScreen()),
           pushScreen('Buttons', const ButtonsScreen()),
           pushScreen('TextFormFieldScreen', const TextFormFieldScreen()),
@@ -137,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  pushScreen(String title, Widget screen) {
+  Widget pushScreen(String title, Widget screen) {
     return ElevatedButton(
       onPressed: () => Navigator.of(context).push(
         MaterialPageRoute(builder: (_) => screen),
