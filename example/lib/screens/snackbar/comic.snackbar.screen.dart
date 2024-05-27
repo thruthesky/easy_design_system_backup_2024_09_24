@@ -16,6 +16,8 @@ class ComicSnackBarsScreen extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
+                margin: const EdgeInsets.all(24),
+                behavior: SnackBarBehavior.floating,
                 content: const Text('This is Comic SnackBar'),
                 action: SnackBarAction(
                   onPressed: () {},

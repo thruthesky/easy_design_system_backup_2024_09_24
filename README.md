@@ -4,34 +4,23 @@ Social design system is an Elegant and easy-to-use UI/UX design library for Flut
 
 There is nothing to learn with the social design system. It just works. Just apply the theme and continue the way how you develop your app.
 
-
-## Features
-
-- Design systems for Flutter app development
-- UI widgets
-
 ## Getting started
 
 Please visit the [Social Design System document website](https://thruthesky.github.io/social_design_system/) to learn more.
 
-
 ## UI samples
 
-
-| Comic Theme    | Sleek Theme          | Social Theme        |
-| -------------------------- | --------------------- | --------------------------- |
-| ComicListView![ComicListView](https://thruthesky.github.io/social_design_system/images/comic_list_view.jpg) | | x |
-| ComicListView.builder ![ComicListView.builder](https://thruthesky.github.io/social_design_system/images/comic_list_view_builder.jpg) | | x |
-| ComicListView.separated ![ComicListView.separated](https://thruthesky.github.io/social_design_system/images/comic_list_view_separated.jpg) | | x |
-| Buttons ![Buttons](https://thruthesky.github.io/social_design_system/images/buttons.jpg) |  | x |
-| Settings ![Settings](https://thruthesky.github.io/social_design_system/images/settings.jpg) |  | x |
-| TextField ![TextField Soical Theme](https://thruthesky.github.io/social_design_system/images/comic.text_field.jpg) | | x |
-|WaveCarouseEntry ![WaveCarouseEntry](https://thruthesky.github.io/social_design_system/images/wave_carousel_entry.gif)|BasicCarouseEntry ![BasicCarouseEntry](https://thruthesky.github.io/social_design_system/images/basic_carousel_entry.gif)|RoundCarouseEntry ![RoundCarouseEntry](https://thruthesky.github.io/social_design_system/images/round_carousel_entry.gif)|
-
-
+| Comic Theme                                                                                                                                | Sleek Theme                                                                                                               | Social Theme                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| ComicListView![ComicListView](https://thruthesky.github.io/social_design_system/images/comic_list_view.jpg)                                |                                                                                                                           | x                                                                                                                         |
+| ComicListView.builder ![ComicListView.builder](https://thruthesky.github.io/social_design_system/images/comic_list_view_builder.jpg)       |                                                                                                                           | x                                                                                                                         |
+| ComicListView.separated ![ComicListView.separated](https://thruthesky.github.io/social_design_system/images/comic_list_view_separated.jpg) |                                                                                                                           | x                                                                                                                         |
+| Buttons ![Buttons](https://thruthesky.github.io/social_design_system/images/buttons.jpg)                                                   |                                                                                                                           | x                                                                                                                         |
+| Settings ![Settings](https://thruthesky.github.io/social_design_system/images/settings.jpg)                                                |                                                                                                                           | x                                                                                                                         |
+| TextField ![TextField Soical Theme](https://thruthesky.github.io/social_design_system/images/comic.text_field.jpg)                         |                                                                                                                           | x                                                                                                                         |
+| WaveCarouseEntry ![WaveCarouseEntry](https://thruthesky.github.io/social_design_system/images/wave_carousel_entry.gif)                     | BasicCarouseEntry ![BasicCarouseEntry](https://thruthesky.github.io/social_design_system/images/basic_carousel_entry.gif) | RoundCarouseEntry ![RoundCarouseEntry](https://thruthesky.github.io/social_design_system/images/round_carousel_entry.gif) |
 
 ## Usage
-
 
 Social Design System follows the principle of the Flutter programming style. You can just continue with Flutter coding without knowing how to apply the UI design.
 
@@ -51,7 +40,6 @@ Theme(
 
 As you know this is really the way how the Flutter goes.
 
-
 You may use `ComicTheme` widget for short like below;
 
 ```dart
@@ -65,21 +53,33 @@ const ComicTheme(
 ),
 ```
 
-
-
 For more details, please visit the [Social Design System document website](https://thruthesky.github.io/social_design_system/)
+
+## Things to learn
+
+### Comic theme
+
+- Comic theme uses
+  - outline with outline color.
+
+### Sleek theme
+
+- Sleek theme uses
+  - background color with primaryContainer.
+
 
 ## Contribution
 
 - Fork and PR.
 - Leave your issues on the git repo.
 
+## Coding Guideline
 
-## How to work
+- Write a good example and description on the example app since we don't provide other documents.
 
-- Add theme desing
-- Add Sample code
-- add screenshots to README.md
-- documentation
-
+- In each screen, have;
+    - Title as the name of widget/compoennt,
+    - Widget of the UI on first of the body
+    - And short description
+    - And sample code
 

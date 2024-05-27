@@ -19,18 +19,18 @@ class SnackBarScreen extends StatelessWidget {
             padding: const EdgeInsets.all(24.0),
             child: Wrap(
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('This is a SnackBar'),
-                        margin: EdgeInsets.all(24),
-                        behavior: SnackBarBehavior.floating,
-                      ),
-                    );
-                  },
-                  child: const Text('Comic Style Snackbar'),
-                ),
+                // ElevatedButton(
+                //   onPressed: () {
+                //     ScaffoldMessenger.of(context).showSnackBar(
+                //       const SnackBar(
+                //         content: Text('This is a SnackBar'),
+                //         margin: EdgeInsets.all(24),
+                //         behavior: SnackBarBehavior.floating,
+                //       ),
+                //     );
+                //   },
+                //   child: const Text('Comic Style Snackbar'),
+                // ),
                 ElevatedButton(
                   onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute(

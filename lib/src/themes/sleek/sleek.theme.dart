@@ -53,16 +53,60 @@ class SleekThemeData {
         ),
       ),
 
+      bottomSheetTheme: theme.bottomSheetTheme.copyWith(
+        backgroundColor: theme.colorScheme.surfaceContainerHigh,
+        // backgroundColor: Colors.red,
+      ),
+
       cardTheme: theme.cardTheme.copyWith(
         // TODO fix it with proper colorscheming
         // this color uses `surfaceContainerLow` from color scheme by default
-        // color: theme.colorScheme.primary,
+        // and the variant card.filled uses`surfaceContainerHigh` from color
+        // scheme by default
+        // color: theme.colorScheme.surfaceContainerLowest,
         elevation: 0,
         shape: RoundedRectangleBorder(
           side: BorderSide.none,
           borderRadius: BorderRadius.circular(24),
         ),
       ),
+      chipTheme: theme.chipTheme.copyWith(
+        backgroundColor: theme.colorScheme.primaryContainer,
+        selectedColor: theme.colorScheme.inversePrimary,
+        labelStyle: (theme.chipTheme.labelStyle ?? const TextStyle()).copyWith(
+          color: theme.colorScheme.onPrimaryContainer,
+        ),
+        secondaryLabelStyle:
+            (theme.chipTheme.secondaryLabelStyle ?? const TextStyle()).copyWith(
+          color: theme.colorScheme.onPrimaryContainer,
+          fontWeight: FontWeight.bold,
+        ),
+        // Note: Cannot use theme.chipTheme.shape here because
+        // SDS's sleek wanted RoundedRectangleBorder
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: BorderSide.none,
+        ),
+        side: BorderSide.none,
+      ),
+
+      // chipTheme: ChipThemeData(
+      //   backgroundColor: theme.colorScheme.primaryContainer,
+      //   selectedColor: theme.colorScheme.primary,
+      //   labelStyle: TextStyle(
+      //     color: theme.colorScheme.primary,
+      //   ),
+      //   secondaryLabelStyle: TextStyle(
+      //     color: theme.colorScheme.onPrimary,
+      //   ),
+      //   labelPadding: const EdgeInsets.symmetric(horizontal: 8),
+      //   padding: const EdgeInsets.symmetric(horizontal: 8),
+      //   shape: RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.circular(16),
+      //     side: BorderSide.none,
+      //   ),
+      //   side: BorderSide.none,
+      // ),
       colorScheme: Theme.of(context).colorScheme,
       dialogBackgroundColor: theme.colorScheme.primaryContainer,
       dialogTheme: DialogTheme(
@@ -70,7 +114,16 @@ class SleekThemeData {
       ),
       checkboxTheme: CheckboxThemeData(
         side: BorderSide(
+          width: 0.5,
           color: theme.colorScheme.outline,
+        ),
+        fillColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outline.withAlpha(50);
+            }
+            return null;
+          },
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(

@@ -60,52 +60,59 @@ class ComicThemeData {
   ///
   /// [of] is a method that returns a [ThemeData] object with the color scheme
   static ThemeData of(BuildContext context) {
-    // final theme = Theme.of(context);
-    final theme = Theme.of(context).copyWith(
-      // colorScheme: ColorScheme.fromSeed(
-      //   seedColor: const Color(0xFF6750A4),
-      //   brightness: Brightness.dark,
-      //   error: const Color(0xFFB00020),
-      // ),
-      textTheme: Theme.of(context).textTheme.copyWith(
-            labelSmall: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.pink,
-            ),
-            labelMedium: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.pink,
-            ),
-            labelLarge: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.pink,
-            ),
-            bodyLarge: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.pink,
-            ),
-            bodyMedium: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.pink,
-            ),
-            bodySmall: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.pink,
-            ),
-          ),
-    );
+    final theme = Theme.of(context);
+    // final theme = Theme.of(context).copyWith(
+    //   colorScheme: ColorScheme.fromSeed(
+    //     seedColor: const Color(0xFF6750A4),
+    //     brightness: Brightness.dark,
+    //     error: const Color(0xFFB00020),
+    //     outline: Colors.red,
+    //   ),
+    //   // textTheme: Theme.of(context).textTheme.copyWith(
+    //   //       labelSmall: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       labelMedium: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       labelLarge: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       bodyLarge: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       bodyMedium: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       bodySmall: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //     ),
+    // );
     return ThemeData(
-      // appBarTheme: AppBarTheme(
-      //   iconTheme: theme.iconTheme.copyWith(
-      //     color: theme.colorScheme.onSurface,
-      //   ),
-      //   actionsIconTheme: theme.iconTheme.copyWith(
-      //     color: theme.colorScheme.onSurface,
-      //   ),
-      //   titleTextStyle: theme.textTheme.headlineMedium?.copyWith(
-      //     color: theme.colorScheme.onSurface,
-      //   ),
-      // ),
+      appBarTheme: AppBarTheme(
+        //   iconTheme: theme.iconTheme.copyWith(
+        //     color: theme.colorScheme.onSurface,
+        //   ),
+        //   actionsIconTheme: theme.iconTheme.copyWith(
+        //     color: theme.colorScheme.onSurface,
+        //   ),
+        //   titleTextStyle: theme.textTheme.headlineMedium?.copyWith(
+        //     color: theme.colorScheme.onSurface,
+        //   ),
+        shape: Border(
+          bottom: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.outline,
+          ),
+        ),
+      ),
 
       // actionIconTheme: ActionIconThemeData(
       //   backButtonIconBuilder: (context) =>
@@ -120,10 +127,10 @@ class ComicThemeData {
       // ),
 
       // NOTE: Unable to add borders for comic theme in bottom app bar.
-      // bottomAppBarTheme: theme.bottomAppBarTheme,
+      bottomAppBarTheme: theme.bottomAppBarTheme,
 
       bottomNavigationBarTheme: theme.bottomNavigationBarTheme.copyWith(
-        backgroundColor: Colors.red,
+        // backgroundColor: Colors.red,
         elevation: 0,
       ),
 
@@ -132,7 +139,7 @@ class ComicThemeData {
         shape: Border(
           top: BorderSide(
             width: borderThickness,
-            color: theme.colorScheme.outline,
+            color: theme.colorScheme.scrim,
           ),
         ),
       ),
@@ -150,28 +157,16 @@ class ComicThemeData {
 
       /// [Chip] @thruthesky - 2024-05-22
       ///
-      chipTheme: ChipThemeData(
-        backgroundColor: theme.colorScheme.surface,
-        deleteIconColor: theme.colorScheme.onSurface,
-        disabledColor: theme.colorScheme.onSurface,
-        selectedColor: theme.colorScheme.secondary,
-        secondarySelectedColor: theme.colorScheme.secondary,
+      chipTheme: theme.chipTheme.copyWith(
         labelPadding: const EdgeInsets.symmetric(horizontal: 8),
         padding: const EdgeInsets.symmetric(horizontal: 8),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(16),
           side: BorderSide(
             color: theme.colorScheme.outline,
             width: borderThickness,
           ),
         ),
-        labelStyle: theme.textTheme.bodyLarge?.copyWith(
-          color: theme.colorScheme.onSurface,
-        ),
-        secondaryLabelStyle: theme.textTheme.bodyLarge?.copyWith(
-          color: theme.colorScheme.onSurface,
-        ),
-        brightness: theme.brightness,
       ),
       colorScheme: theme.colorScheme,
       checkboxTheme: CheckboxThemeData(
@@ -179,13 +174,24 @@ class ComicThemeData {
           width: borderThickness,
           color: theme.colorScheme.outline,
         ),
+        fillColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outline.withAlpha(75);
+            }
+            return null;
+          },
+        ),
       ),
       dialogTheme: DialogTheme(
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(
-            color: theme.colorScheme.outline,
+            /// Initially used the [outline] to match with the other widgets
+            /// but does not work in terms of contrast
+            /// Based from flutter api, [scrim] is used for modal components
+            color: theme.colorScheme.scrim,
             width: borderThickness,
           ),
         ),
@@ -260,7 +266,11 @@ class ComicThemeData {
         ),
       ),
       listTileTheme: theme.listTileTheme.copyWith(
-        tileColor: theme.colorScheme.surface,
+        // Note: By default, the tileColor uses Colors.transparent so we should
+        // not give tile color on comic theme because it might conflict with other
+        // widget that uses background color. We should let the developers
+        // override the tileColor instead
+        // tileColor: theme.colorScheme.surface,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
@@ -310,15 +320,45 @@ class ComicThemeData {
         ),
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
       ),
-
+      drawerTheme: theme.drawerTheme.copyWith(
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        endShape: RoundedRectangleBorder(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(24),
+              bottomLeft: Radius.circular(24),
+            ),
+            side: BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.outline,
+            )),
+        shape: RoundedRectangleBorder(
+            borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(24),
+                bottomRight: Radius.circular(24)),
+            side: BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.outline,
+            )),
+      ),
+      navigationDrawerTheme: theme.navigationDrawerTheme.copyWith(
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        indicatorColor: Colors.transparent,
+        indicatorShape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+            side: BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.outline,
+            )),
+      ),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
           // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
           // color: theme.colorScheme.secondary,
           ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
-        // TODO Fix it on the color scheme outside here
-        // backgroundColor: theme.colorScheme.surface,
+        backgroundColor: theme.colorScheme.surfaceContainerHighest,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(
@@ -326,12 +366,10 @@ class ComicThemeData {
             color: theme.colorScheme.outline,
           ),
         ),
-        // TODO Fix it on the color scheme outside here
-        // actionTextColor: theme.colorScheme.primary,
-        // contentTextStyle: TextStyle(
-        // TODO Fix it on the color scheme outside here
-        // color: theme.colorScheme.onSurface,
-        // ),
+        actionTextColor: theme.colorScheme.primary,
+        contentTextStyle: TextStyle(
+          color: theme.colorScheme.onSurface,
+        ),
       ),
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: SegmentedButton.styleFrom(

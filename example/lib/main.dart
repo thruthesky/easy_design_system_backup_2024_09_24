@@ -1,13 +1,16 @@
-import 'package:example/screens/alert_dialog/alert_dialog.screen.dart';
+import 'package:example/screens/dialog/dialog.screen.dart';
+import 'package:example/screens/app_bar/app_bar.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
 import 'package:example/screens/bottom_app_bar/bottom_app_bar.screen.dart';
 import 'package:example/screens/bottom_sheet/bottom_sheet.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/card/card.screen.dart';
 import 'package:example/screens/checkbox/checkbox.screen.dart';
+import 'package:example/screens/checkbox_list_tile/checkbox_list_tile.screen.dart';
+import 'package:example/screens/chip/chip.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
-import 'package:example/screens/demo/comic.screen.demo.dart';
-import 'package:example/screens/demo/sleek.screen.demo.dart';
+import 'package:example/screens/demo/comic.theme.screen.dart';
+import 'package:example/screens/demo/sleek.theme.screen.dart';
 import 'package:example/screens/divider/divider.screen.dart';
 import 'package:example/screens/floating_action_button/floating_action_button.screen.dart';
 import 'package:example/screens/icon_buttons/icon_buttons.screen.dart';
@@ -15,6 +18,7 @@ import 'package:example/screens/list_tile/list_tile.screen.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
+import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
@@ -24,6 +28,8 @@ import 'package:example/screens/tab_bar/tab_bar.screen.dart';
 import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:example/screens/text_form_field/text_form_field.screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:markdown_widget/widget/all.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,11 +42,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      themeMode: ThemeMode.dark,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Social Design System Demo Home Page'),
     );
   }
 }
@@ -56,13 +63,35 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      if (const String.fromEnvironment('MODE') == 'noe') {
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => const NavigationDrawerScreen()));
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
       body: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         children: <Widget>[
+          const MarkdownBlock(data: '''
+# Social Design System
+
+- Social design system is an Elegant UI/UX library crafted specifically for building social like applications. This is an open source project that you can fork and make PR.
+- Developers must NOT do anything, must NOT learn anything, must NOT refer any document to use the social design system. It will just work. Just continue the way how you work.
+
+## Terms
+- `Basic widgets` means the widgets in material.dart.
+- `Visual component widget` is a widget that have a visual outloook on screen like a Text widget. While GestureDetector is not a visual component since it does not appear on the screen.
+'''),
           Row(
             children: [
               pushScreen('Comic Theme Demo', const ComicScreenDemo()),
@@ -71,8 +100,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           pushScreen('TextFields', const TextFieldScreen()),
           pushScreen('Buttons', const ButtonsScreen()),
-          //
-
           pushScreen('TextFormFieldScreen', const TextFormFieldScreen()),
           pushScreen(
               'Floating Action Button', const FloatingActionButtonScreen()),
@@ -81,22 +108,24 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Badge', const BadgeScreen()),
           pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
           pushScreen('SnackBar', const SnackBarScreen()),
-          pushScreen('AlertDialog', const AlertDialogScreen()),
+          pushScreen('Dialog', const DialogScreen()),
           pushScreen('BottomSheet', const BottomSheetScreen()),
           pushScreen('Card', const CardScreen()),
           pushScreen('Divider', const DividerScreen()),
           pushScreen('ListTile', const ListTileScreen()),
-          ElevatedButton(onPressed: () {}, child: const Text("AppBar")),
+          // ElevatedButton(onPressed: () {}, child: const Text("AppBar")),
+          pushScreen("AppBar", const AppBarScreen()),
           pushScreen('BottomAppBar', const BottomAppBarScreen()),
           // ElevatedButton(onPressed: () {}, child: const Text("NavigationBar")),
           pushScreen('NavigationBar', const NavigationBarScreen()),
-          ElevatedButton(
-              onPressed: () {}, child: const Text("NavigationDrawer")),
+          pushScreen("NavigationDrawer", const NavigationDrawerScreen()),
           ElevatedButton(onPressed: () {}, child: const Text("NavigationRail")),
           // ElevatedButton(onPressed: () {}, child: const Text("TabBar")),
           pushScreen('TabBar', const TabBarScreen()),
           pushScreen('Checkbox', const CheckboxScreen()),
-          ElevatedButton(onPressed: () {}, child: const Text("Chip")),
+          pushScreen('CheckboxListTile', const CheckboxListTileScreen()),
+
+          pushScreen('Chip', const ChipScreen()),
 
           pushScreen('Sleep Walker', const SleepWalkerScreen()),
           pushScreen('Basic Carousel Entry', const BasicCarouselEntryScreen()),
