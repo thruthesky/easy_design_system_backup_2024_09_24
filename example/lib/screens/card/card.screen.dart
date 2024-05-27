@@ -30,7 +30,10 @@ class CardScreen extends StatelessWidget {
             ),
             SleekTheme(
               child: Card(
-                child: CardChild(),
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: CardChild(),
+                ),
               ),
             ),
           ])
@@ -53,7 +56,6 @@ class CardChild extends StatelessWidget {
           title: Text('Title'),
           subtitle: Text('Subtitle'),
           leading: Icon(Icons.ac_unit),
-          trailing: Icon(Icons.ac_unit),
         ),
         Row(
           children: [
