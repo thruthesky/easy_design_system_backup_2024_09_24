@@ -20,95 +20,94 @@ class NavigationBarScreenState extends State<NavigationBarScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text("Comic Theme"),
-            SizedBox(
-              height: 100,
-              width: double.maxFinite,
-              child: Scaffold(
-                bottomNavigationBar: Theme(
-                  data: ComicTheme.of(context),
-                  child: NavigationBar(
-                    onDestinationSelected: (int index) {
-                      setState(() {
-                        currentPageIndex = index;
-                      });
-                    },
-                    // indicatorColor: Colors.amber,
-                    selectedIndex: currentPageIndex,
-                    destinations: const <Widget>[
-                      NavigationDestination(
-                        // selectedIcon: Icon(Icons.home),
-                        // icon: Icon(Icons.home_outlined),
-                        // selectedIcon: Icon(Icons.home),
-                        icon: Icon(Icons.home),
-                        label: 'Home',
-                      ),
-                      NavigationDestination(
-                        icon: Badge(child: Icon(Icons.notifications_sharp)),
-                        label: 'Notifications',
-                      ),
-                      NavigationDestination(
-                        icon: Badge(
-                          label: Text('2'),
-                          child: Icon(Icons.messenger_sharp),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text("Comic Theme"),
+              SizedBox(
+                height: 100,
+                width: double.maxFinite,
+                child: Scaffold(
+                  bottomNavigationBar: Theme(
+                    data: ComicTheme.of(context),
+                    child: NavigationBar(
+                      onDestinationSelected: (int index) {
+                        setState(() {
+                          currentPageIndex = index;
+                        });
+                      },
+                      // indicatorColor: Colors.amber,
+                      selectedIndex: currentPageIndex,
+                      destinations: const <Widget>[
+                        NavigationDestination(
+                          // selectedIcon: Icon(Icons.home),
+                          // icon: Icon(Icons.home_outlined),
+                          // selectedIcon: Icon(Icons.home),
+                          icon: Icon(Icons.home),
+                          label: 'Home',
                         ),
-                        label: 'Messages',
-                      ),
-                    ],
+                        NavigationDestination(
+                          icon: Badge(child: Icon(Icons.notifications_sharp)),
+                          label: 'Notifications',
+                        ),
+                        NavigationDestination(
+                          icon: Badge(
+                            label: Text('2'),
+                            child: Icon(Icons.messenger_sharp),
+                          ),
+                          label: 'Messages',
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 32,
-            ),
-            const Text("Sleek Theme"),
-            SizedBox(
-              height: 100,
-              width: double.maxFinite,
-              child: Scaffold(
-                bottomNavigationBar: Theme(
-                  data: SleekTheme.of(context),
-                  child: NavigationBar(
-                    onDestinationSelected: (int index) {
-                      setState(() {
-                        currentPageIndex = index;
-                      });
-                    },
-                    // indicatorColor: Colors.amber,
-                    selectedIndex: currentPageIndex,
-                    destinations: const <Widget>[
-                      NavigationDestination(
-                        // selectedIcon: Icon(Icons.home),
-                        // icon: Icon(Icons.home_outlined),
-                        // selectedIcon: Icon(Icons.home),
-                        icon: Icon(Icons.home),
-                        label: 'Home',
-                      ),
-                      NavigationDestination(
-                        icon: Badge(child: Icon(Icons.notifications_sharp)),
-                        label: 'Notifications',
-                      ),
-                      NavigationDestination(
-                        icon: Badge(
-                          label: Text('2'),
-                          child: Icon(Icons.messenger_sharp),
+              const SizedBox(
+                height: 32,
+              ),
+              const Text("Sleek Theme"),
+              SizedBox(
+                height: 100,
+                width: double.maxFinite,
+                child: Scaffold(
+                  bottomNavigationBar: Theme(
+                    data: SleekTheme.of(context),
+                    child: NavigationBar(
+                      onDestinationSelected: (int index) {
+                        setState(() {
+                          currentPageIndex = index;
+                        });
+                      },
+                      // indicatorColor: Colors.amber,
+                      selectedIndex: currentPageIndex,
+                      destinations: const <Widget>[
+                        NavigationDestination(
+                          // selectedIcon: Icon(Icons.home),
+                          // icon: Icon(Icons.home_outlined),
+                          // selectedIcon: Icon(Icons.home),
+                          icon: Icon(Icons.home),
+                          label: 'Home',
                         ),
-                        label: 'Messages',
-                      ),
-                    ],
+                        NavigationDestination(
+                          icon: Badge(child: Icon(Icons.notifications_sharp)),
+                          label: 'Notifications',
+                        ),
+                        NavigationDestination(
+                          icon: Badge(
+                            label: Text('2'),
+                            child: Icon(Icons.messenger_sharp),
+                          ),
+                          label: 'Messages',
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            const NothingToLearn(),
-          ],
+              const NothingToLearn(),
+            ],
+          ),
         ),
       ),
     );

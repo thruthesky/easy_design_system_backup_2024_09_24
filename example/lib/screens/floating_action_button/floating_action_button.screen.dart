@@ -20,60 +20,76 @@ class _FloatingActionButtonScreenState
       ),
       body: Padding(
         padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text("Comic Theme"),
-            const SizedBox(height: 8),
-            Theme(
-              data: ComicThemeData.of(context),
-              child: Row(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Table(
                 children: [
-                  FloatingActionButton(
-                    heroTag: 'comicFloatingActionButton',
-                    onPressed: () {
-                      debugPrint('Pressed');
-                    },
-                    child: const Icon(Icons.favorite),
+                  const TableRow(
+                    children: [
+                      Text("Comic Theme"),
+                      Text("Sleek Theme"),
+                    ],
                   ),
-                  const SizedBox(width: 8),
-                  FloatingActionButton.extended(
-                    heroTag: 'comicFloatingActionButtonExtended',
-                    onPressed: () {
-                      debugPrint('Pressed');
-                    },
-                    label: const Text('Extended'),
+                  TableRow(
+                    children: [
+                      Theme(
+                        data: ComicThemeData.of(context),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(height: 8),
+                            FloatingActionButton(
+                              heroTag: 'comicFloatingActionButton',
+                              onPressed: () {
+                                debugPrint('Pressed');
+                              },
+                              child: const Icon(Icons.favorite),
+                            ),
+                            const SizedBox(height: 8),
+                            FloatingActionButton.extended(
+                              heroTag: 'comicFloatingActionButtonExtended',
+                              onPressed: () {
+                                debugPrint('Pressed');
+                              },
+                              label: const Text('Extended'),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Theme(
+                        data: SleekThemeData.of(context),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(height: 8),
+                            FloatingActionButton(
+                              heroTag: 'sleekFloatingActionButton',
+                              onPressed: () {
+                                debugPrint('Pressed');
+                              },
+                              child: const Icon(Icons.favorite),
+                            ),
+                            const SizedBox(height: 8),
+                            FloatingActionButton.extended(
+                              heroTag: 'sleekFloatingActionButtonExtended',
+                              onPressed: () {
+                                debugPrint('Pressed');
+                              },
+                              label: const Text('Extended'),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ),
-            const SizedBox(height: 32),
-            const Text("Sleek Theme"),
-            const SizedBox(height: 8),
-            SleekTheme(
-              child: Row(
-                children: [
-                  FloatingActionButton(
-                    heroTag: 'sleekFloatingActionButton',
-                    onPressed: () {
-                      debugPrint('Pressed');
-                    },
-                    child: const Icon(Icons.favorite),
-                  ),
-                  const SizedBox(width: 8),
-                  FloatingActionButton.extended(
-                    heroTag: 'sleekFloatingActionButtonExtended',
-                    onPressed: () {
-                      debugPrint('Pressed');
-                    },
-                    label: const Text('Extended'),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 32),
-            const NothingToLearn(),
-          ],
+              const SizedBox(height: 12),
+              const NothingToLearn(),
+            ],
+          ),
         ),
       ),
     );
