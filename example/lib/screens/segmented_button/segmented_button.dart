@@ -1,3 +1,4 @@
+import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -30,46 +31,40 @@ class _SegmentedButtonState extends State<SegmentedButtonScreen> {
       appBar: AppBar(
         title: const Text('Segmented Button'),
       ),
-      body: Center(
-        child: Wrap(
-          alignment: WrapAlignment.center,
-          spacing: 16,
-          runSpacing: 16,
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Text('Comic'),
             Theme(
               data: ComicTheme.of(context),
-              child: Column(
-                children: [
-                  const Text('Comic'),
-                  SegmentedButton(
-                    selected: _selected,
-                    segments: const [
-                      ButtonSegment(value: 'value1', label: Text('Inbox')),
-                      ButtonSegment(value: 'value2', label: Text('Primary')),
-                      ButtonSegment(value: 'value3', label: Text('Others')),
-                    ],
-                    onSelectionChanged: updateSelection,
-                  ),
+              child: SegmentedButton(
+                selected: _selected,
+                segments: const [
+                  ButtonSegment(value: 'value1', label: Text('Inbox')),
+                  ButtonSegment(value: 'value2', label: Text('Primary')),
+                  ButtonSegment(value: 'value3', label: Text('Others')),
                 ],
+                onSelectionChanged: updateSelection,
               ),
             ),
+            const SizedBox(height: 24),
+            const Text('Sleek'),
             Theme(
               data: SleekThemeData.of(context),
-              child: Column(
-                children: [
-                  const Text('Sleek'),
-                  SegmentedButton(
-                    selected: _selected1,
-                    segments: const [
-                      ButtonSegment(value: 'value1', label: Text('Inbox')),
-                      ButtonSegment(value: 'value2', label: Text('Primary')),
-                      ButtonSegment(value: 'value3', label: Text('Others')),
-                    ],
-                    onSelectionChanged: updateSelection1,
-                  ),
+              child: SegmentedButton(
+                selected: _selected1,
+                segments: const [
+                  ButtonSegment(value: 'value1', label: Text('Inbox')),
+                  ButtonSegment(value: 'value2', label: Text('Primary')),
+                  ButtonSegment(value: 'value3', label: Text('Others')),
                 ],
+                onSelectionChanged: updateSelection1,
               ),
             ),
+            const SizedBox(height: 32),
+            const NothingToLearn(),
           ],
         ),
       ),

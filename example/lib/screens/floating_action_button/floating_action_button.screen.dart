@@ -1,3 +1,4 @@
+import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -19,10 +20,11 @@ class _FloatingActionButtonScreenState
       ),
       body: Padding(
         padding: const EdgeInsets.all(24),
-        child: Wrap(
-          runSpacing: 8,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text("Comic Theme"),
+            const SizedBox(height: 8),
             Theme(
               data: ComicThemeData.of(context),
               child: Row(
@@ -45,8 +47,9 @@ class _FloatingActionButtonScreenState
                 ],
               ),
             ),
-            const SizedBox(height: 80),
+            const SizedBox(height: 32),
             const Text("Sleek Theme"),
+            const SizedBox(height: 8),
             SleekTheme(
               child: Row(
                 children: [
@@ -68,6 +71,8 @@ class _FloatingActionButtonScreenState
                 ],
               ),
             ),
+            const SizedBox(height: 32),
+            const NothingToLearn(),
           ],
         ),
       ),

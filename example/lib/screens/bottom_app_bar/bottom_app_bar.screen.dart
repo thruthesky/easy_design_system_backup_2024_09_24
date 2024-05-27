@@ -1,3 +1,4 @@
+import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -10,109 +11,86 @@ class BottomAppBarScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("BottomAppBarScreen"),
       ),
-      body: Column(
-        children: [
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => Theme(
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text("Comic"),
+              SizedBox(
+                height: 100,
+                width: double.maxFinite,
+                child: Scaffold(
+                  bottomNavigationBar: Theme(
                     data: ComicTheme.of(context),
-                    child: Scaffold(
-                      appBar: AppBar(
-                        title: const Text("Comic Bottom App Bar"),
-                      ),
-                      body: const Center(
-                        child: Text("Comic Bottom App Bar"),
-                      ),
-                      floatingActionButton: FloatingActionButton(
-                        onPressed: () {},
-                        child: const Icon(Icons.add),
-                      ),
-                      bottomNavigationBar: BottomAppBar(
-                        child: Row(
-                          children: [
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.home),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.search),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.favorite),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.person),
-                            ),
-                          ],
-                        ),
+                    child: BottomAppBar(
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.home),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.search),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.favorite),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.person),
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ),
-              );
-            },
-            child: const Text("View Comic Bottom App Bar"),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => Theme(
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              const Text("Sleek"),
+              SizedBox(
+                height: 100,
+                width: double.maxFinite,
+                child: Scaffold(
+                  bottomNavigationBar: Theme(
                     data: SleekTheme.of(context),
-                    child: Scaffold(
-                      appBar: AppBar(
-                        title: const Text("Sleek Bottom App Bar"),
-                      ),
-                      body: const Center(
-                        child: Text("Sleek Bottom App Bar"),
-                      ),
-                      floatingActionButton: FloatingActionButton(
-                        onPressed: () {},
-                        child: const Icon(Icons.add),
-                      ),
-                      floatingActionButtonLocation:
-                          FloatingActionButtonLocation.centerDocked,
-                      bottomNavigationBar: BottomAppBar(
-                        child: Row(
-                          children: [
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.home),
-                            ),
-                            const Spacer(),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.search),
-                            ),
-                            const Spacer(flex: 6),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.favorite),
-                            ),
-                            const Spacer(),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.person),
-                            ),
-                          ],
-                        ),
+                    child: BottomAppBar(
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.home),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.search),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.favorite),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.person),
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ),
-              );
-            },
-            child: const Text("View Sleek Bottom App Bar"),
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+              const NothingToLearn(),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

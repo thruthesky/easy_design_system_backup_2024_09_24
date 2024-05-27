@@ -34,7 +34,7 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
               child: const TextField(),
             ),
             const SizedBox(height: 16),
-            const NothingToLearn()
+            const NothingToLearn(),
           ],
         ),
       ),
