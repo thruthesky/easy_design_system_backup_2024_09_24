@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 const borderThickness = 2.0;
 
+Color comicContainerBackgroundColor(BuildContext context) =>
+    Theme.of(context).colorScheme.surface;
+
 class ComicIconButtonThemeData {
   ComicIconButtonThemeData();
 
@@ -166,6 +169,8 @@ class ComicThemeData {
             width: borderThickness,
           ),
         ),
+        backgroundColor: comicContainerBackgroundColor(context),
+        selectedColor: comicContainerBackgroundColor(context),
       ),
       colorScheme: theme.colorScheme,
       checkboxTheme: CheckboxThemeData(
