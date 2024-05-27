@@ -476,6 +476,11 @@ class TextUnit extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             Text(
+              'height: ${style.height!} (Size*Height=${(style.height! * style.fontSize!).round()}) ',
+              style: textStyle,
+            ),
+            const SizedBox(width: 8),
+            Text(
               'LetterSpacing: ${style.letterSpacing}',
               style: textStyle,
             )
