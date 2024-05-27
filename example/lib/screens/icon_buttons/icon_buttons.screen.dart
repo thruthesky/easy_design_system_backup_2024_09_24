@@ -10,47 +10,44 @@ class IconButtonScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Icon Buttons'),
       ),
-      body: Wrap(
-        spacing: 8,
-        children: [
-          Theme(
-            data: ComicIconButtonThemeData.of(context),
-            child: Row(
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Table(
+          children: [
+            const TableRow(
               children: [
-                IconButton(
-                  onPressed: () {
-                    debugPrint('Pressed');
-                  },
-                  icon: const Icon(Icons.favorite),
-                ),
-                IconButton(
-                  onPressed: () {
-                    debugPrint('Pressed');
-                  },
-                  icon: const Icon(Icons.add),
-                ),
+                Text('Comic Theme'),
+                Text('Sleek Theme'),
               ],
             ),
-          ),
-          SleekTheme(
-            child: Row(
+            TableRow(
               children: [
-                IconButton(
-                  onPressed: () {
-                    debugPrint('Pressed');
-                  },
-                  icon: const Icon(Icons.favorite),
+                Theme(
+                  data: ComicIconButtonThemeData.of(context),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.add),
+                      ),
+                    ],
+                  ),
                 ),
-                IconButton(
-                  onPressed: () {
-                    debugPrint('Pressed');
-                  },
-                  icon: const Icon(Icons.add),
-                ),
+                Theme(
+                  data: ComicIconButtonThemeData.of(context),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.add),
+                      ),
+                    ],
+                  ),
+                )
               ],
-            ),
-          ),
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
