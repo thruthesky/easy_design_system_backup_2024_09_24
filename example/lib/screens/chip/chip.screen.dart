@@ -12,7 +12,6 @@ class _ChipScreenState extends State<ChipScreen> {
   String selectedChip = "ChoiceChip1";
 
   ThemeData? _themeData;
-
   @override
   Widget build(BuildContext context) {
     _themeData ??= Theme.of(context);
@@ -49,6 +48,7 @@ class _ChipScreenState extends State<ChipScreen> {
               const Chip(label: Text("Chip")),
               const SizedBox(height: 24),
               Wrap(
+                spacing: 8,
                 children: [
                   ChoiceChip(
                     label: const Text("ChoiceChip1"),
