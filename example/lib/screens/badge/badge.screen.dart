@@ -22,24 +22,45 @@ class _BadgeScreenState extends State<BadgeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Comic Theme'),
-            const SizedBox(height: 8),
-            Theme(
-              data: ComicTheme.of(context),
-              child: const Badge(
-                label: Text('5'),
-              ),
+            Table(
+              children: [
+                const TableRow(
+                  children: [
+                    Text('Comic Theme'),
+                    Text('Sleek Theme'),
+                  ],
+                ),
+                TableRow(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 8),
+                        Theme(
+                          data: ComicTheme.of(context),
+                          child: const Badge(
+                            label: Text('5'),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 8),
+                        Theme(
+                          data: SleekThemeData.of(context),
+                          child: const Badge(
+                            label: Text('5'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
             ),
-            const SizedBox(height: 24),
-            const Text('Sleek Theme'),
-            const SizedBox(height: 8),
-            Theme(
-              data: SleekThemeData.of(context),
-              child: const Badge(
-                label: Text('5'),
-              ),
-            ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 12),
             const NothingToLearn(),
           ],
         ),
