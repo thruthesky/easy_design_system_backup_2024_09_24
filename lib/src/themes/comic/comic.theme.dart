@@ -280,21 +280,6 @@ class ComicThemeData {
           ),
         ),
       ),
-      tabBarTheme: theme.tabBarTheme.copyWith(
-        indicator: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              width: borderThickness * 3,
-              color: theme.colorScheme.outline,
-            ),
-          ),
-        ),
-        indicatorSize: TabBarIndicatorSize.label,
-        // Note: By default, the dividerColor uses outlineVariant
-        // dividerColor: theme.colorScheme.onSurface,
-        dividerHeight: borderThickness * 0.8,
-      ),
-
       navigationBarTheme: theme.navigationBarTheme.copyWith(
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
@@ -352,10 +337,10 @@ class ComicThemeData {
               color: theme.colorScheme.outline,
             )),
       ),
-      progressIndicatorTheme: const ProgressIndicatorThemeData(
-          // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
-          // color: theme.colorScheme.secondary,
-          ),
+      // progressIndicatorTheme: const ProgressIndicatorThemeData(
+      // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
+      // color: theme.colorScheme.secondary,
+      // ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
         backgroundColor: theme.colorScheme.surfaceContainerHighest,
@@ -382,6 +367,21 @@ class ComicThemeData {
           ),
           elevation: 0,
         ),
+      ),
+
+      tabBarTheme: theme.tabBarTheme.copyWith(
+        indicator: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              width: borderThickness * 3,
+              color: theme.colorScheme.outline,
+            ),
+          ),
+        ),
+        indicatorSize: TabBarIndicatorSize.label,
+        // Note: By default, the dividerColor uses outlineVariant
+        // dividerColor: theme.colorScheme.onSurface,
+        dividerHeight: borderThickness * 0.8,
       ),
     );
   }
