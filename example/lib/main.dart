@@ -1,3 +1,4 @@
+import 'package:example/screens/color_scheme_new/color_scheme_new.screen.dart';
 import 'package:example/screens/dialog/dialog.screen.dart';
 import 'package:example/screens/app_bar/app_bar.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
@@ -142,6 +143,8 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
           pushScreen('Sleep Walker', const SleepWalkerScreen()),
           pushScreen('Color scheme', const ColorSchemeScreen()),
+
+          pushScreen('Color scheme new', const ColorSchemeNewScreen()),
         ],
       ),
     );
