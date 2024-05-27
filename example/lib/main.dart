@@ -1,4 +1,5 @@
 import 'package:example/screens/color_scheme_new/color_scheme_new.screen.dart';
+import 'package:example/screens/demo/sleek/sleek.theme.screen.dart';
 import 'package:example/screens/dialog/dialog.screen.dart';
 import 'package:example/screens/app_bar/app_bar.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
@@ -7,11 +8,8 @@ import 'package:example/screens/bottom_sheet/bottom_sheet.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/card/card.screen.dart';
 import 'package:example/screens/checkbox/checkbox.screen.dart';
-import 'package:example/screens/checkbox_list_tile/checkbox_list_tile.screen.dart';
 import 'package:example/screens/chip/chip.screen.dart';
-import 'package:example/screens/color_scheme/color_scheme.screen.dart';
 import 'package:example/screens/demo/comic/comic.theme.screen.dart';
-import 'package:example/screens/demo/sleek.theme.screen.dart';
 import 'package:example/screens/divider/divider.screen.dart';
 import 'package:example/screens/floating_action_button/floating_action_button.screen.dart';
 import 'package:example/screens/icon_buttons/icon_buttons.screen.dart';
@@ -22,7 +20,6 @@ import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
 import 'package:example/screens/login/login.screen.dart';
 import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
-import 'package:example/screens/navigation_rail.dart/navigation_rail.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
 import 'package:example/screens/search/search.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
@@ -105,13 +102,13 @@ class _MyHomePageState extends State<MyHomePage> {
               Flexible(
                 child: pushScreen(
                   'Comic Theme',
-                  const ComicScreenDemo(),
+                  const ComicScreenDemoScreen(),
                 ),
               ),
               Flexible(
                 child: pushScreen(
                   'Sleek Theme',
-                  const SleekScreenDemo(),
+                  const SleekScreenDemoScreen(),
                 ),
               ),
             ],

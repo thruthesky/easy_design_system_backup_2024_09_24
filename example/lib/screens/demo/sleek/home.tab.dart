@@ -1,5 +1,5 @@
-import 'package:example/screens/demo/comic/widgets/bottom_sheet.demo.dart';
-import 'package:example/screens/demo/comic/widgets/check_box.demo.dart';
+import 'package:example/screens/demo/sleek/widgets/bottom_sheet.demo.dart';
+import 'package:example/screens/demo/sleek/widgets/check_box.demo.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -24,7 +24,7 @@ class HomeTab extends StatelessWidget {
               children: [
                 const SizedBox(height: 28),
                 Text(
-                  "Welcome to Comic Theme Demonstration Page. This is the Dashboad. Explore the Comic Theme to check out the different Widgets.",
+                  "Welcome to Sleek Theme Demonstration Page. This is the Dashboad. Explore the Sleek Theme to check out the different Widgets.",
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 // const Card(child: Text('Card has a border already')),
@@ -37,20 +37,13 @@ class HomeTab extends StatelessWidget {
                 Card(
                   child: Column(
                     children: [
-                      const ListTileTheme(
-                        child: ListTile(
-                          title: Text('32 °C | 89 °F (A bit rainy)'),
-                          subtitle:
-                              Text('Monday\nLight thunderstorms and rain'),
-                          leading: Icon(Icons.cloud),
-                        ),
+                      const ListTile(
+                        title: Text('32 °C | 89 °F (A bit rainy)'),
+                        subtitle: Text('Monday\nLight thunderstorms and rain'),
+                        leading: Icon(Icons.cloud),
                       ),
                       Column(
                         children: [
-                          const Divider(
-                            indent: 16,
-                            endIndent: 16,
-                          ),
                           Padding(
                             padding: const EdgeInsets.only(
                                 left: 16.0, right: 16.0, bottom: 12.0, top: 8),
@@ -96,13 +89,13 @@ class HomeTab extends StatelessWidget {
                 // const ListTileDemo(),
                 ListTile(
                   leading: const Icon(Icons.palette),
-                  title: const Text("Comic ListTile"),
-                  subtitle: const Text('Tap to learn more about comic theme.'),
+                  title: const Text("Sleek ListTile"),
+                  subtitle: const Text('Tap to learn more about sleek theme.'),
                   onTap: () {
                     showModalBottomSheet(
                       context: context,
                       builder: (context) => Theme(
-                        data: ComicTheme.of(context),
+                        data: SleekTheme.of(context),
                         child: BottomSheet(
                           onClosing: () {},
                           builder: (context) => const SizedBox(
@@ -112,7 +105,7 @@ class HomeTab extends StatelessWidget {
                               child: Column(
                                 children: [
                                   Text(
-                                    'Comic Theme is a theme that is inspired by comic books. The main idea is about thick borders with no background coloring. However, as a developer, you may choose how you want to color your app.',
+                                    'Sleek Theme is a theme that is inspired by modern simple and flat design. The main idea is about solid colorings but without borders. However, as a developer, you may choose how you want to color your app.',
                                   ),
                                 ],
                               ),
@@ -144,16 +137,13 @@ class HomeTab extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const ListTileTheme(
-                        child: ListTile(
-                          leading: Icon(Icons.account_circle, size: 36),
-                          title: Text("Jerremy Comilang"),
-                          subtitle: Text("john.mclean@exampetstore.com"),
-                        ),
+                      const ListTile(
+                        leading: Icon(Icons.account_circle, size: 36),
+                        title: Text("Jerremy Comilang"),
+                        subtitle: Text("john.mclean@exampetstore.com"),
                       ),
                       Column(
                         children: [
-                          const Divider(),
                           const Padding(
                             padding: EdgeInsets.only(
                                 left: 24.0, right: 24.0, top: 12),
@@ -189,16 +179,13 @@ class HomeTab extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const ListTileTheme(
-                        child: ListTile(
-                          leading: Icon(Icons.account_circle, size: 36),
-                          title: Text("Ma. Cecilia L. Comilang"),
-                          subtitle: Text("cormilang@ss.com"),
-                        ),
+                      const ListTile(
+                        leading: Icon(Icons.account_circle, size: 36),
+                        title: Text("Ma. Cecilia L. Comilang"),
+                        subtitle: Text("cormilang@ss.com"),
                       ),
                       Column(
                         children: [
-                          const Divider(),
                           const Padding(
                             padding: EdgeInsets.only(
                                 left: 24.0, right: 24.0, top: 12),
@@ -234,16 +221,13 @@ class HomeTab extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const ListTileTheme(
-                        child: ListTile(
-                          leading: Icon(Icons.account_circle, size: 36),
-                          title: Text("Harry Flores"),
-                          subtitle: Text("Florensia@saniba.com"),
-                        ),
+                      const ListTile(
+                        leading: Icon(Icons.account_circle, size: 36),
+                        title: Text("Harry Flores"),
+                        subtitle: Text("Florensia@saniba.com"),
                       ),
                       Column(
                         children: [
-                          const Divider(),
                           const Padding(
                             padding: EdgeInsets.only(
                                 left: 24.0, right: 24.0, top: 12),
