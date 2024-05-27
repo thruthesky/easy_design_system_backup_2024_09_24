@@ -2,9 +2,7 @@ import 'package:example/screens/demo/comic/chat.tab.dart';
 import 'package:example/screens/demo/comic/home.tab.dart';
 import 'package:example/screens/demo/comic/profile.tab.dart';
 import 'package:example/screens/demo/comic/settings.tab.dart';
-import 'package:example/screens/demo/widgets/list_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:social_design_system/social_design_system.dart';
 
 class ComicScreenDemo extends StatefulWidget {
@@ -67,11 +65,14 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Social Design System",
-                      style: Theme.of(context).textTheme.headlineMedium),
+                  const SizedBox(height: 8),
+                  Text(
+                    "Social Design System",
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
                   const Text("Comic Theme Demo"),
                   const SizedBox(height: 18),
-                  const Icon(Icons.set_meal_outlined, size: 36)
+                  const Icon(Icons.set_meal_outlined, size: 36),
                 ],
               ),
             ),
@@ -116,7 +117,61 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
               ),
             ),
             InkWell(
-              onTap: () => _navigatiorButtonSetIndex(null),
+              onTap: () {
+                _navigatiorButtonSetIndex(null);
+                // Open dialog
+                showDialog(
+                  context: context,
+                  builder: (context) => Theme(
+                    data: ComicTheme.of(context),
+                    child: AlertDialog(
+                      title: const Text('Are you sure?'),
+                      content: const Text(
+                          'Do you want to logout? (This is a demonstation only)'),
+                      actions: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                            showDialog(
+                              context: context,
+                              builder: (context) => Theme(
+                                data: ComicTheme.of(context),
+                                child: AlertDialog(
+                                  icon: const Padding(
+                                    padding: EdgeInsets.only(top: 16.0),
+                                    child: Icon(
+                                      Icons.set_meal_outlined,
+                                      size: 36,
+                                    ),
+                                  ),
+                                  title: const Text("Comic Theme"),
+                                  content: const Text(
+                                    "This is a demonstation only. Thank you for checking this out!",
+                                  ),
+                                  actions: [
+                                    ElevatedButton(
+                                      onPressed: () =>
+                                          Navigator.of(context).pop(),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                          child: const Text('Logout'),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Text('Cancel'),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                 child: ListTile(
