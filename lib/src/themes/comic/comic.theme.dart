@@ -337,10 +337,10 @@ class ComicThemeData {
               color: theme.colorScheme.outline,
             )),
       ),
-      progressIndicatorTheme: const ProgressIndicatorThemeData(
-          // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
-          // color: theme.colorScheme.secondary,
-          ),
+      // progressIndicatorTheme: const ProgressIndicatorThemeData(
+      // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
+      // color: theme.colorScheme.secondary,
+      // ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
         backgroundColor: theme.colorScheme.surfaceContainerHighest,
