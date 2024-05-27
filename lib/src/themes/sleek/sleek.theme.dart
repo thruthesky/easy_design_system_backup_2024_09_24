@@ -112,14 +112,7 @@ class SleekThemeData {
       chipTheme: theme.chipTheme.copyWith(
         backgroundColor: containerBackgroundColor(context),
         selectedColor: theme.colorScheme.inversePrimary,
-        labelStyle: (theme.chipTheme.labelStyle ?? const TextStyle()).copyWith(
-          color: theme.colorScheme.onPrimaryContainer,
-        ),
-        secondaryLabelStyle:
-            (theme.chipTheme.secondaryLabelStyle ?? const TextStyle()).copyWith(
-          color: theme.colorScheme.onPrimaryContainer,
-          fontWeight: FontWeight.bold,
-        ),
+
         // Note: Cannot use theme.chipTheme.shape here because
         // SDS's sleek wanted RoundedRectangleBorder
         shape: RoundedRectangleBorder(
