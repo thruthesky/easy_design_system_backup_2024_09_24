@@ -71,6 +71,8 @@ Card(
   ),
 ),
 ```
+
+* Sleek theme does not give theme design for the Card outline variant, Sleek theme is clean and simple so elevation and border are remove for Card Sleek Theme , you can still use the Card.outline variant but there wont be any theme design
         '''),
             ],
           ),

@@ -19,9 +19,12 @@ import 'package:example/screens/list_tile/list_tile.screen.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
+import 'package:example/screens/login/login.screen.dart';
 import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
+import 'package:example/screens/navigation_rail.dart/navigation_rail.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
+import 'package:example/screens/search/search.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
 import 'package:example/screens/snackbar/snackbars.screen.dart';
@@ -68,8 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (const String.fromEnvironment('MODE') == 'noe') {
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (_) => const NavigationDrawerScreen()));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (_) => const LoginScreen()));
       }
     });
   }
@@ -97,6 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const Text("Demos:"),
           const SizedBox(height: 8),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Flexible(
                 child: pushScreen(
@@ -113,6 +117,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
           const SizedBox(height: 24),
+          if (const String.fromEnvironment('MODE') == 'noe') ...{
+            pushScreen('Search Widget', const SearchScreen()),
+          },
           pushScreen("AppBar", const AppBarScreen()),
           pushScreen('Badge', const BadgeScreen()),
           pushScreen('BottomAppBar', const BottomAppBarScreen()),
@@ -128,9 +135,10 @@ class _MyHomePageState extends State<MyHomePage> {
               'Floating Action Button', const FloatingActionButtonScreen()),
           pushScreen('IconButton', const IconButtonScreen()),
           pushScreen('ListTile', const ListTileScreen()),
+          pushScreen('Login Screen', const LoginScreen()),
           pushScreen('NavigationBar', const NavigationBarScreen()),
           pushScreen("NavigationDrawer", const NavigationDrawerScreen()),
-          // ElevatedButton(onPressed: () {}, child: const Text("NavigationRail")),
+          // pushScreen('NavigationRail', const NavigationRailScreen()),
           pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
           pushScreen('Segmented Button', const SegmentedButtonScreen()),
           pushScreen('SnackBar', const SnackBarScreen()),
@@ -158,4 +166,18 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Text(title),
     );
   }
+}
+
+class WidgetItem {
+  final String id;
+  final String name;
+  final String description;
+  final Widget screen;
+
+  WidgetItem({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.screen,
+  });
 }

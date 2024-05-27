@@ -144,6 +144,21 @@ class SleekThemeData {
       dialogTheme: DialogTheme(
         iconColor: theme.colorScheme.primary,
       ),
+      drawerTheme: theme.drawerTheme.copyWith(
+          elevation: 0,
+          backgroundColor: theme.colorScheme.primaryContainer,
+          shadowColor: Colors.transparent,
+          endShape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(24),
+              bottomLeft: Radius.circular(24),
+            ),
+          ),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(24),
+                bottomRight: Radius.circular(24)),
+          )),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: WidgetStateProperty.all(0),
@@ -216,6 +231,28 @@ class SleekThemeData {
           );
         }),
         elevation: 0,
+      ),
+      navigationDrawerTheme: theme.navigationDrawerTheme.copyWith(
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        indicatorColor: theme.colorScheme.onPrimary,
+        indicatorShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+      ),
+      navigationRailTheme: theme.navigationRailTheme.copyWith(
+        backgroundColor: theme.colorScheme.primaryContainer,
+        indicatorColor: theme.colorScheme.onPrimary,
+        elevation: 0,
+      ),
+
+      // in Sleek theme by default the widgets have no border since we wanted make the the theme
+      // to be plain and simple and look clean and by default we dont have border and elevation
+      // but divider widget by nature it is just a line so to make it a simple and and plain raducing the
+      // thickness by 0 to make it look clean and simple.
+      dividerTheme: theme.dividerTheme.copyWith(
+        color: theme.colorScheme.outline,
+        thickness: 0,
       ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
         linearTrackColor: containerBackgroundColor(context).withAlpha(80),
