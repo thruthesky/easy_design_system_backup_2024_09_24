@@ -53,10 +53,14 @@ class VerifyNumberDialog extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    margin: EdgeInsets.all(24),
+                  SnackBar(
+                    margin: const EdgeInsets.all(24),
                     behavior: SnackBarBehavior.floating,
-                    content: Text('OTP Verified'),
+                    content: const Text('OTP Verified'),
+                    action: SnackBarAction(
+                      onPressed: () {},
+                      label: 'Action',
+                    ),
                   ),
                 );
                 Navigator.of(context).pop();

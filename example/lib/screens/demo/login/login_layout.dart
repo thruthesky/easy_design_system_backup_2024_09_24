@@ -9,6 +9,7 @@ class LoginLayout extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        const Spacer(),
         Text(
           'Welcome Back! Login to Social Design System to get started',
           style: Theme.of(context).textTheme.titleLarge,
@@ -17,7 +18,8 @@ class LoginLayout extends StatelessWidget {
         const SizedBox(
           height: 56,
         ),
-        ...children
+        ...children,
+        const Spacer(flex: 2)
       ],
     );
   }
