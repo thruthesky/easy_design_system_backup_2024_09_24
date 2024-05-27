@@ -1,3 +1,5 @@
+import 'package:example/screens/demo/comic/widgets/bottom_sheet.demo.dart';
+import 'package:example/screens/demo/comic/widgets/check_box.demo.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -123,7 +125,8 @@ class HomeTab extends StatelessWidget {
                   trailing: const Icon(Icons.arrow_forward_ios),
                 ),
                 const SizedBox(height: 24),
-                const ComicBottomSheetDemo(),
+                const BottomSheetDemo(),
+                const CheckBoxDemo(),
                 const SizedBox(height: 24),
               ],
             ),
@@ -138,65 +141,6 @@ class HomeTab extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class ComicBottomSheetDemo extends StatelessWidget {
-  const ComicBottomSheetDemo({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () => showBottomSheet(
-        context: context,
-        builder: (context) => Theme(
-          data: ComicTheme.of(context),
-          child: BottomSheet(
-            onClosing: () {},
-            builder: (context) {
-              return SizedBox(
-                height: 250,
-                width: double.maxFinite,
-                child: Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      const Text(
-                        "There is no secret to success except hard work and getting something indefinable which we call 'the breaks.' In order for a writer to succeed, I suggest three things - read and write - and wait.",
-                      ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          "- Countee Cullen",
-                          style:
-                              Theme.of(context).textTheme.bodySmall?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                          textAlign: TextAlign.end,
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-                      OutlinedButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text("Thank You!"),
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            },
-          ),
-        ),
-      ),
-      child: const Text(
-        'Want to learn a secret?',
-      ),
     );
   }
 }
