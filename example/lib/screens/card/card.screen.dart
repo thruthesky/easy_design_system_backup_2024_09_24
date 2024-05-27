@@ -16,48 +16,47 @@ class CardScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Text('Comic Theme'),
             Theme(
               data: ComicTheme.of(context),
               child: const Card(
                 child: Padding(
                   padding: EdgeInsets.all(16.0),
-                  child: Row(
-                    children: [Icon(Icons.info)],
-                  ),
+                  child: Text('Card Comic Theme'),
                 ),
               ),
             ),
-            // Theme(
-            //   data: ComicTheme.of(context),
-            //   child: const Card.outlined(
-            //     child: Padding(
-            //       padding: EdgeInsets.all(16.0),
-            //       child: Text('Card Outlined Comic Theme'),
-            //     ),
-            //   ),
-            // ),
-            // const SizedBox(
-            //   height: 24,
-            // ),
-            // const Text('Sleek Theme'),
-            // Theme(
-            //   data: SleekTheme.of(context),
-            //   child: const Card(
-            //     child: Padding(
-            //       padding: EdgeInsets.all(16.0),
-            //       child: Text('Card Sleek Theme'),
-            //     ),
-            //   ),
-            // ),
-            // Theme(
-            //   data: SleekTheme.of(context),
-            //   child: const Card.filled(
-            //     child: Padding(
-            //       padding: EdgeInsets.all(16.0),
-            //       child: Text('Card Filled Sleek Theme'),
-            //     ),
-            //   ),
-            // ),
+            Theme(
+              data: ComicTheme.of(context),
+              child: const Card.outlined(
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text('Card Outlined Comic Theme'),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            const Text('Sleek Theme'),
+            Theme(
+              data: SleekTheme.of(context),
+              child: const Card(
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text('Card Sleek Theme'),
+                ),
+              ),
+            ),
+            Theme(
+              data: SleekTheme.of(context),
+              child: const Card.filled(
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text('Card Filled Sleek Theme'),
+                ),
+              ),
+            ),
           ],
         ),
       ),
