@@ -1,3 +1,4 @@
+import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -56,24 +57,40 @@ class _NavigationRailScreenState extends State<NavigationRailScreen> {
                 width: 0,
               ),
             Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Theme(
-                    data: ComicTheme.of(context),
-                    child: ElevatedButton(
-                      onPressed: () => setState(() => selectedTheme = 'Comic'),
-                      child: const Text('Comic Theme'),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Table(
+                      children: [
+                        const TableRow(children: [
+                          Center(child: Text('Comic Theme')),
+                          Center(child: Text('Sleek Theme'))
+                        ]),
+                        TableRow(children: [
+                          Theme(
+                            data: ComicTheme.of(context),
+                            child: ElevatedButton(
+                              onPressed: () =>
+                                  setState(() => selectedTheme = 'Comic'),
+                              child: const Text('Comic Theme'),
+                            ),
+                          ),
+                          Theme(
+                            data: SleekTheme.of(context),
+                            child: ElevatedButton(
+                              onPressed: () =>
+                                  setState(() => selectedTheme = 'Sleek'),
+                              child: const Text('Sleek Theme'),
+                            ),
+                          ),
+                        ])
+                      ],
                     ),
-                  ),
-                  Theme(
-                    data: SleekTheme.of(context),
-                    child: ElevatedButton(
-                      onPressed: () => setState(() => selectedTheme = 'Sleek'),
-                      child: const Text('Sleek Theme'),
-                    ),
-                  )
-                ],
+                    const NothingToLearn()
+                  ],
+                ),
               ),
             )
           ],

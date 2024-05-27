@@ -11,25 +11,23 @@ class DividerScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Divider'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-            const Text('Comic'),
-            Theme(
-              data: ComicTheme.of(context),
-              child: const Divider(),
+            Text('Comic'),
+            ComicTheme(
+              child: Divider(),
             ),
-            const SizedBox(height: 32),
-            const Text('Sleek'),
-            Theme(
-              data: SleekTheme.of(context),
-              child: const Divider(),
+            SizedBox(height: 32),
+            Text('Sleek'),
+            SleekTheme(
+              child: Divider(),
             ),
-            const SizedBox(
-              height: 46,
+            SizedBox(
+              height: 16,
             ),
-            const NothingToLearn()
+            NothingToLearn()
           ],
         ),
       ),

@@ -205,6 +205,27 @@ class ComicThemeData {
         color: theme.colorScheme.outline,
         thickness: borderThickness,
       ),
+      drawerTheme: theme.drawerTheme.copyWith(
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        endShape: RoundedRectangleBorder(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(24),
+              bottomLeft: Radius.circular(24),
+            ),
+            side: BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.scrim,
+            )),
+        shape: RoundedRectangleBorder(
+            borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(24),
+                bottomRight: Radius.circular(24)),
+            side: BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.scrim,
+            )),
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: WidgetStateProperty.all(0),
@@ -308,27 +329,6 @@ class ComicThemeData {
           borderRadius: BorderRadius.circular(24),
         ),
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-      ),
-      drawerTheme: theme.drawerTheme.copyWith(
-        elevation: 0,
-        shadowColor: Colors.transparent,
-        endShape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(24),
-              bottomLeft: Radius.circular(24),
-            ),
-            side: BorderSide(
-              width: borderThickness,
-              color: theme.colorScheme.scrim,
-            )),
-        shape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(24),
-                bottomRight: Radius.circular(24)),
-            side: BorderSide(
-              width: borderThickness,
-              color: theme.colorScheme.scrim,
-            )),
       ),
       navigationDrawerTheme: theme.navigationDrawerTheme.copyWith(
         elevation: 0,

@@ -144,6 +144,21 @@ class SleekThemeData {
       dialogTheme: DialogTheme(
         iconColor: theme.colorScheme.primary,
       ),
+      drawerTheme: theme.drawerTheme.copyWith(
+          elevation: 0,
+          backgroundColor: theme.colorScheme.primaryContainer,
+          shadowColor: Colors.transparent,
+          endShape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(24),
+              bottomLeft: Radius.circular(24),
+            ),
+          ),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(24),
+                bottomRight: Radius.circular(24)),
+          )),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: WidgetStateProperty.all(0),
@@ -217,21 +232,6 @@ class SleekThemeData {
         }),
         elevation: 0,
       ),
-      drawerTheme: theme.drawerTheme.copyWith(
-          elevation: 0,
-          backgroundColor: theme.colorScheme.primaryContainer,
-          shadowColor: Colors.transparent,
-          endShape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(24),
-              bottomLeft: Radius.circular(24),
-            ),
-          ),
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-                topRight: Radius.circular(24),
-                bottomRight: Radius.circular(24)),
-          )),
       navigationDrawerTheme: theme.navigationDrawerTheme.copyWith(
         elevation: 0,
         shadowColor: Colors.transparent,

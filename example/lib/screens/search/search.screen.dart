@@ -26,6 +26,7 @@ import 'package:example/screens/snackbar/snackbars.screen.dart';
 import 'package:example/screens/tab_bar/tab_bar.screen.dart';
 import 'package:example/screens/text_form_field/text_form_field.screen.dart';
 import 'package:flutter/material.dart';
+import 'package:social_design_system/social_design_system.dart';
 
 class SearchScreen extends StatefulWidget {
   static const String routeName = '/search_screen';
@@ -89,39 +90,48 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _result = _items;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [
-          TextField(
-            controller: _searchController,
-            decoration: const InputDecoration(
-              hintText: 'Search widgets...',
-              border: OutlineInputBorder(),
+      appBar: AppBar(
+        title: const Text('Search Widgets'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Column(
+          children: [
+            ComicTheme(
+              child: TextField(
+                controller: _searchController,
+                decoration: const InputDecoration(
+                  hintText: 'Search widgets...',
+                ),
+                onChanged: _searchWidgets,
+              ),
             ),
-            onChanged: _searchWidgets,
-          ),
-          if (_searchController.text.isEmpty) ...{
-            const Expanded(
-                child: Center(
-              child: Text('Search for widgets'),
-            ))
-          },
-          Expanded(
-              child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: _result.length,
-                  itemBuilder: (context, index) {
-                    final widget = _result[index];
-                    return ElevatedButton(
-                      onPressed: () => Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => widget.screen),
-                      ),
-                      child: Text(widget.name),
-                    );
-                  })),
-        ],
+            const SizedBox(
+              height: 8,
+            ),
+            Expanded(
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: _result.length,
+                    itemBuilder: (context, index) {
+                      final widget = _result[index];
+                      return ElevatedButton(
+                        onPressed: () => Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => widget.screen),
+                        ),
+                        child: Text(widget.name),
+                      );
+                    })),
+          ],
+        ),
       ),
     );
   }

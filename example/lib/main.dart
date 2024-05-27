@@ -101,7 +101,9 @@ class _MyHomePageState extends State<MyHomePage> {
               pushScreen('Sleek Theme Demo', const SleekScreenDemo()),
             ],
           ),
-          pushScreen('Search Widget', const SearchScreen()),
+          if (const String.fromEnvironment('MODE') == 'noe') ...{
+            pushScreen('Search Widget', const SearchScreen()),
+          },
           pushScreen("AppBar", const AppBarScreen()),
           pushScreen('Badge', const BadgeScreen()),
           pushScreen('BottomAppBar', const BottomAppBarScreen()),
