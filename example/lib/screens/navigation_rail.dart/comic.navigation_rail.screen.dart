@@ -29,7 +29,8 @@ class _ComicNavigationRialScreenState extends State<ComicNavigationRialScreen> {
           : SleekTheme.of(context),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Comic Navigation Rail'),
+          title: Text(
+              '${selectedTheme == 'Comic' ? 'Comic' : 'Sleek'} Navigation Rail'),
         ),
         body: Row(
           children: [
@@ -54,13 +55,19 @@ class _ComicNavigationRialScreenState extends State<ComicNavigationRialScreen> {
             const VerticalDivider(),
             Column(
               children: [
-                ElevatedButton(
-                  onPressed: () => setState(() => selectedTheme = 'Comic'),
-                  child: const Text('Comic Theme'),
+                Theme(
+                  data: ComicTheme.of(context),
+                  child: ElevatedButton(
+                    onPressed: () => setState(() => selectedTheme = 'Comic'),
+                    child: const Text('Comic Theme'),
+                  ),
                 ),
-                ElevatedButton(
-                  onPressed: () => setState(() => selectedTheme = 'Sleek'),
-                  child: const Text('Sleek Theme'),
+                Theme(
+                  data: SleekTheme.of(context),
+                  child: ElevatedButton(
+                    onPressed: () => setState(() => selectedTheme = 'Sleek'),
+                    child: const Text('Sleek Theme'),
+                  ),
                 )
               ],
             )
