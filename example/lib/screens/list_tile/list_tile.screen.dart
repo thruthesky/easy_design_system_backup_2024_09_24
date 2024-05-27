@@ -1,3 +1,4 @@
+import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -10,6 +11,7 @@ class ListTileScreen extends StatefulWidget {
 }
 
 class _ListTileScreenState extends State<ListTileScreen> {
+  bool comicCheckbox = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +19,7 @@ class _ListTileScreenState extends State<ListTileScreen> {
         title: const Text('ListTile'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(24.0),
         child: Column(
           children: [
             Theme(
@@ -42,6 +44,7 @@ class _ListTileScreenState extends State<ListTileScreen> {
                 ],
               ),
             ),
+            const SizedBox(height: 20),
             Theme(
               data: SleekTheme.of(context),
               child: const Column(
@@ -56,6 +59,35 @@ class _ListTileScreenState extends State<ListTileScreen> {
                 ],
               ),
             ),
+            const SizedBox(height: 20),
+            const Text('Comic Theme CheckBoxListTile'),
+            ComicTheme(
+              child: CheckboxListTile(
+                value: comicCheckbox,
+                onChanged: (bool? value) {
+                  setState(() {
+                    comicCheckbox = value!;
+                  });
+                },
+                title: const Text('Comic Theme CheckboxListTile'),
+                subtitle: const Text('On'),
+              ),
+            ),
+            const SizedBox(height: 20),
+            const Text('Sleek Theme CheckBoxListTile'),
+            SleekTheme(
+              child: CheckboxListTile(
+                value: comicCheckbox,
+                onChanged: (bool? value) {
+                  setState(() {
+                    comicCheckbox = value!;
+                  });
+                },
+                title: const Text('Sleek Theme CheckboxListTile'),
+                subtitle: const Text('On'),
+              ),
+            ),
+            const NothingToLearn(),
           ],
         ),
       ),
