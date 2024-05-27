@@ -294,6 +294,73 @@ class _ColorSchemeNewScreenState extends State<ColorSchemeNewScreen> {
       ),
     ];
 
+    final List<
+        ({
+          String name,
+          TextStyle Function(BuildContext context) style,
+        })> textUnits = [
+      (
+        name: 'displayLarge',
+        style: (context) => Theme.of(context).textTheme.displayLarge!,
+      ),
+      (
+        name: 'displayMedium',
+        style: (context) => Theme.of(context).textTheme.displayMedium!,
+      ),
+      (
+        name: 'displaySmall',
+        style: (context) => Theme.of(context).textTheme.displaySmall!,
+      ),
+      (
+        name: 'headlineLarge',
+        style: (context) => Theme.of(context).textTheme.headlineLarge!,
+      ),
+      (
+        name: 'headlineMedium',
+        style: (context) => Theme.of(context).textTheme.headlineMedium!,
+      ),
+      (
+        name: 'headlineSmall',
+        style: (context) => Theme.of(context).textTheme.headlineSmall!,
+      ),
+      (
+        name: 'titleLarge',
+        style: (context) => Theme.of(context).textTheme.titleLarge!,
+      ),
+      (
+        name: 'titleMedium',
+        style: (context) => Theme.of(context).textTheme.titleMedium!,
+      ),
+      (
+        name: 'titleSmall',
+        style: (context) => Theme.of(context).textTheme.titleSmall!,
+      ),
+      (
+        name: 'bodyLarge',
+        style: (context) => Theme.of(context).textTheme.bodyLarge!,
+      ),
+      (
+        name: 'bodyMedium',
+        style: (context) => Theme.of(context).textTheme.bodyMedium!,
+      ),
+      (
+        name: 'bodySmall',
+        style: (context) => Theme.of(context).textTheme.bodySmall!,
+      ),
+      (
+        name: 'labelLarge',
+        style: (context) => Theme.of(context).textTheme.labelLarge!,
+      ),
+      (
+        name: 'labelMedium',
+        style: (context) => Theme.of(context).textTheme.labelMedium!,
+      ),
+      (
+        name: 'labelSmall',
+        style: (context) => Theme.of(context).textTheme.labelSmall!,
+      ),
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Color Scheme'),
@@ -303,8 +370,8 @@ class _ColorSchemeNewScreenState extends State<ColorSchemeNewScreen> {
         child: Column(
           children: [
             const Text('Theme Fonts'),
-            Text('Display Large',
-                style: Theme.of(context).textTheme.displayLarge),
+            for (final textUnit in textUnits)
+              TextUnit(name: textUnit.name, style: textUnit.style(context)),
             Text('Display Medium',
                 style: Theme.of(context).textTheme.displayMedium),
             Text('Display Small',
@@ -378,6 +445,58 @@ class _ColorSchemeNewScreenState extends State<ColorSchemeNewScreen> {
     );
   }
 }
+
+class TextUnit extends StatelessWidget {
+  const TextUnit({
+    super.key,
+    required this.name,
+    required this.style,
+  });
+
+  final String name;
+  final TextStyle style;
+
+  @override
+  Widget build(BuildContext context) {
+    TextStyle textStyle = const TextStyle(fontSize: 9);
+    return Column(
+      children: [
+        Text(name, style: style),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Weight: ${fontWeights[style.fontWeight.toString()]}',
+              style: textStyle,
+            ),
+            const SizedBox(width: 8),
+            Text(
+              'Size: ${style.fontSize}',
+              style: textStyle,
+            ),
+            const SizedBox(width: 8),
+            Text(
+              'LetterSpacing: ${style.letterSpacing}',
+              style: textStyle,
+            )
+          ],
+        )
+      ],
+    );
+  }
+}
+
+Map<String, String> fontWeights = {
+  "FontWeight.w100": "Thin w100",
+  "FontWeight.w200": "Extra Light w200",
+  "FontWeight.w300": "Light w300",
+  "FontWeight.w400": "Regular w400",
+  "FontWeight.w500": "Medium w500",
+  "FontWeight.w600": "Semi Bold w600",
+  "FontWeight.w700": "Bold w700",
+  "FontWeight.w800": "Extra Bold w800",
+  "FontWeight.w900": "Black w900",
+};
 
 class ColorUnit extends StatelessWidget {
   const ColorUnit({
