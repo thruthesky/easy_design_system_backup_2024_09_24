@@ -188,9 +188,14 @@ class ComicThemeData {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(
-            /// Initially used the [outline] to match with the other widgets
-            /// but does not work in terms of contrast
-            /// Based from flutter api, [scrim] is used for modal components
+            // Initially used the [outline] to match with the other widgets
+            // but does not work in terms of contrast
+            // Based from flutter api, [scrim] is used for modal components
+            // - Joshua
+            //
+            // Scrim may be used differently, need to review the use of scrim
+            // so scrim may be a wrong choice to use here.
+            // - Christian
             color: theme.colorScheme.scrim,
             width: borderThickness,
           ),
