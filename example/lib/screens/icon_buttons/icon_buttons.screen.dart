@@ -34,7 +34,7 @@ class IconButtonScreen extends StatelessWidget {
                   ),
                 ),
                 Theme(
-                  data: ComicIconButtonThemeData.of(context),
+                  data: SleekIconButtonThemeData.of(context),
                   child: Row(
                     children: [
                       IconButton(
