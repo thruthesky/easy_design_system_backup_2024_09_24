@@ -5,8 +5,6 @@ class ProfileTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Text('Profile Tab'),
-    );
+    return const Text('Profile Tab');
   }
 }

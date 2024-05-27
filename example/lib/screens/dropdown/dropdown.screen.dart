@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -11,7 +9,6 @@ class DropdownScreen extends StatefulWidget {
 }
 
 class _DropdownScreenState extends State<DropdownScreen> {
-  @override
   List<String> list = <String>['One', 'Two', 'Three', 'Four'];
 
   @override

@@ -37,7 +37,6 @@ import 'package:example/screens/text_form_field/text_form_field.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:markdown_widget/widget/all.dart';
-import 'package:social_design_system/social_design_system.dart';
 
 void main() {
   runApp(const MyApp());
