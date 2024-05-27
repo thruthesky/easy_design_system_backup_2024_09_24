@@ -175,18 +175,13 @@ class ComicThemeData {
       ),
       colorScheme: theme.colorScheme,
       checkboxTheme: CheckboxThemeData(
-        side: BorderSide(
-          width: borderThickness,
-          color: theme.colorScheme.outline,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(7),
         ),
-        fillColor: WidgetStateProperty.resolveWith<Color?>(
-          (Set<WidgetState> states) {
-            if (states.contains(WidgetState.disabled)) {
-              return theme.colorScheme.outline.withAlpha(75);
-            }
-            return null;
-          },
+        fillColor: WidgetStateProperty.all(
+          comicContainerBackgroundColor(context),
         ),
+        checkColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
       ),
       dialogTheme: DialogTheme(
         elevation: 0,
