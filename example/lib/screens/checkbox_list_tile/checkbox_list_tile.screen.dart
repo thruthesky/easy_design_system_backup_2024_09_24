@@ -1,3 +1,4 @@
+import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -65,9 +66,10 @@ class _CheckboxListTileScreenState extends State<CheckboxListTileScreen> {
                       height: 8,
                     ),
                     const CheckboxListTile(
-                        value: false,
-                        onChanged: null,
-                        title: Text('Off Disabled'))
+                      value: false,
+                      onChanged: null,
+                      title: Text('Off Disabled'),
+                    )
                   ],
                 ),
               ),
@@ -122,6 +124,10 @@ class _CheckboxListTileScreenState extends State<CheckboxListTileScreen> {
                 ),
               ),
             ),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: NothingToLearn(),
+            )
           ],
         ),
       ),
