@@ -1,3 +1,4 @@
+import 'package:example/screens/color_scheme_new/color_scheme_new.screen.dart';
 import 'package:example/screens/dialog/dialog.screen.dart';
 import 'package:example/screens/app_bar/app_bar.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
@@ -9,7 +10,7 @@ import 'package:example/screens/checkbox/checkbox.screen.dart';
 import 'package:example/screens/checkbox_list_tile/checkbox_list_tile.screen.dart';
 import 'package:example/screens/chip/chip.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
-import 'package:example/screens/demo/comic.theme.screen.dart';
+import 'package:example/screens/demo/comic/comic.theme.screen.dart';
 import 'package:example/screens/demo/sleek.theme.screen.dart';
 import 'package:example/screens/divider/divider.screen.dart';
 import 'package:example/screens/floating_action_button/floating_action_button.screen.dart';
@@ -95,13 +96,27 @@ class _MyHomePageState extends State<MyHomePage> {
 - `Basic widgets` means the widgets in material.dart.
 - `Visual component widget` is a widget that have a visual outloook on screen like a Text widget. While GestureDetector is not a visual component since it does not appear on the screen.
 '''),
+          const SizedBox(height: 16),
+          const Text("Demos:"),
+          const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              pushScreen('Comic Theme Demo', const ComicScreenDemo()),
-              pushScreen('Sleek Theme Demo', const SleekScreenDemo()),
+              Flexible(
+                child: pushScreen(
+                  'Comic Theme',
+                  const ComicScreenDemo(),
+                ),
+              ),
+              Flexible(
+                child: pushScreen(
+                  'Sleek Theme',
+                  const SleekScreenDemo(),
+                ),
+              ),
             ],
           ),
+          const SizedBox(height: 24),
           if (const String.fromEnvironment('MODE') == 'noe') ...{
             pushScreen('Search Widget', const SearchScreen()),
           },
@@ -112,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Buttons', const ButtonsScreen()),
           pushScreen('Card', const CardScreen()),
           pushScreen('Checkbox', const CheckboxScreen()),
-          pushScreen('CheckboxListTile', const CheckboxListTileScreen()),
+          // pushScreen('CheckboxListTile', const CheckboxListTileScreen()),
           pushScreen('Chip', const ChipScreen()),
           pushScreen('Dialog', const DialogScreen()),
           pushScreen('Divider', const DividerScreen()),
@@ -123,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Login Screen', const LoginScreen()),
           pushScreen('NavigationBar', const NavigationBarScreen()),
           pushScreen("NavigationDrawer", const NavigationDrawerScreen()),
-          pushScreen('NavigationRail', const NavigationRailScreen()),
+          // pushScreen('NavigationRail', const NavigationRailScreen()),
           pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
           pushScreen('Segmented Button', const SegmentedButtonScreen()),
           pushScreen('SnackBar', const SnackBarScreen()),
@@ -135,13 +150,15 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Wave Carousel Entry', const WaveCarouselEntryScreen()),
           pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
           pushScreen('Sleep Walker', const SleepWalkerScreen()),
-          pushScreen('Color scheme', const ColorSchemeScreen()),
+          // pushScreen('Color scheme', const ColorSchemeScreen()),
+
+          pushScreen('Color scheme new', const ColorSchemeNewScreen()),
         ],
       ),
     );
   }
 
-  pushScreen(String title, Widget screen) {
+  Widget pushScreen(String title, Widget screen) {
     return ElevatedButton(
       onPressed: () => Navigator.of(context).push(
         MaterialPageRoute(builder: (_) => screen),
