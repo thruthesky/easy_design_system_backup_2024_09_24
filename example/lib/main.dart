@@ -1,5 +1,6 @@
 import 'package:example/screens/color_scheme_new/color_scheme_new.screen.dart';
 import 'package:example/screens/demo/sleek/sleek.theme.screen.dart';
+import 'package:example/screens/demo/login/sleek_login.demo.dart';
 import 'package:example/screens/dialog/dialog.screen.dart';
 import 'package:example/screens/app_bar/app_bar.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
@@ -17,9 +18,10 @@ import 'package:example/screens/list_tile/list_tile.screen.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
-import 'package:example/screens/login/login.screen.dart';
+import 'package:example/screens/demo/login/comic_login.demo.dart';
 import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
+import 'package:example/screens/navigation_rail.dart/navigation_rail.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
 import 'package:example/screens/search/search.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
@@ -69,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (const String.fromEnvironment('MODE') == 'noe') {
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (_) => const LoginScreen()));
+            .push(MaterialPageRoute(builder: (_) => const ComicLoginDemo()));
       }
     });
   }
@@ -113,6 +115,40 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(
+                child: pushScreen(
+                  'Comic Login',
+                  const ComicLoginDemo(),
+                ),
+              ),
+              Flexible(
+                child: pushScreen(
+                  'Sleek Login',
+                  const SleekLoginDemo(),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(
+                child: pushScreen(
+                  'Comic Login',
+                  const ComicLoginDemo(),
+                ),
+              ),
+              Flexible(
+                child: pushScreen(
+                  'Sleek Login',
+                  const SleekLoginDemo(),
+                ),
+              ),
+            ],
+          ),
           const SizedBox(height: 24),
           if (const String.fromEnvironment('MODE') == 'noe') ...{
             pushScreen('Search Widget', const SearchScreen()),
@@ -132,10 +168,9 @@ class _MyHomePageState extends State<MyHomePage> {
               'Floating Action Button', const FloatingActionButtonScreen()),
           pushScreen('IconButton', const IconButtonScreen()),
           pushScreen('ListTile', const ListTileScreen()),
-          pushScreen('Login Screen', const LoginScreen()),
           pushScreen('NavigationBar', const NavigationBarScreen()),
           pushScreen("NavigationDrawer", const NavigationDrawerScreen()),
-          // pushScreen('NavigationRail', const NavigationRailScreen()),
+          pushScreen('NavigationRail', const NavigationRailScreen()),
           pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
           pushScreen('Segmented Button', const SegmentedButtonScreen()),
           pushScreen('SnackBar', const SnackBarScreen()),
