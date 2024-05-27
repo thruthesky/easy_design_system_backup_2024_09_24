@@ -75,17 +75,47 @@ class _CheckboxScreenState extends State<CheckboxScreen> {
                     ],
                   ),
                 ),
-                Row(
-                  children: [
-                    Checkbox(
-                      value: sleekCheckBoxOn,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          sleekCheckBoxOn = value!;
-                        });
-                      },
-                    ),
-                  ],
+                SleekTheme(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Checkbox(
+                            value: false,
+                            onChanged: (v) {},
+                          ),
+                          const Text('Off'),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Checkbox(
+                            value: true,
+                            onChanged: (v) {},
+                          ),
+                          const Text('On'),
+                        ],
+                      ),
+                      const Row(
+                        children: [
+                          Checkbox(
+                            value: false,
+                            onChanged: null,
+                          ),
+                          Text('Off Disabled'),
+                        ],
+                      ),
+                      const Row(
+                        children: [
+                          Checkbox(
+                            value: true,
+                            onChanged: null,
+                          ),
+                          Text('On Disabled'),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ])
             ],
