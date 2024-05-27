@@ -18,6 +18,7 @@ import 'package:example/screens/list_tile/list_tile.screen.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
+import 'package:example/screens/login/login.screen.dart';
 import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
 import 'package:example/screens/navigation_rail.dart/navigation_rail.screen.dart';
@@ -69,8 +70,8 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (const String.fromEnvironment('MODE') == 'noe') {
-        // Navigator.of(context).push(
-        //     MaterialPageRoute(builder: (_) => const NavigationRailScreen()));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (_) => const LoginScreen()));
       }
     });
   }
@@ -119,6 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'Floating Action Button', const FloatingActionButtonScreen()),
           pushScreen('IconButton', const IconButtonScreen()),
           pushScreen('ListTile', const ListTileScreen()),
+          pushScreen('Login Screen', const LoginScreen()),
           pushScreen('NavigationBar', const NavigationBarScreen()),
           pushScreen("NavigationDrawer", const NavigationDrawerScreen()),
           pushScreen('NavigationRail', const NavigationRailScreen()),

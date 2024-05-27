@@ -16,6 +16,7 @@ import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
 import 'package:example/screens/floating_action_button/floating_action_button.screen.dart';
 import 'package:example/screens/icon_buttons/icon_buttons.screen.dart';
 import 'package:example/screens/list_tile/list_tile.screen.dart';
+import 'package:example/screens/login/login.screen.dart';
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
 import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
 import 'package:example/screens/navigation_rail.dart/navigation_rail.screen.dart';
@@ -54,6 +55,7 @@ class _SearchScreenState extends State<SearchScreen> {
         name: 'Floating Action Button', screen: FloatingActionButtonScreen()),
     const SearchItem(name: 'IconButton', screen: IconButtonScreen()),
     const SearchItem(name: 'ListTile', screen: ListTileScreen()),
+    const SearchItem(name: 'Login Screen', screen: LoginScreen()),
     const SearchItem(name: 'NavigationBar', screen: NavigationBarScreen()),
     const SearchItem(
         name: "NavigationDrawer", screen: NavigationDrawerScreen()),
