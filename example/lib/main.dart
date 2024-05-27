@@ -22,6 +22,7 @@ import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart'
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
 import 'package:example/screens/navigation_rail.dart/navigation_rail.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
+import 'package:example/screens/search/search.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
 import 'package:example/screens/snackbar/snackbars.screen.dart';
@@ -68,8 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (const String.fromEnvironment('MODE') == 'noe') {
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (_) => const NavigationRailScreen()));
+        // Navigator.of(context).push(
+        //     MaterialPageRoute(builder: (_) => const NavigationRailScreen()));
       }
     });
   }
@@ -100,6 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
               pushScreen('Sleek Theme Demo', const SleekScreenDemo()),
             ],
           ),
+          pushScreen('Search Widget', const SearchScreen()),
           pushScreen("AppBar", const AppBarScreen()),
           pushScreen('Badge', const BadgeScreen()),
           pushScreen('BottomAppBar', const BottomAppBarScreen()),
@@ -143,4 +145,18 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Text(title),
     );
   }
+}
+
+class WidgetItem {
+  final String id;
+  final String name;
+  final String description;
+  final Widget screen;
+
+  WidgetItem({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.screen,
+  });
 }
