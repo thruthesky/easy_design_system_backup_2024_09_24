@@ -112,7 +112,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
           const SizedBox(height: 24),
-          pushScreen('TextFields', const TextFieldScreen()),
           pushScreen("AppBar", const AppBarScreen()),
           pushScreen('Badge', const BadgeScreen()),
           pushScreen('BottomAppBar', const BottomAppBarScreen()),
