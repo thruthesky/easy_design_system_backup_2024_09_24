@@ -144,6 +144,14 @@ class ComicThemeData {
             width: borderThickness,
             color: theme.colorScheme.scrim,
           ),
+          left: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.scrim,
+          ),
+          right: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.scrim,
+          ),
         ),
       ),
       cardTheme: theme.cardTheme.copyWith(

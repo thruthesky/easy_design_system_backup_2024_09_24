@@ -159,6 +159,7 @@ class ComicBottomSheetDemo extends StatelessWidget {
             builder: (context) {
               return SizedBox(
                 height: 250,
+                width: double.maxFinite,
                 child: Padding(
                   padding: const EdgeInsets.all(24.0),
                   child: Column(
@@ -167,12 +168,14 @@ class ComicBottomSheetDemo extends StatelessWidget {
                       const Text(
                         "There is no secret to success except hard work and getting something indefinable which we call 'the breaks.' In order for a writer to succeed, I suggest three things - read and write - and wait.",
                       ),
-                      const SizedBox(height: 8),
                       Align(
                         alignment: Alignment.centerRight,
                         child: Text(
                           "- Countee Cullen",
-                          style: Theme.of(context).textTheme.bodySmall,
+                          style:
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                           textAlign: TextAlign.end,
                         ),
                       ),
