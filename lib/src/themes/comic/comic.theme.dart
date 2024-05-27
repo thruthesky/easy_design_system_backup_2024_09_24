@@ -211,6 +211,7 @@ class ComicThemeData {
         color: theme.colorScheme.outline,
         thickness: borderThickness,
       ),
+
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: WidgetStateProperty.all(0),
