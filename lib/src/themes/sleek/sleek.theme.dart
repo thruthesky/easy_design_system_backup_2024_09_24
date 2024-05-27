@@ -235,19 +235,21 @@ class SleekThemeData {
         ),
         indicatorSize: TabBarIndicatorSize.tab,
       ),
-      textButtonTheme: TextButtonThemeData(
-        style: ButtonStyle(
-          foregroundColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
-          backgroundColor: WidgetStateProperty.all(
-            theme.colorScheme.primaryContainer,
-          ),
-          shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
-          ),
-        ),
-      ),
+
+      //
+      // textButtonTheme: TextButtonThemeData(
+      //   style: ButtonStyle(
+      //     foregroundColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
+      //     backgroundColor: WidgetStateProperty.all(
+      //       theme.colorScheme.primaryContainer,
+      //     ),
+      //     shape: WidgetStateProperty.all(
+      //       RoundedRectangleBorder(
+      //         borderRadius: BorderRadius.circular(24),
+      //       ),
+      //     ),
+      //   ),
+      // ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
         backgroundColor: theme.colorScheme.primaryContainer,
