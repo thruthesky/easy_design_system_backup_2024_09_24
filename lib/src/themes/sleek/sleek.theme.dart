@@ -1,5 +1,29 @@
 import 'package:flutter/material.dart';
 
+Color containerBackgroundColor(BuildContext context) =>
+    Theme.of(context).colorScheme.primaryContainer;
+
+class SleekIconButtonThemeData {
+  SleekIconButtonThemeData();
+
+  static ThemeData of(BuildContext context) {
+    return ThemeData(
+      iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+          ),
+          backgroundColor: WidgetStateProperty.all(
+            containerBackgroundColor(context),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 /// SleekThemeData
 ///
 /// [SleekThemeData] is a class that holds the color scheme for the Sleek theme.
@@ -39,7 +63,7 @@ class SleekThemeData {
       //   textColor: theme.colorScheme.onPrimary,
       // ),
       bottomAppBarTheme: theme.bottomAppBarTheme.copyWith(
-        color: theme.colorScheme.primaryContainer,
+        color: containerBackgroundColor(context),
         shape: const AutomaticNotchedShape(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -86,16 +110,9 @@ class SleekThemeData {
         ),
       ),
       chipTheme: theme.chipTheme.copyWith(
-        backgroundColor: theme.colorScheme.primaryContainer,
+        backgroundColor: containerBackgroundColor(context),
         selectedColor: theme.colorScheme.inversePrimary,
-        labelStyle: (theme.chipTheme.labelStyle ?? const TextStyle()).copyWith(
-          color: theme.colorScheme.onPrimaryContainer,
-        ),
-        secondaryLabelStyle:
-            (theme.chipTheme.secondaryLabelStyle ?? const TextStyle()).copyWith(
-          color: theme.colorScheme.onPrimaryContainer,
-          fontWeight: FontWeight.bold,
-        ),
+
         // Note: Cannot use theme.chipTheme.shape here because
         // SDS's sleek wanted RoundedRectangleBorder
         shape: RoundedRectangleBorder(
@@ -106,7 +123,7 @@ class SleekThemeData {
       ),
 
       // chipTheme: ChipThemeData(
-      //   backgroundColor: theme.colorScheme.primaryContainer,
+      //   backgroundColor: containerBackgroundColor(context),
       //   selectedColor: theme.colorScheme.primary,
       //   labelStyle: TextStyle(
       //     color: theme.colorScheme.primary,
@@ -123,7 +140,7 @@ class SleekThemeData {
       //   side: BorderSide.none,
       // ),
       colorScheme: Theme.of(context).colorScheme,
-      dialogBackgroundColor: theme.colorScheme.primaryContainer,
+      dialogBackgroundColor: containerBackgroundColor(context),
       dialogTheme: DialogTheme(
         iconColor: theme.colorScheme.primary,
       ),
@@ -132,7 +149,7 @@ class SleekThemeData {
           elevation: WidgetStateProperty.all(0),
           foregroundColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
           backgroundColor: WidgetStateProperty.all(
-            theme.colorScheme.primaryContainer,
+            containerBackgroundColor(context),
           ),
           shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
@@ -142,7 +159,7 @@ class SleekThemeData {
         ),
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: theme.colorScheme.primaryContainer,
+        backgroundColor: containerBackgroundColor(context),
         elevation: 0,
         foregroundColor: theme.colorScheme.primary,
         shape: RoundedRectangleBorder(
@@ -152,7 +169,7 @@ class SleekThemeData {
       ),
       inputDecorationTheme: theme.inputDecorationTheme.copyWith(
         filled: true,
-        fillColor: theme.colorScheme.primaryContainer,
+        fillColor: containerBackgroundColor(context),
         border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(24)),
           borderSide: BorderSide.none,
@@ -163,14 +180,14 @@ class SleekThemeData {
         ),
       ),
       listTileTheme: theme.listTileTheme.copyWith(
-        tileColor: theme.colorScheme.primaryContainer,
+        tileColor: containerBackgroundColor(context),
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),
       ),
       navigationBarTheme: theme.navigationBarTheme.copyWith(
-        backgroundColor: theme.colorScheme.primaryContainer,
+        backgroundColor: containerBackgroundColor(context),
         indicatorColor: theme.colorScheme.onPrimary,
         iconTheme: WidgetStateProperty.resolveWith(
           (state) {
@@ -201,13 +218,13 @@ class SleekThemeData {
         elevation: 0,
       ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
-        linearTrackColor: theme.colorScheme.primaryContainer.withAlpha(80),
+        linearTrackColor: containerBackgroundColor(context).withAlpha(80),
       ),
       // segmentedButtonTheme: const SegmentedButtonThemeData(
       // style: SegmentedButton.styleFrom(
       //   // selectedBackgroundColor: theme.colorScheme.primary,
       //   // selectedForegroundColor: theme.colorScheme.onPrimary,
-      //   // backgroundColor: theme.colorScheme.primaryContainer,
+      //   // backgroundColor: containerBackgroundColor(context),
       //   side: BorderSide.none,
       //   elevation: 0,
       // ),
@@ -220,7 +237,7 @@ class SleekThemeData {
           // for selectedBackgroundColor, selectedForegroundColor, and backgroundColor.
           selectedBackgroundColor: theme.colorScheme.primary,
           selectedForegroundColor: theme.colorScheme.onPrimary,
-          backgroundColor: theme.colorScheme.primaryContainer,
+          backgroundColor: containerBackgroundColor(context),
           side: BorderSide.none,
           elevation: 0,
         ),
@@ -231,7 +248,7 @@ class SleekThemeData {
             topLeft: Radius.circular(12),
             topRight: Radius.circular(12),
           ),
-          color: theme.colorScheme.primaryContainer,
+          color: containerBackgroundColor(context),
         ),
         indicatorSize: TabBarIndicatorSize.tab,
       ),
@@ -241,7 +258,7 @@ class SleekThemeData {
       //   style: ButtonStyle(
       //     foregroundColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
       //     backgroundColor: WidgetStateProperty.all(
-      //       theme.colorScheme.primaryContainer,
+      //       containerBackgroundColor(context),
       //     ),
       //     shape: WidgetStateProperty.all(
       //       RoundedRectangleBorder(
@@ -252,7 +269,7 @@ class SleekThemeData {
       // ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
-        backgroundColor: theme.colorScheme.primaryContainer,
+        backgroundColor: containerBackgroundColor(context),
         contentTextStyle: TextStyle(
           color: theme.colorScheme.onPrimaryContainer,
         ),

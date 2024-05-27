@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:markdown_widget/markdown_widget.dart';
 import 'package:markdown_widget/widget/all.dart';
 
 class NothingToLearn extends StatelessWidget {
@@ -10,7 +11,9 @@ class NothingToLearn extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
+        SizedBox(height: 48),
         Divider(),
+        SizedBox(height: 16),
         Text(
           "Soical design system will automatically enhance the UI of your app. Just continue building your app.",
         ),

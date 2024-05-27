@@ -1,3 +1,4 @@
+import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -12,40 +13,45 @@ class IconButtonScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(24),
-        child: Table(
+        child: Column(
           children: [
-            const TableRow(
+            Table(
               children: [
-                Text('Comic Theme'),
-                Text('Sleek Theme'),
-              ],
-            ),
-            TableRow(
-              children: [
-                Theme(
-                  data: ComicIconButtonThemeData.of(context),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.add),
-                      ),
-                    ],
-                  ),
+                const TableRow(
+                  children: [
+                    Text('Comic Theme'),
+                    Text('Sleek Theme'),
+                  ],
                 ),
-                Theme(
-                  data: ComicIconButtonThemeData.of(context),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.add),
+                TableRow(
+                  children: [
+                    Theme(
+                      data: ComicIconButtonThemeData.of(context),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.add),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                    Theme(
+                      data: SleekIconButtonThemeData.of(context),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.add),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
                 )
               ],
-            )
+            ),
+            const NothingToLearn(),
           ],
         ),
       ),
