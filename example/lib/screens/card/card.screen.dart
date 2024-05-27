@@ -1,7 +1,5 @@
-import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:example/widgets/code_to_learn.dart';
 import 'package:flutter/material.dart';
-import 'package:markdown_widget/widget/markdown_block.dart';
 import 'package:social_design_system/social_design_system.dart';
 
 class CardScreen extends StatelessWidget {
@@ -73,6 +71,8 @@ Card(
   ),
 ),
 ```
+
+* Sleek theme does not give theme design for the Card outline variant, Sleek theme is clean and simple so elevation and border are remove for Card Sleek Theme , you can still use the Card.outline variant but there wont be any theme design
         '''),
             ],
           ),
