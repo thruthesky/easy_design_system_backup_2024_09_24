@@ -66,9 +66,10 @@ class _CheckboxListTileScreenState extends State<CheckboxListTileScreen> {
                       height: 8,
                     ),
                     const CheckboxListTile(
-                        value: false,
-                        onChanged: null,
-                        title: Text('Off Disabled'))
+                      value: false,
+                      onChanged: null,
+                      title: Text('Off Disabled'),
+                    )
                   ],
                 ),
               ),
