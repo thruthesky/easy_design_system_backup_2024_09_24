@@ -70,6 +70,21 @@ class SleekThemeData {
           borderRadius: BorderRadius.circular(24),
         ),
       ),
+
+      checkboxTheme: CheckboxThemeData(
+        side: BorderSide(
+          width: 0.5,
+          color: theme.colorScheme.outline,
+        ),
+        fillColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outline.withAlpha(50);
+            }
+            return null;
+          },
+        ),
+      ),
       chipTheme: theme.chipTheme.copyWith(
         backgroundColor: theme.colorScheme.primaryContainer,
         selectedColor: theme.colorScheme.inversePrimary,
@@ -111,20 +126,6 @@ class SleekThemeData {
       dialogBackgroundColor: theme.colorScheme.primaryContainer,
       dialogTheme: DialogTheme(
         iconColor: theme.colorScheme.primary,
-      ),
-      checkboxTheme: CheckboxThemeData(
-        side: BorderSide(
-          width: 0.5,
-          color: theme.colorScheme.outline,
-        ),
-        fillColor: WidgetStateProperty.resolveWith<Color?>(
-          (Set<WidgetState> states) {
-            if (states.contains(WidgetState.disabled)) {
-              return theme.colorScheme.outline.withAlpha(50);
-            }
-            return null;
-          },
-        ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
