@@ -24,7 +24,11 @@ class _CheckBoxDemoState extends State<CheckBoxDemo> {
         children: [
           Checkbox(
             value: value,
-            onChanged: null,
+            onChanged: (v) {
+              setState(() {
+                value = v!;
+              });
+            },
           ),
           const Expanded(
             child: Text("Do you agree in the secret?"),

@@ -1,5 +1,7 @@
 import 'package:example/screens/demo/comic/widgets/bottom_sheet.demo.dart';
 import 'package:example/screens/demo/comic/widgets/check_box.demo.dart';
+import 'package:example/screens/demo/comic/widgets/news.tile.dart';
+import 'package:example/screens/demo/comic/widgets/post.tile.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -132,157 +134,47 @@ class HomeTab extends StatelessWidget {
             ),
           ),
         ),
-        SingleChildScrollView(
+        const SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: EdgeInsets.all(24.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Card(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      const ListTileTheme(
-                        child: ListTile(
-                          leading: Icon(Icons.account_circle, size: 36),
-                          title: Text("Jerremy Comilang"),
-                          subtitle: Text("john.mclean@exampetstore.com"),
-                        ),
-                      ),
-                      Column(
-                        children: [
-                          const Divider(),
-                          const Padding(
-                            padding: EdgeInsets.only(
-                                left: 24.0, right: 24.0, top: 12),
-                            child: Text(
-                                'In the heart of the forest, where the trees whispered ancient secrets, a hidden village thrived. The villagers lived in harmony with nature, their days filled with laughter and song. Mysterious lights danced in the night sky, guiding travelers to safety. Legends spoke of a guardian spirit, protecting all who called this enchanted place home.'),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 12.0,
-                              right: 24.0,
-                              bottom: 12.0,
-                            ),
-                            child: Row(
-                              children: [
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.favorite_outline),
-                                ),
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.message_outlined),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                PostTile(
+                  title: "Jerremy Comilang",
+                  subtitle: "john.mclean@aplepetstore.com",
+                  content:
+                      "In the heart of the forest, where the trees whispered ancient secrets, a hidden village thrived. The villagers lived in harmony with nature, their days filled with laughter and song. Mysterious lights danced in the night sky, guiding travelers to safety. Legends spoke of a guardian spirit, protecting all who called this enchanted place home.",
                 ),
-                Card(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      const ListTileTheme(
-                        child: ListTile(
-                          leading: Icon(Icons.account_circle, size: 36),
-                          title: Text("Ma. Cecilia L. Comilang"),
-                          subtitle: Text("cormilang@ss.com"),
-                        ),
-                      ),
-                      Column(
-                        children: [
-                          const Divider(),
-                          const Padding(
-                            padding: EdgeInsets.only(
-                                left: 24.0, right: 24.0, top: 12),
-                            child: Text(
-                                'Beneath the starry sky, a cat with emerald eyes roamed the quiet streets. Shadows danced under the moonlight as the breeze carried whispers of forgotten tales. In the distance, a clock tower chimed midnight, signaling the start of another magical night.'),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 12.0,
-                              right: 24.0,
-                              bottom: 12.0,
-                            ),
-                            child: Row(
-                              children: [
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.favorite_outline),
-                                ),
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.message_outlined),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                PostTile(
+                  title: "Ma. Cecilia L. Comilang",
+                  subtitle: "cormilang@ss.com",
+                  content:
+                      "Beneath the starry sky, a cat with emerald eyes roamed the quiet streets. Shadows danced under the moonlight as the breeze carried whispers of forgotten tales. In the distance, a clock tower chimed midnight, signaling the start of another magical night.",
                 ),
-                Card(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      const ListTileTheme(
-                        child: ListTile(
-                          leading: Icon(Icons.account_circle, size: 36),
-                          title: Text("Harry Flores"),
-                          subtitle: Text("Florensia@saniba.com"),
-                        ),
-                      ),
-                      Column(
-                        children: [
-                          const Divider(),
-                          const Padding(
-                            padding: EdgeInsets.only(
-                                left: 24.0, right: 24.0, top: 12),
-                            child: Text(
-                                'Under the moonlit sky, a lone owl hooted from an ancient oak. Fireflies flickered, painting the night with tiny sparks of light, while the world slept peacefully.'),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 12.0,
-                              right: 24.0,
-                              bottom: 12.0,
-                            ),
-                            child: Row(
-                              children: [
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.favorite_outline),
-                                ),
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.message_outlined),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                PostTile(
+                  title: "Harry Flores",
+                  subtitle: "florensia@saniba.com",
+                  content:
+                      "Under the moonlit sky, a lone owl hooted from an ancient oak. Fireflies flickered, painting the night with tiny sparks of light, while the world slept peacefully.",
                 ),
               ],
             ),
           ),
         ),
-        const Center(
-          child: Column(
-            children: [
-              Text('Third'),
-            ],
+        const SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(24.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                NewsTile(),
+                NewsTile(),
+                NewsTile(),
+              ],
+            ),
           ),
         ),
       ],
