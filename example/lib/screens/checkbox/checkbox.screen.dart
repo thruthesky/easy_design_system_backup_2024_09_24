@@ -17,263 +17,142 @@ class _CheckboxScreenState extends State<CheckboxScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Checkbox'),
+      appBar: AppBar(
+        title: const Text('Checkbox'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Table(
+              children: [
+                const TableRow(
+                  children: [
+                    Text('Comic Theme'),
+                    Text('Sleek Theme'),
+                  ],
+                ),
+                TableRow(children: [
+                  ComicTheme(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: comicCheckBoxOn,
+                              onChanged: (v) {
+                                setState(() {
+                                  comicCheckBoxOn = v!;
+                                });
+                              },
+                            ),
+                            const Text('Try me'),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: false,
+                              onChanged: (v) {},
+                            ),
+                            const Text('Off'),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: true,
+                              onChanged: (v) {},
+                            ),
+                            const Text('On'),
+                          ],
+                        ),
+                        const Row(
+                          children: [
+                            Checkbox(
+                              value: false,
+                              onChanged: null,
+                            ),
+                            Text('Off Disabled'),
+                          ],
+                        ),
+                        const Row(
+                          children: [
+                            Checkbox(
+                              value: true,
+                              onChanged: null,
+                            ),
+                            Text('On Disabled'),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SleekTheme(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: sleekCheckBoxOn,
+                              onChanged: (v) {
+                                setState(() {
+                                  sleekCheckBoxOn = v!;
+                                });
+                              },
+                            ),
+                            const Text('Try me'),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: false,
+                              onChanged: (v) {},
+                            ),
+                            const Text('Off'),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: true,
+                              onChanged: (v) {},
+                            ),
+                            const Text('On'),
+                          ],
+                        ),
+                        const Row(
+                          children: [
+                            Checkbox(
+                              value: false,
+                              onChanged: null,
+                            ),
+                            Text('Off Disabled'),
+                          ],
+                        ),
+                        const Row(
+                          children: [
+                            Checkbox(
+                              value: true,
+                              onChanged: null,
+                            ),
+                            Text('On Disabled'),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ]),
+              ],
+            ),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: NothingToLearn(),
+            )
+          ],
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Table(
-            children: [
-              const TableRow(
-                children: [
-                  Text('Comic Theme'),
-                  Text('Sleek Theme'),
-                ],
-              ),
-              TableRow(children: [
-                ComicTheme(
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: comicCheckBoxOn,
-                            onChanged: (v) {
-                              setState(() {
-                                comicCheckBoxOn = v!;
-                              });
-                            },
-                          ),
-                          const Text('Try me'),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: false,
-                            onChanged: (v) {},
-                          ),
-                          const Text('Off'),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: true,
-                            onChanged: (v) {},
-                          ),
-                          const Text('On'),
-                        ],
-                      ),
-                      const Row(
-                        children: [
-                          Checkbox(
-                            value: false,
-                            onChanged: null,
-                          ),
-                          Text('Off Disabled'),
-                        ],
-                      ),
-                      const Row(
-                        children: [
-                          Checkbox(
-                            value: true,
-                            onChanged: null,
-                          ),
-                          Text('On Disabled'),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                SleekTheme(
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: sleekCheckBoxOn,
-                            onChanged: (v) {
-                              setState(() {
-                                sleekCheckBoxOn = v!;
-                              });
-                            },
-                          ),
-                          const Text('Try me'),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: false,
-                            onChanged: (v) {},
-                          ),
-                          const Text('Off'),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: true,
-                            onChanged: (v) {},
-                          ),
-                          const Text('On'),
-                        ],
-                      ),
-                      const Row(
-                        children: [
-                          Checkbox(
-                            value: false,
-                            onChanged: null,
-                          ),
-                          Text('Off Disabled'),
-                        ],
-                      ),
-                      const Row(
-                        children: [
-                          Checkbox(
-                            value: true,
-                            onChanged: null,
-                          ),
-                          Text('On Disabled'),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ])
-            ],
-          ),
-        )
-
-        // SingleChildScrollView(
-        //   child: Column(
-        //     crossAxisAlignment: CrossAxisAlignment.start,
-        //     children: [
-        //       const Padding(
-        //         padding: EdgeInsets.only(left: 16.0),
-        //         child: Text('Comic'),
-        //       ),
-        //       Theme(
-        //         data: ComicTheme.of(context),
-        //         child: Column(
-        //           children: [
-        //             Row(
-        //               children: <Widget>[
-        //                 Checkbox(
-        //                   value: comicCheckBoxOn,
-        //                   onChanged: (bool? value) {
-        //                     setState(() {
-        //                       comicCheckBoxOn = value!;
-        //                     });
-        //                   },
-        //                 ),
-        //                 const Text(
-        //                   'On',
-        //                 ),
-        //                 const SizedBox(width: 16),
-        //                 Checkbox(
-        //                   value: comicCheckBoxOff,
-        //                   onChanged: (bool? value) {
-        //                     setState(() {
-        //                       comicCheckBoxOff = value!;
-        //                     });
-        //                   },
-        //                 ),
-        //                 const Text(
-        //                   'Off',
-        //                 ),
-        //               ],
-        //             ),
-        //             const Row(
-        //               children: <Widget>[
-        //                 Checkbox(
-        //                   value: true,
-        //                   onChanged: null,
-        //                 ),
-        //                 Text(
-        //                   'On Disabled',
-        //                 ),
-        //                 SizedBox(width: 16),
-        //                 Checkbox(
-        //                   value: false,
-        //                   onChanged: null,
-        //                 ),
-        //                 Text(
-        //                   'Off Disabled',
-        //                 ),
-        //               ],
-        //             ),
-        //           ],
-        //         ),
-        //       ),
-        //       const SizedBox(
-        //         height: 16,
-        //       ),
-        //       const Padding(
-        //         padding: EdgeInsets.only(left: 16.0),
-        //         child: Text('Sleek'),
-        //       ),
-        //       Theme(
-        //         data: SleekTheme.of(context),
-        //         child: Column(
-        //           children: [
-        //             Row(
-        //               children: <Widget>[
-        //                 Checkbox(
-        //                   value: sleekCheckBoxOn,
-        //                   onChanged: (bool? value) {
-        //                     setState(() {
-        //                       sleekCheckBoxOn = value!;
-        //                     });
-        //                   },
-        //                 ),
-        //                 const Text(
-        //                   'On',
-        //                 ),
-        //                 const SizedBox(width: 16),
-        //                 Checkbox(
-        //                   value: sleekCheckBoxOff,
-        //                   onChanged: (bool? value) {
-        //                     setState(() {
-        //                       sleekCheckBoxOff = value!;
-        //                     });
-        //                   },
-        //                 ),
-        //                 const Text(
-        //                   'Off',
-        //                 ),
-        //               ],
-        //             ),
-        //             const Row(
-        //               children: <Widget>[
-        //                 Checkbox(
-        //                   value: true,
-        //                   onChanged: null,
-        //                 ),
-        //                 Text(
-        //                   'On Disabled',
-        //                 ),
-        //                 SizedBox(width: 16),
-        //                 Checkbox(
-        //                   value: false,
-        //                   onChanged: null,
-        //                 ),
-        //                 Text(
-        //                   'Off Disabled',
-        //                 ),
-        //               ],
-        //             ),
-        //           ],
-        //         ),
-        //       ),
-        //       const Padding(
-        //         padding: EdgeInsets.all(16.0),
-        //         child: NothingToLearn(),
-        //       )
-        //     ],
-        //   ),
-        // ),
-        );
+      ),
+    );
   }
 }

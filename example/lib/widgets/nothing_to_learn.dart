@@ -15,7 +15,7 @@ class NothingToLearn extends StatelessWidget {
         Divider(),
         SizedBox(height: 16),
         Text(
-          "Soical design system will automatically enhance the UI of your app. Just continue building your app.",
+          "Social design system will automatically enhance the UI of your app. Just continue building your app.",
         ),
         MarkdownBlock(data: '''
 ```dart

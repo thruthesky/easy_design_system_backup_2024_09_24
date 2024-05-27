@@ -190,6 +190,15 @@ class ComicThemeData {
           },
         ),
       ),
+      dropdownMenuTheme: DropdownMenuThemeData(
+        menuStyle: theme.dropdownMenuTheme.menuStyle?.copyWith(
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(7),
+            ),
+          ),
+        ),
+      ),
       dialogTheme: DialogTheme(
         elevation: 0,
         shape: RoundedRectangleBorder(

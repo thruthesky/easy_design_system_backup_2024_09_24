@@ -13,6 +13,7 @@ import 'package:example/screens/color_scheme/color_scheme.screen.dart';
 import 'package:example/screens/demo/comic/comic.theme.screen.dart';
 import 'package:example/screens/demo/sleek.theme.screen.dart';
 import 'package:example/screens/divider/divider.screen.dart';
+import 'package:example/screens/dropdown/dropdown.screen.dart';
 import 'package:example/screens/floating_action_button/floating_action_button.screen.dart';
 import 'package:example/screens/icon_buttons/icon_buttons.screen.dart';
 import 'package:example/screens/list_tile/list_tile.screen.dart';
@@ -127,6 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Buttons', const ButtonsScreen()),
           pushScreen('Card', const CardScreen()),
           pushScreen('Checkbox', const CheckboxScreen()),
+          pushScreen('Dropdown', const DropdownScreen()),
           // pushScreen('CheckboxListTile', const CheckboxListTileScreen()),
           pushScreen('Chip', const ChipScreen()),
           pushScreen('Dialog', const DialogScreen()),
