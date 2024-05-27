@@ -45,9 +45,9 @@ class _ComicScreenDemoState extends State<ComicScreenDemo>
               ? TabBar(
                   controller: _tabController,
                   tabs: const [
+                    Tab(text: 'Dashboard'),
                     Tab(text: 'Posts'),
-                    Tab(text: 'Other'),
-                    Tab(text: 'Color Scheme'),
+                    Tab(text: 'News'),
                   ],
                 )
               : null,

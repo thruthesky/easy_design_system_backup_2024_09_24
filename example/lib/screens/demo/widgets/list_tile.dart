@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_design_system/social_design_system.dart';
 
 class ListTileDemo extends StatelessWidget {
   const ListTileDemo({
@@ -10,18 +11,29 @@ class ListTileDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(24),
-      child: ListTile(
-        leading: const Icon(Icons.palette),
-        title: Text(title),
-        subtitle: const Text(
-            'Comic Theme is a theme that is inspired by comic books.'),
-        onTap: () {
-          Navigator.pushNamed(context, '/comic-theme');
-        },
-        trailing: const Icon(Icons.arrow_forward_ios),
-      ),
+    return ListTile(
+      leading: const Icon(Icons.palette),
+      title: Text(title),
+      subtitle:
+          const Text('Comic Theme is a theme that is inspired by comic books.'),
+      onTap: () {
+        showModalBottomSheet(
+          context: context,
+          builder: (context) => Theme(
+            data: ComicTheme.of(context),
+            child: BottomSheet(
+              onClosing: () {},
+              builder: (context) => const SizedBox(
+                height: 200,
+                child: Center(
+                  child: Text('Comic'),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+      trailing: const Icon(Icons.arrow_forward_ios),
     );
   }
 }

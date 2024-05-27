@@ -48,6 +48,30 @@ class _ComicScreenDemoState extends State<SleekScreenDemo>
               child: Column(
                 children: [
                   const ListTileDemo(title: 'Sleek ListTile'),
+                  ListTile(
+                    leading: const Icon(Icons.palette),
+                    title: const Text('Sleek ListTile'),
+                    subtitle: const Text(
+                        'Sleek Theme is a theme that is inspired by modern sleek design.'),
+                    onTap: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) => Theme(
+                          data: ComicTheme.of(context),
+                          child: BottomSheet(
+                            onClosing: () {},
+                            builder: (context) => const SizedBox(
+                              height: 200,
+                              child: Center(
+                                child: Text('Comic'),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                    trailing: const Icon(Icons.arrow_forward_ios),
+                  ),
                   const SleekBottomSheetDemo(),
                   const SizedBox(height: 24),
                   TextButton(
