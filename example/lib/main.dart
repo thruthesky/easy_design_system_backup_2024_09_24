@@ -102,8 +102,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           pushScreen('TextFields', const TextFieldScreen()),
           pushScreen('Buttons', const ButtonsScreen()),
-          //
-
           pushScreen('TextFormFieldScreen', const TextFormFieldScreen()),
           pushScreen(
               'Floating Action Button', const FloatingActionButtonScreen()),
@@ -128,9 +126,6 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('TabBar', const TabBarScreen()),
           pushScreen('Checkbox', const CheckboxScreen()),
           pushScreen('CheckboxListTile', const CheckboxListTileScreen()),
-
-          ElevatedButton(onPressed: () {}, child: const Text("Chip")),
-          // ElevatedButton(onPressed: () {}, child: const Text("Chip")),
 
           pushScreen('Chip', const ChipScreen()),
 

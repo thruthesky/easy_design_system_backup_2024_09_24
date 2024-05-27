@@ -62,37 +62,38 @@ class ComicThemeData {
   static ThemeData of(BuildContext context) {
     final theme = Theme.of(context);
     // final theme = Theme.of(context).copyWith(
-    // colorScheme: ColorScheme.fromSeed(
-    //   seedColor: const Color(0xFF6750A4),
-    //   brightness: Brightness.dark,
-    //   error: const Color(0xFFB00020),
-    // ),
-    // textTheme: Theme.of(context).textTheme.copyWith(
-    //       labelSmall: const TextStyle(
-    //         fontWeight: FontWeight.w400,
-    //         color: Colors.pink,
-    //       ),
-    //       labelMedium: const TextStyle(
-    //         fontWeight: FontWeight.w400,
-    //         color: Colors.pink,
-    //       ),
-    //       labelLarge: const TextStyle(
-    //         fontWeight: FontWeight.w400,
-    //         color: Colors.pink,
-    //       ),
-    //       bodyLarge: const TextStyle(
-    //         fontWeight: FontWeight.w400,
-    //         color: Colors.pink,
-    //       ),
-    //       bodyMedium: const TextStyle(
-    //         fontWeight: FontWeight.w400,
-    //         color: Colors.pink,
-    //       ),
-    //       bodySmall: const TextStyle(
-    //         fontWeight: FontWeight.w400,
-    //         color: Colors.pink,
-    //       ),
-    //     ),
+    //   colorScheme: ColorScheme.fromSeed(
+    //     seedColor: const Color(0xFF6750A4),
+    //     brightness: Brightness.dark,
+    //     error: const Color(0xFFB00020),
+    //     outline: Colors.red,
+    //   ),
+    //   // textTheme: Theme.of(context).textTheme.copyWith(
+    //   //       labelSmall: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       labelMedium: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       labelLarge: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       bodyLarge: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       bodyMedium: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       bodySmall: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //     ),
     // );
     return ThemeData(
       appBarTheme: AppBarTheme(
@@ -157,11 +158,6 @@ class ComicThemeData {
       /// [Chip] @thruthesky - 2024-05-22
       ///
       chipTheme: theme.chipTheme.copyWith(
-        // backgroundColor: theme.colorScheme.surface,
-        // deleteIconColor: theme.colorScheme.onSurface,
-        // disabledColor: theme.colorScheme.onSurface,
-        // selectedColor: theme.colorScheme.secondary,
-        // secondarySelectedColor: theme.colorScheme.secondary,
         labelPadding: const EdgeInsets.symmetric(horizontal: 8),
         padding: const EdgeInsets.symmetric(horizontal: 8),
         shape: RoundedRectangleBorder(
@@ -171,12 +167,6 @@ class ComicThemeData {
             width: borderThickness,
           ),
         ),
-        // labelStyle: theme.textTheme.bodyLarge?.copyWith(
-        //   color: theme.colorScheme.onSurface,
-        // ),
-        // secondaryLabelStyle: theme.textTheme.bodyLarge?.copyWith(
-        //   color: theme.colorScheme.onSurface,
-        // ),
       ),
       colorScheme: theme.colorScheme,
       checkboxTheme: CheckboxThemeData(
