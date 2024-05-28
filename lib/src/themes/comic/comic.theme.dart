@@ -198,6 +198,39 @@ class ComicThemeData {
           },
         ),
       ),
+      radioTheme: const RadioThemeData(),
+      switchTheme: SwitchThemeData(
+        trackOutlineWidth: WidgetStateProperty.all(
+          borderThickness,
+        ),
+        thumbColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outlineVariant;
+            }
+            return theme.colorScheme.outline;
+          },
+        ),
+        trackOutlineColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outlineVariant;
+            }
+
+            return theme.colorScheme.onSurface;
+          },
+        ),
+        trackColor: WidgetStateProperty.all(
+          comicContainerBackgroundColor(context),
+        ),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        selectedBorderColor: theme.colorScheme.outline,
+        borderWidth: borderThickness,
+        fillColor: comicContainerBackgroundColor(context),
+        borderRadius: BorderRadius.circular(7),
+      ),
+
       dropdownMenuTheme: DropdownMenuThemeData(
         menuStyle: theme.dropdownMenuTheme.menuStyle?.copyWith(
           shape: WidgetStateProperty.all(

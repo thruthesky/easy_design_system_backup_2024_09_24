@@ -109,6 +109,33 @@ class SleekThemeData {
           },
         ),
       ),
+      radioTheme: const RadioThemeData(),
+      switchTheme: SwitchThemeData(
+        trackOutlineWidth: WidgetStateProperty.all(
+          0,
+        ),
+        thumbColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outlineVariant;
+            }
+            return theme.colorScheme.inversePrimary;
+          },
+        ),
+        trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
+        trackColor: WidgetStateProperty.all(
+          containerBackgroundColor(context),
+        ),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        borderColor: Colors.transparent,
+        selectedBorderColor: Colors.transparent,
+        disabledBorderColor: Colors.transparent,
+        splashColor: containerBackgroundColor(context),
+        fillColor: theme.colorScheme.inversePrimary,
+        borderRadius: BorderRadius.circular(16),
+      ),
+
       chipTheme: theme.chipTheme.copyWith(
         backgroundColor: containerBackgroundColor(context),
         selectedColor: theme.colorScheme.inversePrimary,

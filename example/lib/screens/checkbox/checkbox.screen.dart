@@ -10,10 +10,6 @@ class CheckboxScreen extends StatefulWidget {
 }
 
 class _CheckboxScreenState extends State<CheckboxScreen> {
-  bool comicCheckBoxOn = true;
-
-  bool sleekCheckBoxOn = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,19 +32,6 @@ class _CheckboxScreenState extends State<CheckboxScreen> {
                   ComicTheme(
                     child: Column(
                       children: [
-                        Row(
-                          children: [
-                            Checkbox(
-                              value: comicCheckBoxOn,
-                              onChanged: (v) {
-                                setState(() {
-                                  comicCheckBoxOn = v!;
-                                });
-                              },
-                            ),
-                            const Text('Try me'),
-                          ],
-                        ),
                         Row(
                           children: [
                             Checkbox(
@@ -91,19 +74,6 @@ class _CheckboxScreenState extends State<CheckboxScreen> {
                   SleekTheme(
                     child: Column(
                       children: [
-                        Row(
-                          children: [
-                            Checkbox(
-                              value: sleekCheckBoxOn,
-                              onChanged: (v) {
-                                setState(() {
-                                  sleekCheckBoxOn = v!;
-                                });
-                              },
-                            ),
-                            const Text('Try me'),
-                          ],
-                        ),
                         Row(
                           children: [
                             Checkbox(
