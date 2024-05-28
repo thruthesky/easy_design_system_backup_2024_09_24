@@ -231,12 +231,36 @@ class ComicThemeData {
         borderRadius: BorderRadius.circular(7),
       ),
 
-      dropdownMenuTheme: DropdownMenuThemeData(
-        menuStyle: theme.dropdownMenuTheme.menuStyle?.copyWith(
+      popupMenuTheme: PopupMenuThemeData(
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.outline,
+          ),
+        ),
+        color: comicContainerBackgroundColor(context),
+      ),
+
+      // uses the menuTheme
+      // dropdownMenuTheme: const DropdownMenuThemeData(),
+      menuTheme: MenuThemeData(
+        style:
+            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
+          backgroundColor: WidgetStateProperty.all(
+            comicContainerBackgroundColor(context),
+          ),
+          shadowColor: WidgetStateProperty.all(
+            Colors.transparent,
+          ),
           shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(7),
-            ),
+                borderRadius: BorderRadius.circular(16),
+                side: BorderSide(
+                  width: borderThickness,
+                  color: theme.colorScheme.outline,
+                )),
           ),
         ),
       ),

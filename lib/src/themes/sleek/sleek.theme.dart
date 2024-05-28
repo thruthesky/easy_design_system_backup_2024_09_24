@@ -136,6 +136,32 @@ class SleekThemeData {
         borderRadius: BorderRadius.circular(16),
       ),
 
+      /// uses menuTheme
+      // dropdownMenuTheme: const DropdownMenuThemeData(),
+      menuTheme: MenuThemeData(
+        style:
+            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
+          backgroundColor: WidgetStateProperty.all(
+            containerBackgroundColor(context),
+          ),
+          shadowColor: WidgetStateProperty.all(
+            Colors.transparent,
+          ),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+        ),
+      ),
+      popupMenuTheme: PopupMenuThemeData(
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        color: containerBackgroundColor(context),
+      ),
+
       chipTheme: theme.chipTheme.copyWith(
         backgroundColor: containerBackgroundColor(context),
         selectedColor: theme.colorScheme.inversePrimary,

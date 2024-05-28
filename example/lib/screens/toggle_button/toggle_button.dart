@@ -46,7 +46,7 @@ class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
                             ],
                           ),
                           const SizedBox(
-                            height: 8,
+                            height: 20,
                           ),
                           ToggleButtons(
                             isSelected: const [false, true, false],
@@ -58,7 +58,7 @@ class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
                             ],
                           ),
                           const SizedBox(
-                            height: 8,
+                            height: 20,
                           ),
                           ToggleButtons(
                             isSelected: const [false, false, true],
@@ -70,7 +70,7 @@ class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
                             ],
                           ),
                           const SizedBox(
-                            height: 8,
+                            height: 20,
                           ),
                           ToggleButtons(
                             isSelected: const [true, true, true],
@@ -82,7 +82,7 @@ class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
                             ],
                           ),
                           const SizedBox(
-                            height: 8,
+                            height: 20,
                           ),
                           ToggleButtons(
                             isSelected: const [true, false, false],
@@ -110,7 +110,7 @@ class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
                             ],
                           ),
                           const SizedBox(
-                            height: 10,
+                            height: 23,
                           ),
                           ToggleButtons(
                             isSelected: const [false, true, false],
@@ -122,7 +122,7 @@ class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
                             ],
                           ),
                           const SizedBox(
-                            height: 10,
+                            height: 23,
                           ),
                           ToggleButtons(
                             isSelected: const [false, false, true],
@@ -134,7 +134,7 @@ class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
                             ],
                           ),
                           const SizedBox(
-                            height: 10,
+                            height: 23,
                           ),
                           ToggleButtons(
                             isSelected: const [true, true, true],
@@ -146,7 +146,7 @@ class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
                             ],
                           ),
                           const SizedBox(
-                            height: 10,
+                            height: 23,
                           ),
                           ToggleButtons(
                             isSelected: const [true, false, false],
@@ -165,7 +165,7 @@ class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
               ],
             ),
             const Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: NothingToLearn(),
             )
           ],
