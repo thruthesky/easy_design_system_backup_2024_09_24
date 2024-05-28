@@ -107,6 +107,95 @@ class _DropdownScreenState extends State<DropdownScreen> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 16.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Expanded(
+                                  child: MenuBar(
+                                    children: <Widget>[
+                                      SubmenuButton(
+                                        menuChildren: <Widget>[
+                                          MenuItemButton(
+                                            onPressed: () {
+                                              showAboutDialog(
+                                                context: context,
+                                                applicationName:
+                                                    'MenuBar Sample',
+                                                applicationVersion: '1.0.0',
+                                              );
+                                            },
+                                            child: const MenuAcceleratorLabel(
+                                                '&About'),
+                                          ),
+                                          MenuItemButton(
+                                            onPressed: () {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                const SnackBar(
+                                                  content: Text('Saved!'),
+                                                ),
+                                              );
+                                            },
+                                            child: const MenuAcceleratorLabel(
+                                                '&Save'),
+                                          ),
+                                          MenuItemButton(
+                                            onPressed: () {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                const SnackBar(
+                                                  content: Text('Quit!'),
+                                                ),
+                                              );
+                                            },
+                                            child: const MenuAcceleratorLabel(
+                                                '&Quit'),
+                                          ),
+                                        ],
+                                        child:
+                                            const MenuAcceleratorLabel('&File'),
+                                      ),
+                                      SubmenuButton(
+                                        menuChildren: <Widget>[
+                                          MenuItemButton(
+                                            onPressed: () {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                const SnackBar(
+                                                  content: Text('Magnify!'),
+                                                ),
+                                              );
+                                            },
+                                            child: const MenuAcceleratorLabel(
+                                                '&Magnify'),
+                                          ),
+                                          MenuItemButton(
+                                            onPressed: () {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                const SnackBar(
+                                                  content: Text('Minify!'),
+                                                ),
+                                              );
+                                            },
+                                            child: const MenuAcceleratorLabel(
+                                                'Mi&nify'),
+                                          ),
+                                        ],
+                                        child:
+                                            const MenuAcceleratorLabel('&View'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 24,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16.0),
                             child: DropdownButton<String>(
                               isExpanded: true,
                               value: dropdownValue,
@@ -197,6 +286,91 @@ class _DropdownScreenState extends State<DropdownScreen> {
                                 child: Text(v),
                               );
                             }).toList(),
+                          ),
+                          const SizedBox(
+                            height: 24,
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Expanded(
+                                child: MenuBar(
+                                  children: <Widget>[
+                                    SubmenuButton(
+                                      menuChildren: <Widget>[
+                                        MenuItemButton(
+                                          onPressed: () {
+                                            showAboutDialog(
+                                              context: context,
+                                              applicationName: 'MenuBar Sample',
+                                              applicationVersion: '1.0.0',
+                                            );
+                                          },
+                                          child: const MenuAcceleratorLabel(
+                                              '&About'),
+                                        ),
+                                        MenuItemButton(
+                                          onPressed: () {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              const SnackBar(
+                                                content: Text('Saved!'),
+                                              ),
+                                            );
+                                          },
+                                          child: const MenuAcceleratorLabel(
+                                              '&Save'),
+                                        ),
+                                        MenuItemButton(
+                                          onPressed: () {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              const SnackBar(
+                                                content: Text('Quit!'),
+                                              ),
+                                            );
+                                          },
+                                          child: const MenuAcceleratorLabel(
+                                              '&Quit'),
+                                        ),
+                                      ],
+                                      child:
+                                          const MenuAcceleratorLabel('&File'),
+                                    ),
+                                    SubmenuButton(
+                                      menuChildren: <Widget>[
+                                        MenuItemButton(
+                                          onPressed: () {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              const SnackBar(
+                                                content: Text('Magnify!'),
+                                              ),
+                                            );
+                                          },
+                                          child: const MenuAcceleratorLabel(
+                                              '&Magnify'),
+                                        ),
+                                        MenuItemButton(
+                                          onPressed: () {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              const SnackBar(
+                                                content: Text('Minify!'),
+                                              ),
+                                            );
+                                          },
+                                          child: const MenuAcceleratorLabel(
+                                              'Mi&nify'),
+                                        ),
+                                      ],
+                                      child:
+                                          const MenuAcceleratorLabel('&View'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                           const SizedBox(
                             height: 24,
