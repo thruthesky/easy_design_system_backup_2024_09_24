@@ -145,19 +145,11 @@ class ComicThemeData {
           ),
           left: BorderSide(
             width: borderThickness,
-            color: theme.colorScheme.scrim,
+            color: theme.colorScheme.outline,
           ),
           right: BorderSide(
             width: borderThickness,
-            color: theme.colorScheme.scrim,
-          ),
-          left: BorderSide(
-            width: borderThickness,
-            color: theme.colorScheme.scrim,
-          ),
-          right: BorderSide(
-            width: borderThickness,
-            color: theme.colorScheme.scrim,
+            color: theme.colorScheme.outline,
           ),
         ),
       ),
@@ -220,15 +212,10 @@ class ComicThemeData {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(
-            // Initially used the [outline] to match with the other widgets
-            // but does not work in terms of contrast
-            // Based from flutter api, [scrim] is used for modal components
-            // - Joshua
-            //
-            // Scrim may be used differently, need to review the use of scrim
-            // so scrim may be a wrong choice to use here.
-            // - Christian
-            color: theme.colorScheme.scrim,
+            //  All of the widgets that uses scrim are returned to outline
+            //  So others will not confuse on what color to use
+            //  - Joshua
+            color: theme.colorScheme.surface,
             width: borderThickness,
           ),
         ),
@@ -248,7 +235,7 @@ class ComicThemeData {
             ),
             side: BorderSide(
               width: borderThickness,
-              color: theme.colorScheme.scrim,
+              color: theme.colorScheme.outline,
             )),
         shape: RoundedRectangleBorder(
             borderRadius: const BorderRadius.only(
@@ -256,7 +243,7 @@ class ComicThemeData {
                 bottomRight: Radius.circular(24)),
             side: BorderSide(
               width: borderThickness,
-              color: theme.colorScheme.scrim,
+              color: theme.colorScheme.outline,
             )),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(

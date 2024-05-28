@@ -1,91 +1,79 @@
+import 'package:example/screens/snackbar/comic.snackbar.screen.dart';
+import 'package:example/screens/snackbar/sleek.snackbar.screen.dart';
+import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
-import 'package:social_design_system/social_design_system.dart';
+import 'package:markdown_widget/markdown_widget.dart';
 
-class SnackBarScreen extends StatefulWidget {
+class SnackBarScreen extends StatelessWidget {
   const SnackBarScreen({super.key});
 
   @override
-  State<SnackBarScreen> createState() => _SnackBarScreenState();
-}
-
-class _SnackBarScreenState extends State<SnackBarScreen> {
-  bool isComic = true;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: isComic ? ComicTheme.of(context) : SleekTheme.of(context),
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('SnackBars'),
-        ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Wrap(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('SnackBars'),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: SingleChildScrollView(
+            child: Column(
               children: [
-                Theme(
-                  data: ComicTheme.of(context),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        isComic = true;
-                        ScaffoldMessenger.of(context).hideCurrentSnackBar(
-                            reason: SnackBarClosedReason.hide);
-                      });
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('This is a Comic SnackBar'),
-                          margin: EdgeInsets.all(24),
-                          behavior: SnackBarBehavior.floating,
+                Wrap(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => const ComicSnackBarsScreen(),
                         ),
-                      );
-                    },
-                    child: const Text('Comic Style Snackbar'),
-                  ),
-                ),
-                Theme(
-                  data: SleekTheme.of(context),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        isComic = false;
-                        ScaffoldMessenger.of(context).hideCurrentSnackBar(
-                            reason: SnackBarClosedReason.hide);
-                      });
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('This is a Sleek SnackBar'),
-                          margin: EdgeInsets.all(24),
-                          behavior: SnackBarBehavior.floating,
+                      ),
+                      child: const Text('Comic Style Snackbar'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => const SleekSnackBarScreen(),
                         ),
-                      );
-                    },
-                    child: const Text('Comic Style Snackbar'),
-                  ),
+                      ),
+                      child: const Text('Sleek Style Snackbar'),
+                    ),
+                  ],
                 ),
-                // ElevatedButton(
-                //   onPressed: () => Navigator.of(context).push(
-                //     MaterialPageRoute(
-                //       builder: (_) => const ComicSnackBarsScreen(),
-                //     ),
-                //   ),
-                //   child: const Text('Comic Style Snackbar'),
-                // ),
-                // ElevatedButton(
-                //   onPressed: () => Navigator.of(context).push(
-                //     MaterialPageRoute(
-                //       builder: (_) => const SleekSnackBarScreen(),
-                //     ),
-                //   ),
-                //   child: const Text('Sleek Style Snackbar'),
-                // ),
+                const SizedBox(height: 40),
+                const Divider(),
+                const SizedBox(height: 16),
+                const MarkdownBlock(
+                  data: '''
+`SnackBar` are splits into two different screens because of the reason its being dependent on `Scaffold`. 
+            
+Just wrap the `Scaffold` with `Theme` or give the `Material` a `ThemeData` and let the SDS do the designing.
+
+```dart
+Theme(
+    data: ComicTheme.of(context),
+    child: Scaffold(
+      appBar: AppBar(
+      title: const Text('Comic SnackBar'),
+        ),
+    body: Center(
+      child: ElevatedButton(
+        onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text('This is Comic SnackBar'),
+            action: SnackBarAction(
+            onPressed: () {},
+            label: 'Action',
+              ),
+            ),
+          ),
+        child: const Text('Display Comic SnackBar'),
+        ),
+      ),
+    ),
+  )
+```
+            ''',
+                ),
               ],
             ),
           ),
