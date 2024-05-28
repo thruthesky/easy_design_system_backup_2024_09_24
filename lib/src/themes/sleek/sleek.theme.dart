@@ -136,8 +136,7 @@ class SleekThemeData {
         borderRadius: BorderRadius.circular(16),
       ),
 
-      /// uses menuTheme
-      // dropdownMenuTheme: const DropdownMenuThemeData(),
+      /// dropdownmenu, anchormenu, menubar
       menuTheme: MenuThemeData(
         style:
             (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
