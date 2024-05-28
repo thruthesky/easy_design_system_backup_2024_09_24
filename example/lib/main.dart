@@ -77,6 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (_) => const ComicLoginDemo()));
       }
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (_) => const BottomSheetScreen()));
     });
   }
 
