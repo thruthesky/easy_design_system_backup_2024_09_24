@@ -166,7 +166,6 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('TextFormField', const TextFormFieldScreen()),
           const Divider(),
           const Text('Custom Widgets:'),
-
           pushScreen('ComicListView', const ComicListViewScreen()),
           pushScreen('SleekListView', const SleekListViewScreen()),
           pushScreen('Setting', const SettingScreen()),
@@ -175,7 +174,6 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
           pushScreen('Sleep Walker', const SleepWalkerScreen()),
           // pushScreen('Color scheme', const ColorSchemeScreen()),
-
           pushScreen('Color scheme new', const ColorSchemeNewScreen()),
         ],
       ),
