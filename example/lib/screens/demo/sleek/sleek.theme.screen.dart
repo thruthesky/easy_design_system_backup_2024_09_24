@@ -1,19 +1,19 @@
-import 'package:example/screens/demo/comic/chat.tab.dart';
-import 'package:example/screens/demo/comic/home.tab.dart';
-import 'package:example/screens/demo/comic/profile.tab.dart';
-import 'package:example/screens/demo/comic/settings.tab.dart';
-import 'package:example/screens/demo/comic/status.dialog.dart';
+import 'package:example/screens/demo/sleek/chat.tab.dart';
+import 'package:example/screens/demo/sleek/home.tab.dart';
+import 'package:example/screens/demo/sleek/profile.tab.dart';
+import 'package:example/screens/demo/sleek/settings.tab.dart';
+import 'package:example/screens/demo/sleek/status.dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
-class ComicScreenDemoScreen extends StatefulWidget {
-  const ComicScreenDemoScreen({super.key});
+class SleekScreenDemoScreen extends StatefulWidget {
+  const SleekScreenDemoScreen({super.key});
 
   @override
-  State<ComicScreenDemoScreen> createState() => _ComicScreenDemoScreenState();
+  State<SleekScreenDemoScreen> createState() => _SleekScreenDemoScreenState();
 }
 
-class _ComicScreenDemoScreenState extends State<ComicScreenDemoScreen>
+class _SleekScreenDemoScreenState extends State<SleekScreenDemoScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
@@ -32,7 +32,7 @@ class _ComicScreenDemoScreenState extends State<ComicScreenDemoScreen>
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: ComicTheme.of(context),
+      data: SleekTheme.of(context),
       child: Scaffold(
         appBar: AppBar(
           title: index == 0
@@ -71,7 +71,7 @@ class _ComicScreenDemoScreenState extends State<ComicScreenDemoScreen>
                     "Social Design System",
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
-                  const Text("Comic Theme Demo"),
+                  const Text("Sleek Theme Demo"),
                   const SizedBox(height: 18),
                   const Icon(Icons.set_meal_outlined, size: 36),
                 ],
@@ -124,7 +124,7 @@ class _ComicScreenDemoScreenState extends State<ComicScreenDemoScreen>
                 showDialog(
                   context: context,
                   builder: (context) => Theme(
-                    data: ComicTheme.of(context),
+                    data: SleekTheme.of(context),
                     child: AlertDialog(
                       title: const Text('Are you sure?'),
                       content: const Text(
@@ -136,7 +136,7 @@ class _ComicScreenDemoScreenState extends State<ComicScreenDemoScreen>
                             showDialog(
                               context: context,
                               builder: (context) => Theme(
-                                data: ComicTheme.of(context),
+                                data: SleekTheme.of(context),
                                 child: AlertDialog(
                                   icon: const Padding(
                                     padding: EdgeInsets.only(top: 16.0),
@@ -145,7 +145,7 @@ class _ComicScreenDemoScreenState extends State<ComicScreenDemoScreen>
                                       size: 36,
                                     ),
                                   ),
-                                  title: const Text("Comic Theme"),
+                                  title: const Text("Sleek Theme"),
                                   content: const Text(
                                     "This is a demonstation only. Thank you for checking this out!",
                                   ),
