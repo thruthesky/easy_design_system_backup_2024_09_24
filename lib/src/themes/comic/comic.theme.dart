@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 const borderThickness = 2.0;
 
+Color comicContainerBackgroundColor(BuildContext context) =>
+    Theme.of(context).colorScheme.surface;
+
 class ComicIconButtonThemeData {
   ComicIconButtonThemeData();
 
@@ -62,37 +65,38 @@ class ComicThemeData {
   static ThemeData of(BuildContext context) {
     final theme = Theme.of(context);
     // final theme = Theme.of(context).copyWith(
-    // colorScheme: ColorScheme.fromSeed(
-    //   seedColor: const Color(0xFF6750A4),
-    //   brightness: Brightness.dark,
-    //   error: const Color(0xFFB00020),
-    // ),
-    // textTheme: Theme.of(context).textTheme.copyWith(
-    //       labelSmall: const TextStyle(
-    //         fontWeight: FontWeight.w400,
-    //         color: Colors.pink,
-    //       ),
-    //       labelMedium: const TextStyle(
-    //         fontWeight: FontWeight.w400,
-    //         color: Colors.pink,
-    //       ),
-    //       labelLarge: const TextStyle(
-    //         fontWeight: FontWeight.w400,
-    //         color: Colors.pink,
-    //       ),
-    //       bodyLarge: const TextStyle(
-    //         fontWeight: FontWeight.w400,
-    //         color: Colors.pink,
-    //       ),
-    //       bodyMedium: const TextStyle(
-    //         fontWeight: FontWeight.w400,
-    //         color: Colors.pink,
-    //       ),
-    //       bodySmall: const TextStyle(
-    //         fontWeight: FontWeight.w400,
-    //         color: Colors.pink,
-    //       ),
-    //     ),
+    //   colorScheme: ColorScheme.fromSeed(
+    //     seedColor: const Color(0xFF6750A4),
+    //     brightness: Brightness.dark,
+    //     error: const Color(0xFFB00020),
+    //     outline: Colors.red,
+    //   ),
+    //   // textTheme: Theme.of(context).textTheme.copyWith(
+    //   //       labelSmall: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       labelMedium: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       labelLarge: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       bodyLarge: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       bodyMedium: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //       bodySmall: const TextStyle(
+    //   //         fontWeight: FontWeight.w400,
+    //   //         color: Colors.pink,
+    //   //       ),
+    //   //     ),
     // );
     return ThemeData(
       appBarTheme: AppBarTheme(
@@ -129,7 +133,6 @@ class ComicThemeData {
       bottomAppBarTheme: theme.bottomAppBarTheme,
 
       bottomNavigationBarTheme: theme.bottomNavigationBarTheme.copyWith(
-        // backgroundColor: Colors.red,
         elevation: 0,
       ),
 
@@ -139,6 +142,22 @@ class ComicThemeData {
           top: BorderSide(
             width: borderThickness,
             color: theme.colorScheme.outline,
+          ),
+          left: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.scrim,
+          ),
+          right: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.scrim,
+          ),
+          left: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.scrim,
+          ),
+          right: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.scrim,
           ),
         ),
       ),
@@ -157,11 +176,6 @@ class ComicThemeData {
       /// [Chip] @thruthesky - 2024-05-22
       ///
       chipTheme: theme.chipTheme.copyWith(
-        // backgroundColor: theme.colorScheme.surface,
-        // deleteIconColor: theme.colorScheme.onSurface,
-        // disabledColor: theme.colorScheme.onSurface,
-        // selectedColor: theme.colorScheme.secondary,
-        // secondarySelectedColor: theme.colorScheme.secondary,
         labelPadding: const EdgeInsets.symmetric(horizontal: 8),
         padding: const EdgeInsets.symmetric(horizontal: 8),
         shape: RoundedRectangleBorder(
@@ -171,26 +185,34 @@ class ComicThemeData {
             width: borderThickness,
           ),
         ),
-        // labelStyle: theme.textTheme.bodyLarge?.copyWith(
-        //   color: theme.colorScheme.onSurface,
-        // ),
-        // secondaryLabelStyle: theme.textTheme.bodyLarge?.copyWith(
-        //   color: theme.colorScheme.onSurface,
-        // ),
+        backgroundColor: comicContainerBackgroundColor(context),
+        selectedColor: comicContainerBackgroundColor(context),
       ),
       colorScheme: theme.colorScheme,
       checkboxTheme: CheckboxThemeData(
-        side: BorderSide(
-          width: borderThickness,
-          color: theme.colorScheme.outline,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(7),
         ),
-        fillColor: WidgetStateProperty.resolveWith<Color?>(
+        fillColor: WidgetStateProperty.all(
+          comicContainerBackgroundColor(context),
+        ),
+        checkColor: WidgetStateProperty.resolveWith<Color?>(
           (Set<WidgetState> states) {
             if (states.contains(WidgetState.disabled)) {
-              return theme.colorScheme.outline.withAlpha(75);
+              return theme.colorScheme.outlineVariant;
             }
-            return null;
+
+            return theme.colorScheme.onSurface;
           },
+        ),
+      ),
+      dropdownMenuTheme: DropdownMenuThemeData(
+        menuStyle: theme.dropdownMenuTheme.menuStyle?.copyWith(
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(7),
+            ),
+          ),
         ),
       ),
       dialogTheme: DialogTheme(
@@ -198,7 +220,15 @@ class ComicThemeData {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(
-            color: theme.colorScheme.outline,
+            // Initially used the [outline] to match with the other widgets
+            // but does not work in terms of contrast
+            // Based from flutter api, [scrim] is used for modal components
+            // - Joshua
+            //
+            // Scrim may be used differently, need to review the use of scrim
+            // so scrim may be a wrong choice to use here.
+            // - Christian
+            color: theme.colorScheme.scrim,
             width: borderThickness,
           ),
         ),
@@ -207,6 +237,27 @@ class ComicThemeData {
         // TODO check the default color
         color: theme.colorScheme.outline,
         thickness: borderThickness,
+      ),
+      drawerTheme: theme.drawerTheme.copyWith(
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        endShape: RoundedRectangleBorder(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(24),
+              bottomLeft: Radius.circular(24),
+            ),
+            side: BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.scrim,
+            )),
+        shape: RoundedRectangleBorder(
+            borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(24),
+                bottomRight: Radius.circular(24)),
+            side: BorderSide(
+              width: borderThickness,
+              color: theme.colorScheme.scrim,
+            )),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
@@ -287,21 +338,6 @@ class ComicThemeData {
           ),
         ),
       ),
-      tabBarTheme: theme.tabBarTheme.copyWith(
-        indicator: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              width: borderThickness * 3,
-              color: theme.colorScheme.outline,
-            ),
-          ),
-        ),
-        indicatorSize: TabBarIndicatorSize.label,
-        // Note: By default, the dividerColor uses outlineVariant
-        // dividerColor: theme.colorScheme.onSurface,
-        dividerHeight: borderThickness * 0.8,
-      ),
-
       navigationBarTheme: theme.navigationBarTheme.copyWith(
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
@@ -327,31 +363,10 @@ class ComicThemeData {
         ),
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
       ),
-      drawerTheme: theme.drawerTheme.copyWith(
-        elevation: 0,
-        shadowColor: Colors.transparent,
-        endShape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(24),
-              bottomLeft: Radius.circular(24),
-            ),
-            side: BorderSide(
-              width: borderThickness,
-              color: theme.colorScheme.outline,
-            )),
-        shape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(24),
-                bottomRight: Radius.circular(24)),
-            side: BorderSide(
-              width: borderThickness,
-              color: theme.colorScheme.outline,
-            )),
-      ),
       navigationDrawerTheme: theme.navigationDrawerTheme.copyWith(
         elevation: 0,
         shadowColor: Colors.transparent,
-        indicatorColor: Colors.transparent,
+        // indicatorColor: Colors.transparent,
         indicatorShape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
             side: BorderSide(
@@ -359,10 +374,19 @@ class ComicThemeData {
               color: theme.colorScheme.outline,
             )),
       ),
-      progressIndicatorTheme: const ProgressIndicatorThemeData(
-          // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
-          // color: theme.colorScheme.secondary,
-          ),
+      navigationRailTheme: theme.navigationRailTheme.copyWith(
+          indicatorColor: Colors.transparent,
+          indicatorShape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                color: theme.colorScheme.outline,
+                width: borderThickness,
+              ))),
+      // progressIndicatorTheme: const ProgressIndicatorThemeData(
+      // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
+      // color: theme.colorScheme.secondary,
+
+      // ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
         backgroundColor: theme.colorScheme.surface,
@@ -389,6 +413,21 @@ class ComicThemeData {
           ),
           elevation: 0,
         ),
+      ),
+
+      tabBarTheme: theme.tabBarTheme.copyWith(
+        indicator: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              width: borderThickness * 3,
+              color: theme.colorScheme.outline,
+            ),
+          ),
+        ),
+        indicatorSize: TabBarIndicatorSize.label,
+        // Note: By default, the dividerColor uses outlineVariant
+        // dividerColor: theme.colorScheme.onSurface,
+        dividerHeight: borderThickness * 0.8,
       ),
     );
   }
