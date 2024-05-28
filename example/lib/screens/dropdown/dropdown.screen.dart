@@ -229,7 +229,7 @@ class _DropdownScreenState extends State<DropdownScreen> {
               ],
             ),
             const Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: NothingToLearn(),
             )
           ],
