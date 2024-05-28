@@ -1,6 +1,5 @@
 import 'package:example/screens/snackbar/comic.snackbar.screen.dart';
 import 'package:example/screens/snackbar/sleek.snackbar.screen.dart';
-import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:markdown_widget/markdown_widget.dart';
 

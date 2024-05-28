@@ -136,20 +136,17 @@ class ComicThemeData {
         elevation: 0,
       ),
 
-      bottomSheetTheme: BottomSheetThemeData(
+      bottomSheetTheme: const BottomSheetThemeData(
         // backgroundColor: theme.colorScheme.surface,
         shape: Border(
           top: BorderSide(
             width: borderThickness,
-            color: theme.colorScheme.outline,
           ),
           left: BorderSide(
             width: borderThickness,
-            color: theme.colorScheme.outline,
           ),
           right: BorderSide(
             width: borderThickness,
-            color: theme.colorScheme.outline,
           ),
         ),
       ),
@@ -211,11 +208,9 @@ class ComicThemeData {
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
-          side: BorderSide(
-            //  All of the widgets that uses scrim are returned to outline
-            //  So others will not confuse on what color to use
-            //  - Joshua
-            color: theme.colorScheme.surface,
+          side: const BorderSide(
+            // removed the border color so the default value from [BorderSide] will be used
+            // either way
             width: borderThickness,
           ),
         ),
