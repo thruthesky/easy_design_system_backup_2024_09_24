@@ -8,6 +8,7 @@ import 'package:example/screens/checkbox/checkbox.screen.dart';
 import 'package:example/screens/checkbox_list_tile/checkbox_list_tile.screen.dart';
 import 'package:example/screens/chip/chip.screen.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
+import 'package:example/screens/color_scheme_new/color_scheme_new.screen.dart';
 import 'package:example/screens/dialog/dialog.screen.dart';
 import 'package:example/screens/divider/divider.screen.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
@@ -25,6 +26,7 @@ import 'package:example/screens/segmented_button/segmented_button.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
 import 'package:example/screens/snackbar/snackbars.screen.dart';
 import 'package:example/screens/tab_bar/tab_bar.screen.dart';
+import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:example/screens/text_form_field/text_form_field.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
@@ -65,6 +67,7 @@ class _SearchScreenState extends State<SearchScreen> {
     const SearchItem(name: 'Segmented Button', screen: SegmentedButtonScreen()),
     const SearchItem(name: 'SnackBar', screen: SnackBarScreen()),
     const SearchItem(name: 'TabBar', screen: TabBarScreen()),
+    const SearchItem(name: 'TextFields', screen: TextFieldScreen()),
     const SearchItem(name: 'TextFormField', screen: TextFormFieldScreen()),
     const SearchItem(
         name: 'Basic Carousel Entry', screen: BasicCarouselEntryScreen()),
@@ -73,7 +76,7 @@ class _SearchScreenState extends State<SearchScreen> {
     const SearchItem(
         name: 'Round Carousel Entry', screen: RoundCarouselEntryScreen()),
     const SearchItem(name: 'Sleep Walker', screen: SleepWalkerScreen()),
-    const SearchItem(name: 'Color scheme', screen: ColorSchemeScreen()),
+    const SearchItem(name: 'Color scheme', screen: ColorSchemeNewScreen()),
   ];
 
   List<SearchItem> _result = [];

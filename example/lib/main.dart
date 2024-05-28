@@ -8,9 +8,7 @@ import 'package:example/screens/bottom_sheet/bottom_sheet.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/card/card.screen.dart';
 import 'package:example/screens/checkbox/checkbox.screen.dart';
-import 'package:example/screens/checkbox_list_tile/checkbox_list_tile.screen.dart';
 import 'package:example/screens/chip/chip.screen.dart';
-import 'package:example/screens/color_scheme/color_scheme.screen.dart';
 import 'package:example/screens/demo/comic/comic.theme.screen.dart';
 import 'package:example/screens/demo/sleek.theme.screen.dart';
 import 'package:example/screens/divider/divider.screen.dart';
@@ -135,9 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
           const SizedBox(height: 24),
-          if (const String.fromEnvironment('MODE') == 'noe') ...{
-            pushScreen('Search Widget', const SearchScreen()),
-          },
+          pushScreen('Search Widget', const SearchScreen()),
           pushScreen("AppBar", const AppBarScreen()),
           pushScreen('Badge', const BadgeScreen()),
           pushScreen('BottomAppBar', const BottomAppBarScreen()),
