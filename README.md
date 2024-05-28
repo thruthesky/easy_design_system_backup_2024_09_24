@@ -8,17 +8,20 @@ And again, there is nothing to learn. Just install the package and apply the the
 
 Please visit the [Social Design System document website](https://thruthesky.github.io/social_design_system/) to learn more.
 
-## UI samples
+## Demos
 
-| Comic Theme                                                                                                                                | Sleek Theme                                                                                                               | Social Theme                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| ComicListView![ComicListView](https://thruthesky.github.io/social_design_system/images/comic_list_view.jpg)                                |                                                                                                                           | x                                                                                                                         |
-| ComicListView.builder ![ComicListView.builder](https://thruthesky.github.io/social_design_system/images/comic_list_view_builder.jpg)       |                                                                                                                           | x                                                                                                                         |
-| ComicListView.separated ![ComicListView.separated](https://thruthesky.github.io/social_design_system/images/comic_list_view_separated.jpg) |                                                                                                                           | x                                                                                                                         |
-| Buttons ![Buttons](https://thruthesky.github.io/social_design_system/images/buttons.jpg)                                                   |                                                                                                                           | x                                                                                                                         |
-| Settings ![Settings](https://thruthesky.github.io/social_design_system/images/settings.jpg)                                                |                                                                                                                           | x                                                                                                                         |
-| TextField ![TextField Soical Theme](https://thruthesky.github.io/social_design_system/images/comic.text_field.jpg)                         |                                                                                                                           | x                                                                                                                         |
-| WaveCarouseEntry ![WaveCarouseEntry](https://thruthesky.github.io/social_design_system/images/wave_carousel_entry.gif)                     | BasicCarouseEntry ![BasicCarouseEntry](https://thruthesky.github.io/social_design_system/images/basic_carousel_entry.gif) | RoundCarouseEntry ![RoundCarouseEntry](https://thruthesky.github.io/social_design_system/images/round_carousel_entry.gif) |
+Here are some demo of using Social Design System (SDS).
+
+| Comic Theme   | Sleek Theme                                                |
+| --- | --- 
+| ![DemoScreen](./docs/images/demo.comic.home.screen.png) |  ![DemoScreen](./docs/images/demo.sleek.home.screen.png) |
+| ![DemoScreen](./docs/images/demo.comic.login.screen.png)| ![DemoScreen](./docs/images/demo.sleek.login.screen.png)|
+
+
+
+WaveCarouseEntry ![WaveCarouseEntry](./docs/images/wave_carousel_entry.png)                 
+BasicCarouseEntry ![BasicCarouseEntry](./docs/images/basic_carousel_entry.png) 
+RoundCarouseEntry ![RoundCarouseEntry](./docs/images/round_carousel_entry.png)|
 
 ## Usage
 

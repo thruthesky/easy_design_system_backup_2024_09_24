@@ -210,7 +210,7 @@ class ComicThemeData {
           borderRadius: BorderRadius.circular(24),
           side: const BorderSide(
             // removed the border color so the default value from [BorderSide] will be used
-            // either way
+            // color: theme.colorScheme.outline,
             width: borderThickness,
           ),
         ),
@@ -371,7 +371,7 @@ class ComicThemeData {
       // ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
-        backgroundColor: theme.colorScheme.surface,
+        backgroundColor: comicContainerBackgroundColor(context),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(

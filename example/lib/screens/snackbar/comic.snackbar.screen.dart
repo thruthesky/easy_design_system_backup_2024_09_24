@@ -13,7 +13,7 @@ class ComicSnackBarsScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Comic SnackBar'),
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
+            icon: const BackButtonIcon(),
             onPressed: () {
               ScaffoldMessenger.of(context).removeCurrentSnackBar();
               Navigator.of(context).pop();

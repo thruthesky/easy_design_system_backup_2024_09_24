@@ -19,8 +19,8 @@ class BottomSheetScreen extends StatelessWidget {
               Column(
                 children: [
                   DisplayBottomSheet(
-                    themeData: ComicTheme.of(context),
                     label: 'Display Comic Bottomsheet',
+                    themeData: ComicTheme.of(context),
                     isModal: false,
                   ),
                   DisplayBottomSheet(
@@ -73,17 +73,7 @@ class DisplayBottomSheet extends StatelessWidget {
                 data: themeData,
                 child: BottomSheet(
                   onClosing: () {},
-                  builder: (context) => SizedBox(
-                    height: 200,
-                    child: Center(
-                      child: OutlinedButton(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: const Text('Close'),
-                      ),
-                    ),
-                  ),
+                  builder: (context) => content(context),
                 ),
               ),
             );
@@ -94,23 +84,27 @@ class DisplayBottomSheet extends StatelessWidget {
                 data: themeData,
                 child: BottomSheet(
                   onClosing: () {},
-                  builder: (context) => SizedBox(
-                    height: 200,
-                    child: Center(
-                      child: OutlinedButton(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: const Text('Close'),
-                      ),
-                    ),
-                  ),
+                  builder: (context) => content(context),
                 ),
               ),
             );
           }
         },
         child: Text(label),
+      ),
+    );
+  }
+
+  SizedBox content(BuildContext context) {
+    return SizedBox(
+      height: 200,
+      child: Center(
+        child: OutlinedButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: const Text('Close'),
+        ),
       ),
     );
   }

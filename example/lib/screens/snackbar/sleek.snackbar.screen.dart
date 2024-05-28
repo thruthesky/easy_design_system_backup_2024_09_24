@@ -13,7 +13,7 @@ class SleekSnackBarScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Sleek SnackBar'),
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
+            icon: const BackButtonIcon(),
             onPressed: () {
               ScaffoldMessenger.of(context).removeCurrentSnackBar();
               Navigator.of(context).pop();

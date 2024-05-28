@@ -78,7 +78,7 @@ class SleekThemeData {
       ),
 
       bottomSheetTheme: theme.bottomSheetTheme.copyWith(
-        backgroundColor: theme.colorScheme.surfaceContainerHigh,
+        backgroundColor: containerBackgroundColor(context),
         // backgroundColor: Colors.red,
       ),
 

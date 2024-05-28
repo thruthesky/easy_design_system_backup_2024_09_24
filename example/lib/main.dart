@@ -48,6 +48,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       themeMode: ThemeMode.dark,
       theme: ThemeData(
@@ -77,8 +78,6 @@ class _MyHomePageState extends State<MyHomePage> {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (_) => const ComicLoginDemo()));
       }
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (_) => const BottomSheetScreen()));
     });
   }
 
