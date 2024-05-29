@@ -1,5 +1,7 @@
 import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:social_design_system/social_design_system.dart';
 
 class ToggleButtonScreen extends StatefulWidget {
@@ -56,14 +58,21 @@ class ToggleButtonExample extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ToggleButtons(
-          isSelected: const [true, false, false],
-          onPressed: (int index) {},
-          children: const <Widget>[
-            Text('ABC'),
-            Text('DEF'),
-            Text('GHI'),
-          ],
+        Container(
+          padding: const EdgeInsets.all(0),
+          decoration: const BoxDecoration(
+            color: Colors.amber,
+            borderRadius: BorderRadius.all(Radius.circular(8)),
+          ),
+          child: ToggleButtons(
+            isSelected: const [true, false, false],
+            onPressed: (int index) {},
+            children: const <Widget>[
+              Text('ABC'),
+              Text('DEF'),
+              Text('GHI'),
+            ],
+          ),
         ),
         const SizedBox(
           height: 20,

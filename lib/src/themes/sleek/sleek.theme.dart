@@ -133,7 +133,7 @@ class SleekThemeData {
         disabledBorderColor: Colors.transparent,
         splashColor: containerBackgroundColor(context),
         fillColor: theme.colorScheme.inversePrimary,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(8),
       ),
 
       /// dropdownmenu, anchormenu, menubar
