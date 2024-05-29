@@ -14,7 +14,7 @@ Social Design System provides a starting screen for your app.
 
 | BasicCarouselEntry | WaveCarouselEntry | RoundCarouselEntry |
 | :---: | :---: | :---: |
-| ![BasicCarouselEntry](./docs/images/basic_carousel_entry.jpg)| ![WaveCarouselEntry](./docs/images/wave_carousel_entry.jpg)| ![RoundCarouselEntry](./docs/images/round_carousel_entry.jpg)|
+| ![BasicCarouselEntry](https://github.com/thruthesky/social_design_system/blob/main/docs/images/basic_carousel_entry.jpg?raw=true)| ![WaveCarouselEntry](https://github.com/thruthesky/social_design_system/blob/main/docs/images/wave_carousel_entry.jpg?raw=true)| ![RoundCarouselEntry](https://github.com/thruthesky/social_design_system/blob/main/docs/images/round_carousel_entry.jpg?raw=true)|
 
 ## Demos
 
@@ -22,8 +22,8 @@ Here are some demos of the Social Design System (SDS).
 
 | Comic Theme   | Sleek Theme                                                |
 | :---: | :---: | 
-| ![DemoScreen](./docs/images/demo.comic.home.screen.jpg) |  ![DemoScreen](./docs/images/demo.sleek.home.screen.jpg) |
-| ![DemoScreen](./docs/images/demo.comic.login.screen.jpg)| ![DemoScreen](./docs/images/demo.sleek.login.screen.jpg)|
+| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.comic.home.screen.jpg?raw=true) |  ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.sleek.home.screen.jpg?raw=true) |
+| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.comic.login.screen.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.sleek.login.screen.jpg?raw=true)|
 
 
 ## Usage
