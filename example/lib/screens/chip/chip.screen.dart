@@ -93,14 +93,14 @@ class _ChipScreenState extends State<ChipScreen> {
                   InputChip(
                     label: const Text("InputChip1"),
                     onSelected: (value) {
-                      print(value);
+                      debugPrint(value.toString());
                     },
                   ),
                   InputChip(
                     label: const Text("InputChip2 Selected"),
                     selected: true,
                     onSelected: (value) {
-                      print(value);
+                      debugPrint(value.toString());
                     },
                   ),
                   const InputChip(
@@ -111,17 +111,17 @@ class _ChipScreenState extends State<ChipScreen> {
                   InputChip(
                     label: const Text("InputChip5 With Delete"),
                     onSelected: (value) {
-                      print(value);
+                      debugPrint(value.toString());
                     },
                     onDeleted: () {
-                      print("onDeleted");
+                      debugPrint("onDeleted");
                     },
                   ),
                   InputChip(
                     label: const Text("InputChip3 disabled"),
                     selected: true,
                     onDeleted: () {
-                      print("onDeleted");
+                      debugPrint("onDeleted");
                     },
                     isEnabled: false,
                   ),
