@@ -325,11 +325,13 @@ class _SleekThemeUiWidgetsScreenState extends State<SleekThemeUiWidgetsScreen>
                   OutlinedButton(
                     onPressed: () => showModalBottomSheet(
                       context: context,
-                      builder: (context) => BottomSheet(
-                        onClosing: () {},
-                        builder: (context) => const SizedBox(
-                          height: 300,
-                          child: Center(child: Text('Modal BottomSheet')),
+                      builder: (context) => SleekTheme(
+                        child: BottomSheet(
+                          onClosing: () {},
+                          builder: (context) => const SizedBox(
+                            height: 300,
+                            child: Center(child: Text('Modal BottomSheet')),
+                          ),
                         ),
                       ),
                     ),

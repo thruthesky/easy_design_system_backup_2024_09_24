@@ -325,11 +325,13 @@ class _ComicThemeUiWidgetsScreenState extends State<ComicThemeUiWidgetsScreen>
                   OutlinedButton(
                     onPressed: () => showModalBottomSheet(
                       context: context,
-                      builder: (context) => BottomSheet(
-                        onClosing: () {},
-                        builder: (context) => const SizedBox(
-                          height: 300,
-                          child: Center(child: Text('Modal BottomSheet')),
+                      builder: (context) => ComicTheme(
+                        child: BottomSheet(
+                          onClosing: () {},
+                          builder: (context) => const SizedBox(
+                            height: 300,
+                            child: Center(child: Text('Modal BottomSheet')),
+                          ),
                         ),
                       ),
                     ),
