@@ -136,20 +136,17 @@ class ComicThemeData {
         elevation: 0,
       ),
 
-      bottomSheetTheme: BottomSheetThemeData(
+      bottomSheetTheme: const BottomSheetThemeData(
         // backgroundColor: theme.colorScheme.surface,
         shape: Border(
           top: BorderSide(
             width: borderThickness,
-            color: theme.colorScheme.scrim,
           ),
           left: BorderSide(
             width: borderThickness,
-            color: theme.colorScheme.scrim,
           ),
           right: BorderSide(
             width: borderThickness,
-            color: theme.colorScheme.scrim,
           ),
         ),
       ),
@@ -287,16 +284,9 @@ class ComicThemeData {
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
-          side: BorderSide(
-            // Initially used the [outline] to match with the other widgets
-            // but does not work in terms of contrast
-            // Based from flutter api, [scrim] is used for modal components
-            // - Joshua
-            //
-            // Scrim may be used differently, need to review the use of scrim
-            // so scrim may be a wrong choice to use here.
-            // - Christian
-            color: theme.colorScheme.scrim,
+          side: const BorderSide(
+            // removed the border color so the default value from [BorderSide] will be used
+            // color: theme.colorScheme.outline,
             width: borderThickness,
           ),
         ),
@@ -316,7 +306,7 @@ class ComicThemeData {
             ),
             side: BorderSide(
               width: borderThickness,
-              color: theme.colorScheme.scrim,
+              color: theme.colorScheme.outline,
             )),
         shape: RoundedRectangleBorder(
             borderRadius: const BorderRadius.only(
@@ -324,7 +314,7 @@ class ComicThemeData {
                 bottomRight: Radius.circular(24)),
             side: BorderSide(
               width: borderThickness,
-              color: theme.colorScheme.scrim,
+              color: theme.colorScheme.outline,
             )),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -457,7 +447,7 @@ class ComicThemeData {
       // ),
       snackBarTheme: SnackBarThemeData(
         elevation: 0,
-        backgroundColor: theme.colorScheme.surfaceContainerHighest,
+        backgroundColor: comicContainerBackgroundColor(context),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
           side: BorderSide(

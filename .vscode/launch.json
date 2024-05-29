@@ -5,6 +5,14 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "SDS - iPhone 14 Pro Max",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "example",
+      "program": "lib/main.dart",
+      "deviceId": "iPhone 14 Pro Max"
+    },
+    {
       "name": "SDS - iPhone 15 Pro Max",
       "request": "launch",
       "type": "dart",

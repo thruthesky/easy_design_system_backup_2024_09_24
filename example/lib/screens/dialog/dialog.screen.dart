@@ -1,5 +1,6 @@
 import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
+import 'package:markdown_widget/markdown_widget.dart';
 import 'package:social_design_system/social_design_system.dart';
 
 class DialogScreen extends StatelessWidget {
@@ -136,8 +137,19 @@ class DialogScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 32),
               const NothingToLearn(),
+              const MarkdownBlock(
+                data: '''
+**Note**
+In `ComicTheme`, `BorderSide` is used to style the `Dialog` but since it has its own default value and cannot override, you might need to customize it on your own.
+
+```dart
+const BorderSide({
+  // BorderSide default value
+  this.color = const Color(0xFF000000), 
+```
+''',
+              ),
             ],
           ),
         ),
