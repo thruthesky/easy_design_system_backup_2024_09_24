@@ -49,7 +49,7 @@ class BottomSheetScreen extends StatelessWidget {
   }
 }
 
-class DisplayBottomSheet extends StatelessWidget {
+class DisplayBottomSheet extends StatefulWidget {
   const DisplayBottomSheet({
     super.key,
     required this.label,
@@ -61,17 +61,32 @@ class DisplayBottomSheet extends StatelessWidget {
   final bool isModal;
 
   @override
+  State<DisplayBottomSheet> createState() => _DisplayBottomSheetState();
+}
+
+class _DisplayBottomSheetState extends State<DisplayBottomSheet>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(vsync: this);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Theme(
-      data: themeData,
+      data: widget.themeData,
       child: ElevatedButton(
         onPressed: () {
-          if (isModal) {
+          if (widget.isModal) {
             showModalBottomSheet(
               context: context,
               builder: (context) => Theme(
-                data: themeData,
+                data: widget.themeData,
                 child: BottomSheet(
+                  animationController: _animationController,
                   onClosing: () {},
                   builder: (context) => content(context),
                 ),
@@ -81,7 +96,7 @@ class DisplayBottomSheet extends StatelessWidget {
             showBottomSheet(
               context: context,
               builder: (context) => Theme(
-                data: themeData,
+                data: widget.themeData,
                 child: BottomSheet(
                   onClosing: () {},
                   builder: (context) => content(context),
@@ -90,7 +105,7 @@ class DisplayBottomSheet extends StatelessWidget {
             );
           }
         },
-        child: Text(label),
+        child: Text(widget.label),
       ),
     );
   }

@@ -11,11 +11,12 @@ class ComicThemeUiWidgetsScreen extends StatefulWidget {
 }
 
 class _ComicThemeUiWidgetsScreenState extends State<ComicThemeUiWidgetsScreen>
-    with SingleTickerProviderStateMixin {
-  final scaffoldState = GlobalKey<ScaffoldState>();
+    with TickerProviderStateMixin {
+  final _scaffoldState = GlobalKey<ScaffoldState>();
 
   final TextEditingController menuController = TextEditingController();
   late TabController _tabController;
+  late AnimationController _animationController;
 
   int selectedIndex = 0;
   int navigationBarIndex = 0;
@@ -48,13 +49,14 @@ class _ComicThemeUiWidgetsScreenState extends State<ComicThemeUiWidgetsScreen>
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
+    _animationController = AnimationController(vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
     return ComicTheme(
       child: Scaffold(
-        key: scaffoldState,
+        key: _scaffoldState,
         appBar: AppBar(
           leading: const BackButton(),
           title: const Text('Comic'),
@@ -300,16 +302,20 @@ class _ComicThemeUiWidgetsScreenState extends State<ComicThemeUiWidgetsScreen>
                   ),
                   OutlinedButton(
                     onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Testing'),
+                      SnackBar(
+                        content: const Text('This is a Snackbar'),
+                        action: SnackBarAction(
+                            label: 'Close',
+                            onPressed: () => Navigator.of(context).pop()),
                       ),
                     ),
                     child: const Text('SnackBar'),
                   ),
                   OutlinedButton(
                     onPressed: () =>
-                        scaffoldState.currentState?.showBottomSheet(
+                        _scaffoldState.currentState?.showBottomSheet(
                       (context) => BottomSheet(
+                        animationController: _animationController,
                         onClosing: () {},
                         builder: (context) => SizedBox(
                           height: 300,
@@ -329,6 +335,8 @@ class _ComicThemeUiWidgetsScreenState extends State<ComicThemeUiWidgetsScreen>
                       context: context,
                       builder: (context) => ComicTheme(
                         child: BottomSheet(
+                          animationController: _animationController,
+                          enableDrag: false,
                           onClosing: () {},
                           builder: (context) => const SizedBox(
                             height: 300,

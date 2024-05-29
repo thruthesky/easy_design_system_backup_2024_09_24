@@ -11,11 +11,12 @@ class SleekThemeUiWidgetsScreen extends StatefulWidget {
 }
 
 class _SleekThemeUiWidgetsScreenState extends State<SleekThemeUiWidgetsScreen>
-    with SingleTickerProviderStateMixin {
-  final scaffoldState = GlobalKey<ScaffoldState>();
+    with TickerProviderStateMixin {
+  final _scaffoldState = GlobalKey<ScaffoldState>();
 
   final TextEditingController menuController = TextEditingController();
   late TabController _tabController;
+  late AnimationController _animationController;
 
   int selectedIndex = 0;
   int navigationBarIndex = 0;
@@ -48,13 +49,14 @@ class _SleekThemeUiWidgetsScreenState extends State<SleekThemeUiWidgetsScreen>
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
+    _animationController = AnimationController(vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
     return SleekTheme(
       child: Scaffold(
-        key: scaffoldState,
+        key: _scaffoldState,
         appBar: AppBar(
           leading: const BackButton(),
           title: const Text('Sleek'),
@@ -300,16 +302,20 @@ class _SleekThemeUiWidgetsScreenState extends State<SleekThemeUiWidgetsScreen>
                   ),
                   OutlinedButton(
                     onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Testing'),
+                      SnackBar(
+                        content: const Text('This is a Snackbar'),
+                        action: SnackBarAction(
+                            label: 'Close',
+                            onPressed: () => Navigator.of(context).pop()),
                       ),
                     ),
                     child: const Text('SnackBar'),
                   ),
                   OutlinedButton(
                     onPressed: () =>
-                        scaffoldState.currentState?.showBottomSheet(
+                        _scaffoldState.currentState?.showBottomSheet(
                       (context) => BottomSheet(
+                        animationController: _animationController,
                         onClosing: () {},
                         builder: (context) => SizedBox(
                           height: 300,
@@ -329,6 +335,8 @@ class _SleekThemeUiWidgetsScreenState extends State<SleekThemeUiWidgetsScreen>
                       context: context,
                       builder: (context) => SleekTheme(
                         child: BottomSheet(
+                          animationController: _animationController,
+                          enableDrag: false,
                           onClosing: () {},
                           builder: (context) => const SizedBox(
                             height: 300,
@@ -365,11 +373,11 @@ class MyDrawer extends StatefulWidget {
 }
 
 class _MyDrawerState extends State<MyDrawer> {
-  int selectedDestination = 0;
+  int _selectedDestination = 0;
 
   void selectDestination(int index) {
     setState(() {
-      selectedDestination = index;
+      _selectedDestination = index;
     });
   }
 
@@ -377,7 +385,7 @@ class _MyDrawerState extends State<MyDrawer> {
   Widget build(BuildContext context) {
     return NavigationDrawer(
       onDestinationSelected: selectDestination,
-      selectedIndex: selectedDestination,
+      selectedIndex: _selectedDestination,
       children: const [
         SafeArea(
           child: Center(
