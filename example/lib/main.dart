@@ -1,3 +1,6 @@
+import 'package:example/screens/color_scheme_new/color_scheme_new.screen.dart';
+import 'package:example/screens/demo/sleek/sleek.theme.screen.dart';
+import 'package:example/screens/demo/login/sleek_login.demo.dart';
 import 'package:example/screens/dialog/dialog.screen.dart';
 import 'package:example/screens/app_bar/app_bar.screen.dart';
 import 'package:example/screens/badge/badge.screen.dart';
@@ -6,22 +9,26 @@ import 'package:example/screens/bottom_sheet/bottom_sheet.screen.dart';
 import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/card/card.screen.dart';
 import 'package:example/screens/checkbox/checkbox.screen.dart';
-import 'package:example/screens/checkbox_list_tile/checkbox_list_tile.screen.dart';
 import 'package:example/screens/chip/chip.screen.dart';
-import 'package:example/screens/color_scheme/color_scheme.screen.dart';
-import 'package:example/screens/demo/comic.theme.screen.dart';
-import 'package:example/screens/demo/sleek.theme.screen.dart';
+import 'package:example/screens/demo/comic/comic.theme.screen.dart';
 import 'package:example/screens/divider/divider.screen.dart';
+import 'package:example/screens/dropdown/dropdown.screen.dart';
 import 'package:example/screens/floating_action_button/floating_action_button.screen.dart';
 import 'package:example/screens/icon_buttons/icon_buttons.screen.dart';
 import 'package:example/screens/list_tile/list_tile.screen.dart';
 import 'package:example/screens/entry/basic_carousel_entry.screen.dart';
 import 'package:example/screens/entry/round_carousel_entry.screen.dart';
 import 'package:example/screens/entry/wave_carousel_entry.screen.dart';
+import 'package:example/screens/demo/login/comic_login.demo.dart';
+import 'package:example/screens/list_view/comic.list_view.screen.dart';
+import 'package:example/screens/list_view/sleek.list_view.screen.dart';
 import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
+import 'package:example/screens/navigation_rail.dart/navigation_rail.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
+import 'package:example/screens/search/search.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
+import 'package:example/screens/setting/setting.screen.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
 import 'package:example/screens/snackbar/snackbars.screen.dart';
 import 'package:example/screens/tab_bar/tab_bar.screen.dart';
@@ -67,8 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (const String.fromEnvironment('MODE') == 'noe') {
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (_) => const NavigationDrawerScreen()));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (_) => const ComicLoginDemo()));
       }
     });
   }
@@ -92,52 +99,92 @@ class _MyHomePageState extends State<MyHomePage> {
 - `Basic widgets` means the widgets in material.dart.
 - `Visual component widget` is a widget that have a visual outloook on screen like a Text widget. While GestureDetector is not a visual component since it does not appear on the screen.
 '''),
+          const SizedBox(height: 16),
+          const Text("Demos:"),
+          const SizedBox(height: 8),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              pushScreen('Comic Theme Demo', const ComicScreenDemo()),
-              pushScreen('Sleek Theme Demo', const SleekScreenDemo()),
+              Flexible(
+                child: pushScreen(
+                  'Comic Theme',
+                  const ComicScreenDemoScreen(),
+                ),
+              ),
+              Flexible(
+                child: pushScreen(
+                  'Sleek Theme',
+                  const SleekScreenDemoScreen(),
+                ),
+              ),
             ],
           ),
-          pushScreen('TextFields', const TextFieldScreen()),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(
+                child: pushScreen(
+                  'Comic Login',
+                  const ComicLoginDemo(),
+                ),
+              ),
+              Flexible(
+                child: pushScreen(
+                  'Sleek Login',
+                  const SleekLoginDemo(),
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 24),
+          if (const String.fromEnvironment('MODE') == 'noe') ...{
+            pushScreen('Search Widget', const SearchScreen()),
+          },
+          pushScreen("AppBar", const AppBarScreen()),
+          pushScreen('Badge', const BadgeScreen()),
+          pushScreen('BottomAppBar', const BottomAppBarScreen()),
+          pushScreen('BottomSheet', const BottomSheetScreen()),
           pushScreen('Buttons', const ButtonsScreen()),
-          pushScreen('TextFormFieldScreen', const TextFormFieldScreen()),
+          pushScreen('Card', const CardScreen()),
+          pushScreen('Checkbox', const CheckboxScreen()),
+          pushScreen('Dropdown', const DropdownScreen()),
+          // pushScreen('CheckboxListTile', const CheckboxListTileScreen()),
+          pushScreen('Chip', const ChipScreen()),
+          pushScreen('Dialog', const DialogScreen()),
+          pushScreen('Divider', const DividerScreen()),
           pushScreen(
               'Floating Action Button', const FloatingActionButtonScreen()),
           pushScreen('IconButton', const IconButtonScreen()),
-          pushScreen('Segmented Button', const SegmentedButtonScreen()),
-          pushScreen('Badge', const BadgeScreen()),
-          pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
-          pushScreen('SnackBar', const SnackBarScreen()),
-          pushScreen('Dialog', const DialogScreen()),
-          pushScreen('BottomSheet', const BottomSheetScreen()),
-          pushScreen('Card', const CardScreen()),
-          pushScreen('Divider', const DividerScreen()),
           pushScreen('ListTile', const ListTileScreen()),
-          // ElevatedButton(onPressed: () {}, child: const Text("AppBar")),
-          pushScreen("AppBar", const AppBarScreen()),
-          pushScreen('BottomAppBar', const BottomAppBarScreen()),
-          // ElevatedButton(onPressed: () {}, child: const Text("NavigationBar")),
           pushScreen('NavigationBar', const NavigationBarScreen()),
           pushScreen("NavigationDrawer", const NavigationDrawerScreen()),
-          ElevatedButton(onPressed: () {}, child: const Text("NavigationRail")),
-          // ElevatedButton(onPressed: () {}, child: const Text("TabBar")),
+          pushScreen('NavigationRail', const NavigationRailScreen()),
+          pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
+          pushScreen('Segmented Button', const SegmentedButtonScreen()),
+          pushScreen('SnackBar', const SnackBarScreen()),
           pushScreen('TabBar', const TabBarScreen()),
-          pushScreen('Checkbox', const CheckboxScreen()),
-          pushScreen('CheckboxListTile', const CheckboxListTileScreen()),
+          pushScreen('TextFields', const TextFieldScreen()),
+          pushScreen('TextFormField', const TextFormFieldScreen()),
+          const Divider(),
+          const Text('Custom Widgets:'),
 
-          pushScreen('Chip', const ChipScreen()),
-
-          pushScreen('Sleep Walker', const SleepWalkerScreen()),
+          pushScreen('ComicListView', const ComicListViewScreen()),
+          pushScreen('SleekListView', const SleekListViewScreen()),
+          pushScreen('Setting', const SettingScreen()),
           pushScreen('Basic Carousel Entry', const BasicCarouselEntryScreen()),
           pushScreen('Wave Carousel Entry', const WaveCarouselEntryScreen()),
           pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
-          pushScreen('Color scheme', const ColorSchemeScreen()),
+          pushScreen('Sleep Walker', const SleepWalkerScreen()),
+          // pushScreen('Color scheme', const ColorSchemeScreen()),
+
+          pushScreen('Color scheme new', const ColorSchemeNewScreen()),
         ],
       ),
     );
   }
 
-  pushScreen(String title, Widget screen) {
+  Widget pushScreen(String title, Widget screen) {
     return ElevatedButton(
       onPressed: () => Navigator.of(context).push(
         MaterialPageRoute(builder: (_) => screen),
@@ -145,4 +192,18 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Text(title),
     );
   }
+}
+
+class WidgetItem {
+  final String id;
+  final String name;
+  final String description;
+  final Widget screen;
+
+  WidgetItem({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.screen,
+  });
 }

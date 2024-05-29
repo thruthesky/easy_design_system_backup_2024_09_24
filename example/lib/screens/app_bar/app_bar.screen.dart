@@ -1,3 +1,4 @@
+import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -20,27 +21,38 @@ class _AppBarScreenState extends State<AppBarScreen> {
         appBar: AppBar(
           title: const Text("AppBar"),
         ),
-        body: Center(
+        body: Padding(
+          padding: const EdgeInsets.all(24.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Not much changed in Sleek Theme"),
-              TextButton(
-                child: const Text("Sleek Theme"),
-                onPressed: () {
-                  setState(() {
-                    _themeData = SleekTheme.of(context);
-                  });
-                },
+              const Text("Comic"),
+              SizedBox(
+                height: 100,
+                width: double.maxFinite,
+                child: Theme(
+                  data: ComicTheme.of(context),
+                  child: Scaffold(
+                    appBar: AppBar(
+                      title: const Text("AppBar"),
+                    ),
+                  ),
+                ),
               ),
-              TextButton(
-                child: const Text("Comic Theme"),
-                onPressed: () {
-                  setState(() {
-                    _themeData = ComicTheme.of(context);
-                  });
-                },
-              )
+              const Text("Sleek"),
+              SizedBox(
+                height: 100,
+                width: double.maxFinite,
+                child: Theme(
+                  data: SleekTheme.of(context),
+                  child: Scaffold(
+                    appBar: AppBar(
+                      title: const Text("AppBar"),
+                    ),
+                  ),
+                ),
+              ),
+              const NothingToLearn(),
             ],
           ),
         ),

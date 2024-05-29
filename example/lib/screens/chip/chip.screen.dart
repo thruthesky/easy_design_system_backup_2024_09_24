@@ -1,3 +1,4 @@
+import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -9,16 +10,17 @@ class ChipScreen extends StatefulWidget {
 }
 
 class _ChipScreenState extends State<ChipScreen> {
-  String selectedChip = "ChoiceChip1";
-
-  ThemeData? _themeData;
+  bool c1 = true;
+  bool c2 = true;
+  bool ic1 = true;
+  bool ic2 = true;
   @override
   Widget build(BuildContext context) {
-    _themeData ??= Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Chip'),
       ),
+<<<<<<< HEAD
       body: Center(
           child: Theme(
         data: _themeData!,
@@ -130,8 +132,62 @@ class _ChipScreenState extends State<ChipScreen> {
               const SizedBox(height: 24),
             ],
           ),
+=======
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          children: [
+            Table(
+              children: [
+                const TableRow(
+                  children: [
+                    Text("Comic Theme"),
+                    Text("Sleek Theme"),
+                  ],
+                ),
+                TableRow(
+                  children: [
+                    ComicTheme(
+                      child: ChoiceChip(
+                        label: const Text("ChoiceChip"),
+                        selected: c1,
+                        onSelected: (v) => setState(() => c1 = v),
+                      ),
+                    ),
+                    SleekTheme(
+                      child: ChoiceChip(
+                        label: const Text("ChoiceChip"),
+                        selected: c2,
+                        onSelected: (v) => setState(() => c2 = v),
+                      ),
+                    ),
+                  ],
+                ),
+                TableRow(
+                  children: [
+                    ComicTheme(
+                      child: InputChip(
+                        label: const Text("InputChip"),
+                        selected: ic1,
+                        onSelected: (v) => setState(() => ic1 = v),
+                      ),
+                    ),
+                    SleekTheme(
+                      child: InputChip(
+                        label: const Text("InputChip"),
+                        selected: ic2,
+                        onSelected: (v) => setState(() => ic2 = v),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            const NothingToLearn(),
+          ],
+>>>>>>> 8e7f2794fbdf1b0c06d4481e767a012f8def7a1f
         ),
-      )),
+      ),
     );
   }
 }
