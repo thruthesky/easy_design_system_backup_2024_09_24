@@ -26,14 +26,17 @@ import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart'
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
 import 'package:example/screens/navigation_rail.dart/navigation_rail.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
+import 'package:example/screens/radio_button/radio_button.dart';
 import 'package:example/screens/search/search.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
 import 'package:example/screens/setting/setting.screen.dart';
 import 'package:example/screens/sleep_walker/sleep_walker.screen.dart';
 import 'package:example/screens/snackbar/snackbars.screen.dart';
+import 'package:example/screens/switch/switch.dart';
 import 'package:example/screens/tab_bar/tab_bar.screen.dart';
 import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:example/screens/text_form_field/text_form_field.screen.dart';
+import 'package:example/screens/toggle_button/toggle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:markdown_widget/widget/all.dart';
@@ -148,11 +151,12 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Buttons', const ButtonsScreen()),
           pushScreen('Card', const CardScreen()),
           pushScreen('Checkbox', const CheckboxScreen()),
-          pushScreen('Dropdown', const DropdownScreen()),
+
           // pushScreen('CheckboxListTile', const CheckboxListTileScreen()),
           pushScreen('Chip', const ChipScreen()),
           pushScreen('Dialog', const DialogScreen()),
           pushScreen('Divider', const DividerScreen()),
+          pushScreen('Dropdown', const DropdownScreen()),
           pushScreen(
               'Floating Action Button', const FloatingActionButtonScreen()),
           pushScreen('IconButton', const IconButtonScreen()),
@@ -161,11 +165,17 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen("NavigationDrawer", const NavigationDrawerScreen()),
           pushScreen('NavigationRail', const NavigationRailScreen()),
           pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
+
+          pushScreen('Radio Button', const RadioButtonScreen()),
           pushScreen('Segmented Button', const SegmentedButtonScreen()),
           pushScreen('SnackBar', const SnackBarScreen()),
+
+          pushScreen('Switch', const SwitchScreen()),
           pushScreen('TabBar', const TabBarScreen()),
           pushScreen('TextFields', const TextFieldScreen()),
           pushScreen('TextFormField', const TextFormFieldScreen()),
+
+          pushScreen('Toggle Button', const ToggleButtonScreen()),
           const Divider(),
           const Text('Custom Widgets:'),
 

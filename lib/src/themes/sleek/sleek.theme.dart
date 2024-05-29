@@ -109,6 +109,74 @@ class SleekThemeData {
           },
         ),
       ),
+      radioTheme: const RadioThemeData(),
+      switchTheme: SwitchThemeData(
+        trackOutlineWidth: WidgetStateProperty.all(
+          0,
+        ),
+        thumbColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outlineVariant;
+            }
+            return theme.colorScheme.inversePrimary;
+          },
+        ),
+        trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
+        trackColor: WidgetStateProperty.all(
+          containerBackgroundColor(context),
+        ),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        borderColor: Colors.transparent,
+        selectedBorderColor: Colors.transparent,
+        disabledBorderColor: Colors.transparent,
+        splashColor: containerBackgroundColor(context),
+        fillColor: theme.colorScheme.inversePrimary,
+        borderRadius: BorderRadius.circular(16),
+      ),
+
+      /// dropdownmenu, anchormenu, menubar
+      menuTheme: MenuThemeData(
+        style:
+            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
+          backgroundColor: WidgetStateProperty.all(
+            containerBackgroundColor(context),
+          ),
+          shadowColor: WidgetStateProperty.all(
+            Colors.transparent,
+          ),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+        ),
+      ),
+      menuBarTheme: MenuBarThemeData(
+        style:
+            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
+          backgroundColor: WidgetStateProperty.all(
+            containerBackgroundColor(context),
+          ),
+          shadowColor: WidgetStateProperty.all(
+            Colors.transparent,
+          ),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+        ),
+      ),
+      popupMenuTheme: PopupMenuThemeData(
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        color: containerBackgroundColor(context),
+      ),
+
       chipTheme: theme.chipTheme.copyWith(
         backgroundColor: containerBackgroundColor(context),
         selectedColor: theme.colorScheme.inversePrimary,

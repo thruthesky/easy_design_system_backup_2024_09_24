@@ -198,12 +198,88 @@ class ComicThemeData {
           },
         ),
       ),
-      dropdownMenuTheme: DropdownMenuThemeData(
-        menuStyle: theme.dropdownMenuTheme.menuStyle?.copyWith(
+      radioTheme: const RadioThemeData(),
+      switchTheme: SwitchThemeData(
+        trackOutlineWidth: WidgetStateProperty.all(
+          borderThickness,
+        ),
+        thumbColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outlineVariant;
+            }
+            return theme.colorScheme.outline;
+          },
+        ),
+        trackOutlineColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outlineVariant;
+            }
+
+            return theme.colorScheme.onSurface;
+          },
+        ),
+        trackColor: WidgetStateProperty.all(
+          comicContainerBackgroundColor(context),
+        ),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        selectedBorderColor: theme.colorScheme.outline,
+        borderWidth: borderThickness,
+        fillColor: comicContainerBackgroundColor(context),
+        borderRadius: BorderRadius.circular(7),
+      ),
+
+      popupMenuTheme: PopupMenuThemeData(
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.outline,
+          ),
+        ),
+        color: comicContainerBackgroundColor(context),
+      ),
+
+      // uses the menuTheme
+      // dropdownMenuTheme: const DropdownMenuThemeData(),
+      menuTheme: MenuThemeData(
+        style:
+            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
+          backgroundColor: WidgetStateProperty.all(
+            comicContainerBackgroundColor(context),
+          ),
+          shadowColor: WidgetStateProperty.all(
+            Colors.transparent,
+          ),
           shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(7),
-            ),
+                borderRadius: BorderRadius.circular(16),
+                side: BorderSide(
+                  width: borderThickness,
+                  color: theme.colorScheme.outline,
+                )),
+          ),
+        ),
+      ),
+      menuBarTheme: MenuBarThemeData(
+        style:
+            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
+          backgroundColor: WidgetStateProperty.all(
+            comicContainerBackgroundColor(context),
+          ),
+          shadowColor: WidgetStateProperty.all(
+            Colors.transparent,
+          ),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+                side: BorderSide(
+                  width: borderThickness,
+                  color: theme.colorScheme.outline,
+                )),
           ),
         ),
       ),
