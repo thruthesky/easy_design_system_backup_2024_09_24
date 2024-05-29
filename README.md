@@ -19,9 +19,9 @@ Here are some demo of using Social Design System (SDS).
 
 
 
-WaveCarouseEntry ![WaveCarouseEntry](./docs/images/wave_carousel_entry.png)                 
-BasicCarouseEntry ![BasicCarouseEntry](./docs/images/basic_carousel_entry.png) 
-RoundCarouseEntry ![RoundCarouseEntry](./docs/images/round_carousel_entry.png)|
+ ![WaveCarouseEntry](./docs/images/wave_carousel_entry.png)                 
+ ![BasicCarouseEntry](./docs/images/basic_carousel_entry.png) 
+ ![RoundCarouseEntry](./docs/images/round_carousel_entry.png)
 
 ## Usage
 
@@ -75,14 +75,4 @@ For more details, please visit the [Social Design System document website](https
 
 - Fork and PR.
 - Leave your issues on the git repo.
-
-## Coding Guideline
-
-- Write a good example and description on the example app since we don't provide other documents.
-
-- In each screen, have;
-    - Title as the name of widget/compoennt,
-    - Widget of the UI on first of the body
-    - And short description
-    - And sample code
 
