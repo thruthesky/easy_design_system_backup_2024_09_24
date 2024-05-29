@@ -14,14 +14,14 @@ Here are some demo of using Social Design System (SDS).
 
 | Comic Theme   | Sleek Theme                                                |
 | --- | --- 
-| ![DemoScreen](./docs/images/demo.comic.home.screen.png) |  ![DemoScreen](./docs/images/demo.sleek.home.screen.png) |
-| ![DemoScreen](./docs/images/demo.comic.login.screen.png)| ![DemoScreen](./docs/images/demo.sleek.login.screen.png)|
+| ![DemoScreen](./docs/images/demo.comic.home.screen.jpg) |  ![DemoScreen](./docs/images/demo.sleek.home.screen.jpg) |
+| ![DemoScreen](./docs/images/demo.comic.login.screen.jpg)| ![DemoScreen](./docs/images/demo.sleek.login.screen.jpg)|
 
 
 
- ![WaveCarouseEntry](./docs/images/wave_carousel_entry.png)                 
- ![BasicCarouseEntry](./docs/images/basic_carousel_entry.png) 
- ![RoundCarouseEntry](./docs/images/round_carousel_entry.png)
+ ![WaveCarouseEntry](./docs/images/wave_carousel_entry.jpg)                 
+ ![BasicCarouseEntry](./docs/images/basic_carousel_entry.jpg) 
+ ![RoundCarouseEntry](./docs/images/round_carousel_entry.jpg)
 
 ## Usage
 
