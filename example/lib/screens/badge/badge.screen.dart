@@ -1,4 +1,4 @@
-import 'package:example/widgets/nothing_to_learn.dart';
+import 'package:example/widgets/no_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -61,7 +61,7 @@ class _BadgeScreenState extends State<BadgeScreen> {
               ],
             ),
             const SizedBox(height: 12),
-            const NothingToLearn(),
+            const NoTheme(widgetName: 'Badge'),
           ],
         ),
       ),
