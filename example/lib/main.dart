@@ -37,6 +37,8 @@ import 'package:example/screens/tab_bar/tab_bar.screen.dart';
 import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:example/screens/text_form_field/text_form_field.screen.dart';
 import 'package:example/screens/toggle_button/toggle_button.dart';
+import 'package:example/screens/ui_widgets/comic_theme.screen.dart';
+import 'package:example/screens/ui_widgets/sleek_theme.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:markdown_widget/widget/all.dart';
@@ -136,6 +138,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: pushScreen(
                   'Sleek Login',
                   const SleekLoginDemo(),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(
+                child: pushScreen(
+                  'Comic Theme UI Widgets',
+                  const ComicThemeUiWidgetsScreen(),
+                ),
+              ),
+              Flexible(
+                child: pushScreen(
+                  'Sleek Theme UI Widgets',
+                  const SleekThemeUiWidgetsScreen(),
                 ),
               ),
             ],
