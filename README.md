@@ -14,7 +14,7 @@ Social Design System provides a starting screen for your app.
 
 | BasicCarouselEntry | WaveCarouselEntry | RoundCarouselEntry |
 | :---: | :---: | :---: |
-| ![BasicCarouselEntry](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/basic_carousel_entry.jpg?raw=true)| ![WaveCarouselEntry](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/wave_carousel_entry.jpg?raw=true)| ![RoundCarouselEntry](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/round_carousel_entry.jpg?raw=true)|
+| ![BasicCarouselEntry](https://github.com/thruthesky/social_design_system/blob/main/docs/images/basic_carousel_entry.jpg?raw=true)| ![WaveCarouselEntry](https://github.com/thruthesky/social_design_system/blob/main/docs/images/wave_carousel_entry.jpg?raw=true)| ![RoundCarouselEntry](https://github.com/thruthesky/social_design_system/blob/main/docs/images/round_carousel_entry.jpg?raw=true)|
 
 ## Demos
 
@@ -22,11 +22,11 @@ Here are some demos of the Social Design System (SDS).
 
 | Comic Theme   | Sleek Theme                                                |
 | :---: | :---: | 
-| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/demo.comic.home.screen.jpg?raw=true) |  ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/demo.sleek.home.screen.jpg?raw=true) |
-| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/demo.comic.login.screen.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/demo.sleek.login.screen.jpg?raw=true)|
-| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/comic.widgets.tab_1.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/sleek.widgets.tab_1.jpg?raw=true) |
-| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/comic.widgets.tab_2.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/sleek.widgets.tab_2.jpg?raw=true) |
-| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/comic.widgets.tab_3.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/designing/docs/images/sleek.widgets.tab_3.jpg?raw=true) |
+| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.comic.home.screen.jpg?raw=true) |  ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.sleek.home.screen.jpg?raw=true) |
+| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.comic.login.screen.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.sleek.login.screen.jpg?raw=true)|
+| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/comic.widgets.tab_1.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/sleek.widgets.tab_1.jpg?raw=true) |
+| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/comic.widgets.tab_2.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/sleek.widgets.tab_2.jpg?raw=true) |
+| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/comic.widgets.tab_3.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/sleek.widgets.tab_3.jpg?raw=true) |
 
 
 ## Usage
