@@ -20,119 +20,6 @@ class _ChipScreenState extends State<ChipScreen> {
       appBar: AppBar(
         title: const Text('Chip'),
       ),
-<<<<<<< HEAD
-      body: Center(
-          child: Theme(
-        data: _themeData!,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(height: 24),
-              Wrap(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      _themeData = ComicTheme.of(context);
-                      setState(() {});
-                    },
-                    child: const Text("Comic Theme"),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      _themeData = SleekTheme.of(context);
-                      setState(() {});
-                    },
-                    child: const Text("Sleek Theme"),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 24),
-              const Chip(label: Text("Chip")),
-              const SizedBox(height: 24),
-              Wrap(
-                spacing: 8,
-                children: [
-                  ChoiceChip(
-                    label: const Text("ChoiceChip1"),
-                    selected: selectedChip == "ChoiceChip1",
-                    onSelected: (bool selected) {
-                      setState(() {
-                        selectedChip = "ChoiceChip1";
-                      });
-                    },
-                  ),
-                  ChoiceChip(
-                    label: const Text("ChoiceChip2"),
-                    selected: selectedChip == "ChoiceChip2",
-                    onSelected: (bool selected) {
-                      setState(() {
-                        selectedChip = "ChoiceChip2";
-                      });
-                    },
-                  ),
-                  ChoiceChip(
-                    label: const Text("ChoiceChip3"),
-                    selected: selectedChip == "ChoiceChip3",
-                    onSelected: (bool selected) {
-                      setState(() {
-                        selectedChip = "ChoiceChip3";
-                      });
-                    },
-                  ),
-                  const ChoiceChip(
-                    label: Text("ChoiceChip4"),
-                    selected: true,
-                  ),
-                  const ChoiceChip(
-                    label: Text("ChoiceChip3"),
-                    selected: false,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 24),
-              Wrap(
-                children: [
-                  InputChip(
-                    label: const Text("InputChip1"),
-                    onSelected: (value) {
-                      debugPrint(value.toString());
-                    },
-                  ),
-                  InputChip(
-                    label: const Text("InputChip2 Selected"),
-                    selected: true,
-                    onSelected: (value) {
-                      debugPrint(value.toString());
-                    },
-                  ),
-                  const InputChip(
-                    label: Text("InputChip3 disabled"),
-                    selected: true,
-                  ),
-                  const InputChip(label: Text("InputChip4 disabled")),
-                  InputChip(
-                    label: const Text("InputChip5 With Delete"),
-                    onSelected: (value) {
-                      debugPrint(value.toString());
-                    },
-                    onDeleted: () {
-                      debugPrint("onDeleted");
-                    },
-                  ),
-                  InputChip(
-                    label: const Text("InputChip3 disabled"),
-                    selected: true,
-                    onDeleted: () {
-                      debugPrint("onDeleted");
-                    },
-                    isEnabled: false,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 24),
-            ],
-          ),
-=======
       body: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -185,7 +72,6 @@ class _ChipScreenState extends State<ChipScreen> {
             ),
             const NothingToLearn(),
           ],
->>>>>>> 8e7f2794fbdf1b0c06d4481e767a012f8def7a1f
         ),
       ),
     );
