@@ -1,7 +1,5 @@
 # Social Design System
 
----
-
 The Social design system is an Elegant and easy-to-use UI/UX design library for Flutter, crafted to enhance your app's aesthetics and user experience without learning anything. This is an open-source project that you can fork and pr.
 
 >And again, ***there is nothing to learn.*** Just install the package and apply the theme to `MaterialApp`.
