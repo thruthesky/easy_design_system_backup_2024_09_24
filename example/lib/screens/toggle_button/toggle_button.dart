@@ -10,8 +10,6 @@ class ToggleButtonScreen extends StatefulWidget {
 }
 
 class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
-  List<bool> isSelected = [true, false];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,8 +21,8 @@ class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
         child: Column(
           children: [
             Table(
-              children: [
-                const TableRow(
+              children: const [
+                TableRow(
                   children: [
                     Text('Comic Theme'),
                     Text('Sleek Theme'),
@@ -33,144 +31,89 @@ class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
                 TableRow(
                   children: [
                     ComicTheme(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ToggleButtons(
-                            isSelected: const [true, false, false],
-                            onPressed: (int index) {},
-                            children: const <Widget>[
-                              Text('ABC'),
-                              Text('DEF'),
-                              Text('GHI'),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          ToggleButtons(
-                            isSelected: const [false, true, false],
-                            onPressed: (int index) {},
-                            children: const <Widget>[
-                              Text('ABC'),
-                              Text('DEF'),
-                              Text('GHI'),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          ToggleButtons(
-                            isSelected: const [false, false, true],
-                            onPressed: (int index) {},
-                            children: const <Widget>[
-                              Text('ABC'),
-                              Text('DEF'),
-                              Text('GHI'),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          ToggleButtons(
-                            isSelected: const [true, true, true],
-                            onPressed: (int index) {},
-                            children: const <Widget>[
-                              Icon(Icons.arrow_back),
-                              Icon(Icons.graphic_eq_rounded),
-                              Icon(Icons.arrow_forward),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          ToggleButtons(
-                            isSelected: const [true, false, false],
-                            onPressed: null,
-                            children: const <Widget>[
-                              Icon(Icons.arrow_back),
-                              Icon(Icons.graphic_eq_rounded),
-                              Icon(Icons.arrow_forward),
-                            ],
-                          ),
-                        ],
-                      ),
+                      child: ToggleButtonExample(),
                     ),
                     SleekTheme(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ToggleButtons(
-                            isSelected: const [true, false, false],
-                            onPressed: (int index) {},
-                            children: const <Widget>[
-                              Text('ABC'),
-                              Text('DEF'),
-                              Text('GHI'),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 23,
-                          ),
-                          ToggleButtons(
-                            isSelected: const [false, true, false],
-                            onPressed: (int index) {},
-                            children: const <Widget>[
-                              Text('ABC'),
-                              Text('DEF'),
-                              Text('GHI'),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 23,
-                          ),
-                          ToggleButtons(
-                            isSelected: const [false, false, true],
-                            onPressed: (int index) {},
-                            children: const <Widget>[
-                              Text('ABC'),
-                              Text('DEF'),
-                              Text('GHI'),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 23,
-                          ),
-                          ToggleButtons(
-                            isSelected: const [true, true, true],
-                            onPressed: (int index) {},
-                            children: const <Widget>[
-                              Icon(Icons.arrow_back),
-                              Icon(Icons.graphic_eq_rounded),
-                              Icon(Icons.arrow_forward),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 23,
-                          ),
-                          ToggleButtons(
-                            isSelected: const [true, false, false],
-                            onPressed: null,
-                            children: const <Widget>[
-                              Icon(Icons.arrow_back),
-                              Icon(Icons.graphic_eq_rounded),
-                              Icon(Icons.arrow_forward),
-                            ],
-                          ),
-                        ],
-                      ),
+                      child: ToggleButtonExample(),
                     ),
                   ],
                 )
               ],
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: NothingToLearn(),
-            )
+            const NothingToLearn()
           ],
         ),
       ),
+    );
+  }
+}
+
+class ToggleButtonExample extends StatelessWidget {
+  const ToggleButtonExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ToggleButtons(
+          isSelected: const [true, false, false],
+          onPressed: (int index) {},
+          children: const <Widget>[
+            Text('ABC'),
+            Text('DEF'),
+            Text('GHI'),
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        ToggleButtons(
+          isSelected: const [false, true, false],
+          onPressed: (int index) {},
+          children: const <Widget>[
+            Text('ABC'),
+            Text('DEF'),
+            Text('GHI'),
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        ToggleButtons(
+          isSelected: const [false, false, true],
+          onPressed: (int index) {},
+          children: const <Widget>[
+            Text('ABC'),
+            Text('DEF'),
+            Text('GHI'),
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        ToggleButtons(
+          isSelected: const [true, true, true],
+          onPressed: (int index) {},
+          children: const <Widget>[
+            Icon(Icons.arrow_back),
+            Icon(Icons.graphic_eq_rounded),
+            Icon(Icons.arrow_forward),
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        ToggleButtons(
+          isSelected: const [true, false, false],
+          onPressed: null,
+          children: const <Widget>[
+            Icon(Icons.arrow_back),
+            Icon(Icons.graphic_eq_rounded),
+            Icon(Icons.arrow_forward),
+          ],
+        ),
+      ],
     );
   }
 }

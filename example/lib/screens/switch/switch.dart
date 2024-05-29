@@ -22,8 +22,8 @@ class _SwitchScreenState extends State<SwitchScreen> {
         child: Column(
           children: [
             Table(
-              children: [
-                const TableRow(
+              children: const [
+                TableRow(
                   children: [
                     Text('Comic Theme'),
                     Text('Sleek Theme'),
@@ -32,90 +32,10 @@ class _SwitchScreenState extends State<SwitchScreen> {
                 TableRow(
                   children: [
                     ComicTheme(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Switch(
-                                value: true,
-                                onChanged: (bool value) {},
-                              ),
-                              const Text('On')
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Switch(
-                                value: false,
-                                onChanged: (bool value) {},
-                              ),
-                              const Text('Off')
-                            ],
-                          ),
-                          const Row(
-                            children: [
-                              Switch(
-                                value: true,
-                                onChanged: null,
-                              ),
-                              Text('On Disabled')
-                            ],
-                          ),
-                          const Row(
-                            children: [
-                              Switch(
-                                value: false,
-                                onChanged: null,
-                              ),
-                              Text('Off Disabled')
-                            ],
-                          )
-                        ],
-                      ),
+                      child: SwitchExample(),
                     ),
                     SleekTheme(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Switch(
-                                value: true,
-                                onChanged: (bool value) {},
-                              ),
-                              const Text('On')
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Switch(
-                                value: false,
-                                onChanged: (bool value) {},
-                              ),
-                              const Text('Off')
-                            ],
-                          ),
-                          const Row(
-                            children: [
-                              Switch(
-                                value: true,
-                                onChanged: null,
-                              ),
-                              Text('On Disabled')
-                            ],
-                          ),
-                          const Row(
-                            children: [
-                              Switch(
-                                value: false,
-                                onChanged: null,
-                              ),
-                              Text('Off Disabled')
-                            ],
-                          )
-                        ],
-                      ),
+                      child: SwitchExample(),
                     ),
                   ],
                 )
@@ -128,6 +48,55 @@ class _SwitchScreenState extends State<SwitchScreen> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class SwitchExample extends StatelessWidget {
+  const SwitchExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Switch(
+              value: true,
+              onChanged: (bool value) {},
+            ),
+            const Text('On')
+          ],
+        ),
+        Row(
+          children: [
+            Switch(
+              value: false,
+              onChanged: (bool value) {},
+            ),
+            const Text('Off')
+          ],
+        ),
+        const Row(
+          children: [
+            Switch(
+              value: true,
+              onChanged: null,
+            ),
+            Text('On Disabled')
+          ],
+        ),
+        const Row(
+          children: [
+            Switch(
+              value: false,
+              onChanged: null,
+            ),
+            Text('Off Disabled')
+          ],
+        )
+      ],
     );
   }
 }

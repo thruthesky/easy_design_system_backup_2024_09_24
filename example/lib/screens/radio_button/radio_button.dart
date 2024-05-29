@@ -11,7 +11,6 @@ class RadioButtonScreen extends StatefulWidget {
 }
 
 class _RadioButtonScreenState extends State<RadioButtonScreen> {
-  String radio = 'radio1';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,8 +22,8 @@ class _RadioButtonScreenState extends State<RadioButtonScreen> {
         child: Column(
           children: [
             Table(
-              children: [
-                const TableRow(
+              children: const [
+                TableRow(
                   children: [
                     Text('Comic Theme'),
                     Text('Sleek Theme'),
@@ -33,104 +32,71 @@ class _RadioButtonScreenState extends State<RadioButtonScreen> {
                 TableRow(
                   children: [
                     ComicTheme(
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Radio(
-                                value: 'radio1',
-                                groupValue: radio,
-                                onChanged: (value) {},
-                              ),
-                              const Text('Selected')
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                value: 'radio2',
-                                groupValue: radio,
-                                onChanged: (value) {},
-                              ),
-                              const Text('Not selected')
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  value: 'radio1',
-                                  groupValue: radio,
-                                  onChanged: null),
-                              const Text('Disable selected')
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  value: 'radio2',
-                                  groupValue: radio,
-                                  onChanged: null),
-                              const Text('Disable unselected')
-                            ],
-                          ),
-                        ],
-                      ),
+                      child: RadioExample(),
                     ),
                     SleekTheme(
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Radio(
-                                value: 'radio1',
-                                groupValue: radio,
-                                onChanged: (value) {},
-                              ),
-                              const Text('Selected')
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                value: 'radio2',
-                                groupValue: radio,
-                                onChanged: (value) {},
-                              ),
-                              const Text('Not selected')
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  value: 'radio1',
-                                  groupValue: radio,
-                                  onChanged: null),
-                              const Text('Disable selected')
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  value: 'radio2',
-                                  groupValue: radio,
-                                  onChanged: null),
-                              const Text('Disable unselected')
-                            ],
-                          ),
-                        ],
-                      ),
+                      child: RadioExample(),
                     ),
                   ],
                 )
               ],
             ),
-            const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: NothingToLearn(),
-            )
+            const NothingToLearn()
           ],
         ),
       ),
+    );
+  }
+}
+
+class RadioExample extends StatelessWidget {
+  const RadioExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Radio(
+              value: 'radio1',
+              groupValue: 'radio1',
+              onChanged: (value) {},
+            ),
+            const Text('Selected')
+          ],
+        ),
+        Row(
+          children: [
+            Radio(
+              value: 'radio2',
+              groupValue: '',
+              onChanged: (value) {},
+            ),
+            const Text('Not selected')
+          ],
+        ),
+        const Row(
+          children: [
+            Radio(
+              value: 'radio1',
+              groupValue: 'radio1',
+              onChanged: null,
+            ),
+            Text('Disable selected')
+          ],
+        ),
+        const Row(
+          children: [
+            Radio(
+              value: 'radio2',
+              groupValue: '',
+              onChanged: null,
+            ),
+            Text('Disable unselected')
+          ],
+        ),
+      ],
     );
   }
 }

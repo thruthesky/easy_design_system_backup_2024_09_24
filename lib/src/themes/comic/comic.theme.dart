@@ -264,6 +264,25 @@ class ComicThemeData {
           ),
         ),
       ),
+      menuBarTheme: MenuBarThemeData(
+        style:
+            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
+          backgroundColor: WidgetStateProperty.all(
+            comicContainerBackgroundColor(context),
+          ),
+          shadowColor: WidgetStateProperty.all(
+            Colors.transparent,
+          ),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+                side: BorderSide(
+                  width: borderThickness,
+                  color: theme.colorScheme.outline,
+                )),
+          ),
+        ),
+      ),
       dialogTheme: DialogTheme(
         elevation: 0,
         shape: RoundedRectangleBorder(

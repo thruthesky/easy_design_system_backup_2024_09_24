@@ -153,6 +153,22 @@ class SleekThemeData {
           ),
         ),
       ),
+      menuBarTheme: MenuBarThemeData(
+        style:
+            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
+          backgroundColor: WidgetStateProperty.all(
+            containerBackgroundColor(context),
+          ),
+          shadowColor: WidgetStateProperty.all(
+            Colors.transparent,
+          ),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+        ),
+      ),
       popupMenuTheme: PopupMenuThemeData(
         elevation: 0,
         shape: RoundedRectangleBorder(
