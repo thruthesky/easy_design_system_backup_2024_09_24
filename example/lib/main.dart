@@ -141,9 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
 
           const SizedBox(height: 24),
-          if (const String.fromEnvironment('MODE') == 'noe') ...{
-            pushScreen('Search Widget', const SearchScreen()),
-          },
+          pushScreen('Search Widget', const SearchScreen()),
           pushScreen("AppBar", const AppBarScreen()),
           pushScreen('Badge', const BadgeScreen()),
           pushScreen('BottomAppBar', const BottomAppBarScreen()),
@@ -178,7 +176,6 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Toggle Button', const ToggleButtonScreen()),
           const Divider(),
           const Text('Custom Widgets:'),
-
           pushScreen('ComicListView', const ComicListViewScreen()),
           pushScreen('SleekListView', const SleekListViewScreen()),
           pushScreen('Setting', const SettingScreen()),
@@ -187,7 +184,6 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
           pushScreen('Sleep Walker', const SleepWalkerScreen()),
           // pushScreen('Color scheme', const ColorSchemeScreen()),
-
           pushScreen('Color scheme new', const ColorSchemeNewScreen()),
         ],
       ),
