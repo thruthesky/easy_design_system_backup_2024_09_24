@@ -277,19 +277,21 @@ class _ComicThemeUiWidgetsScreenState extends State<ComicThemeUiWidgetsScreen>
                   OutlinedButton(
                     onPressed: () => showDialog(
                       context: context,
-                      builder: (context) => AlertDialog(
-                        content: SizedBox(
-                          height: 100,
-                          child: Column(
-                            children: [
-                              const Expanded(
-                                child: Text('This is a sample Dialog'),
-                              ),
-                              TextButton(
-                                onPressed: () => Navigator.of(context).pop(),
-                                child: const Text('Close'),
-                              ),
-                            ],
+                      builder: (context) => ComicTheme(
+                        child: AlertDialog(
+                          content: SizedBox(
+                            height: 100,
+                            child: Column(
+                              children: [
+                                const Expanded(
+                                  child: Text('This is a sample Dialog'),
+                                ),
+                                TextButton(
+                                  onPressed: () => Navigator.of(context).pop(),
+                                  child: const Text('Close'),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
