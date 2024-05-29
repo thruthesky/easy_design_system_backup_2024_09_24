@@ -24,6 +24,9 @@ Here are some demos of the Social Design System (SDS).
 | :---: | :---: | 
 | ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.comic.home.screen.jpg?raw=true) |  ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.sleek.home.screen.jpg?raw=true) |
 | ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.comic.login.screen.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.sleek.login.screen.jpg?raw=true)|
+| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/comic.widgets.tab_1.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/sleek.widgets.tab_1.jpg?raw=true) |
+| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/comic.widgets.tab_2.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/sleek.widgets.tab_2.jpg?raw=true) |
+| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/comic.widgets.tab_3.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/sleek.widgets.tab_3.jpg?raw=true) |
 
 
 ## Usage
