@@ -21,7 +21,7 @@ class _BirthdatePickerScreenState extends State<BirthdatePickerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Birthday Picker'),
+        title: const Text('Birthdate Picker'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
