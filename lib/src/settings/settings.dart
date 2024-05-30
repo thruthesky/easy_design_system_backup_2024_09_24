@@ -32,18 +32,20 @@ class Settings extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              ListView.separated(
-                padding: EdgeInsets.zero,
-                shrinkWrap: true,
-                primary: false,
-                physics: const NeverScrollableScrollPhysics(),
-                separatorBuilder: (context, index) => Divider(
-                  indent: 16,
-                  endIndent: 16,
-                  color: Theme.of(context).colorScheme.secondary,
+              ListTileTheme(
+                child: ListView.separated(
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  primary: false,
+                  physics: const NeverScrollableScrollPhysics(),
+                  separatorBuilder: (context, index) => Divider(
+                    indent: 16,
+                    endIndent: 16,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+                  itemCount: children.length,
+                  itemBuilder: (context, index) => children[index],
                 ),
-                itemCount: children.length,
-                itemBuilder: (context, index) => children[index],
               ),
             ],
           ),
