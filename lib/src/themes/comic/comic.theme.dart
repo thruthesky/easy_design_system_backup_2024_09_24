@@ -151,7 +151,7 @@ class ComicThemeData {
         ),
       ),
       cardTheme: theme.cardTheme.copyWith(
-        // color: theme.colorScheme.surface,
+        // color: theme.colorScheme.error,
         elevation: 0,
         shape: RoundedRectangleBorder(
           side: BorderSide(
@@ -159,6 +159,24 @@ class ComicThemeData {
             color: theme.colorScheme.outline,
           ),
           borderRadius: BorderRadius.circular(24),
+        ),
+      ),
+
+      checkboxTheme: CheckboxThemeData(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(7),
+        ),
+        fillColor: WidgetStateProperty.all(
+          comicContainerBackgroundColor(context),
+        ),
+        checkColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outlineVariant;
+            }
+
+            return theme.colorScheme.onSurface;
+          },
         ),
       ),
 
@@ -178,108 +196,7 @@ class ComicThemeData {
         selectedColor: comicContainerBackgroundColor(context),
       ),
       colorScheme: theme.colorScheme,
-      checkboxTheme: CheckboxThemeData(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(7),
-        ),
-        fillColor: WidgetStateProperty.all(
-          comicContainerBackgroundColor(context),
-        ),
-        checkColor: WidgetStateProperty.resolveWith<Color?>(
-          (Set<WidgetState> states) {
-            if (states.contains(WidgetState.disabled)) {
-              return theme.colorScheme.outlineVariant;
-            }
 
-            return theme.colorScheme.onSurface;
-          },
-        ),
-      ),
-      radioTheme: const RadioThemeData(),
-      switchTheme: SwitchThemeData(
-        trackOutlineWidth: WidgetStateProperty.all(
-          borderThickness,
-        ),
-        thumbColor: WidgetStateProperty.resolveWith<Color?>(
-          (Set<WidgetState> states) {
-            if (states.contains(WidgetState.disabled)) {
-              return theme.colorScheme.outlineVariant;
-            }
-            return theme.colorScheme.outline;
-          },
-        ),
-        trackOutlineColor: WidgetStateProperty.resolveWith<Color?>(
-          (Set<WidgetState> states) {
-            if (states.contains(WidgetState.disabled)) {
-              return theme.colorScheme.outlineVariant;
-            }
-
-            return theme.colorScheme.onSurface;
-          },
-        ),
-        trackColor: WidgetStateProperty.all(
-          comicContainerBackgroundColor(context),
-        ),
-      ),
-      toggleButtonsTheme: ToggleButtonsThemeData(
-        selectedBorderColor: theme.colorScheme.outline,
-        borderWidth: borderThickness,
-        fillColor: comicContainerBackgroundColor(context),
-        borderRadius: BorderRadius.circular(7),
-      ),
-
-      popupMenuTheme: PopupMenuThemeData(
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-          side: BorderSide(
-            width: borderThickness,
-            color: theme.colorScheme.outline,
-          ),
-        ),
-        color: comicContainerBackgroundColor(context),
-      ),
-
-      // uses the menuTheme
-      // dropdownMenuTheme: const DropdownMenuThemeData(),
-      menuTheme: MenuThemeData(
-        style:
-            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
-          backgroundColor: WidgetStateProperty.all(
-            comicContainerBackgroundColor(context),
-          ),
-          shadowColor: WidgetStateProperty.all(
-            Colors.transparent,
-          ),
-          shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-                side: BorderSide(
-                  width: borderThickness,
-                  color: theme.colorScheme.outline,
-                )),
-          ),
-        ),
-      ),
-      menuBarTheme: MenuBarThemeData(
-        style:
-            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
-          backgroundColor: WidgetStateProperty.all(
-            comicContainerBackgroundColor(context),
-          ),
-          shadowColor: WidgetStateProperty.all(
-            Colors.transparent,
-          ),
-          shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-                side: BorderSide(
-                  width: borderThickness,
-                  color: theme.colorScheme.outline,
-                )),
-          ),
-        ),
-      ),
       dialogTheme: DialogTheme(
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -331,6 +248,7 @@ class ComicThemeData {
           ),
         ),
       ),
+
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         // TODO check the default color
         // backgroundColor: theme.colorScheme.surface,
@@ -363,24 +281,7 @@ class ComicThemeData {
           ),
         ),
       ),
-      outlinedButtonTheme: OutlinedButtonThemeData(
-        style: ButtonStyle(
-          elevation: WidgetStateProperty.all(0),
-          // NOTE: Shape is not working here.
-          side: WidgetStatePropertyAll(
-            BorderSide(
-              // TODO this might be a wrong way to do it.
-              // because in flutter way, to set the color scheme, we can usually set
-              // it thru copyWith, then set the color scheme.
-              // Here, it is accessing the outline color from the theme variable.
-              // When developer used this like ComicTheme.of(context).copyWith( colorScheme: theme.colorScheme )
-              // theme.colorScheme.
-              color: theme.colorScheme.outline,
-              width: borderThickness,
-            ),
-          ),
-        ),
-      ),
+
       listTileTheme: theme.listTileTheme.copyWith(
         // Note: By default, the tileColor uses Colors.transparent so we should
         // not give tile color on comic theme because it might conflict with other
@@ -396,6 +297,48 @@ class ComicThemeData {
           ),
         ),
       ),
+      menuBarTheme: MenuBarThemeData(
+        style:
+            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
+          backgroundColor: WidgetStateProperty.all(
+            comicContainerBackgroundColor(context),
+          ),
+          shadowColor: WidgetStateProperty.all(
+            Colors.transparent,
+          ),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+                side: BorderSide(
+                  width: borderThickness,
+                  color: theme.colorScheme.outline,
+                )),
+          ),
+        ),
+      ),
+
+      // uses the menuTheme
+      // dropdownMenuTheme: const DropdownMenuThemeData(),
+      menuTheme: MenuThemeData(
+        style:
+            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
+          backgroundColor: WidgetStateProperty.all(
+            comicContainerBackgroundColor(context),
+          ),
+          shadowColor: WidgetStateProperty.all(
+            Colors.transparent,
+          ),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+                side: BorderSide(
+                  width: borderThickness,
+                  color: theme.colorScheme.outline,
+                )),
+          ),
+        ),
+      ),
+
       navigationBarTheme: theme.navigationBarTheme.copyWith(
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
@@ -433,16 +376,28 @@ class ComicThemeData {
             )),
       ),
       navigationRailTheme: theme.navigationRailTheme.copyWith(
-          indicatorColor: Colors.transparent,
-          indicatorShape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-              side: BorderSide(
-                color: theme.colorScheme.outline,
-                width: borderThickness,
-              ))),
-      // progressIndicatorTheme: const ProgressIndicatorThemeData(
-      // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
-      // color: theme.colorScheme.secondary,
+        indicatorColor: Colors.transparent,
+        indicatorShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+          side: BorderSide(
+            color: theme.colorScheme.outline,
+            width: borderThickness,
+          ),
+        ),
+      ),
+      popupMenuTheme: PopupMenuThemeData(
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: BorderSide(
+            width: borderThickness,
+            color: theme.colorScheme.outline,
+          ),
+        ),
+        color: comicContainerBackgroundColor(context),
+      ),
+
+      radioTheme: const RadioThemeData(),
 
       // ),
       snackBarTheme: SnackBarThemeData(
@@ -472,6 +427,59 @@ class ComicThemeData {
           elevation: 0,
         ),
       ),
+      switchTheme: SwitchThemeData(
+        trackOutlineWidth: WidgetStateProperty.all(
+          borderThickness,
+        ),
+        thumbColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outlineVariant;
+            }
+            return theme.colorScheme.outline;
+          },
+        ),
+        trackOutlineColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outlineVariant;
+            }
+
+            return theme.colorScheme.onSurface;
+          },
+        ),
+        trackColor: WidgetStateProperty.all(
+          comicContainerBackgroundColor(context),
+        ),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        selectedBorderColor: theme.colorScheme.outline,
+        borderWidth: borderThickness,
+        fillColor: comicContainerBackgroundColor(context),
+        borderRadius: BorderRadius.circular(7),
+      ),
+
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: ButtonStyle(
+          elevation: WidgetStateProperty.all(0),
+          // NOTE: Shape is not working here.
+          side: WidgetStatePropertyAll(
+            BorderSide(
+              // TODO this might be a wrong way to do it.
+              // because in flutter way, to set the color scheme, we can usually set
+              // it thru copyWith, then set the color scheme.
+              // Here, it is accessing the outline color from the theme variable.
+              // When developer used this like ComicTheme.of(context).copyWith( colorScheme: theme.colorScheme )
+              // theme.colorScheme.
+              color: theme.colorScheme.outline,
+              width: borderThickness,
+            ),
+          ),
+        ),
+      ),
+      // progressIndicatorTheme: const ProgressIndicatorThemeData(
+      // linearTrackColor: theme.colorScheme.outlineVariant.withAlpha(40),
+      // color: theme.colorScheme.secondary,
 
       tabBarTheme: theme.tabBarTheme.copyWith(
         indicator: BoxDecoration(

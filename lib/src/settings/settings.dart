@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
 class Settings extends StatelessWidget {
-  const Settings(
-      {super.key,
-      required this.children,
-      required this.label,
-      this.indent = false});
+  const Settings({
+    super.key,
+    required this.children,
+    required this.label,
+    this.indent = false,
+    this.thickness,
+  });
 
   final List<Widget> children;
   final String label;
   final bool indent;
+  final double? thickness;
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +24,7 @@ class Settings extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Text(label),
         ),
-        Container(
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Theme.of(context).colorScheme.secondary,
-              width: 1.6,
-            ),
-            borderRadius: BorderRadius.circular(16),
-          ),
+        Card(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -41,7 +37,9 @@ class Settings extends StatelessWidget {
                   separatorBuilder: (context, index) => Divider(
                     indent: 16,
                     endIndent: 16,
-                    color: Theme.of(context).colorScheme.secondary,
+                    height: 2,
+                    thickness: thickness ?? 1.8,
+                    color: Theme.of(context).dividerColor,
                   ),
                   itemCount: children.length,
                   itemBuilder: (context, index) => children[index],
