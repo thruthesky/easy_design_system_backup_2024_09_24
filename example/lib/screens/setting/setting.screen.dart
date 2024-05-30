@@ -1,3 +1,4 @@
+import 'package:example/widgets/code_to_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:social_design_system/social_design_system.dart';
 
@@ -16,68 +17,143 @@ class _SettingScreenState extends State<SettingScreen> {
       appBar: AppBar(
         title: const Text('Setting'),
       ),
-      body: const Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(24.0),
-            child: ComicTheme(
-              child: SettingItems(
-                label: 'Comic Theme Settings',
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: ComicTheme(
+                child: Settings(
+                  label: 'Comic Theme Settings',
+                  children: [
+                    ListTile(
+                      visualDensity: VisualDensity.compact,
+                      title: const Text('Notifications'),
+                      subtitle: const Text('Receive notifications'),
+                      leading: const Icon(Icons.notifications_outlined),
+                      trailing: const Icon(Icons.chevron_right_rounded),
+                      onTap: () => debugPrint('Item 1'),
+                    ),
+                    ListTile(
+                      visualDensity: VisualDensity.compact,
+                      title: const Text('Favorites'),
+                      subtitle: const Text('Want to know who likes you?'),
+                      leading: const Icon(Icons.favorite_border_outlined),
+                      trailing: const Icon(
+                        Icons.arrow_right_rounded,
+                        size: 32,
+                      ),
+                      onTap: () => debugPrint('Item 2'),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(24.0),
-            child: SleekTheme(
-              child: SettingItems(
-                label: 'Comic Theme Settings',
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: SleekTheme(
+                child: Settings(
+                  label: 'Sleek Theme Settings',
+                  children: [
+                    ListTile(
+                      visualDensity: VisualDensity.compact,
+                      title: const Text('Notifications'),
+                      subtitle: const Text('Receive notifications'),
+                      leading: const Icon(Icons.notifications_outlined),
+                      trailing: const Icon(Icons.chevron_right_rounded),
+                      onTap: () => debugPrint('Item 1'),
+                    ),
+                    ListTile(
+                      visualDensity: VisualDensity.compact,
+                      title: const Text('Favorites'),
+                      subtitle: const Text('Want to know who likes you?'),
+                      leading: const Icon(Icons.favorite_border_outlined),
+                      trailing: const Icon(
+                        Icons.arrow_right_rounded,
+                        size: 32,
+                      ),
+                      onTap: () => debugPrint('Item 2'),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+            const Padding(
+              padding: EdgeInsets.all(24.0),
+              child: CodeToLearn(md: '''
+## Settings
+
+- This `Settings` widget is intended for use in a menu or settings screen.
+- The `Settings` widget comprises a series of `ListTile` widgets.
+- To apply a theme, simply wrap your `Settings` widget with either the `ComicTheme` or `SleekTheme`.
+
+
+```dart
+Padding(
+      padding: const EdgeInsets.all(24.0),
+      child: ComicTheme(
+        child: Settings(
+          label: 'Comic Theme Settings',
+          children: [
+            ListTile(
+              visualDensity: VisualDensity.compact,
+              title: const Text('Notifications'),
+              subtitle: const Text('Receive notifications'),
+              leading: const Icon(Icons.notifications_outlined),
+              trailing: const Icon(Icons.chevron_right_rounded),
+              onTap: () => debugPrint('Item 1'),
+            ),
+            ListTile(
+              visualDensity: VisualDensity.compact,
+              title: const Text('Favorites'),
+              subtitle: const Text('Want to know who likes you?'),
+              leading: const Icon(Icons.favorite_border_outlined),
+              trailing: const Icon(
+                Icons.arrow_right_rounded,
+                size: 32,
+              ),
+              onTap: () => debugPrint('Item 2'),
+            ),
+          ],
+        ),
       ),
-    );
-  }
-}
+    ),
+    Padding(
+      padding: const EdgeInsets.all(24.0),
+      child: SleekTheme(
+        child: Settings(
+          label: 'Sleek Theme Settings',
+          children: [
+            ListTile(
+              visualDensity: VisualDensity.compact,
+              title: const Text('Notifications'),
+              subtitle: const Text('Receive notifications'),
+              leading: const Icon(Icons.notifications_outlined),
+              trailing: const Icon(Icons.chevron_right_rounded),
+              onTap: () => debugPrint('Item 1'),
+            ),
+            ListTile(
+              visualDensity: VisualDensity.compact,
+              title: const Text('Favorites'),
+              subtitle: const Text('Want to know who likes you?'),
+              leading: const Icon(Icons.favorite_border_outlined),
+              trailing: const Icon(
+                Icons.arrow_right_rounded,
+                size: 32,
+              ),
+              onTap: () => debugPrint('Item 2'),
+            ),
+          ],
+        ),
+      ),
+    ),
+```
 
-class SettingItems extends StatelessWidget {
-  const SettingItems({
-    super.key,
-    required this.label,
-  });
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Settings(
-      label: label,
-      children: [
-        ListTile(
-          visualDensity: VisualDensity.compact,
-          title: const Text('Notifications'),
-          subtitle: const Text('Receive notifications'),
-          leading: const Icon(Icons.notifications_outlined),
-          trailing: const Icon(Icons.chevron_right_rounded),
-          onTap: () => debugPrint('Item 1'),
+            '''),
+            ),
+          ],
         ),
-        ListTile(
-          visualDensity: VisualDensity.compact,
-          title: const Text('Favorites'),
-          subtitle: const Text('Want to know who likes you?'),
-          leading: const Icon(Icons.favorite_border_outlined),
-          trailing: const Icon(
-            Icons.arrow_right_rounded,
-            size: 32,
-          ),
-          onTap: () => debugPrint('Item 2'),
-        ),
-        ListTile(
-          title: const Text('Privacy Policy'),
-          leading: const Icon(Icons.shield_outlined),
-          trailing: const Icon(Icons.arrow_circle_right_outlined),
-          onTap: () => debugPrint('Item 3'),
-        ),
-      ],
+      ),
     );
   }
 }

@@ -109,32 +109,14 @@ class SleekThemeData {
           },
         ),
       ),
-      radioTheme: const RadioThemeData(),
-      switchTheme: SwitchThemeData(
-        trackOutlineWidth: WidgetStateProperty.all(
-          0,
-        ),
-        thumbColor: WidgetStateProperty.resolveWith<Color?>(
-          (Set<WidgetState> states) {
-            if (states.contains(WidgetState.disabled)) {
-              return theme.colorScheme.outlineVariant;
-            }
-            return theme.colorScheme.inversePrimary;
-          },
-        ),
-        trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
-        trackColor: WidgetStateProperty.all(
-          containerBackgroundColor(context),
-        ),
-      ),
-      toggleButtonsTheme: ToggleButtonsThemeData(
-        borderColor: Colors.transparent,
-        selectedBorderColor: Colors.transparent,
-        disabledBorderColor: Colors.transparent,
-        splashColor: containerBackgroundColor(context),
-        fillColor: theme.colorScheme.inversePrimary,
-        borderRadius: BorderRadius.circular(8),
-      ),
+
+      /// Note that the [dividerColor] is used to determine the name of the Theme.
+      /// So, don't change this.
+      /// And to know if it's sleek theme, then use like below
+      /// ```dart
+      /// final isSleekTheme = Theme.of(context).dividerColor == Theme.of(context).colorScheme.onPrimaryContainer;
+      /// ```
+      dividerColor: theme.colorScheme.onPrimaryContainer,
 
       /// dropdownmenu, anchormenu, menubar
       menuTheme: MenuThemeData(
@@ -334,6 +316,33 @@ class SleekThemeData {
       //   elevation: 0,
       // ),
       // ),
+
+      radioTheme: const RadioThemeData(),
+      switchTheme: SwitchThemeData(
+        trackOutlineWidth: WidgetStateProperty.all(
+          0,
+        ),
+        thumbColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return theme.colorScheme.outlineVariant;
+            }
+            return theme.colorScheme.inversePrimary;
+          },
+        ),
+        trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
+        trackColor: WidgetStateProperty.all(
+          containerBackgroundColor(context),
+        ),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        borderColor: Colors.transparent,
+        selectedBorderColor: Colors.transparent,
+        disabledBorderColor: Colors.transparent,
+        splashColor: containerBackgroundColor(context),
+        fillColor: theme.colorScheme.inversePrimary,
+        borderRadius: BorderRadius.circular(8),
+      ),
       segmentedButtonTheme: theme.segmentedButtonTheme.copyWith(
         style: SegmentedButton.styleFrom(
           // The idea of sleek design is solid, unbordered. However,

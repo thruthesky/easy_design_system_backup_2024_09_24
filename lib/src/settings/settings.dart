@@ -6,16 +6,58 @@ class Settings extends StatelessWidget {
     required this.children,
     required this.label,
     this.indent = false,
-    this.thickness,
   });
 
   final List<Widget> children;
   final String label;
   final bool indent;
-  final double? thickness;
-
   @override
   Widget build(BuildContext context) {
+    final isSleekTheme = Theme.of(context).dividerColor ==
+        Theme.of(context).colorScheme.onPrimaryContainer;
+
+    double? thickness;
+    double? height;
+    double? borderRadius;
+
+    if (isSleekTheme) {
+      thickness = 0;
+      height = 0;
+      borderRadius = 24;
+    }
+    Widget card = Card(
+      margin: EdgeInsets.zero,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ListTileTheme(
+            child: ListView.separated(
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              primary: false,
+              physics: const NeverScrollableScrollPhysics(),
+              separatorBuilder: (context, index) => Divider(
+                indent: 16,
+                endIndent: 16,
+                height: height ?? 2,
+                thickness: thickness ?? 1.8,
+                color: Theme.of(context).dividerColor,
+              ),
+              itemCount: children.length,
+              itemBuilder: (context, index) => children[index],
+            ),
+          ),
+        ],
+      ),
+    );
+
+    if (isSleekTheme) {
+      card = ClipRRect(
+        borderRadius: BorderRadius.circular(borderRadius!),
+        child: Container(color: Colors.blue, child: card),
+      );
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -24,30 +66,7 @@ class Settings extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Text(label),
         ),
-        Card(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ListTileTheme(
-                child: ListView.separated(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  primary: false,
-                  physics: const NeverScrollableScrollPhysics(),
-                  separatorBuilder: (context, index) => Divider(
-                    indent: 16,
-                    endIndent: 16,
-                    height: 2,
-                    thickness: thickness ?? 1.8,
-                    color: Theme.of(context).dividerColor,
-                  ),
-                  itemCount: children.length,
-                  itemBuilder: (context, index) => children[index],
-                ),
-              ),
-            ],
-          ),
-        ),
+        card,
       ],
     );
   }
