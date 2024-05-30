@@ -25,7 +25,7 @@ import 'package:example/screens/list_view/sleek.list_view.screen.dart';
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
 import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
 import 'package:example/screens/navigation_rail.dart/navigation_rail.screen.dart';
-import 'package:example/screens/picker/birthday.picker.screen.dart';
+import 'package:example/screens/birthdate_picker/birthdate.picker.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
 import 'package:example/screens/segmented_button/segmented_button.dart';
 import 'package:example/screens/setting/setting.screen.dart';
@@ -54,7 +54,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
     const SearchItem(name: "AppBar", screen: AppBarScreen()),
     const SearchItem(name: 'Badge', screen: BadgeScreen()),
-    const SearchItem(name: 'BirthdayPicker', screen: BirthdayPickerScreen()),
+    const SearchItem(name: 'BirthdayPicker', screen: BirthdatePickerScreen()),
     const SearchItem(name: 'BottomAppBar', screen: BottomAppBarScreen()),
     const SearchItem(name: 'BottomSheet', screen: BottomSheetScreen()),
     const SearchItem(name: 'Buttons', screen: ButtonsScreen()),

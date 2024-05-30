@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BirthdayDialogPicker extends StatefulWidget {
-  const BirthdayDialogPicker({
+class BirthdatePickerDialog extends StatefulWidget {
+  const BirthdatePickerDialog({
     super.key,
     required this.onSelectedBirthDay,
     required this.onSelectedBirthMonth,
@@ -31,10 +31,10 @@ class BirthdayDialogPicker extends StatefulWidget {
   final String? birthdayHint;
 
   @override
-  State<BirthdayDialogPicker> createState() => _BirthdayPickerState();
+  State<BirthdatePickerDialog> createState() => _BirthdayPickerState();
 }
 
-class _BirthdayPickerState extends State<BirthdayDialogPicker> {
+class _BirthdayPickerState extends State<BirthdatePickerDialog> {
   int? birthYear;
   int? birthMonth;
   int? birthDay;
@@ -49,10 +49,15 @@ class _BirthdayPickerState extends State<BirthdayDialogPicker> {
   }
 
   decorate(Widget child) {
+    final isSleekTheme = Theme.of(context).dividerColor ==
+        Theme.of(context).colorScheme.onPrimaryContainer;
+
     return InputDecorator(
-      decoration: const InputDecoration(
-        border: OutlineInputBorder(),
-        contentPadding: EdgeInsets.only(right: 8),
+      decoration: InputDecoration(
+        fillColor:
+            isSleekTheme ? Theme.of(context).colorScheme.primaryFixedDim : null,
+        border: const OutlineInputBorder(),
+        contentPadding: const EdgeInsets.only(right: 8),
         isDense: true,
       ),
       child: DropdownButtonHideUnderline(child: child),
@@ -61,13 +66,14 @@ class _BirthdayPickerState extends State<BirthdayDialogPicker> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
-    print('disposed');
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final isSleekTheme = Theme.of(context).dividerColor ==
+        Theme.of(context).colorScheme.onPrimaryContainer;
+
     return AlertDialog(
       content: Column(
         mainAxisSize: MainAxisSize.min,
@@ -176,6 +182,11 @@ class _BirthdayPickerState extends State<BirthdayDialogPicker> {
           const SizedBox(height: 24),
           ElevatedButton(
             onPressed: widget.onSave,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: isSleekTheme
+                  ? Theme.of(context).colorScheme.primaryFixedDim
+                  : null,
+            ),
             child: const Text('Save'),
           ),
           const SizedBox(height: 24),

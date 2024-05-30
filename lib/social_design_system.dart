@@ -10,7 +10,7 @@ export 'src/entry/wave_carousel_entry/wave_up_down_clipper.dart';
 
 export 'src/extensions/build_context.extension.dart';
 
-export 'src/picker/birthday_dialog.picker.dart';
+export 'src/birthdate_picker/birthdate_picker.dialog.dart';
 
 export 'src/sleep_walker/sleep_walker.dart';
 

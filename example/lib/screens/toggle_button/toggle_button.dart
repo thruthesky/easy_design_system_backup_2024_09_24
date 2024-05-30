@@ -1,7 +1,5 @@
 import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:social_design_system/social_design_system.dart';
 
 class ToggleButtonScreen extends StatefulWidget {
