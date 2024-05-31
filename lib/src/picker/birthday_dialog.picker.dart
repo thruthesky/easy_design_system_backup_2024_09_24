@@ -46,6 +46,16 @@ class _BirthdayPickerState extends State<BirthdayDialogPicker> {
     birthDay = widget.initialBirthDay ?? 1;
     birthMonth = widget.initialBirthMonth ?? 1;
     birthYear = widget.initialBirthYear ?? 2000;
+
+    if (birthYear == 0) {
+      birthYear = 2000;
+    }
+    if (birthMonth == 0) {
+      birthMonth = 1;
+    }
+    if (birthDay == 0) {
+      birthDay = 1;
+    }
   }
 
   decorate(Widget child) {
@@ -57,13 +67,6 @@ class _BirthdayPickerState extends State<BirthdayDialogPicker> {
       ),
       child: DropdownButtonHideUnderline(child: child),
     );
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    print('disposed');
-    super.dispose();
   }
 
   @override

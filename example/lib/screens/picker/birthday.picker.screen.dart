@@ -33,7 +33,7 @@ class _BirthdayPickerScreenState extends State<BirthdayPickerScreen> {
                   onTap: () {
                     showDialog(
                       context: context,
-                      builder: (context) => ComicTheme(
+                      builder: (context) => SleekTheme(
                         child: BirthdayDialogPicker(
                           initialBirthDay: day,
                           initialBirthMonth: month,
