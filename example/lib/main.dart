@@ -25,6 +25,7 @@ import 'package:example/screens/list_view/sleek.list_view.screen.dart';
 import 'package:example/screens/navigation_drawer/navigation_drawer.screen.dart';
 import 'package:example/screens/navigation_bar/navigation_bar.screen.dart';
 import 'package:example/screens/navigation_rail.dart/navigation_rail.screen.dart';
+import 'package:example/screens/birthdate_picker/birthdate.picker.screen.dart';
 import 'package:example/screens/progress_indicator/progress_indicator.screen.dart';
 import 'package:example/screens/radio_button/radio_button.dart';
 import 'package:example/screens/search/search.screen.dart';
@@ -80,8 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (const String.fromEnvironment('MODE') == 'noe') {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (_) => const ComicLoginDemo()));
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => const BirthdatePickerScreen()));
       }
     });
   }
@@ -164,6 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Search Widget', const SearchScreen()),
           pushScreen("AppBar", const AppBarScreen()),
           pushScreen('Badge', const BadgeScreen()),
+
           pushScreen('BottomAppBar', const BottomAppBarScreen()),
           pushScreen('BottomSheet', const BottomSheetScreen()),
           pushScreen('Buttons', const ButtonsScreen()),
@@ -196,6 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pushScreen('Toggle Button', const ToggleButtonScreen()),
           const Divider(),
           const Text('Custom Widgets:'),
+          pushScreen('BirthdatePicker', const BirthdatePickerScreen()),
           pushScreen('ComicListView', const ComicListViewScreen()),
           pushScreen('SleekListView', const SleekListViewScreen()),
           pushScreen('Setting', const SettingScreen()),
