@@ -6,11 +6,14 @@ class Settings extends StatelessWidget {
     required this.children,
     required this.label,
     this.indent = false,
+    this.padding = const EdgeInsets.all(0),
   });
 
   final List<Widget> children;
   final String label;
   final bool indent;
+  final EdgeInsetsGeometry padding;
+
   @override
   Widget build(BuildContext context) {
     final isSleekTheme = Theme.of(context).dividerColor ==
@@ -58,16 +61,19 @@ class Settings extends StatelessWidget {
       );
     }
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(label),
-        ),
-        card,
-      ],
+    return Padding(
+      padding: padding,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(label),
+          ),
+          card,
+        ],
+      ),
     );
   }
 }
