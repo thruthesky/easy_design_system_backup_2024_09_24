@@ -85,7 +85,6 @@ class _BirthdayPickerState extends State<BirthdatePickerDialog> {
           ),
           const SizedBox(height: 24),
           Row(
-            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
                 flex: 28,
@@ -112,7 +111,6 @@ class _BirthdayPickerState extends State<BirthdatePickerDialog> {
                   ],
                 ),
               ),
-              // const SizedBox(width: 8.4),
               const Spacer(flex: 1),
               Expanded(
                 flex: 20,
@@ -143,7 +141,6 @@ class _BirthdayPickerState extends State<BirthdatePickerDialog> {
                   ],
                 ),
               ),
-              // const SizedBox(width: 8.4),
               const Spacer(flex: 1),
               Expanded(
                 flex: 20,
