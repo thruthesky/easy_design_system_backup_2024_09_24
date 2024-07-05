@@ -1,3 +1,7 @@
+## 0.0.19
+* Add. displaying current theme for easy reference.
+* Update. minor fix.
+
 ## 0.0.18
 * Add. BirthdatePicker
 * Update. minor works.

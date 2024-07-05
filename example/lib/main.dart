@@ -1,4 +1,4 @@
-import 'package:example/screens/color_scheme_new/color_scheme_new.screen.dart';
+import 'package:social_design_system/social_design_system.dart';
 import 'package:example/screens/demo/sleek/sleek.theme.screen.dart';
 import 'package:example/screens/demo/login/sleek_login.demo.dart';
 import 'package:example/screens/dialog/dialog.screen.dart';
@@ -93,122 +93,126 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        children: <Widget>[
-          const MarkdownBlock(data: '''
-# Social Design System
-
-- Social design system is an Elegant UI/UX library crafted specifically for building social like applications. This is an open source project that you can fork and make PR.
-- Developers must NOT do anything, must NOT learn anything, must NOT refer any document to use the social design system. It will just work. Just continue the way how you work.
-
-## Terms
-- `Basic widgets` means the widgets in material.dart.
-- `Visual component widget` is a widget that have a visual outloook on screen like a Text widget. While GestureDetector is not a visual component since it does not appear on the screen.
-'''),
-          const SizedBox(height: 16),
-          const Text("Demos:"),
-          const SizedBox(height: 8),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Flexible(
-                child: pushScreen(
-                  'Comic Theme',
-                  const ComicScreenDemoScreen(),
+      body: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          children: <Widget>[
+            const MarkdownBlock(data: '''
+      # Social Design System
+      
+      - Social design system is an Elegant UI/UX library crafted specifically for building social like applications. This is an open source project that you can fork and make PR.
+      - Developers must NOT do anything, must NOT learn anything, must NOT refer any document to use the social design system. It will just work. Just continue the way how you work.
+      
+      ## Terms
+      - `Basic widgets` means the widgets in material.dart.
+      - `Visual component widget` is a widget that have a visual outloook on screen like a Text widget. While GestureDetector is not a visual component since it does not appear on the screen.
+      '''),
+            const SizedBox(height: 16),
+            const Text("Demos:"),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: pushScreen(
+                    'Comic Theme',
+                    const ComicScreenDemoScreen(),
+                  ),
                 ),
-              ),
-              Flexible(
-                child: pushScreen(
-                  'Sleek Theme',
-                  const SleekScreenDemoScreen(),
+                Flexible(
+                  child: pushScreen(
+                    'Sleek Theme',
+                    const SleekScreenDemoScreen(),
+                  ),
                 ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Flexible(
-                child: pushScreen(
-                  'Comic Login',
-                  const ComicLoginDemo(),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: pushScreen(
+                    'Comic Login',
+                    const ComicLoginDemo(),
+                  ),
                 ),
-              ),
-              Flexible(
-                child: pushScreen(
-                  'Sleek Login',
-                  const SleekLoginDemo(),
+                Flexible(
+                  child: pushScreen(
+                    'Sleek Login',
+                    const SleekLoginDemo(),
+                  ),
                 ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Flexible(
-                child: pushScreen(
-                  'Comic Theme UI Widgets',
-                  const ComicThemeUiWidgetsScreen(),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: pushScreen(
+                    'Comic Theme UI Widgets',
+                    const ComicThemeUiWidgetsScreen(),
+                  ),
                 ),
-              ),
-              Flexible(
-                child: pushScreen(
-                  'Sleek Theme UI Widgets',
-                  const SleekThemeUiWidgetsScreen(),
+                Flexible(
+                  child: pushScreen(
+                    'Sleek Theme UI Widgets',
+                    const SleekThemeUiWidgetsScreen(),
+                  ),
                 ),
-              ),
-            ],
-          ),
+              ],
+            ),
 
-          const SizedBox(height: 24),
-          pushScreen('Search Widget', const SearchScreen()),
-          pushScreen("AppBar", const AppBarScreen()),
-          pushScreen('Badge', const BadgeScreen()),
+            const SizedBox(height: 24),
+            pushScreen('Search Widget', const SearchScreen()),
+            pushScreen("AppBar", const AppBarScreen()),
+            pushScreen('Badge', const BadgeScreen()),
 
-          pushScreen('BottomAppBar', const BottomAppBarScreen()),
-          pushScreen('BottomSheet', const BottomSheetScreen()),
-          pushScreen('Buttons', const ButtonsScreen()),
-          pushScreen('Card', const CardScreen()),
-          pushScreen('Checkbox', const CheckboxScreen()),
+            pushScreen('BottomAppBar', const BottomAppBarScreen()),
+            pushScreen('BottomSheet', const BottomSheetScreen()),
+            pushScreen('Buttons', const ButtonsScreen()),
+            pushScreen('Card', const CardScreen()),
+            pushScreen('Checkbox', const CheckboxScreen()),
 
-          // pushScreen('CheckboxListTile', const CheckboxListTileScreen()),
-          pushScreen('Chip', const ChipScreen()),
-          pushScreen('Dialog', const DialogScreen()),
-          pushScreen('Divider', const DividerScreen()),
-          pushScreen('Dropdown', const DropdownScreen()),
-          pushScreen(
-              'Floating Action Button', const FloatingActionButtonScreen()),
-          pushScreen('IconButton', const IconButtonScreen()),
-          pushScreen('ListTile', const ListTileScreen()),
-          pushScreen('NavigationBar', const NavigationBarScreen()),
-          pushScreen("NavigationDrawer", const NavigationDrawerScreen()),
-          pushScreen('NavigationRail', const NavigationRailScreen()),
-          pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
+            // pushScreen('CheckboxListTile', const CheckboxListTileScreen()),
+            pushScreen('Chip', const ChipScreen()),
+            pushScreen('Dialog', const DialogScreen()),
+            pushScreen('Divider', const DividerScreen()),
+            pushScreen('Dropdown', const DropdownScreen()),
+            pushScreen(
+                'Floating Action Button', const FloatingActionButtonScreen()),
+            pushScreen('IconButton', const IconButtonScreen()),
+            pushScreen('ListTile', const ListTileScreen()),
+            pushScreen('NavigationBar', const NavigationBarScreen()),
+            pushScreen("NavigationDrawer", const NavigationDrawerScreen()),
+            pushScreen('NavigationRail', const NavigationRailScreen()),
+            pushScreen('Progress Indicator', const ProgressIndicatorScreen()),
 
-          pushScreen('Radio Button', const RadioButtonScreen()),
-          pushScreen('Segmented Button', const SegmentedButtonScreen()),
-          pushScreen('SnackBar', const SnackBarScreen()),
+            pushScreen('Radio Button', const RadioButtonScreen()),
+            pushScreen('Segmented Button', const SegmentedButtonScreen()),
+            pushScreen('SnackBar', const SnackBarScreen()),
 
-          pushScreen('Switch', const SwitchScreen()),
-          pushScreen('TabBar', const TabBarScreen()),
-          pushScreen('TextFields', const TextFieldScreen()),
-          pushScreen('TextFormField', const TextFormFieldScreen()),
+            pushScreen('Switch', const SwitchScreen()),
+            pushScreen('TabBar', const TabBarScreen()),
+            pushScreen('TextFields', const TextFieldScreen()),
+            pushScreen('TextFormField', const TextFormFieldScreen()),
 
-          pushScreen('Toggle Button', const ToggleButtonScreen()),
-          const Divider(),
-          const Text('Custom Widgets:'),
-          pushScreen('BirthdatePicker', const BirthdatePickerScreen()),
-          pushScreen('ComicListView', const ComicListViewScreen()),
-          pushScreen('SleekListView', const SleekListViewScreen()),
-          pushScreen('Setting', const SettingScreen()),
-          pushScreen('Basic Carousel Entry', const BasicCarouselEntryScreen()),
-          pushScreen('Wave Carousel Entry', const WaveCarouselEntryScreen()),
-          pushScreen('Round Carousel Entry', const RoundCarouselEntryScreen()),
-          pushScreen('Sleep Walker', const SleepWalkerScreen()),
-          // pushScreen('Color scheme', const ColorSchemeScreen()),
-          pushScreen('Color scheme new', const ColorSchemeNewScreen()),
-        ],
+            pushScreen('Toggle Button', const ToggleButtonScreen()),
+            const Divider(),
+            const Text('Custom Widgets:'),
+            pushScreen('BirthdatePicker', const BirthdatePickerScreen()),
+            pushScreen('ComicListView', const ComicListViewScreen()),
+            pushScreen('SleekListView', const SleekListViewScreen()),
+            pushScreen('Setting', const SettingScreen()),
+            pushScreen(
+                'Basic Carousel Entry', const BasicCarouselEntryScreen()),
+            pushScreen('Wave Carousel Entry', const WaveCarouselEntryScreen()),
+            pushScreen(
+                'Round Carousel Entry', const RoundCarouselEntryScreen()),
+            pushScreen('Sleep Walker', const SleepWalkerScreen()),
+            // pushScreen('Color scheme', const ColorSchemeScreen()),
+            pushScreen('Current theme config', const CurrentThemeScreen()),
+          ],
+        ),
       ),
     );
   }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// Settings
+///
+/// A widget that displays a list of settings.
 class Settings extends StatelessWidget {
   const Settings({
     super.key,

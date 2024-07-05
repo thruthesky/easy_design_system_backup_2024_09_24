@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class ColorSchemeNewScreen extends StatefulWidget {
-  static const String routeName = '/ColorScheme';
-  const ColorSchemeNewScreen({super.key});
+class CurrentThemeScreen extends StatefulWidget {
+  static const String routeName = '/CurrentThemeScreen';
+  const CurrentThemeScreen({super.key});
 
   @override
-  State<ColorSchemeNewScreen> createState() => _ColorSchemeNewScreenState();
+  State<CurrentThemeScreen> createState() => _CurrentThemeScreenState();
 }
 
-class _ColorSchemeNewScreenState extends State<ColorSchemeNewScreen> {
+class _CurrentThemeScreenState extends State<CurrentThemeScreen> {
   @override
   Widget build(BuildContext context) {
     final List<

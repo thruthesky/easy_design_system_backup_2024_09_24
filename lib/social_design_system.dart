@@ -18,3 +18,5 @@ export 'src/themes/sleek/sleek.theme.dart';
 export 'src/themes/sleek/sleek.list_view.dart';
 
 export 'src/settings/settings.dart';
+
+export 'src/current_theme/current_theme.screen.dart';

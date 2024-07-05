@@ -6,7 +6,6 @@ import 'package:example/screens/buttons/buttons.screen.dart';
 import 'package:example/screens/card/card.screen.dart';
 import 'package:example/screens/checkbox/checkbox.screen.dart';
 import 'package:example/screens/chip/chip.screen.dart';
-import 'package:example/screens/color_scheme_new/color_scheme_new.screen.dart';
 import 'package:example/screens/demo/comic/comic.theme.screen.dart';
 import 'package:example/screens/demo/login/sleek_login.demo.dart';
 import 'package:example/screens/demo/sleek/sleek.theme.screen.dart';
@@ -93,7 +92,7 @@ class _SearchScreenState extends State<SearchScreen> {
     const SearchItem(
         name: 'Round Carousel Entry', screen: RoundCarouselEntryScreen()),
     const SearchItem(name: 'Sleep Walker', screen: SleepWalkerScreen()),
-    const SearchItem(name: 'Color scheme', screen: ColorSchemeNewScreen()),
+    const SearchItem(name: 'Color scheme', screen: CurrentThemeScreen()),
   ];
 
   List<SearchItem> _result = [];

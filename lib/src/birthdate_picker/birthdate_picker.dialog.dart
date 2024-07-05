@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// Birthdate picker dialog
+///
+/// TODO name it as `DatePickerDialog` for more general use
 class BirthdatePickerDialog extends StatefulWidget {
   const BirthdatePickerDialog({
     super.key,
