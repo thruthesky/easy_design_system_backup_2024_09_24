@@ -82,6 +82,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int selectedIndex = 0;
   bool wideScreen = false;
+  bool showSideMenu = false;
 
   late Widget content;
 
@@ -114,9 +115,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (wideScreen)
+            if (wideScreen || showSideMenu)
               SingleChildScrollView(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text('Menu'),
                     const Divider(),
@@ -294,14 +296,24 @@ class _MyHomePageState extends State<MyHomePage> {
           : NavigationBar(
               elevation: 0,
               backgroundColor: Colors.white,
-              destinations: destinations.map<NavigationDestination>((d) {
-                return NavigationDestination(
-                  icon: Icon(d.icon),
-                  label: d.label,
-                );
-              }).toList(),
+              destinations: const [
+                NavigationDestination(
+                  icon: Icon(Icons.home_outlined),
+                  label: 'Home',
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.menu_outlined),
+                  label: 'Menu',
+                ),
+              ],
               selectedIndex: selectedIndex,
               onDestinationSelected: (index) {
+                if (index == 0) {
+                  content = const HomeContent();
+                  showSideMenu = false;
+                } else if (index == 1) {
+                  showSideMenu = true;
+                }
                 setState(() {
                   selectedIndex = index;
                 });
@@ -317,27 +329,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return ElevatedButton(
       onPressed: () {
         content = contentBuilder();
+        showSideMenu = false;
         setState(() {});
       },
       child: Text(label),
     );
   }
-
-//   Widget pushScreen(
-//     String title, {
-//     required Function builder,
-//   }
-//       // Widget screen,
-//       ) {
-//     return ElevatedButton(
-//       onPressed: () => Navigator.of(context).push(
-//         MaterialPageRoute(
-//           contentBuilder: (_) => builder(),
-//         ),
-//       ),
-//       child: Text(title),
-//     );
-//   }
 }
 
 class WidgetItem {
