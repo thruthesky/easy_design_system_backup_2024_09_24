@@ -5,54 +5,6 @@ const borderThickness = 2.0;
 Color comicContainerBackgroundColor(BuildContext context) =>
     Theme.of(context).colorScheme.surface;
 
-class ComicIconButtonThemeData {
-  ComicIconButtonThemeData();
-
-  static ThemeData of(BuildContext context) {
-    final theme = Theme.of(context);
-    return ThemeData(
-      iconButtonTheme: IconButtonThemeData(
-        style: ButtonStyle(
-          shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-              side: BorderSide(
-                color: theme.colorScheme.outline,
-                width: borderThickness,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class ComicTextButtonThemeData {
-  // ComicTextButtonThemeData();
-
-  static ThemeData of(BuildContext context) {
-    final theme = Theme.of(context);
-    return ThemeData(
-      textButtonTheme: TextButtonThemeData(
-        style: ButtonStyle(
-          foregroundColor: WidgetStateProperty.all(theme.colorScheme.onSurface),
-          backgroundColor: WidgetStateProperty.all(theme.colorScheme.surface),
-          shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-              side: BorderSide(
-                width: borderThickness,
-                color: theme.colorScheme.secondary,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 /// ComicThemeData
 ///
 /// [ComicThemeData] is a class that holds the color scheme for the Comic theme.
