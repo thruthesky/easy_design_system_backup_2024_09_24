@@ -730,10 +730,10 @@ _1940: x0 => x0.navigator,
 _1947: x0 => x0.status,
 _1948: (x0,x1) => x0.responseType = x1,
 _1950: x0 => x0.response,
-_3749: () => globalThis.window,
-_3829: x0 => x0.navigator,
-_4310: x0 => x0.userAgent,
-_14593: () => globalThis.window.flutterCanvasKit
+_3808: () => globalThis.window,
+_3887: x0 => x0.navigator,
+_4260: x0 => x0.userAgent,
+_14785: () => globalThis.window.flutterCanvasKit
     };
 
     const baseImports = {
