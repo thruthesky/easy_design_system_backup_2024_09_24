@@ -1,3 +1,7 @@
+import 'package:example/contents/home.content.dart';
+import 'package:example/contents/text.content.dart';
+import 'package:example/nav_bar_destination.dart';
+import 'package:example/screens/color_scheme/color_scheme.screen.dart';
 import 'package:social_design_system/social_design_system.dart';
 import 'package:example/screens/demo/sleek/sleek.theme.screen.dart';
 import 'package:example/screens/demo/login/sleek_login.demo.dart';
@@ -61,7 +65,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Social Design System Demo Home Page'),
+      home: const MyHomePage(title: 'Social Design System'),
     );
   }
 }
@@ -76,9 +80,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int selectedIndex = 0;
+  bool wideScreen = false;
+
+  late Widget content;
+
   @override
   void initState() {
     super.initState();
+    content = const HomeContent();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (const String.fromEnvironment('MODE') == 'noe') {
         Navigator.of(context).push(
@@ -88,165 +98,246 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final double width = MediaQuery.of(context).size.width;
+    wideScreen = width > 600;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
       body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          children: <Widget>[
-            const MarkdownBlock(data: '''
-      # Social Design System
-      
-      - Social design system is an Elegant UI/UX library crafted specifically for building social like applications. This is an open source project that you can fork and make PR.
-      - Developers must NOT do anything, must NOT learn anything, must NOT refer any document to use the social design system. It will just work. Just continue the way how you work.
-      
-      ## Terms
-      - `Basic widgets` means the widgets in material.dart.
-      - `Visual component widget` is a widget that have a visual outloook on screen like a Text widget. While GestureDetector is not a visual component since it does not appear on the screen.
-      '''),
-            const SizedBox(height: 16),
-            const Text("Demos:"),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(
-                  child: pushScreen(
-                    'Comic Theme',
-                    builder: () => const ComicScreenDemoScreen(),
-                  ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (wideScreen)
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const Text('Menu'),
+                    const Divider(),
+
+                    menu(
+                      label: 'Comic Theme',
+                      contentBuilder: () => const ComicScreenDemoScreen(),
+                    ),
+
+                    menu(
+                      label: 'Sleek Theme',
+                      contentBuilder: () => const SleekScreenDemoScreen(),
+                    ),
+
+                    menu(
+                      label: 'Comic Login',
+                      contentBuilder: () => const ComicLoginDemo(),
+                    ),
+
+                    menu(
+                      label: 'Sleek Login',
+                      contentBuilder: () => const SleekLoginDemo(),
+                    ),
+
+                    menu(
+                      label: 'Comic Theme UI Widgets',
+                      contentBuilder: () => const ComicThemeUiWidgetsScreen(),
+                    ),
+
+                    menu(
+                      label: 'Sleek Theme UI Widgets',
+                      contentBuilder: () => const SleekThemeUiWidgetsScreen(),
+                    ),
+                    menu(
+                      label: 'Home',
+                      contentBuilder: () => const HomeContent(),
+                    ),
+                    menu(
+                      label: 'Text',
+                      contentBuilder: () => const TextContent(),
+                    ),
+
+                    const SizedBox(height: 24),
+                    menu(
+                        label: 'Search Widget',
+                        contentBuilder: () => const SearchScreen()),
+                    menu(
+                        label: "AppBar",
+                        contentBuilder: () => const AppBarScreen()),
+                    menu(
+                        label: 'Badge',
+                        contentBuilder: () => const BadgeScreen()),
+
+                    menu(
+                        label: 'BottomAppBar',
+                        contentBuilder: () => const BottomAppBarScreen()),
+                    menu(
+                        label: 'BottomSheet',
+                        contentBuilder: () => const BottomSheetScreen()),
+                    menu(
+                        label: 'Buttons',
+                        contentBuilder: () => const ButtonsScreen()),
+                    menu(
+                        label: 'Card',
+                        contentBuilder: () => const CardScreen()),
+                    menu(
+                        label: 'Checkbox',
+                        contentBuilder: () => const CheckboxScreen()),
+
+                    // menu(label: 'CheckboxListTile', contentBuilder: () => const CheckboxListTileScreen()),
+                    menu(
+                        label: 'Chip',
+                        contentBuilder: () => const ChipScreen()),
+                    menu(
+                        label: 'Dialog',
+                        contentBuilder: () => const DialogScreen()),
+                    menu(
+                        label: 'Divider',
+                        contentBuilder: () => const DividerScreen()),
+                    menu(
+                        label: 'Dropdown',
+                        contentBuilder: () => const DropdownScreen()),
+                    menu(
+                        label: 'Floating Action Button',
+                        contentBuilder: () =>
+                            const FloatingActionButtonScreen()),
+                    menu(
+                        label: 'IconButton',
+                        contentBuilder: () => const IconButtonScreen()),
+                    menu(
+                        label: 'ListTile',
+                        contentBuilder: () => const ListTileScreen()),
+                    menu(
+                        label: 'NavigationBar',
+                        contentBuilder: () => const NavigationBarScreen()),
+                    menu(
+                        label: "NavigationDrawer",
+                        contentBuilder: () => const NavigationDrawerScreen()),
+                    menu(
+                        label: 'NavigationRail',
+                        contentBuilder: () => const NavigationRailScreen()),
+                    menu(
+                        label: 'Progress Indicator',
+                        contentBuilder: () => const ProgressIndicatorScreen()),
+
+                    menu(
+                        label: 'Radio Button',
+                        contentBuilder: () => const RadioButtonScreen()),
+                    menu(
+                        label: 'Segmented Button',
+                        contentBuilder: () => const SegmentedButtonScreen()),
+                    menu(
+                        label: 'SnackBar',
+                        contentBuilder: () => const SnackBarScreen()),
+
+                    menu(
+                        label: 'Switch',
+                        contentBuilder: () => const SwitchScreen()),
+                    menu(
+                        label: 'TabBar',
+                        contentBuilder: () => const TabBarScreen()),
+                    menu(
+                        label: 'TextFields',
+                        contentBuilder: () => const TextFieldScreen()),
+                    menu(
+                        label: 'TextFormField',
+                        contentBuilder: () => const TextFormFieldScreen()),
+
+                    menu(
+                        label: 'Toggle Button',
+                        contentBuilder: () => const ToggleButtonScreen()),
+                    const Divider(),
+                    const Text('Custom Widgets:'),
+                    menu(
+                        label: 'BirthdatePicker',
+                        contentBuilder: () => const BirthdatePickerScreen()),
+                    menu(
+                        label: 'ComicListView',
+                        contentBuilder: () => const ComicListViewScreen()),
+                    menu(
+                        label: 'SleekListView',
+                        contentBuilder: () => const SleekListViewScreen()),
+                    menu(
+                        label: 'Setting',
+                        contentBuilder: () => const SettingScreen()),
+                    menu(
+                        label: 'Basic Carousel Entry',
+                        contentBuilder: () => const BasicCarouselEntryScreen()),
+                    menu(
+                        label: 'Wave Carousel Entry',
+                        contentBuilder: () => const WaveCarouselEntryScreen()),
+                    menu(
+                        label: 'Round Carousel Entry',
+                        contentBuilder: () => const RoundCarouselEntryScreen()),
+                    menu(
+                        label: 'Sleep Walker',
+                        contentBuilder: () => const SleepWalkerScreen()),
+                    menu(
+                        label: 'Color scheme',
+                        contentBuilder: () => const ColorSchemeScreen()),
+                    menu(
+                        label: 'Current theme config',
+                        contentBuilder: () => const CurrentThemeScreen()),
+                  ],
                 ),
-                Flexible(
-                  child: pushScreen(
-                    'Sleek Theme',
-                    builder: () => const SleekScreenDemoScreen(),
-                  ),
-                ),
-              ],
+              ),
+            Expanded(
+              child: content,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(
-                  child: pushScreen(
-                    'Comic Login',
-                    builder: () => const ComicLoginDemo(),
-                  ),
-                ),
-                Flexible(
-                  child: pushScreen(
-                    'Sleek Login',
-                    builder: () => const SleekLoginDemo(),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(
-                  child: pushScreen(
-                    'Comic Theme UI Widgets',
-                    builder: () => const ComicThemeUiWidgetsScreen(),
-                  ),
-                ),
-                Flexible(
-                  child: pushScreen(
-                    'Sleek Theme UI Widgets',
-                    builder: () => const SleekThemeUiWidgetsScreen(),
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 24),
-            pushScreen('Search Widget', builder: () => const SearchScreen()),
-            pushScreen("AppBar", builder: () => const AppBarScreen()),
-            pushScreen('Badge', builder: () => const BadgeScreen()),
-
-            pushScreen('BottomAppBar',
-                builder: () => const BottomAppBarScreen()),
-            pushScreen('BottomSheet', builder: () => const BottomSheetScreen()),
-            pushScreen('Buttons', builder: () => const ButtonsScreen()),
-            pushScreen('Card', builder: () => const CardScreen()),
-            pushScreen('Checkbox', builder: () => const CheckboxScreen()),
-
-            // pushScreen('CheckboxListTile', builder: () => const CheckboxListTileScreen()),
-            pushScreen('Chip', builder: () => const ChipScreen()),
-            pushScreen('Dialog', builder: () => const DialogScreen()),
-            pushScreen('Divider', builder: () => const DividerScreen()),
-            pushScreen('Dropdown', builder: () => const DropdownScreen()),
-            pushScreen('Floating Action Button',
-                builder: () => const FloatingActionButtonScreen()),
-            pushScreen('IconButton', builder: () => const IconButtonScreen()),
-            pushScreen('ListTile', builder: () => const ListTileScreen()),
-            pushScreen('NavigationBar',
-                builder: () => const NavigationBarScreen()),
-            pushScreen("NavigationDrawer",
-                builder: () => const NavigationDrawerScreen()),
-            pushScreen('NavigationRail',
-                builder: () => const NavigationRailScreen()),
-            pushScreen('Progress Indicator',
-                builder: () => const ProgressIndicatorScreen()),
-
-            pushScreen('Radio Button',
-                builder: () => const RadioButtonScreen()),
-            pushScreen('Segmented Button',
-                builder: () => const SegmentedButtonScreen()),
-            pushScreen('SnackBar', builder: () => const SnackBarScreen()),
-
-            pushScreen('Switch', builder: () => const SwitchScreen()),
-            pushScreen('TabBar', builder: () => const TabBarScreen()),
-            pushScreen('TextFields', builder: () => const TextFieldScreen()),
-            pushScreen('TextFormField',
-                builder: () => const TextFormFieldScreen()),
-
-            pushScreen('Toggle Button',
-                builder: () => const ToggleButtonScreen()),
-            const Divider(),
-            const Text('Custom Widgets:'),
-            pushScreen('BirthdatePicker',
-                builder: () => const BirthdatePickerScreen()),
-            pushScreen('ComicListView',
-                builder: () => const ComicListViewScreen()),
-            pushScreen('SleekListView',
-                builder: () => const SleekListViewScreen()),
-            pushScreen('Setting', builder: () => const SettingScreen()),
-            pushScreen('Basic Carousel Entry',
-                builder: () => const BasicCarouselEntryScreen()),
-            pushScreen('Wave Carousel Entry',
-                builder: () => const WaveCarouselEntryScreen()),
-            pushScreen('Round Carousel Entry',
-                builder: () => const RoundCarouselEntryScreen()),
-            pushScreen('Sleep Walker',
-                builder: () => const SleepWalkerScreen()),
-            // pushScreen('Color scheme', builder: () => const ColorSchemeScreen()),
-            pushScreen('Current theme config',
-                builder: () => const CurrentThemeScreen()),
           ],
         ),
       ),
+      bottomNavigationBar: wideScreen
+          ? null
+          : NavigationBar(
+              elevation: 0,
+              backgroundColor: Colors.white,
+              destinations: destinations.map<NavigationDestination>((d) {
+                return NavigationDestination(
+                  icon: Icon(d.icon),
+                  label: d.label,
+                );
+              }).toList(),
+              selectedIndex: selectedIndex,
+              onDestinationSelected: (index) {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+            ),
     );
   }
 
-  Widget pushScreen(
-    String title, {
-    required Function builder,
-  }
-      // Widget screen,
-      ) {
+  menu({
+    required String label,
+    required Widget Function() contentBuilder,
+  }) {
     return ElevatedButton(
-      onPressed: () => Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => builder(),
-        ),
-      ),
-      child: Text(title),
+      onPressed: () {
+        content = contentBuilder();
+        setState(() {});
+      },
+      child: Text(label),
     );
   }
+
+//   Widget pushScreen(
+//     String title, {
+//     required Function builder,
+//   }
+//       // Widget screen,
+//       ) {
+//     return ElevatedButton(
+//       onPressed: () => Navigator.of(context).push(
+//         MaterialPageRoute(
+//           contentBuilder: (_) => builder(),
+//         ),
+//       ),
+//       child: Text(title),
+//     );
+//   }
 }
 
 class WidgetItem {
