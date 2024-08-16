@@ -1,3 +1,6 @@
+## 0.0.20
+* Update. Document update only.
+
 ## 0.0.19
 * Add. displaying current theme for easy reference.
 * Update. minor fix.
