@@ -83,3 +83,10 @@ For more details, please visit the [Social Design System document website](https
 - Fork and PR.
 - Leave your issues on the git repo.
 
+
+
+## How to build and run
+
+
+- Fork (or clone) the project.
+- Run the example project
