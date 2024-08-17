@@ -1,4 +1,5 @@
 import 'package:example/contents/comic_border.content.dart';
+import 'package:example/contents/comic_icon_button_theme_data.content.dart';
 import 'package:example/contents/home.content.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
 import 'package:easy_design_system/easy_design_system.dart';
@@ -113,226 +114,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (wideScreen || showSideMenu)
-              SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text('Menu'),
-                    const ComicTheme(
-                      child: SizedBox(
-                        width: 200,
-                        child: Divider(
-                          height: 24,
-                        ),
-                      ),
-                    ),
-
-                    menu(
-                      label: 'Home',
-                      contentBuilder: () => const HomeContent(),
-                    ),
-                    menu(
-                      label: 'Comic Theme',
-                      contentBuilder: () => const ComicScreenDemoScreen(),
-                    ),
-
-                    menu(
-                      label: 'Sleek Theme',
-                      contentBuilder: () => const SleekScreenDemoScreen(),
-                    ),
-
-                    menu(
-                      label: 'Comic Login',
-                      contentBuilder: () => const ComicLoginDemo(),
-                    ),
-
-                    menu(
-                      label: 'Sleek Login',
-                      contentBuilder: () => const SleekLoginDemo(),
-                    ),
-
-                    menu(
-                      label: 'Comic Theme UI Widgets',
-                      contentBuilder: () => const ComicThemeUiWidgetsScreen(),
-                    ),
-
-                    menu(
-                      label: 'Sleek Theme UI Widgets',
-                      contentBuilder: () => const SleekThemeUiWidgetsScreen(),
-                    ),
-
-                    const ComicTheme(
-                      child: SizedBox(
-                        width: 200,
-                        child: Divider(
-                          height: 24,
-                        ),
-                      ),
-                    ),
-
-                    menu(
-                        label: 'Search Widget',
-                        contentBuilder: () => const SearchScreen()),
-                    menu(
-                        label: "AppBar",
-                        contentBuilder: () => const AppBarScreen()),
-                    menu(
-                        label: 'Badge',
-                        contentBuilder: () => const BadgeScreen()),
-
-                    menu(
-                        label: 'BottomAppBar',
-                        contentBuilder: () => const BottomAppBarScreen()),
-                    menu(
-                        label: 'BottomSheet',
-                        contentBuilder: () => const BottomSheetScreen()),
-                    menu(
-                        label: 'Buttons',
-                        contentBuilder: () => const ButtonsScreen()),
-                    menu(
-                        label: 'Card',
-                        contentBuilder: () => const CardScreen()),
-                    menu(
-                        label: 'Checkbox',
-                        contentBuilder: () => const CheckboxScreen()),
-
-                    // menu(label: 'CheckboxListTile', contentBuilder: () => const CheckboxListTileScreen()),
-                    menu(
-                        label: 'Chip',
-                        contentBuilder: () => const ChipScreen()),
-                    menu(
-                        label: 'Dialog',
-                        contentBuilder: () => const DialogScreen()),
-                    menu(
-                        label: 'Divider',
-                        contentBuilder: () => const DividerScreen()),
-                    menu(
-                        label: 'Dropdown',
-                        contentBuilder: () => const DropdownScreen()),
-                    menu(
-                        label: 'Floating Action Button',
-                        contentBuilder: () =>
-                            const FloatingActionButtonScreen()),
-                    menu(
-                        label: 'IconButton',
-                        contentBuilder: () => const IconButtonScreen()),
-                    menu(
-                        label: 'ListTile',
-                        contentBuilder: () => const ListTileScreen()),
-                    menu(
-                        label: 'NavigationBar',
-                        contentBuilder: () => const NavigationBarScreen()),
-                    menu(
-                        label: "NavigationDrawer",
-                        contentBuilder: () => const NavigationDrawerScreen()),
-                    menu(
-                        label: 'NavigationRail',
-                        contentBuilder: () => const NavigationRailScreen()),
-                    menu(
-                        label: 'Progress Indicator',
-                        contentBuilder: () => const ProgressIndicatorScreen()),
-
-                    menu(
-                        label: 'Radio Button',
-                        contentBuilder: () => const RadioButtonScreen()),
-                    menu(
-                        label: 'Segmented Button',
-                        contentBuilder: () => const SegmentedButtonScreen()),
-                    menu(
-                        label: 'SnackBar',
-                        contentBuilder: () => const SnackBarScreen()),
-
-                    menu(
-                        label: 'Switch',
-                        contentBuilder: () => const SwitchScreen()),
-                    menu(
-                        label: 'TabBar',
-                        contentBuilder: () => const TabBarScreen()),
-                    menu(
-                        label: 'TextFields',
-                        contentBuilder: () => const TextFieldScreen()),
-                    menu(
-                        label: 'TextFormField',
-                        contentBuilder: () => const TextFormFieldScreen()),
-
-                    menu(
-                        label: 'Toggle Button',
-                        contentBuilder: () => const ToggleButtonScreen()),
-
-                    const Text('Custom Theme Data:'),
-                    const ComicTheme(
-                      child: SizedBox(
-                        width: 200,
-                        child: Divider(
-                          height: 24,
-                        ),
-                      ),
-                    ),
-
-                    menu(
-                      label: 'ComicIconButtonThemeData',
-                      contentBuilder: () => const Placeholder(),
-                    ),
-                    menu(
-                      label: 'SleekIconButtonThemeData',
-                      contentBuilder: () => const Placeholder(),
-                    ),
-                    menu(
-                      label: 'ComicTextButtonThemeData',
-                      contentBuilder: () => const Placeholder(),
-                    ),
-                    menu(
-                      label: 'ComicBorderThemeData',
-                      contentBuilder: () => const ComicBorderThemeDataScreen(),
-                    ),
-
-                    const Text('Custom Widgets:'),
-
-                    const ComicTheme(
-                      child: SizedBox(
-                        width: 200,
-                        child: Divider(
-                          height: 24,
-                        ),
-                      ),
-                    ),
-
-                    menu(
-                        label: 'BirthdatePicker',
-                        contentBuilder: () => const BirthdatePickerScreen()),
-                    menu(
-                        label: 'ComicListView',
-                        contentBuilder: () => const ComicListViewScreen()),
-                    menu(
-                        label: 'SleekListView',
-                        contentBuilder: () => const SleekListViewScreen()),
-                    menu(
-                        label: 'Setting',
-                        contentBuilder: () => const SettingScreen()),
-                    menu(
-                        label: 'Basic Carousel Entry',
-                        contentBuilder: () => const BasicCarouselEntryScreen()),
-                    menu(
-                        label: 'Wave Carousel Entry',
-                        contentBuilder: () => const WaveCarouselEntryScreen()),
-                    menu(
-                        label: 'Round Carousel Entry',
-                        contentBuilder: () => const RoundCarouselEntryScreen()),
-                    menu(
-                        label: 'Sleep Walker',
-                        contentBuilder: () => const SleepWalkerScreen()),
-                    menu(
-                        label: 'Color scheme',
-                        contentBuilder: () => const ColorSchemeScreen()),
-                    menu(
-                        label: 'Current theme config',
-                        contentBuilder: () => const CurrentThemeScreen()),
-                  ],
-                ),
-              ),
+            sideMenu(),
             Expanded(
-              child: SingleChildScrollView(child: content),
+              child: content,
             ),
           ],
         ),
@@ -362,17 +146,214 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  Widget sideMenu() {
+    if (!wideScreen && !showSideMenu) {
+      return const SizedBox.shrink();
+    }
+    return SingleChildScrollView(
+      child: Container(
+        padding: const EdgeInsets.only(right: 16.0),
+        width: 260,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Menu'),
+            const ComicTheme(
+              child: Divider(
+                height: 24,
+              ),
+            ),
+
+            menu(
+              label: 'Home',
+              contentBuilder: () => const HomeContent(),
+            ),
+            menu(
+              label: 'Comic Theme',
+              contentBuilder: () => const ComicScreenDemoScreen(),
+            ),
+
+            menu(
+              label: 'Sleek Theme',
+              contentBuilder: () => const SleekScreenDemoScreen(),
+            ),
+
+            menu(
+              label: 'Comic Login',
+              contentBuilder: () => const ComicLoginDemo(),
+            ),
+
+            menu(
+              label: 'Sleek Login',
+              contentBuilder: () => const SleekLoginDemo(),
+            ),
+
+            menu(
+              label: 'Comic Theme UI Widgets',
+              contentBuilder: () => const ComicThemeUiWidgetsScreen(),
+            ),
+
+            menu(
+              label: 'Sleek Theme UI Widgets',
+              contentBuilder: () => const SleekThemeUiWidgetsScreen(),
+            ),
+
+            const ComicTheme(
+              child: Divider(
+                height: 24,
+              ),
+            ),
+
+            menu(
+                label: 'Search Widget',
+                contentBuilder: () => const SearchScreen()),
+            menu(label: "AppBar", contentBuilder: () => const AppBarScreen()),
+            menu(label: 'Badge', contentBuilder: () => const BadgeScreen()),
+
+            menu(
+                label: 'BottomAppBar',
+                contentBuilder: () => const BottomAppBarScreen()),
+            menu(
+                label: 'BottomSheet',
+                contentBuilder: () => const BottomSheetScreen()),
+            menu(label: 'Buttons', contentBuilder: () => const ButtonsScreen()),
+            menu(label: 'Card', contentBuilder: () => const CardScreen()),
+            menu(
+                label: 'Checkbox',
+                contentBuilder: () => const CheckboxScreen()),
+
+            // menu(label: 'CheckboxListTile', contentBuilder: () => const CheckboxListTileScreen()),
+            menu(label: 'Chip', contentBuilder: () => const ChipScreen()),
+            menu(label: 'Dialog', contentBuilder: () => const DialogScreen()),
+            menu(label: 'Divider', contentBuilder: () => const DividerScreen()),
+            menu(
+                label: 'Dropdown',
+                contentBuilder: () => const DropdownScreen()),
+            menu(
+                label: 'Floating Action Button',
+                contentBuilder: () => const FloatingActionButtonScreen()),
+            menu(
+                label: 'IconButton',
+                contentBuilder: () => const IconButtonScreen()),
+            menu(
+                label: 'ListTile',
+                contentBuilder: () => const ListTileScreen()),
+            menu(
+                label: 'NavigationBar',
+                contentBuilder: () => const NavigationBarScreen()),
+            menu(
+                label: "NavigationDrawer",
+                contentBuilder: () => const NavigationDrawerScreen()),
+            menu(
+                label: 'NavigationRail',
+                contentBuilder: () => const NavigationRailScreen()),
+            menu(
+                label: 'Progress Indicator',
+                contentBuilder: () => const ProgressIndicatorScreen()),
+
+            menu(
+                label: 'Radio Button',
+                contentBuilder: () => const RadioButtonScreen()),
+            menu(
+                label: 'Segmented Button',
+                contentBuilder: () => const SegmentedButtonScreen()),
+            menu(
+                label: 'SnackBar',
+                contentBuilder: () => const SnackBarScreen()),
+
+            menu(label: 'Switch', contentBuilder: () => const SwitchScreen()),
+            menu(label: 'TabBar', contentBuilder: () => const TabBarScreen()),
+            menu(
+                label: 'TextFields',
+                contentBuilder: () => const TextFieldScreen()),
+            menu(
+                label: 'TextFormField',
+                contentBuilder: () => const TextFormFieldScreen()),
+
+            menu(
+                label: 'Toggle Button',
+                contentBuilder: () => const ToggleButtonScreen()),
+
+            const Text('Custom Theme Data:'),
+            const ComicTheme(
+              child: Divider(
+                height: 24,
+              ),
+            ),
+
+            menu(
+              label: 'ComicIconButtonThemeData',
+              contentBuilder: () => const ComicIconButtonThemeDataContent(),
+            ),
+            menu(
+              label: 'SleekIconButtonThemeData',
+              contentBuilder: () => const Placeholder(),
+            ),
+            menu(
+              label: 'ComicTextButtonThemeData',
+              contentBuilder: () => const Placeholder(),
+            ),
+            menu(
+              label: 'ComicBorderThemeData',
+              contentBuilder: () => const ComicBorderThemeDataScreen(),
+            ),
+
+            const Text('Custom Widgets:'),
+
+            const ComicTheme(
+              child: Divider(
+                height: 24,
+              ),
+            ),
+
+            menu(
+                label: 'BirthdatePicker',
+                contentBuilder: () => const BirthdatePickerScreen()),
+            menu(
+                label: 'ComicListView',
+                contentBuilder: () => const ComicListViewScreen()),
+            menu(
+                label: 'SleekListView',
+                contentBuilder: () => const SleekListViewScreen()),
+            menu(label: 'Setting', contentBuilder: () => const SettingScreen()),
+            menu(
+                label: 'Basic Carousel Entry',
+                contentBuilder: () => const BasicCarouselEntryScreen()),
+            menu(
+                label: 'Wave Carousel Entry',
+                contentBuilder: () => const WaveCarouselEntryScreen()),
+            menu(
+                label: 'Round Carousel Entry',
+                contentBuilder: () => const RoundCarouselEntryScreen()),
+            menu(
+                label: 'Sleep Walker',
+                contentBuilder: () => const SleepWalkerScreen()),
+            menu(
+                label: 'Color scheme',
+                contentBuilder: () => const ColorSchemeScreen()),
+            menu(
+                label: 'Current theme config',
+                contentBuilder: () => const CurrentThemeScreen()),
+          ],
+        ),
+      ),
+    );
+  }
+
   menu({
     required String label,
     required Widget Function() contentBuilder,
   }) {
-    return ElevatedButton(
-      onPressed: () {
+    return ListTile(
+      onTap: () {
         content = contentBuilder();
         showSideMenu = false;
         setState(() {});
       },
-      child: Text(label),
+      title: Text(
+        label,
+        style: const TextStyle(fontSize: 14),
+      ),
     );
   }
 }

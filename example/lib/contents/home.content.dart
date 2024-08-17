@@ -8,7 +8,6 @@ class HomeContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MarkdownBlock(data: '''
 # TODO
-- [ ] Name it as Easy Design System !
 - [ ] Add ComicBorder (or ComicBorderThemeData) to Container, Card;
 - [ ] Add example of ComicBorderThemeData, Comic/Sleek IconButtonThemeData, ComicTextThemeData;
 
