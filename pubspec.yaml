@@ -1,6 +1,6 @@
-name: social_design_system
+name: seasy_design_system
 description: "Elegant and easy-to-use UI/UX design library for Flutter, crafted to enhance your app's aesthetics and user experience."
-version: 0.0.20
+version: 0.0.21
 homepage: https://thruthesky.github.io/social_design_system
 environment:
   sdk: ">=3.3.3 <4.0.0"
