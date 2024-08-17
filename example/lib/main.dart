@@ -1,7 +1,7 @@
 import 'package:example/contents/comic_border.content.dart';
 import 'package:example/contents/home.content.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
-import 'package:social_design_system/social_design_system.dart';
+import 'package:easy_design_system/easy_design_system.dart';
 import 'package:example/screens/demo/sleek/sleek.theme.screen.dart';
 import 'package:example/screens/demo/login/sleek_login.demo.dart';
 import 'package:example/screens/dialog/dialog.screen.dart';

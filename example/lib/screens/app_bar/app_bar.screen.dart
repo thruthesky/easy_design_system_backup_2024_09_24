@@ -1,6 +1,6 @@
 import 'package:example/widgets/nothing_to_learn.dart';
 import 'package:flutter/material.dart';
-import 'package:social_design_system/social_design_system.dart';
+import 'package:easy_design_system/easy_design_system.dart';
 
 class AppBarScreen extends StatefulWidget {
   const AppBarScreen({super.key});

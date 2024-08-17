@@ -3,7 +3,7 @@ import 'package:example/screens/demo/sleek/widgets/check_box.demo.dart';
 import 'package:example/screens/demo/sleek/widgets/news.tile.dart';
 import 'package:example/screens/demo/sleek/widgets/post.tile.dart';
 import 'package:flutter/material.dart';
-import 'package:social_design_system/social_design_system.dart';
+import 'package:easy_design_system/easy_design_system.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({

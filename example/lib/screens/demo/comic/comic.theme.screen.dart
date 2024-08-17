@@ -4,7 +4,7 @@ import 'package:example/screens/demo/comic/profile.tab.dart';
 import 'package:example/screens/demo/comic/settings.tab.dart';
 import 'package:example/screens/demo/comic/status.dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:social_design_system/social_design_system.dart';
+import 'package:easy_design_system/easy_design_system.dart';
 
 class ComicScreenDemoScreen extends StatefulWidget {
   const ComicScreenDemoScreen({super.key});

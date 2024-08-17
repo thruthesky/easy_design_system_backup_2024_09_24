@@ -34,7 +34,7 @@ import 'package:example/screens/tab_bar/tab_bar.screen.dart';
 import 'package:example/screens/text_field/text_field.screen.dart';
 import 'package:example/screens/text_form_field/text_form_field.screen.dart';
 import 'package:flutter/material.dart';
-import 'package:social_design_system/social_design_system.dart';
+import 'package:easy_design_system/easy_design_system.dart';
 
 class SearchScreen extends StatefulWidget {
   static const String routeName = '/search_screen';
