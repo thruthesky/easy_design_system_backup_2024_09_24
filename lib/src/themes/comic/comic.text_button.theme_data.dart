@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:social_design_system/src/themes/comic/comic.theme.dart';
+import 'package:easy_design_system/src/themes/comic/comic.theme.dart';
 
 /// TextButton for Comic Theme
 ///

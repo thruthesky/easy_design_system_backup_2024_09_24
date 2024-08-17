@@ -1,5 +1,5 @@
 ## 0.0.21
-* Refactor. Rename social_design_system to easy_design_system
+* Refactor. Rename easy_design_system to easy_design_system
 * Refactor. Separate theme data into each file.
 * Refactor. Example document.
 

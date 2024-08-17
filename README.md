@@ -6,7 +6,7 @@ The Social design system is an Elegant and easy-to-use UI/UX design library for 
 
 ## Getting started
 
-To learn more, please visit the [Social Design System document website](https://thruthesky.github.io/social_design_system/).
+To learn more, please visit the [Social Design System document website](https://thruthesky.github.io/easy_design_system/).
 
 ## Entry Screens
 
@@ -14,7 +14,7 @@ Social Design System provides a starting screen for your app.
 
 | BasicCarouselEntry | WaveCarouselEntry | RoundCarouselEntry |
 | :---: | :---: | :---: |
-| ![BasicCarouselEntry](https://github.com/thruthesky/social_design_system/blob/main/docs/images/basic_carousel_entry.jpg?raw=true)| ![WaveCarouselEntry](https://github.com/thruthesky/social_design_system/blob/main/docs/images/wave_carousel_entry.jpg?raw=true)| ![RoundCarouselEntry](https://github.com/thruthesky/social_design_system/blob/main/docs/images/round_carousel_entry.jpg?raw=true)|
+| ![BasicCarouselEntry](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/basic_carousel_entry.jpg?raw=true)| ![WaveCarouselEntry](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/wave_carousel_entry.jpg?raw=true)| ![RoundCarouselEntry](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/round_carousel_entry.jpg?raw=true)|
 
 ## Demos
 
@@ -22,11 +22,11 @@ Here are some demos of the Social Design System (SDS).
 
 | Comic Theme   | Sleek Theme                                                |
 | :---: | :---: | 
-| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.comic.home.screen.jpg?raw=true) |  ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.sleek.home.screen.jpg?raw=true) |
-| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.comic.login.screen.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/demo.sleek.login.screen.jpg?raw=true)|
-| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/comic.widgets.tab_1.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/sleek.widgets.tab_1.jpg?raw=true) |
-| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/comic.widgets.tab_2.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/sleek.widgets.tab_2.jpg?raw=true) |
-| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/comic.widgets.tab_3.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/social_design_system/blob/main/docs/images/sleek.widgets.tab_3.jpg?raw=true) |
+| ![DemoScreen](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/demo.comic.home.screen.jpg?raw=true) |  ![DemoScreen](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/demo.sleek.home.screen.jpg?raw=true) |
+| ![DemoScreen](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/demo.comic.login.screen.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/demo.sleek.login.screen.jpg?raw=true)|
+| ![DemoScreen](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/comic.widgets.tab_1.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/sleek.widgets.tab_1.jpg?raw=true) |
+| ![DemoScreen](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/comic.widgets.tab_2.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/sleek.widgets.tab_2.jpg?raw=true) |
+| ![DemoScreen](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/comic.widgets.tab_3.jpg?raw=true)| ![DemoScreen](https://github.com/thruthesky/easy_design_system/blob/main/docs/images/sleek.widgets.tab_3.jpg?raw=true) |
 
 
 ## Usage
@@ -62,7 +62,7 @@ const ComicTheme(
 ),
 ```
 
-For more details, please visit the [Social Design System document website](https://thruthesky.github.io/social_design_system/)
+For more details, please visit the [Social Design System document website](https://thruthesky.github.io/easy_design_system/)
 
 ## Things to learn
 

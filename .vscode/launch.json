@@ -53,13 +53,13 @@
       "deviceId": "920A2E68-9FB9-47F5-9705-C023218D340B"
     },
     {
-      "name": "social_design_system (profile mode)",
+      "name": "easy_design_system (profile mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "profile"
     },
     {
-      "name": "social_design_system (release mode)",
+      "name": "easy_design_system (release mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "release"

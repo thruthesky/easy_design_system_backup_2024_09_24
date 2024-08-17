@@ -1,7 +1,7 @@
-name: seasy_design_system
+name: easy_design_system
 description: "Elegant and easy-to-use UI/UX design library for Flutter, crafted to enhance your app's aesthetics and user experience."
 version: 0.0.21
-homepage: https://thruthesky.github.io/social_design_system
+homepage: https://thruthesky.github.io/easy_design_system
 environment:
   sdk: ">=3.3.3 <4.0.0"
   flutter: ">=1.17.0"
@@ -20,8 +20,8 @@ dev_dependencies:
 
 flutter:
 
-repository: https://github.com/thruthesky/social_design_system
-issue_tracker: https://github.com/thruthesky/social_design_system/issues
+repository: https://github.com/thruthesky/easy_design_system
+issue_tracker: https://github.com/thruthesky/easy_design_system/issues
 topics:
   - ui
   - widgets

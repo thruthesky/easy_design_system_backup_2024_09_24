@@ -1,13 +1,12 @@
 name: example
 description: "A new Flutter project."
 
-publish_to: 'none' 
-
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.3 <4.0.0'
+  sdk: ">=3.3.3 <4.0.0"
 
 dependencies:
   cached_network_image: ^3.3.1
@@ -15,20 +14,14 @@ dependencies:
   flutter:
     sdk: flutter
   markdown_widget: ^2.3.2+6
-  social_design_system:
+  easy_design_system:
     path: ../
-
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
   flutter_lints: ^3.0.0
 
-
 flutter:
-
   uses-material-design: true
-
-  
