@@ -332,7 +332,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             Expanded(
-              child: content,
+              child: SingleChildScrollView(child: content),
             ),
           ],
         ),
