@@ -1,3 +1,6 @@
+## 0.0.22
+* Add. `comicBorder`.
+
 ## 0.0.21
 * Refactor. Rename easy_design_system to easy_design_system
 * Refactor. Separate theme data into each file.
