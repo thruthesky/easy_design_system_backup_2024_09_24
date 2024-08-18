@@ -16,7 +16,6 @@ extension ComicThemeContainer on Container {
       div = 1.2;
     }
 
-    print('div; $div');
     return Container(
       margin: margin,
       decoration: BoxDecoration(
@@ -42,38 +41,6 @@ extension ComicThemeContainer on Container {
             ((decoration as BoxDecoration?) ?? const BoxDecoration()).copyWith(
           borderRadius: BorderRadius.circular(borderRadius / div),
         ),
-        child: child,
-      ),
-    );
-
-    return Container(
-      margin: margin,
-      decoration: decoration ??
-          BoxDecoration(
-            color: Colors.white,
-            border: Border.all(
-              color: Colors.black,
-              width: 2.0,
-            ),
-            borderRadius: BorderRadius.circular(24.0),
-          ),
-      child: Container(
-        margin:
-            const EdgeInsets.all(4.0), // Space between inner and outer borders
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.red, // Inner border color
-            width: 2.0, // Inner border width
-          ),
-        ),
-        alignment: alignment,
-        padding: padding,
-        color: color,
-        foregroundDecoration: foregroundDecoration,
-        constraints: constraints,
-        transform: transform,
-        transformAlignment: transformAlignment,
-        clipBehavior: clipBehavior,
         child: child,
       ),
     );
