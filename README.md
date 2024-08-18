@@ -1,16 +1,16 @@
-# Social Design System
+# Easy Design System
 
-The Social design system is an Elegant and easy-to-use UI/UX design library for Flutter, crafted to enhance your app's aesthetics and user experience without learning anything. This is an open-source project that you can fork and pr.
+The Easy design system is an Elegant and easy-to-use UI/UX design library for Flutter, crafted to enhance your app's aesthetics and user experience without learning anything. This is an open-source project that you can fork and pr.
 
 >And again, ***there is nothing to learn.*** Just install the package and apply the theme to `MaterialApp`.
 
 ## Getting started
 
-To learn more, please visit the [Social Design System document website](https://thruthesky.github.io/easy_design_system/).
+To learn more, please visit the [Easy Design System document website](https://thruthesky.github.io/easy_design_system/).
 
 ## Entry Screens
 
-Social Design System provides a starting screen for your app.
+Easy Design System provides a starting screen for your app.
 
 | BasicCarouselEntry | WaveCarouselEntry | RoundCarouselEntry |
 | :---: | :---: | :---: |
@@ -18,7 +18,7 @@ Social Design System provides a starting screen for your app.
 
 ## Demos
 
-Here are some demos of the Social Design System (SDS).
+Here are some demos of the Easy Design System (SDS).
 
 | Comic Theme   | Sleek Theme                                                |
 | :---: | :---: | 
@@ -31,7 +31,7 @@ Here are some demos of the Social Design System (SDS).
 
 ## Usage
 
-Social Design System follows the principle of the Flutter programming style. You can continue with Flutter coding without knowing how to apply the UI design.
+Easy Design System follows the principle of the Flutter programming style. You can continue with Flutter coding without knowing how to apply the UI design.
 
 For instance, SDS provides `ComicTheme` and you can use it like below;
 
@@ -62,7 +62,7 @@ const ComicTheme(
 ),
 ```
 
-For more details, please visit the [Social Design System document website](https://thruthesky.github.io/easy_design_system/)
+For more details, please visit the [Easy Design System document website](https://thruthesky.github.io/easy_design_system/)
 
 ## Things to learn
 
