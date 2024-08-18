@@ -301,9 +301,18 @@ class _MyHomePageState extends State<MyHomePage> {
               label: 'ComicTextButtonThemeData',
               contentBuilder: () => const ComicTextButtonThemeDataContent(),
             ),
+
+            const Text('Extensions:'),
+
+            const ComicTheme(
+              child: Divider(
+                height: 24,
+              ),
+            ),
+
             menu(
-              label: 'ComicBorderThemeData',
-              contentBuilder: () => const ComicBorderThemeDataScreen(),
+              label: 'ComicBorder',
+              contentBuilder: () => const ComicBorderScreen(),
             ),
 
             const Text('Custom Widgets:'),

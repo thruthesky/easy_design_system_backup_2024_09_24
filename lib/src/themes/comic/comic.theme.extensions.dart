@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 // Create an extension on Container to add a border to it.
-extension ComicThemeContainer on Container {
+extension ComicThemeContainer on Widget {
   Container comicBorder({
+    EdgeInsets margin = EdgeInsets.zero,
     double spacing = 2.4,
     double borderRadius = 24.0,
     Color outlineColor = Colors.black,
@@ -27,21 +28,11 @@ extension ComicThemeContainer on Container {
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: Container(
-        alignment: alignment,
-        padding: padding,
-        color: color,
-        foregroundDecoration: foregroundDecoration,
-        constraints: constraints,
-        transform: transform,
-        transformAlignment: transformAlignment,
-        clipBehavior: clipBehavior,
-        // Space between outer borders and content
         margin: EdgeInsets.all(spacing),
-        decoration:
-            ((decoration as BoxDecoration?) ?? const BoxDecoration()).copyWith(
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius / div),
         ),
-        child: child,
+        child: this,
       ),
     );
   }

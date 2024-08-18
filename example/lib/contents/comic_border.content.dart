@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:markdown_widget/widget/markdown_block.dart';
 import 'package:easy_design_system/easy_design_system.dart';
 
-class ComicBorderThemeDataScreen extends StatefulWidget {
+class ComicBorderScreen extends StatefulWidget {
   static const String routeName = '/ComicBorderThemeData';
-  const ComicBorderThemeDataScreen({super.key});
+  const ComicBorderScreen({super.key});
 
   @override
-  State<ComicBorderThemeDataScreen> createState() =>
-      _ComicBorderThemeDataScreenState();
+  State<ComicBorderScreen> createState() => _ComicBorderScreenState();
 }
 
-class _ComicBorderThemeDataScreenState
-    extends State<ComicBorderThemeDataScreen> {
+class _ComicBorderScreenState extends State<ComicBorderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,15 +21,16 @@ class _ComicBorderThemeDataScreenState
         child: Column(
           children: [
             const MarkdownBlock(data: '''
-# ComicTheme Border
+# ComicBorder
 
 - Why?
   - The comic theme is known to have a thick outline border, but it doesn't apply the border to every widget.
-  - Specifically, the Container widget doesn't have this border because the theme system doesn't support it.
-  - To address this, we created an extension method called `comicBorder` to apply the comic theme border to the Container widget.
+  - The widgets like 'Container', 'SizedBox', etc are not supported by the Flutter theme system to add thick border.
+  - To add a thick border, we created an extension method called `comicBorder` that wraps with Container(s) apply the comic theme border to the widget.
 
-- How?
-  - Since the `comicBorder` method changes the decoration of the Container widget, you cannot use the `color` property of the Container together with the `comicBorder` method.
+- Purpose
+  - You can add not only the outline border, but also the inner border with a different color.
+
 
 - Example:
 ```dart
@@ -39,42 +38,59 @@ Container(
   padding: const EdgeInsets.all(8.0),
   decoration: BoxDecoration(
     color: Colors.grey.shade300,
+    borderRadius: BorderRadius.circular(24.0),
   ),
   child: const Text('Hello, Easy Design System!'),
 ).comicBorder(),
 
 /// Display a Container with a border containing background image and text.
 Container(
-  margin: const EdgeInsets.all(48.0),
   padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
-  decoration: const BoxDecoration(
-    image: DecorationImage(
+  decoration: BoxDecoration(
+    image: const DecorationImage(
       image: NetworkImage('https://picsum.photos/200/300'),
       fit: BoxFit.cover,
     ),
+    borderRadius: BorderRadius.circular(32),
   ),
   child: const Text('Easy Design System with decoration!'),
 ).comicBorder(
+  margin: const EdgeInsets.all(8.0),
   outlineColor: Colors.blue,
   inlineColor: Colors.amber,
   borderRadius: 32,
 ),
 
-
-/// Display a Container with a border, but without inner border.
 Container(
-  margin: const EdgeInsets.all(8.0),
   padding: const EdgeInsets.all(32),
-  decoration: const BoxDecoration(
-    image: DecorationImage(
+  decoration: BoxDecoration(
+    image: const DecorationImage(
       image: NetworkImage('https://picsum.photos/401/200'),
       fit: BoxFit.cover,
     ),
+    borderRadius: BorderRadius.circular(22.0),
   ),
   child: const Text('Without inner border!'),
 ).comicBorder(
   outlineColor: Colors.black,
   spacing: 0,
+),
+
+const SizedBox(
+  child: Text('12+'),
+).comicBorder(
+  margin: const EdgeInsets.all(8.0),
+  spacing: 0,
+),
+
+const CircleAvatar(
+  radius: 48,
+  backgroundImage: NetworkImage('https://picsum.photos/200/300'),
+).comicBorder(
+  margin: const EdgeInsets.all(8.0),
+  outlineColor: Colors.blue,
+  inlineColor: Colors.white,
+  borderRadius: 64,
 ),
 
 ```
@@ -85,40 +101,59 @@ Container(
               padding: const EdgeInsets.all(8.0),
               decoration: BoxDecoration(
                 color: Colors.grey.shade300,
+                borderRadius: BorderRadius.circular(24.0),
               ),
               child: const Text('Hello, Easy Design System!'),
             ).comicBorder(),
 
             /// Display a Container with a border containing background image and text.
             Container(
-              margin: const EdgeInsets.all(8.0),
               padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
-              decoration: const BoxDecoration(
-                image: DecorationImage(
+              decoration: BoxDecoration(
+                image: const DecorationImage(
                   image: NetworkImage('https://picsum.photos/200/300'),
                   fit: BoxFit.cover,
                 ),
+                borderRadius: BorderRadius.circular(32),
               ),
               child: const Text('Easy Design System with decoration!'),
             ).comicBorder(
+              margin: const EdgeInsets.all(8.0),
               outlineColor: Colors.blue,
               inlineColor: Colors.amber,
               borderRadius: 32,
             ),
 
             Container(
-              margin: const EdgeInsets.all(8.0),
               padding: const EdgeInsets.all(32),
-              decoration: const BoxDecoration(
-                image: DecorationImage(
+              decoration: BoxDecoration(
+                image: const DecorationImage(
                   image: NetworkImage('https://picsum.photos/401/200'),
                   fit: BoxFit.cover,
                 ),
+                borderRadius: BorderRadius.circular(22.0),
               ),
               child: const Text('Without inner border!'),
             ).comicBorder(
               outlineColor: Colors.black,
               spacing: 0,
+            ),
+
+            const SizedBox(
+              child: Text('12+'),
+            ).comicBorder(
+              margin: const EdgeInsets.all(8.0),
+              spacing: 0,
+            ),
+
+            const CircleAvatar(
+              radius: 48,
+              backgroundImage: NetworkImage('https://picsum.photos/200/300'),
+            ).comicBorder(
+              margin: const EdgeInsets.all(8.0),
+              outlineColor: Colors.blue,
+              inlineColor: Colors.white,
+              borderRadius: 64,
             ),
 
             const SafeArea(child: SizedBox(height: 120)),
