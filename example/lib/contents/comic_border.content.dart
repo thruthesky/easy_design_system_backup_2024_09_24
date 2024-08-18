@@ -95,6 +95,31 @@ const CircleAvatar(
 
 ```
       '''),
+            Stack(
+              clipBehavior: Clip.none,
+              children: <Widget>[
+                const Icon(Icons.notifications),
+                Positioned(
+                  top: -12,
+                  right: -9,
+                  child: Text(
+                    "3",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.red.shade900,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ).comicBorder(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 4,
+                      vertical: 0,
+                    ),
+                    borderRadius: 12,
+                    spacing: 0,
+                  ),
+                ),
+              ],
+            ),
 
             ///
             Container(
