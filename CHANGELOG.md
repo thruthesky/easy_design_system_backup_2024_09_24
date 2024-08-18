@@ -1,3 +1,6 @@
+## 0.0.23
+* Update. improve `comicBorder`.
+
 ## 0.0.22
 * Add. `comicBorder`.
 
