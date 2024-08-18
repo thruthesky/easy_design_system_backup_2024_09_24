@@ -1,6 +1,9 @@
+import 'package:example/app.state.dart';
 import 'package:example/contents/comic_border.content.dart';
 import 'package:example/contents/comic_icon_button_theme_data.content.dart';
+import 'package:example/contents/comic_text_button_theme_data.content.dart';
 import 'package:example/contents/home.content.dart';
+import 'package:example/contents/sleek_icon_button_theme_data.content.dart';
 import 'package:example/screens/color_scheme/color_scheme.screen.dart';
 import 'package:easy_design_system/easy_design_system.dart';
 import 'package:example/screens/demo/sleek/sleek.theme.screen.dart';
@@ -46,9 +49,15 @@ import 'package:example/screens/ui_widgets/comic_theme.screen.dart';
 import 'package:example/screens/ui_widgets/sleek_theme.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:easystate/easystate.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    EasyState(
+      state: AppState(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -83,12 +92,9 @@ class _MyHomePageState extends State<MyHomePage> {
   bool wideScreen = false;
   bool showSideMenu = false;
 
-  late Widget content;
-
   @override
   void initState() {
     super.initState();
-    content = const HomeContent();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (const String.fromEnvironment('MODE') == 'noe') {
         Navigator.of(context).push(
@@ -110,16 +116,16 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: SafeArea(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            sideMenu(),
-            Expanded(
-              child: content,
+      body: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          sideMenu(),
+          Expanded(
+            child: EasyStateBuilder<AppState>(
+              builder: (_, state) => state.content,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       bottomNavigationBar: wideScreen
           ? null
@@ -129,7 +135,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   ElevatedButton(
                       onPressed: () {
-                        content = const HomeContent();
+                        EasyState.of<AppState>(context).setContent(
+                          const HomeContent(),
+                        );
                         showSideMenu = false;
                         setState(() {});
                       },
@@ -287,11 +295,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             menu(
               label: 'SleekIconButtonThemeData',
-              contentBuilder: () => const Placeholder(),
+              contentBuilder: () => const SleekIconButtonThemeDataContent(),
             ),
             menu(
               label: 'ComicTextButtonThemeData',
-              contentBuilder: () => const Placeholder(),
+              contentBuilder: () => const ComicTextButtonThemeDataContent(),
             ),
             menu(
               label: 'ComicBorderThemeData',
@@ -346,7 +354,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }) {
     return ListTile(
       onTap: () {
-        content = contentBuilder();
+        EasyState.of<AppState>(context).setContent(contentBuilder());
         showSideMenu = false;
         setState(() {});
       },

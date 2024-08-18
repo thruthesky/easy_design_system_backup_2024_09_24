@@ -5,21 +5,18 @@ import 'package:example/screens/icon_buttons/icon_buttons.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:markdown_widget/widget/markdown_block.dart';
 
-class ComicIconButtonThemeDataContent extends StatelessWidget {
-  const ComicIconButtonThemeDataContent({super.key});
+class SleekIconButtonThemeDataContent extends StatelessWidget {
+  const SleekIconButtonThemeDataContent({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         const MarkdownBlock(data: '''
-# ComicIconButtonThemeData
+# SleekIconButtonThemeData
 
 - Why?
-  - Flutter themes apply to all widgets globally.
-  - We cannot apply themes by ID or cascading style widget trees.
-  - Applying a theme to IconButton affects all IconButtons in the app, including those in the AppBar, which can look unattractive.
-  - Therefore, we need to create a new theme specifically for IconButton.
+  - For the same reason of IconButtonThemeData!
 
 - How?
   - See the IconButton menu for details.

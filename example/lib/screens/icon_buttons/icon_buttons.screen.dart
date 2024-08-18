@@ -48,7 +48,7 @@ class IconButtonScreen extends StatelessWidget {
                       ),
                     )
                   ],
-                )
+                ),
               ],
             ),
             const NothingToLearn(),

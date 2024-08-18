@@ -14,7 +14,7 @@ class ComicIconButtonThemeData {
               borderRadius: BorderRadius.circular(24),
               side: BorderSide(
                 color: theme.colorScheme.outline,
-                width: borderThickness,
+                width: comicBorderWidth,
               ),
             ),
           ),

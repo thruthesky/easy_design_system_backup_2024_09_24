@@ -1,5 +1,5 @@
+import 'package:easy_design_system/easy_design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:easy_design_system/src/themes/comic/comic.theme.dart';
 
 /// TextButton for Comic Theme
 ///
@@ -24,7 +24,7 @@ class ComicTextButtonThemeData {
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
               side: BorderSide(
-                width: borderThickness,
+                width: comicBorderWidth,
                 color: theme.colorScheme.secondary,
               ),
             ),

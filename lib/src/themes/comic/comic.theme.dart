@@ -1,9 +1,5 @@
+import 'package:easy_design_system/easy_design_system.dart';
 import 'package:flutter/material.dart';
-
-const borderThickness = 2.0;
-
-Color comicContainerBackgroundColor(BuildContext context) =>
-    Theme.of(context).colorScheme.surface;
 
 /// ComicThemeData
 ///
@@ -15,7 +11,7 @@ class ComicThemeData {
   ///
   /// [of] is a method that returns a [ThemeData] object with the color scheme
   static ThemeData of(BuildContext context) {
-    final theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     // final theme = Theme.of(context).copyWith(
     //   colorScheme: ColorScheme.fromSeed(
     //     seedColor: const Color(0xFF6750A4),
@@ -63,7 +59,7 @@ class ComicThemeData {
         //   ),
         shape: Border(
           bottom: BorderSide(
-            width: borderThickness,
+            width: comicBorderWidth,
             color: theme.colorScheme.outline,
           ),
         ),
@@ -92,26 +88,20 @@ class ComicThemeData {
         // backgroundColor: theme.colorScheme.surface,
         shape: Border(
           top: BorderSide(
-            width: borderThickness,
+            width: comicBorderWidth,
           ),
           left: BorderSide(
-            width: borderThickness,
+            width: comicBorderWidth,
           ),
           right: BorderSide(
-            width: borderThickness,
+            width: comicBorderWidth,
           ),
         ),
       ),
       cardTheme: theme.cardTheme.copyWith(
         // color: theme.colorScheme.error,
         elevation: 0,
-        shape: RoundedRectangleBorder(
-          side: BorderSide(
-            width: borderThickness,
-            color: theme.colorScheme.outline,
-          ),
-          borderRadius: BorderRadius.circular(24),
-        ),
+        shape: comicRoundedRectangleBorder(context),
       ),
 
       checkboxTheme: CheckboxThemeData(
@@ -137,13 +127,7 @@ class ComicThemeData {
       chipTheme: theme.chipTheme.copyWith(
         labelPadding: const EdgeInsets.symmetric(horizontal: 8),
         padding: const EdgeInsets.symmetric(horizontal: 8),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-          side: BorderSide(
-            color: theme.colorScheme.outline,
-            width: borderThickness,
-          ),
-        ),
+        shape: comicRoundedRectangleBorder(context),
         backgroundColor: comicContainerBackgroundColor(context),
         selectedColor: comicContainerBackgroundColor(context),
       ),
@@ -152,36 +136,36 @@ class ComicThemeData {
       dialogTheme: DialogTheme(
         elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(comicBorderRadius),
           side: const BorderSide(
             // removed the border color so the default value from [BorderSide] will be used
             // color: theme.colorScheme.outline,
-            width: borderThickness,
+            width: comicBorderWidth,
           ),
         ),
       ),
       dividerTheme: theme.dividerTheme.copyWith(
         color: theme.colorScheme.outline,
-        thickness: borderThickness,
+        thickness: comicBorderWidth,
       ),
       drawerTheme: theme.drawerTheme.copyWith(
         elevation: 0,
         shadowColor: Colors.transparent,
         endShape: RoundedRectangleBorder(
             borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(24),
-              bottomLeft: Radius.circular(24),
+              topLeft: Radius.circular(comicBorderRadius),
+              bottomLeft: Radius.circular(comicBorderRadius),
             ),
             side: BorderSide(
-              width: borderThickness,
+              width: comicBorderWidth,
               color: theme.colorScheme.outline,
             )),
         shape: RoundedRectangleBorder(
             borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(24),
-                bottomRight: Radius.circular(24)),
+                topRight: Radius.circular(comicBorderRadius),
+                bottomRight: Radius.circular(comicBorderRadius)),
             side: BorderSide(
-              width: borderThickness,
+              width: comicBorderWidth,
               color: theme.colorScheme.outline,
             )),
       ),
@@ -189,26 +173,14 @@ class ComicThemeData {
         style: ButtonStyle(
           elevation: WidgetStateProperty.all(0),
           shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-              side: BorderSide(
-                color: theme.colorScheme.outline,
-                width: borderThickness,
-              ),
-            ),
+            comicRoundedRectangleBorder(context),
           ),
         ),
       ),
 
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-          side: BorderSide(
-            width: borderThickness,
-            color: theme.colorScheme.outline,
-          ),
-        ),
+        shape: comicRoundedRectangleBorder(context),
         highlightElevation: 0,
       ),
       inputDecorationTheme: theme.inputDecorationTheme.copyWith(
@@ -219,14 +191,14 @@ class ComicThemeData {
           borderRadius: BorderRadius.circular(15.15),
           borderSide: BorderSide(
             color: theme.colorScheme.outline,
-            width: borderThickness,
+            width: comicBorderWidth,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.15),
           borderSide: BorderSide(
             color: theme.colorScheme.outline,
-            width: borderThickness,
+            width: comicBorderWidth,
           ),
         ),
       ),
@@ -238,13 +210,7 @@ class ComicThemeData {
         // override the tileColor instead
         // tileColor: theme.colorScheme.surface,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-          side: BorderSide(
-            color: theme.colorScheme.outline,
-            width: borderThickness,
-          ),
-        ),
+        shape: comicRoundedRectangleBorder(context),
       ),
       menuBarTheme: MenuBarThemeData(
         style:
@@ -256,12 +222,7 @@ class ComicThemeData {
             Colors.transparent,
           ),
           shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-                side: BorderSide(
-                  width: borderThickness,
-                  color: theme.colorScheme.outline,
-                )),
+            comicRoundedRectangleBorder(context, 16),
           ),
         ),
       ),
@@ -278,12 +239,7 @@ class ComicThemeData {
             Colors.transparent,
           ),
           shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-                side: BorderSide(
-                  width: borderThickness,
-                  color: theme.colorScheme.outline,
-                )),
+            comicRoundedRectangleBorder(context, 16),
           ),
         ),
       ),
@@ -303,45 +259,22 @@ class ComicThemeData {
             color: Theme.of(context).colorScheme.onSurface,
           );
         }),
-        indicatorShape: RoundedRectangleBorder(
-          side: BorderSide(
-            width: borderThickness,
-            color: Theme.of(context).colorScheme.outline,
-          ),
-          borderRadius: BorderRadius.circular(24),
-        ),
+        indicatorShape: comicRoundedRectangleBorder(context),
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
       ),
       navigationDrawerTheme: theme.navigationDrawerTheme.copyWith(
         elevation: 0,
         shadowColor: Colors.transparent,
         // indicatorColor: Colors.transparent,
-        indicatorShape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24),
-            side: BorderSide(
-              width: borderThickness,
-              color: theme.colorScheme.outline,
-            )),
+        indicatorShape: comicRoundedRectangleBorder(context),
       ),
       navigationRailTheme: theme.navigationRailTheme.copyWith(
         indicatorColor: Colors.transparent,
-        indicatorShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-          side: BorderSide(
-            color: theme.colorScheme.outline,
-            width: borderThickness,
-          ),
-        ),
+        indicatorShape: comicRoundedRectangleBorder(context),
       ),
       popupMenuTheme: PopupMenuThemeData(
         elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-          side: BorderSide(
-            width: borderThickness,
-            color: theme.colorScheme.outline,
-          ),
-        ),
+        shape: comicRoundedRectangleBorder(context, 16),
         color: comicContainerBackgroundColor(context),
       ),
 
@@ -352,9 +285,9 @@ class ComicThemeData {
         elevation: 0,
         backgroundColor: comicContainerBackgroundColor(context),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(comicBorderRadius),
           side: BorderSide(
-            width: borderThickness,
+            width: comicBorderWidth,
             color: theme.colorScheme.outline,
           ),
         ),
@@ -369,7 +302,7 @@ class ComicThemeData {
           // selectedForegroundColor: theme.colorScheme.onSurface,
           // foregroundColor: theme.colorScheme.onSurface,
           side: BorderSide(
-            width: borderThickness,
+            width: comicBorderWidth,
             color: theme.colorScheme.outline,
           ),
           elevation: 0,
@@ -377,7 +310,7 @@ class ComicThemeData {
       ),
       switchTheme: SwitchThemeData(
         trackOutlineWidth: WidgetStateProperty.all(
-          borderThickness,
+          comicBorderWidth,
         ),
         thumbColor: WidgetStateProperty.resolveWith<Color?>(
           (Set<WidgetState> states) {
@@ -402,7 +335,7 @@ class ComicThemeData {
       ),
       toggleButtonsTheme: ToggleButtonsThemeData(
         selectedBorderColor: theme.colorScheme.outline,
-        borderWidth: borderThickness,
+        borderWidth: comicBorderWidth,
         fillColor: comicContainerBackgroundColor(context),
         borderRadius: BorderRadius.circular(7),
       ),
@@ -420,7 +353,7 @@ class ComicThemeData {
               // When developer used this like ComicTheme.of(context).copyWith( colorScheme: theme.colorScheme )
               // theme.colorScheme.
               color: theme.colorScheme.outline,
-              width: borderThickness,
+              width: comicBorderWidth,
             ),
           ),
         ),
@@ -433,7 +366,7 @@ class ComicThemeData {
         indicator: BoxDecoration(
           border: Border(
             bottom: BorderSide(
-              width: borderThickness * 3,
+              width: comicBorderWidth * 3,
               color: theme.colorScheme.outline,
             ),
           ),
@@ -441,7 +374,7 @@ class ComicThemeData {
         indicatorSize: TabBarIndicatorSize.label,
         // Note: By default, the dividerColor uses outlineVariant
         // dividerColor: theme.colorScheme.onSurface,
-        dividerHeight: borderThickness * 0.8,
+        dividerHeight: comicBorderWidth * 0.8,
       ),
     );
   }
