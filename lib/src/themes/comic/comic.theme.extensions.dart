@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 extension ComicThemeContainer on Widget {
   Container comicBorder({
     EdgeInsets margin = EdgeInsets.zero,
+    EdgeInsets padding = EdgeInsets.zero,
     double spacing = 2.4,
     double borderRadius = 24.0,
     Color outlineColor = Colors.black,
     Color inlineColor = Colors.white,
+    double borderWidth = 2.0,
   }) {
     double div = 1.1;
     // borderRadius < 10 ? 1.1 : 1.2;
@@ -23,11 +25,12 @@ extension ComicThemeContainer on Widget {
         color: inlineColor, // Background color of the container
         border: Border.all(
           color: outlineColor, // Outer border color
-          width: 2.4, // Outer border width
+          width: borderWidth, // Outer border width
         ),
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: Container(
+        padding: padding,
         margin: EdgeInsets.all(spacing),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius / div),
