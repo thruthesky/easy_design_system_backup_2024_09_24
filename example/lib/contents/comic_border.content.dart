@@ -245,6 +245,21 @@ Container(
               spacing: 0,
             ),
 
+            const SizedBox(height: 24),
+
+            const MarkdownBlock(data: '''
+- Example: Icon with innerBorderRadius: 0
+The inner border radius is by 2.0 by the border radius. And it's okay for most cases. But you can customize it by passing the `innerBorderRadius` parameter.
+Especially, when you display comic border on a small widget like Icon, you would see the widget in the comic border is a little bit rounded. To make it sharp, you can set the `innerBorderRadius` to 0.
+```dart
+const Icon(Icons.square).comicBorder(innerRadius: 0),
+```
+'''),
+            const SizedBox(
+              height: 24,
+            ),
+            const Icon(Icons.square).comicBorder(innerBorderRadius: 0),
+
             const SafeArea(child: SizedBox(height: 120)),
           ],
         ),

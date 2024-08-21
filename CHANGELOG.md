@@ -1,3 +1,6 @@
+## 0.0.24
+* Update. add `innerBorderRadius` to `comicBorder`.
+
 ## 0.0.23
 * Update. improve `comicBorder`.
 
