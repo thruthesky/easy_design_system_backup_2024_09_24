@@ -7,17 +7,12 @@ extension ComicThemeContainer on Widget {
     EdgeInsets padding = EdgeInsets.zero,
     double spacing = 2.4,
     double borderRadius = 24.0,
+    double? innerRadius,
     Color outlineColor = Colors.black,
     Color inlineColor = Colors.white,
     double borderWidth = 2.0,
   }) {
-    double div = 1.1;
-    // borderRadius < 10 ? 1.1 : 1.2;
-    if (borderRadius < 10) {
-      div = 2;
-    } else if (borderRadius < 20) {
-      div = 1.2;
-    }
+    innerRadius ??= borderRadius - 2;
 
     return Container(
       margin: margin,
@@ -33,9 +28,12 @@ extension ComicThemeContainer on Widget {
         padding: padding,
         margin: EdgeInsets.all(spacing),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius / div),
+          borderRadius: BorderRadius.circular(innerRadius),
         ),
-        child: this,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(innerRadius),
+          child: this,
+        ),
       ),
     );
   }
