@@ -10,12 +10,14 @@ class Settings extends StatelessWidget {
     required this.label,
     this.indent = false,
     this.padding = const EdgeInsets.all(0),
+    this.elevation,
   });
 
   final List<Widget> children;
   final String label;
   final bool indent;
   final EdgeInsetsGeometry padding;
+  final double? elevation;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,7 @@ class Settings extends StatelessWidget {
     }
     Widget card = Card(
       margin: EdgeInsets.zero,
+      elevation: elevation,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

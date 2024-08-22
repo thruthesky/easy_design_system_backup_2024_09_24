@@ -1,3 +1,6 @@
+## 0.0.25
+* Update. add `elevation` to `Settings`.
+
 ## 0.0.24
 * Update. add `innerBorderRadius` to `comicBorder`.
 
