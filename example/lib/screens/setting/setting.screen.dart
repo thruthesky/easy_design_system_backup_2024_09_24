@@ -86,7 +86,7 @@ class _SettingScreenState extends State<SettingScreen> {
 - This `Settings` widget is intended for use in a menu or settings screen.
 - The `Settings` widget comprises a series of `ListTile` widgets.
 - To apply a theme, simply wrap your `Settings` widget with either the `ComicTheme` or `SleekTheme`.
-
+- `elevation` is an optional parameter that adds a shadow to the `Settings` widget.
 
 ```dart
 Padding(
