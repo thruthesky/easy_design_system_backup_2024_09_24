@@ -47820,7 +47820,7 @@ return null},
 $S:0}
 A.w2.prototype={
 v(a){var s=null
-return A.bs(A.bM(s,!0,s,s,B.a6a,s),s,B.VW,s,s,s,s,s)}}
+return A.bs(A.bM(s,!0,s,s,B.a6a,s),s,B.VX,s,s,s,s,s)}}
 A.qE.prototype={
 O(){return new A.Y0(B.f)}}
 A.Y0.prototype={
@@ -48017,7 +48017,7 @@ A.WK.prototype={
 v(a){var s,r,q,p=null,o=A.bM(p,!0,p,p,B.a6s,p),n=J.iP(5,t.l7)
 for(s=0;s<5;++s){r=""+s
 q=A.af("Item "+r,p,p,p,p,p,p,p)
-n[s]=A.fN(!1,p,p,p,!0,p,!1,B.eD,p,new A.axp(),!1,p,p,p,A.af("Subtitle "+r,p,p,p,p,p,p,p),p,q,B.dX,p)}return A.bs(o,p,A.dw(new A.ab(B.W,A.am(A.b([new A.G3(n,p,5,B.cT,!0,B.H,p),B.a6,new A.G3(B.eI,new A.axq(),5,B.cT,!0,B.H,p),B.J1],t.p),B.m,B.i,B.j,B.l),p),p,B.z,p,p,B.w),p,p,p,p,p)}}
+n[s]=A.fN(!1,p,p,p,!0,p,!1,B.eD,p,new A.axp(),!1,p,p,p,A.af("Subtitle "+r,p,p,p,p,p,p,p),p,q,B.dX,p)}return A.bs(o,p,A.dw(new A.ab(B.W,A.am(A.b([new A.G3(n,p,5,B.cT,!0,B.H,p),B.a6,new A.G3(B.eI,new A.axq(),5,B.cT,!0,B.H,p),B.J2],t.p),B.m,B.i,B.j,B.l),p),p,B.z,p,p,B.w),p,p,p,p,p)}}
 A.axp.prototype={
 $0(){},
 $S:0}
@@ -48188,7 +48188,7 @@ A.tJ.prototype={
 O(){return new A.a1H(B.f)}}
 A.a1H.prototype={
 v(a){var s=null,r=t.p
-return A.bs(A.bM(s,!0,s,s,B.E8,s),s,A.dw(A.am(A.b([new A.ab(B.W,new A.dg(A.aXW(A.b([A.fN(!1,s,s,s,!0,s,!1,B.qh,s,new A.aJp(),!1,s,s,s,B.Ek,s,B.Eq,B.qm,B.hw),A.fN(!1,s,s,s,!0,s,!1,B.qu,s,new A.aJq(),!1,s,s,s,B.Ec,s,B.DP,B.qv,B.hw)],r),"Comic Theme Settings"),s),s),new A.ab(B.W,new A.dx(A.aXW(A.b([A.fN(!1,s,s,s,!0,s,!1,B.qh,s,new A.aJr(),!1,s,s,s,B.Ek,s,B.Eq,B.qm,B.hw),A.fN(!1,s,s,s,!0,s,!1,B.qu,s,new A.aJs(),!1,s,s,s,B.Ec,s,B.DP,B.qv,B.hw)],r),"Sleek Theme Settings"),s),s),B.VZ],r),B.m,B.i,B.j,B.l),s,B.z,s,s,B.w),s,s,s,s,s)}}
+return A.bs(A.bM(s,!0,s,s,B.E8,s),s,A.dw(A.am(A.b([new A.ab(B.W,new A.dg(A.aXW(A.b([A.fN(!1,s,s,s,!0,s,!1,B.qh,s,new A.aJp(),!1,s,s,s,B.Ek,s,B.Eq,B.qm,B.hw),A.fN(!1,s,s,s,!0,s,!1,B.qu,s,new A.aJq(),!1,s,s,s,B.Ec,s,B.DP,B.qv,B.hw)],r),"Comic Theme Settings"),s),s),new A.ab(B.W,new A.dx(A.aXW(A.b([A.fN(!1,s,s,s,!0,s,!1,B.qh,s,new A.aJr(),!1,s,s,s,B.Ek,s,B.Eq,B.qm,B.hw),A.fN(!1,s,s,s,!0,s,!1,B.qu,s,new A.aJs(),!1,s,s,s,B.Ec,s,B.DP,B.qv,B.hw)],r),"Sleek Theme Settings"),s),s),B.VS],r),B.m,B.i,B.j,B.l),s,B.z,s,s,B.w),s,s,s,s,s)}}
 A.aJp.prototype={
 $0(){return A.eX().$1("Item 1")},
 $S:0}
@@ -48259,7 +48259,7 @@ A.tW.prototype={
 O(){return new A.a2j(B.f)}}
 A.a2j.prototype={
 v(a){var s=null
-return A.bs(A.bM(s,!0,s,s,B.a6G,s),s,new A.ab(B.dR,A.am(A.b([A.ii(s,B.Rq,s,B.by,B.bS,s,s),B.VS],t.p),B.m,B.i,B.j,B.l),s),s,s,s,s,s)}}
+return A.bs(A.bM(s,!0,s,s,B.a6G,s),s,new A.ab(B.dR,A.am(A.b([A.ii(s,B.Rq,s,B.by,B.bS,s,s),B.VT],t.p),B.m,B.i,B.j,B.l),s),s,s,s,s,s)}}
 A.Uc.prototype={
 v(a){var s=t.p
 return A.am(A.b([A.bS(A.b([A.ar4(new A.ar5(),!0),B.fe],s),B.m,B.i,B.j),A.bS(A.b([A.ar4(new A.ar6(),!1),B.Ef],s),B.m,B.i,B.j),B.XB,B.XA],s),B.Y,B.i,B.j,B.l)}}
@@ -108450,7 +108450,7 @@ B.W=new A.ac(24,24,24,24)
 B.IZ=new A.lK("# Sleep Walker\n\n- You can move around a widget in a stack. It is useful to give some decoration under the stack.\n\n- The speed of the each move is set by the starting point of the `duration`. Meaning, the speed of the current position to next position is depends on the `duration` of the current position. So, the last `duration` is ignored.\n\n```dart\nimport 'package:flutter/material.dart';\nimport 'package:social_kit/social_kit.dart';\n\nclass SleepWalkerScreen extends StatefulWidget {\n  static const String routeName = '/SleepWalker';\n  const SleepWalkerScreen({super.key});\n\n  @override\n  State<SleepWalkerScreen> createState() => _SleepWalkerScreenState();\n}\n\nclass _SleepWalkerScreenState extends State<SleepWalkerScreen> {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: const Text('SleepWalker'),\n      ),\n      body: Stack(\n        children: [\n          const Text(\"SleepWalker\"),\n          SleepWalker(\n            alignments: const [\n              (\n                alignment: Alignment.topLeft,\n                duration: Duration(milliseconds: 2000),\n              ),\n              (\n                alignment: Alignment.topRight,\n                duration: Duration(milliseconds: 700),\n              ),\n              (\n                alignment: Alignment.bottomRight,\n                duration: Duration(milliseconds: 400),\n              ),\n              (\n                alignment: Alignment.bottomLeft,\n                duration: Duration(milliseconds: 300),\n              ),\n              (\n                alignment: Alignment(.7, .2),\n                duration: Duration(milliseconds: 200),\n              ),\n              (\n                alignment: Alignment(-1, -1),\n                duration: Duration(seconds: 1),\n              ),\n            ],\n            child: Container(\n              width: 200,\n              height: 200,\n              color: Colors.blue,\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}\n```\n\n- Use case; You may add a background that moves in a screen. Add a child widget that has some blurred shapes and rotatation.\n",B.W,null)
 B.J_=new A.lK("## BirthdatePickerDialog\n- The `BirthdatePickerDialog` is a custom widget within our social design system designed to \n  facilitate the selection of birthdays. It enables users to easily choose their birthday from a dialog.\n- To Apply a Theme, simply wrap the `BirthdatePickerDialog` widget with the `ComicTheme` widget.\n\n```dart\nComicTheme(\n  child: ListTile(\n    onTap: () {\n      showDialog(\n        context: context,\n        builder: (context) => ComicTheme(\n          child: BirthdatePickerDialog(\n            initialBirthDay: day,\n            initialBirthMonth: month,\n            initialBirthYear: year,\n            onSelectedBirthDay: (v) {\n              debugPrint(v.toString());\n            },\n            onSelectedBirthMonth: (v) {\n              debugPrint(v.toString());\n            },\n            onSelectedBirthYear: (v) {\n              debugPrint(v.toString());\n            },\n            onSave: () {\n              Navigator.pop(context);\n            },\n          ),\n        ),\n      );\n    },\n    trailing: const Icon(Icons.calendar_month),\n    title:Text('Select birthday') ,\n  ),\n),\n```\n          ",null,null)
 B.J0=new A.lK("# ComicListView\n\n`ComicListView` is a list view with comic style theme. It provides `ComicListView`, `ComicListView.builder()`, `ComicListView.separated()`.\n\nThe `ComicListView` supports full ListView widget with the comic style ui design.\n\n\n```dart\nComicListView(\n  shrinkWrap: true,\n  physics: const NeverScrollableScrollPhysics(),\n  padding: EdgeInsets.zero,\n  children: List.generate(\n    5,\n    (index) => ListTile(\n      title: Text('Item $index'),\n      subtitle: Text('Subtitle $index'),\n      leading: const Icon(Icons.ac_unit),\n      trailing: const Icon(Icons.arrow_forward_ios),\n      onTap: () {},\n    ),\n  ),\n),\n```\n\n`ComicListView.builder()` support the most of `ListView.builder()` properties with opinionated comic style ui design.\n\n```dart\nComicListView.builder(\n  padding: EdgeInsets.zero,\n  shrinkWrap: true,\n  physics: const NeverScrollableScrollPhysics(),\n  itemCount: 5,\n  itemBuilder: (context, index) => ListTile(\n    title: Text('Item $index'),\n    subtitle: Text('Subtitle $index'),\n    leading: const Icon(Icons.ac_unit),\n    trailing: const Icon(Icons.arrow_forward_ios),\n    onTap: () {},\n  ),\n),\n```\n\n`ComicListView.separated` supports the most of `ListView.separated` properties except that you cannot customize the `separatedBuilder` since it is opinionated for comic ui design.\n\n\n\n```dart\nComicListView.separated(\n  padding: EdgeInsets.zero,\n  shrinkWrap: true,\n  itemCount: 5,\n  itemBuilder: (context, index) => ListTile(\n    title: Text('Item $index'),\n    subtitle: Text('Subtitle $index'),\n    leading: const Icon(Icons.ac_unit),\n    trailing: const Icon(Icons.arrow_forward_ios),\n    onTap: () {},\n  ),\n),\n```\n",null,null)
-B.J1=new A.lK("# SleekListView\n\n`SleekListView` is a list view with comic style theme. It provides `SleekListView`, `SleekListView.builder()`, `SleekListView.separated()`.\n\nThe `SleekListView` supports full ListView widget with the comic style ui design.\n\n\n```dart\nSleekListView(\n  shrinkWrap: true,\n  physics: const NeverScrollableScrollPhysics(),\n  padding: EdgeInsets.zero,\n  children: List.generate(\n    5,\n    (index) => ListTile(\n      title: Text('Item $index'),\n      subtitle: Text('Subtitle $index'),\n      leading: const Icon(Icons.ac_unit),\n      trailing: const Icon(Icons.arrow_forward_ios),\n      onTap: () {},\n    ),\n  ),\n),\n```\n\n`SleekListView.builder()` support the most of `ListView.builder()` properties with opinionated comic style ui design.\n\n```dart\nSleekListView.builder(\n  padding: EdgeInsets.zero,\n  shrinkWrap: true,\n  physics: const NeverScrollableScrollPhysics(),\n  itemCount: 5,\n  itemBuilder: (context, index) => ListTile(\n    title: Text('Item $index'),\n    subtitle: Text('Subtitle $index'),\n    leading: const Icon(Icons.ac_unit),\n    trailing: const Icon(Icons.arrow_forward_ios),\n    onTap: () {},\n  ),\n),\n```\n\n`SleekListView.separated` supports the most of `ListView.separated` properties except that you cannot customize the `separatedBuilder` since it is opinionated for comic ui design.\n\n\n\n```dart\nSleekListView.separated(\n  padding: EdgeInsets.zero,\n  shrinkWrap: true,\n  itemCount: 5,\n  itemBuilder: (context, index) => ListTile(\n    title: Text('Item $index'),\n    subtitle: Text('Subtitle $index'),\n    leading: const Icon(Icons.ac_unit),\n    trailing: const Icon(Icons.arrow_forward_ios),\n    onTap: () {},\n  ),\n),\n```\n",null,null)
+B.J2=new A.lK("# SleekListView\n\n`SleekListView` is a list view with comic style theme. It provides `SleekListView`, `SleekListView.builder()`, `SleekListView.separated()`.\n\nThe `SleekListView` supports full ListView widget with the comic style ui design.\n\n\n```dart\nSleekListView(\n  shrinkWrap: true,\n  physics: const NeverScrollableScrollPhysics(),\n  padding: EdgeInsets.zero,\n  children: List.generate(\n    5,\n    (index) => ListTile(\n      title: Text('Item $index'),\n      subtitle: Text('Subtitle $index'),\n      leading: const Icon(Icons.ac_unit),\n      trailing: const Icon(Icons.arrow_forward_ios),\n      onTap: () {},\n    ),\n  ),\n),\n```\n\n`SleekListView.builder()` support the most of `ListView.builder()` properties with opinionated comic style ui design.\n\n```dart\nSleekListView.builder(\n  padding: EdgeInsets.zero,\n  shrinkWrap: true,\n  physics: const NeverScrollableScrollPhysics(),\n  itemCount: 5,\n  itemBuilder: (context, index) => ListTile(\n    title: Text('Item $index'),\n    subtitle: Text('Subtitle $index'),\n    leading: const Icon(Icons.ac_unit),\n    trailing: const Icon(Icons.arrow_forward_ios),\n    onTap: () {},\n  ),\n),\n```\n\n`SleekListView.separated` supports the most of `ListView.separated` properties except that you cannot customize the `separatedBuilder` since it is opinionated for comic ui design.\n\n\n\n```dart\nSleekListView.separated(\n  padding: EdgeInsets.zero,\n  shrinkWrap: true,\n  itemCount: 5,\n  itemBuilder: (context, index) => ListTile(\n    title: Text('Item $index'),\n    subtitle: Text('Subtitle $index'),\n    leading: const Icon(Icons.ac_unit),\n    trailing: const Icon(Icons.arrow_forward_ios),\n    onTap: () {},\n  ),\n),\n```\n",null,null)
 B.J3=new A.lK("## Card\n\n* Card has many properties including a background and a border which causes the UI look dirty.\n* By default, Card widget has a border in comic theme and if you add a ListTile inside it, the border will be doubled. You can do your own customization to make it look better.\n  Below is an example of a Card with a ListTile inside it.\n```dart\nCard(\n  child: Padding(\n    padding: EdgeInsets.all(8.0),\n    child: Column(\n      children: [\n        const ListTile(\n          title: Text('Title'),\n          subtitle: Text('Subtitle'),\n          leading: Icon(Icons.ac_unit),\n        ),\n        Row(\n          children: [\n            const Spacer(),\n            ElevatedButton(onPressed: () {}, child: const Text(\"YES\")),\n            ElevatedButton(onPressed: () {}, child: const Text(\"NO\"))\n          ],\n        ),\n      ],\n    ),\n  ),\n),\n```\n\n* Sleek theme does not give theme design for the Card outline variant, Sleek theme is clean and simple so elevation and border are remove for Card Sleek Theme , you can still use the Card.outline variant but there wont be any theme design\n        ",null,null)
 B.J4=new A.qi(null)
 B.fI=new A.o(4291869951)
@@ -109179,8 +109179,8 @@ B.ht=new A.M("Profile",null,null,null,null,null,null,null,null,null)
 B.xp=new A.op(B.fV,B.ht,null)
 B.Q7=A.b(s([B.XD,B.xr,B.xq,B.xp]),t.p)
 B.ID=new A.NX(null)
-B.VX=new A.ab(B.bx,B.ID,null)
-B.ok=new A.vl(null,null,B.VX,null)
+B.VY=new A.ab(B.bx,B.ID,null)
+B.ok=new A.vl(null,null,B.VY,null)
 B.KS=new A.dg(B.ok,null)
 B.a_I=new A.dx(B.ok,null)
 B.QG=A.b(s([B.KS,B.a_I]),t.p)
@@ -109347,8 +109347,8 @@ B.aK=new A.fd(9,"counter")
 B.d3=new A.fd(10,"container")
 B.Rt=A.b(s([B.ay,B.b2,B.ao,B.b3,B.aP,B.aQ,B.ad,B.aH,B.b4,B.aK,B.d3]),A.aD("F<fd>"))
 B.a6D=new A.M("Drawer",null,null,null,null,null,null,null,null,null)
-B.VT=new A.ab(B.py,B.a6D,null)
-B.IK=new A.h3(B.N,null,null,B.VT,null)
+B.VU=new A.ab(B.py,B.a6D,null)
+B.IK=new A.h3(B.N,null,null,B.VU,null)
 B.XF=new A.tr(!0,!0,!0,!0,B.H,B.IK,null)
 B.lr=A.b(s([B.XF,B.xr,B.xq,B.xp]),t.p)
 B.bG=new A.eD(1,"fuchsia")
@@ -110518,14 +110518,16 @@ B.a9U=new A.RT(0,"start")
 B.VP=new A.RT(1,"end")
 B.OX=new A.fM(B.qt,B.hu,null,null,!1,null,null,null,null,null,!0,null,null,!1,null,!1,null,null,null,null)
 B.xJ=new A.ab(B.eu,B.OX,null)
-B.VS=new A.ab(B.dR,B.aG,null)
+B.J1=new A.lK("## Settings\n\n- This `Settings` widget is intended for use in a menu or settings screen.\n- The `Settings` widget comprises a series of `ListTile` widgets.\n- To apply a theme, simply wrap your `Settings` widget with either the `ComicTheme` or `SleekTheme`.\n- `elevation` is an optional parameter that adds a shadow to the `Settings` widget.\n\n```dart\nPadding(\n      padding: const EdgeInsets.all(24.0),\n      child: ComicTheme(\n        child: Settings(\n          label: 'Comic Theme Settings',\n          children: [\n            ListTile(\n              visualDensity: VisualDensity.compact,\n              title: const Text('Notifications'),\n              subtitle: const Text('Receive notifications'),\n              leading: const Icon(Icons.notifications_outlined),\n              trailing: const Icon(Icons.chevron_right_rounded),\n              onTap: () => debugPrint('Item 1'),\n            ),\n            ListTile(\n              visualDensity: VisualDensity.compact,\n              title: const Text('Favorites'),\n              subtitle: const Text('Want to know who likes you?'),\n              leading: const Icon(Icons.favorite_border_outlined),\n              trailing: const Icon(\n                Icons.arrow_right_rounded,\n                size: 32,\n              ),\n              onTap: () => debugPrint('Item 2'),\n            ),\n          ],\n        ),\n      ),\n    ),\n    Padding(\n      padding: const EdgeInsets.all(24.0),\n      child: SleekTheme(\n        child: Settings(\n          label: 'Sleek Theme Settings',\n          children: [\n            ListTile(\n              visualDensity: VisualDensity.compact,\n              title: const Text('Notifications'),\n              subtitle: const Text('Receive notifications'),\n              leading: const Icon(Icons.notifications_outlined),\n              trailing: const Icon(Icons.chevron_right_rounded),\n              onTap: () => debugPrint('Item 1'),\n            ),\n            ListTile(\n              visualDensity: VisualDensity.compact,\n              title: const Text('Favorites'),\n              subtitle: const Text('Want to know who likes you?'),\n              leading: const Icon(Icons.favorite_border_outlined),\n              trailing: const Icon(\n                Icons.arrow_right_rounded,\n                size: 32,\n              ),\n              onTap: () => debugPrint('Item 2'),\n            ),\n          ],\n        ),\n      ),\n    ),\n```\n\n            ",null,null)
+B.VS=new A.ab(B.W,B.J1,null)
+B.VT=new A.ab(B.dR,B.aG,null)
 B.P1=new A.fM(B.qr,B.fd,null,null,!1,null,null,null,null,null,!0,null,null,!1,null,!1,null,null,null,null)
 B.xK=new A.ab(B.eu,B.P1,null)
 B.KV=new A.dg(B.co,null)
 B.a_E=new A.dx(B.co,null)
 B.Ri=A.b(s([B.dA,B.KV,B.ee,B.dz,B.a_E,B.aM,B.aG]),t.p)
 B.KE=new A.f_(B.w,B.i,B.j,B.m,null,B.l,null,B.Ri,null)
-B.VW=new A.ab(B.cq,B.KE,null)
+B.VX=new A.ab(B.cq,B.KE,null)
 B.Mf=new A.ac(0,16,0,0)
 B.xL=new A.ab(B.Mf,B.lf,null)
 B.E8=new A.M("Setting",null,null,null,null,null,null,null,null,null)
@@ -110536,8 +110538,6 @@ B.NZ=new A.bN(B.NB,null,null,null,null)
 B.mT=new A.M("Logout",null,null,null,null,null,null,null,null,null)
 B.OZ=new A.fM(B.NZ,B.mT,null,null,!1,null,null,null,null,null,!0,null,null,!1,null,!1,null,null,null,null)
 B.xN=new A.ab(B.eu,B.OZ,null)
-B.J2=new A.lK("## Settings\n\n- This `Settings` widget is intended for use in a menu or settings screen.\n- The `Settings` widget comprises a series of `ListTile` widgets.\n- To apply a theme, simply wrap your `Settings` widget with either the `ComicTheme` or `SleekTheme`.\n\n\n```dart\nPadding(\n      padding: const EdgeInsets.all(24.0),\n      child: ComicTheme(\n        child: Settings(\n          label: 'Comic Theme Settings',\n          children: [\n            ListTile(\n              visualDensity: VisualDensity.compact,\n              title: const Text('Notifications'),\n              subtitle: const Text('Receive notifications'),\n              leading: const Icon(Icons.notifications_outlined),\n              trailing: const Icon(Icons.chevron_right_rounded),\n              onTap: () => debugPrint('Item 1'),\n            ),\n            ListTile(\n              visualDensity: VisualDensity.compact,\n              title: const Text('Favorites'),\n              subtitle: const Text('Want to know who likes you?'),\n              leading: const Icon(Icons.favorite_border_outlined),\n              trailing: const Icon(\n                Icons.arrow_right_rounded,\n                size: 32,\n              ),\n              onTap: () => debugPrint('Item 2'),\n            ),\n          ],\n        ),\n      ),\n    ),\n    Padding(\n      padding: const EdgeInsets.all(24.0),\n      child: SleekTheme(\n        child: Settings(\n          label: 'Sleek Theme Settings',\n          children: [\n            ListTile(\n              visualDensity: VisualDensity.compact,\n              title: const Text('Notifications'),\n              subtitle: const Text('Receive notifications'),\n              leading: const Icon(Icons.notifications_outlined),\n              trailing: const Icon(Icons.chevron_right_rounded),\n              onTap: () => debugPrint('Item 1'),\n            ),\n            ListTile(\n              visualDensity: VisualDensity.compact,\n              title: const Text('Favorites'),\n              subtitle: const Text('Want to know who likes you?'),\n              leading: const Icon(Icons.favorite_border_outlined),\n              trailing: const Icon(\n                Icons.arrow_right_rounded,\n                size: 32,\n              ),\n              onTap: () => debugPrint('Item 2'),\n            ),\n          ],\n        ),\n      ),\n    ),\n```\n\n            ",null,null)
-B.VZ=new A.ab(B.W,B.J2,null)
 B.OY=new A.fM(B.qg,B.ht,null,null,!1,null,null,null,null,null,!0,null,null,!1,null,!1,null,null,null,null)
 B.xO=new A.ab(B.eu,B.OY,null)
 B.xP=new A.x9(null)
@@ -110957,15 +110957,15 @@ B.WT=new A.xm("Ma. Cecilia L. Comilang","cormilang@ss.com",u.e,null)
 B.WV=new A.xm("Harry Flores","florensia@saniba.com",u.Y,null)
 B.Q2=A.b(s([B.WR,B.WT,B.WV]),t.p)
 B.KC=new A.f_(B.w,B.i,B.j,B.bW,null,B.l,null,B.Q2,null)
-B.VU=new A.ab(B.W,B.KC,null)
-B.a_4=new A.mE(B.w,null,null,null,B.VU,B.z,null)
+B.VV=new A.ab(B.W,B.KC,null)
+B.a_4=new A.mE(B.w,null,null,null,B.VV,B.z,null)
 B.WS=new A.xn("Jerremy Comilang","john.mclean@aplepetstore.com",u.B,null)
 B.WU=new A.xn("Ma. Cecilia L. Comilang","cormilang@ss.com",u.e,null)
 B.WW=new A.xn("Harry Flores","florensia@saniba.com",u.Y,null)
 B.Q3=A.b(s([B.WS,B.WU,B.WW]),t.p)
 B.KD=new A.f_(B.w,B.i,B.j,B.bW,null,B.l,null,B.Q3,null)
-B.VV=new A.ab(B.W,B.KD,null)
-B.a_3=new A.mE(B.w,null,null,null,B.VV,B.z,null)
+B.VW=new A.ab(B.W,B.KD,null)
+B.a_3=new A.mE(B.w,null,null,null,B.VW,B.z,null)
 B.TI=new A.fO("# Easy Design System\n\n- Why Easy Design System?\n  - To make it absolutely easy for you to build beautiful apps.\n  - And yes, it is absolutely easy to use.\n- Easy design system is an Elegant UI/UX library crafted specifically for building beautiful applications.\n- You do NOT need to\n  - learn anything,\n  - do anything,\n  - read anything\n  - Just wrap your app with the theme and you are good to go.\n  It will just work. Continue your job.\n\n## Terms\n- `Basic widgets` means the widgets in material.dart.\n- `Visual component widget` is a widget that have a visual outloook on screen like a Text widget. While GestureDetector is not a visual component since it does not appear on the screen.\n                  ",null)
 B.a_5=new A.mE(B.w,null,null,null,B.TI,B.z,null)
 B.lM=new A.RC(null)
@@ -111027,8 +111027,8 @@ B.a_w=new A.cI(1/0,1/0,null,null)
 B.a6c=new A.M("Comic Theme is a theme that is inspired by comic books. The main idea is about thick borders with no background coloring. However, as a developer, you may choose how you want to color your app.",null,null,null,null,null,null,null,null,null)
 B.Qp=A.b(s([B.a6c]),t.p)
 B.Kz=new A.f_(B.w,B.i,B.j,B.m,null,B.l,null,B.Qp,null)
-B.VY=new A.ab(B.W,B.Kz,null)
-B.a_x=new A.cI(null,200,B.VY,null)
+B.VZ=new A.ab(B.W,B.Kz,null)
+B.a_x=new A.cI(null,200,B.VZ,null)
 B.a_z=new A.y_(null)
 B.a_A=new A.y0(null)
 B.a_B=new A.tP(null)
