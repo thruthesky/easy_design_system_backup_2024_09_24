@@ -10,14 +10,14 @@ class Settings extends StatelessWidget {
     required this.label,
     this.indent = false,
     this.padding = const EdgeInsets.all(0),
-    this.elevation,
+    this.elevation = 0,
   });
 
   final List<Widget> children;
   final String label;
   final bool indent;
   final EdgeInsetsGeometry padding;
-  final double? elevation;
+  final double elevation;
 
   @override
   Widget build(BuildContext context) {
