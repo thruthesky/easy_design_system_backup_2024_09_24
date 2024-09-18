@@ -72,6 +72,17 @@ For more details, please visit the [Easy Design System document website](https:/
   - outline with outline color.
   - background color with the surface color.
 
+- You can set `comicBorderWidth` before using the `ComicTheme` widget. With this, you can control the border width of the outline.
+
+```dart
+Widget build(BuildContext context) {
+  comicBorderWidth = 1.0;
+  return MaterialApp.router(
+    theme: ComicTheme.of(context).copyWith(),
+  );
+}
+```
+
 ### Sleek theme
 
 - Sleek theme uses

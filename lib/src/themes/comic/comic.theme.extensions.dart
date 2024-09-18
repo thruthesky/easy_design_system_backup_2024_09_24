@@ -1,3 +1,4 @@
+import 'package:easy_design_system/easy_design_system.dart';
 import 'package:flutter/material.dart';
 
 // Create an extension on Container to add a border to it.
@@ -10,7 +11,7 @@ extension ComicThemeContainer on Widget {
     double? innerBorderRadius,
     Color outlineColor = Colors.black,
     Color inlineColor = Colors.white,
-    double borderWidth = 2.0,
+    double? borderWidth,
   }) {
     innerBorderRadius ??= borderRadius - 2;
 
@@ -20,7 +21,7 @@ extension ComicThemeContainer on Widget {
         color: inlineColor, // Background color of the container
         border: Border.all(
           color: outlineColor, // Outer border color
-          width: borderWidth, // Outer border width
+          width: borderWidth ?? comicBorderWidth, // Outer border width
         ),
         borderRadius: BorderRadius.circular(borderRadius),
       ),

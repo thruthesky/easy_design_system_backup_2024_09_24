@@ -51,7 +51,7 @@ class ComicThemeData {
         elevation: 0,
       ),
 
-      bottomSheetTheme: const BottomSheetThemeData(
+      bottomSheetTheme: BottomSheetThemeData(
         // backgroundColor: theme.colorScheme.surface,
         shape: Border(
           top: BorderSide(
@@ -104,7 +104,7 @@ class ComicThemeData {
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(comicBorderRadius),
-          side: const BorderSide(
+          side: BorderSide(
             // removed the border color so the default value from [BorderSide] will be used
             // color: theme.colorScheme.outline,
             width: comicBorderWidth,
@@ -119,7 +119,7 @@ class ComicThemeData {
         elevation: 0,
         shadowColor: Colors.transparent,
         endShape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               topLeft: Radius.circular(comicBorderRadius),
               bottomLeft: Radius.circular(comicBorderRadius),
             ),
@@ -128,7 +128,7 @@ class ComicThemeData {
               color: theme.colorScheme.outline,
             )),
         shape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
                 topRight: Radius.circular(comicBorderRadius),
                 bottomRight: Radius.circular(comicBorderRadius)),
             side: BorderSide(
@@ -180,8 +180,7 @@ class ComicThemeData {
         shape: comicRoundedRectangleBorder(context),
       ),
       menuBarTheme: MenuBarThemeData(
-        style:
-            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
+        style: (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
           backgroundColor: WidgetStateProperty.all(
             comicContainerBackgroundColor(context),
           ),
@@ -197,8 +196,7 @@ class ComicThemeData {
       // uses the menuTheme
       // dropdownMenuTheme: const DropdownMenuThemeData(),
       menuTheme: MenuThemeData(
-        style:
-            (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
+        style: (theme.dropdownMenuTheme.menuStyle ?? const MenuStyle()).copyWith(
           backgroundColor: WidgetStateProperty.all(
             comicContainerBackgroundColor(context),
           ),
