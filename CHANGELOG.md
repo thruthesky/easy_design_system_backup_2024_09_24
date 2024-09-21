@@ -1,3 +1,6 @@
+## 0.0.26
+* Update. add `comicBorderWidth`.
+
 ## 0.0.25
 * Update. add `elevation` to `Settings`.
 
