@@ -14,7 +14,7 @@ const loadingMessage = document.querySelector('#loading-message');
 loadingMessage.textContent = "Downloading flutter engine...";
 console.log("-> Loading flutter engine...");
 _flutter.loader.load({
-    serviceWorkerVersion: "171622230",
+    serviceWorkerVersion: "1048964898",
     onEntrypointLoaded: async function (engineInitializer) {
         
         console.log("-> Engin is downloaded now. Going to initialize it.");
